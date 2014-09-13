@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1 view-title>Libraries</h1>
+</div>
+
+<form ng-submit="vm.submitSearchForm()" novalidate role="search">
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Search for library" name="query" ng-model="vm.searchQuery">
+  <div class="input-group-btn">
+      <button type="submit" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+  </div>
+</div>
+</form>  
+
+<div class="row search-examples">
+  <div class="col col-xs-10">
+    Examples: 
+    <a href="/#!/lib/search?query=" class="btn btn-default btn-xs" tooltip="List all libraries"><i class="fa fa-search"></i> All libraries</span></a>
+    <a href="/#!/lib/search?query=arduino" class="btn btn-default btn-xs" tooltip="Search in library's name, keywords and description fields"><i class="fa fa-search"></i> Arduino</span></a>
+    <a href="/#!/lib/search?query=msp430" class="btn btn-default btn-xs" tooltip="Search in library's name, keywords and description fields"><i class="fa fa-search"></i> MSP430</span></a>
+    <a href="/#!/lib/search?query=arduino%20%2Bi2c" class="btn btn-default btn-xs" tooltip="I2C Arduino-based libraries"><i class="fa fa-search"></i> Arduino +i2c</span></a>
+    <a href="/#!/lib/search?query=keyword%253Asensor" class="btn btn-default btn-xs" tooltip="Filter libraries by keyword"><i class="fa fa-search"></i> keyword:sensor</span></a>
+    <a href="/#!/lib/search?query=author%253A%2522Adafruit%2520Industries%2522" class="btn btn-default btn-xs" tooltip="Filter by author"><i class="fa fa-search"></i> author:"Adafruit Industries"</span></a>
+  </div>
+  <div class="col col-xs-2 text-right"><a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a></div>
+</div>
+

@@ -1,0 +1,154 @@
+<div class="page-header">
+  <h1 view-title>Platforms</h1>
+</div>
+
+<div class="well">
+  <b>PlatformIO</b> has pre-built different development platforms for popular <i>OS</i>
+  (<i>Mac</i>, <i>Linux 32/64/+ARM</i> and <i>Windows</i>). Each of them include <u>compiler</u>,
+  <u>debugger</u>, <u>uploader</u> (for embedded) and many other useful tools.
+</div>
+
+<tabset>
+  <tab>
+    <tab-heading>
+      <kbd>atmelavr</kbd>
+    </tab-heading>
+
+    <h4 align="center"><kbd>$ platformio install atmelavr</kbd></h4>
+
+    <p>
+      <a href="http://www.atmel.com/products/microcontrollers/avr/default.aspx" target="_blank">Atmel AVR® 8- and 32-bit MCUs</a>
+      deliver a unique combination of performance, power efficiency and design
+      flexibility. Optimized to speed time to market—and easily adapt to new
+      ones—they are based on the industry's most code-efficient architecture for
+      C and assembly programming.
+    </p>
+
+    <h2>Packages</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Alias</th>
+          <th>Contents</th>
+        </tr>
+      <thead>
+      <tr>
+        <td><span class="label label-default">toolchain-atmelavr</span></td>
+        <td>toolchain</td>
+        <td>
+          <a href="https://gcc.gnu.org/wiki/avr-gcc" target="_blank">avr-gcc</a>,
+          <a href="http://www.gnu.org/software/gdb/" target="_blank">GDB</a>,
+          <a href="http://avarice.sourceforge.net" target="_blank">AVaRICE</a>,
+          <a href="http://www.nongnu.org/simulavr/" target="_blank">SimulAVR</a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">tool-avrdude</span></td>
+        <td>uploader</td>
+        <td><a href="http://www.nongnu.org/avrdude/" target="_blank">AVRDUDE</a></td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">framework-arduinoavr</span></td>
+        <td></td>
+        <td><a href="http://arduino.cc/en/Reference/HomePage" target="_blank">Arduino Wiring-based Framework (AVR Core, 1.5.x  branch)</a></td>
+      </tr>
+    </table>
+
+  </tab>
+
+  <tab>
+    <tab-heading>
+      <kbd>timsp430</kbd>
+    </tab-heading>
+
+    <h4 align="center"><kbd>$ platformio install timsp430</kbd></h4>
+
+    <p>
+      <a href="http://www.ti.com/lsds/ti/microcontrollers_16-bit_32-bit/msp/overview.page" target="_blank">MSP430 microcontrollers (MCUs) from Texas Instruments (TI)</a>
+      are 16-bit, RISC-based, mixed-signal processors designed for ultra-low power.
+      These MCUs offer the lowest power consumption and the perfect mix of integrated peripherals for thousands of applications.
+    </p>
+
+    <h2>Packages</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Alias</th>
+          <th>Contents</th>
+        </tr>
+      <thead>
+      <tr>
+        <td><span class="label label-default">toolchain-timsp430</span></td>
+        <td>toolchain</td>
+        <td>
+          <a href="http://sourceforge.net/projects/mspgcc/" target="_blank">msp-gcc</a>,
+          <a href="http://www.gnu.org/software/gdb/" target="_blank">GDB</a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">tool-mspdebug</span></td>
+        <td>uploader</td>
+        <td><a href="http://www.http://mspdebug.sourceforge.net/" target="_blank">MSPDebug</a></td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">framework-energiamsp430</span></td>
+        <td></td>
+        <td><a href="http://energia.nu/reference/" target="_blank">Energia Wiring-based Framework (MSP430 Core)</a></td>
+      </tr>
+    </table>
+  </tab>
+
+  <tab>
+    <tab-heading>
+      <kbd>titiva</kbd>
+    </tab-heading>
+
+    <h4 align="center"><kbd>$ platformio install titiva</kbd></h4>
+
+    <p>
+      <a href="http://www.ti.com/lsds/ti/microcontrollers_16-bit_32-bit/c2000_performance/control_automation/tm4c12x/overview.page" target="_blank">Texas Instruments TM4C12x MCUs</a>
+      offer the industry’s most popular ARM® Cortex®-M4 core with scalable memory and package options,
+      unparalleled connectivity peripherals, advanced application functions, industry-leading analog integration, and extensive software solutions.
+    </p>
+
+    <h2>Packages</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Alias</th>
+          <th>Contents</th>
+        </tr>
+      <thead>
+      <tr>
+        <td><span class="label label-default">toolchain-gccarmnoneeabi</span></td>
+        <td>toolchain</td>
+        <td>
+          <a href="https://launchpad.net/gcc-arm-embedded/" target="_blank">gcc-arm-embedded</a>,
+          <a href="http://www.gnu.org/software/gdb/" target="_blank">GDB</a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">tool-lm4flash</span></td>
+        <td>uploader</td>
+        <td><a href="http://www.ti.com/tool/lmflashprogrammer" target="_blank">Flash Programmer</a></td>
+      </tr>
+      <tr>
+        <td><span class="label label-default">framework-energiativa</span></td>
+        <td></td>
+        <td><a href="http://energia.nu/reference/" target="_blank">Energia Wiring-based Framework (LM4F Core)</a></td>
+      </tr>
+    </table>
+  </tab>
+
+</tabset>
+
+<div class="alert alert-info text-center">
+  For more detailed information about <b>Platforms</b> please go to
+  <a href="http://docs.platformio.ikravets.com/en/latest/platforms/index.html">Documentation</a>.
+</div>

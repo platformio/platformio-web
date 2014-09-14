@@ -40,12 +40,12 @@
 <div class="row">
   <div class="col col-md-4">
     <h3>Updated</h3>
-    <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh"></i>  <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>  <small>{{ item.date | relativeDate }}</small>
+    <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh"></i> <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
     </p>
   </div>
   <div class="col col-md-4">
     <h3>Added</h3>
-    <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i>  <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>  <small>{{ item.date | relativeDate }}</small>
+    <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i> <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
     </p>
   </div>
   <div class="col col-md-4 keywords-stats">
@@ -62,12 +62,12 @@
 <div class="row">
   <div class="col col-md-4">
     <h3>Day's</h3>
-    <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i>  <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>
+    <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i> <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>
     </p>
   </div>
   <div class="col col-md-4">
     <h3>Week's</h3>
-    <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i>  <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>
+    <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i> <a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a>
     </p>
   </div>
   <div class="col col-md-4">

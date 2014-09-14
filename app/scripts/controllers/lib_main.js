@@ -9,11 +9,12 @@
   angular.module('siteApp')
     .controller('LibMainController', LibMainController);
 
-  function LibMainController($location) {
+  function LibMainController($location, libStats) {
     var vm = this;
 
     vm.submitSearchForm = submitSearchForm;
     vm.searchQuery = '';
+    vm.stats = libStats;
 
     ////////////
 

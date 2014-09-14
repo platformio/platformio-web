@@ -11,7 +11,7 @@
     .config(routeConfig);
 
   function routeConfig($locationProvider, $routeProvider,
-                       $disqusProvider) {
+    $disqusProvider) {
     $locationProvider.hashPrefix('!');
     $disqusProvider.setShortname('platformio');
 
@@ -28,7 +28,14 @@
       .when('/lib', {
         templateUrl: 'views/lib_main.html',
         controller: 'LibMainController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          libStats: ['dataService',
+            function(dataService) {
+              return dataService.getLibStats().$promise;
+            }
+          ]
+        }
       })
       .when('/lib/search', {
         templateUrl: 'views/lib_search.html',

@@ -14,7 +14,8 @@
     return {
       getLibSearchResult: getLibSearchResult,
       getLibInfo: getLibInfo,
-      getLibDlUrl: getLibDlUrl
+      getLibDlUrl: getLibDlUrl,
+      getLibStats: getLibStats
     };
 
     function getLibSearchResult(data) {
@@ -26,10 +27,13 @@
     }
 
     function getLibDlUrl(name) {
-      return $resource(siteConfig.apiURL + '/lib/download/' + name).get();
+      return $resource(
+        siteConfig.apiURL + '/lib/download/' + name).get();
     }
 
-
+    function getLibStats() {
+      return $resource(siteConfig.apiURL + '/lib/stats').get();
+    }
   }
 
 })();

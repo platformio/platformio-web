@@ -36,6 +36,7 @@
 
 .terminal small {
   color: #cecece;
+  word-wrap: break-word;
 }
 
 .terminal .comment {
@@ -45,7 +46,9 @@
 }
 
 .footer {
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 5px 0 10px 0;
+  border-top: 1px solid #eee;
 }
 
 /* Code highlighting */
@@ -83,7 +86,11 @@
 }
 
 .keywords .btn {
-  margin-right: 3px;
+  margin: 0 3px 3px 0;
+}
+
+.keywords-stats p {
+  margin-bottom: 6px;
 }
 
 .libinfo {
@@ -111,3 +118,9 @@
   width: 100%;
 }
 
+.page-header.libs-stats, .page-header.libs-stats h2 {
+  margin-bottom: 0;
+}
+.libs-stats .lib-recently-btn {
+  padding-top: 20px;
+}

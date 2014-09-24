@@ -47,7 +47,7 @@
 
 .footer {
   margin-top: 20px;
-  padding: 5px 0 10px 0;
+  padding: 20px;
   border-top: 1px solid #eee;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .lib-installation .lib-dl {
-  padding-left: 0;
+  padding: 1px 0 0 0;
 }
 
 .lib-installation .lib-install .terminal {
@@ -114,7 +114,7 @@
 }
 
 .lib-installation .lib-dl .btn {
-  height: 39px;
+  height: 38px;
   width: 100%;
 }
 
@@ -123,4 +123,17 @@
 }
 .libs-stats .lib-recently-btn {
   padding-top: 20px;
+}
+
+.examples .title {
+  margin-top: 30px;
+}
+
+.examples .code-toogle {
+  line-height: 0;
+}
+
+.examples .code-toogle-btn {
+  position: relative;
+  margin-bottom: -35px;
 }

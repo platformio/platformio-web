@@ -53,6 +53,22 @@
           ]
         }
       })
+      .when('/lib/examples', {
+        templateUrl: 'views/lib_examples.html',
+        controller: 'LibExamplesController',
+        controllerAs: 'vm',
+        resolve: {
+          searchResult: ['$location', 'dataService',
+            function($location, dataService) {
+              var searchObject = $location.search();
+              return dataService.getLibExamples({
+                query: searchObject.query,
+                page: searchObject.page ? parseInt(searchObject.page) : 1
+              }).$promise;
+            }
+          ]
+        }
+      })
       .when('/lib/show/:libName', {
         templateUrl: 'views/lib_show.html',
         controller: 'LibShowController',
@@ -66,10 +82,6 @@
           ]
         }
       })
-
-    .when('/lib/examples', {
-      templateUrl: 'views/lib_examples.html'
-    })
       .otherwise({
         redirectTo: '/'
       });

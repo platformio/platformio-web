@@ -13,6 +13,7 @@
   function dataService($resource, siteConfig) {
     return {
       getLibSearchResult: getLibSearchResult,
+      getLibExamples: getLibExamples,
       getLibInfo: getLibInfo,
       getLibDlUrl: getLibDlUrl,
       getLibStats: getLibStats
@@ -20,6 +21,10 @@
 
     function getLibSearchResult(data) {
       return $resource(siteConfig.apiURL + '/lib/search', data).get();
+    }
+
+    function getLibExamples(data) {
+      return $resource(siteConfig.apiURL + '/lib/examples', data).get();
     }
 
     function getLibInfo(name) {

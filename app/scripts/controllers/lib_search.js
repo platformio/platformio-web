@@ -18,7 +18,7 @@
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
 
-    if (searchObject.query.length) {
+    if (searchObject.query && searchObject.query.length) {
       vm.searchQuery = decodeURIComponent(searchObject.query);
     }
 

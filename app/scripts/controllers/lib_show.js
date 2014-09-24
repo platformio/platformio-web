@@ -9,7 +9,7 @@
   angular.module('siteApp')
     .controller('LibShowController', LibShowController);
 
-  function LibShowController($window, libInfo, dataService) {
+  function LibShowController($window, $location, dataService, libInfo) {
     var vm = this;
 
     vm.lib = libInfo;
@@ -19,6 +19,16 @@
 
     if (vm.examples.length) {
       vm.currentExample = vm.examples[0];
+    }
+
+    var searchObject = $location.search();
+    if (searchObject.example) {
+      angular.forEach(vm.examples, function(item) {
+        if (item.name === searchObject.example) {
+          vm.currentExample = item;
+          return;
+        }
+      });
     }
 
     ////////////

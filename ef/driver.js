@@ -1,3 +1,8 @@
+/**
+ * Copyright (C) Ivan Kravets <me@ikravets.com>
+ * See LICENSE for details.
+ */
+
 var page = require('webpage').create();
 var args = require('system').args;
 

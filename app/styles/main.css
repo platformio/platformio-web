@@ -101,6 +101,10 @@
   padding-bottom: 10px;
 }
 
+.lib-installation {
+  margin-right: 0;
+}
+
 .lib-installation .lib-install {
   padding-right: 0;
 }

@@ -1,5 +1,9 @@
+<view-title>{{ vm.searchResult.page > 1 ? 'Page ' + vm.searchResult.page + ' |'  : '' }} {{ vm.searchQuery ? vm.searchQuery + ' |' : '' }} Libraries</view-title>
+<meta name="description" content="{{ vm.seo.description }}" view-head />
+<meta name="keywords" content="{{ vm.seo.keywords }}" view-head />
+
 <div class="page-header">
-  <h1 view-title>Libraries <small>Search</small></h1>
+  <h1>Libraries <small>Search</small></h1>
 </div>
 
 <form ng-submit="vm.submitSearchForm()" novalidate role="search">
@@ -42,11 +46,11 @@
 <br>
 <div ng-if="!vm.searchResult.items.length" class="jumbotron">
   <h3>Nothing has been found by your request</h3>
-  <p>Try <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>, like asterisk <code>*</code>. For example, 
+  <p>Try <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>, like asterisk <code>*</code>. For example,
     <a href="/#!/lib/search?query=DS18*" class="btn btn-default btn-xs" tooltip="The asterisk serves as the truncation (or wildcard) operator"><i class="fa fa-search"></i> DS18*</span></a>
   </p>
   <p class="text-center">
     <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html" class="btn btn-success"><i class="fa fa-plus"></i> Create Library</a>
-    <a href="https://github.com/ivankravets/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>    
+    <a href="https://github.com/ivankravets/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>
   </p>
 </div>

@@ -77,6 +77,10 @@
   padding: 0;
 }
 
+.search-examples .col .btn {
+  margin-bottom: 3px;
+}
+
 .search-result {
   margin-top: 10px;
 }
@@ -125,8 +129,13 @@
 .page-header.libs-stats, .page-header.libs-stats h2 {
   margin-bottom: 0;
 }
+
 .libs-stats .lib-recently-btn {
   padding-top: 20px;
+}
+
+.libs-stats .lib-recently-btn .btn {
+  margin-bottom: 3px;
 }
 
 .examples .title {

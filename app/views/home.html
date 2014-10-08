@@ -1,3 +1,6 @@
+<meta name="description" content="PlatformIO is a cross-platform code builder and library manager (Arduino, MSP430, ARM)" view-head />
+<meta name="keywords" content="PlatformIO, Arduino, MSP430, ARM, builder, libraries, manager, library.json" view-head />
+
 <div class="page-header">
   <h1>PlatformIO <small view-title>A cross-platform code builder and library manager (Arduino, MSP430, ARM)</small></h1>
 </div>
@@ -40,7 +43,7 @@ For more detailed information please go to <a href="http://docs.platformio.ikrav
 <h3>"Blink" example</h3>
 
 <p>
-  Due to <em>PlatformIO</em> we can <strong>build the same code</strong> for the different development platforms. 
+  Due to <em>PlatformIO</em> we can <strong>build the same code</strong> for the different development platforms.
   Let's define example environments for the most popular boards from the different platforms:
 
   <table class="table table-striped">
@@ -73,7 +76,7 @@ For more detailed information please go to <a href="http://docs.platformio.ikrav
 
 <p>
   The source code that is located below in <span class="label label-default">main.c</span> will turn <em>ON</em> and <em>OFF</em>
-  the <a href="http://wiring.org.co" target="_blank">Wiring</a> compatible board <em>LED</em>, 
+  the <a href="http://wiring.org.co" target="_blank">Wiring</a> compatible board <em>LED</em>,
   with intervals of 1 second (1000 milliseconds).
 </p>
 
@@ -171,8 +174,8 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
     <font color="green">The platform 'titiva' has been successfully installed!</font>
     <br />
   </small>
-  <br /> 
-  
+  <br />
+
   <p class="comment">2. Initialize PlatformIO-based empty project</p>
   <p class="cmd"><i class="fa fa-terminal fa-lg"></i> <font color="teal">$</font> platformio init</p>
   <small>
@@ -199,7 +202,7 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
     <font color="yellow">
       .pioenvs/arduino_uno/core/Stream.cpp: In member function 'bool Stream::find(char*)':<br />
       .pioenvs/arduino_uno/core/Stream.cpp:78:30: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]<br />
-   return findUntil(target, "");<br /><br />      
+   return findUntil(target, "");<br /><br />
     </font>
 
     Processing <font color="cyan">launchpad_msp430g2</font> environment: <br />
@@ -231,7 +234,7 @@ arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pi
                                                                            ^
 .pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h:52:108: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br />
      bool operator==(const IPAddress& addr) { return (*((uint32_t*)_address)) == (*((uint32_t*)addr._address)); };<br />
-   return findUntil(target, "");<br /><br />      
+   return findUntil(target, "");<br /><br />
     </font>
   </small>
 </div>

@@ -13,6 +13,7 @@
     var vm = this;
 
     vm.lib = libInfo;
+    vm.seoKeywords = vm.lib.keywords.join(', ');
     vm.examples = getExamples();
     vm.currentExample = {};
     vm.downloadLib = downloadLib;

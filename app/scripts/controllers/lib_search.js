@@ -15,6 +15,7 @@
 
     vm.searchQuery = '';
     vm.searchResult = searchResult;
+    vm.seo = prepareSEOData();
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
 
@@ -29,6 +30,31 @@
         query: encodeURIComponent(vm.searchQuery),
         page: vm.searchResult.page
       });
+    }
+
+    function prepareSEOData() {
+      var data = {
+        'description': [],
+        'keywords': []
+      };
+
+      angular.forEach(vm.searchResult.items, function(item) {
+        data.description.push(item.name);
+        data.keywords = data.keywords.concat(item.name.split(
+          '-'));
+      });
+
+      data.keywords = data.keywords.filter(
+        function(value, index, self) {
+          return self.indexOf(value) === index;
+        }
+      );
+
+      // join to string
+      data.description = data.description.join(', ');
+      data.keywords = data.keywords.join(', ');
+
+      return data;
     }
   }
 

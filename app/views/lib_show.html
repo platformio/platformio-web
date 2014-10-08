@@ -1,5 +1,10 @@
+<view-title>{{ vm.lib.name }} | Libraries</view-title>
+<meta name="author" content="{{ vm.lib.author.name }}" view-head />
+<meta name="description" content="{{ vm.lib.description }}" view-head />
+<meta name="keywords" content="{{ vm.seoKeywords }}" view-head />
+
 <div class="page-header">
-  <h1 view-title>Library <small>{{ vm.lib.name }}</small></h1>
+  <h1>{{ vm.lib.name }}</h1>
 </div>
 <div class="lead">{{ vm.lib.description }}</div>
 

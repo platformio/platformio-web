@@ -16,6 +16,7 @@
 
     vm.searchQuery = '';
     vm.searchResult = searchResult;
+    vm.seo = prepareSEOData();
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
 
@@ -70,9 +71,36 @@
 
           code = code.replace(
             /(?:\s*\/\*[\s\S]+?\*\/\s*|\s*\/\/[\s\S]+?$\s)/m, '');
-          item.shortCode = code.split('\n', maxLines).splice(0, maxLines).join(
+          item.shortCode = code.split('\n', maxLines).splice(0,
+            maxLines).join(
             '\n');
         });
+    }
+
+    function filterUniqueValues(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+
+    function prepareSEOData() {
+      var data = {
+        'description': [],
+        'keywords': []
+      };
+
+      angular.forEach(vm.searchResult.items, function(item) {
+        data.description = data.description.concat([item.lib.name, item.name]);
+        data.keywords = data.keywords.concat(item.name.split(
+          /[\-\_\.]/));
+      });
+
+      data.description = data.description.filter(filterUniqueValues);
+      data.keywords = data.keywords.filter(filterUniqueValues);
+
+      // join to string
+      data.description = data.description.join(', ');
+      data.keywords = data.keywords.join(', ');
+
+      return data;
     }
   }
 })();

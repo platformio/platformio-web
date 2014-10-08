@@ -15,7 +15,7 @@ def application(env, start_response):
     else:
         url = "http://platformio.ikravets.com/#!" + unquote(qs[19:])
         response = check_output(["/usr/local/bin/phantomjs",
-                                 "--load-images=false", "driver.js", url])
+                                 "--load-images=false", "crawler.js", url])
 
     start_response(status, [("Content-Type", "text/html"),
                             ("Content-Length", str(len(response)))])

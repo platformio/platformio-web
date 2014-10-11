@@ -8,12 +8,25 @@
 
   angular
     .module('siteApp')
+    .factory('httpErrorInterceptor', httpErrorInterceptor)
     .config(routeConfig);
 
+  function httpErrorInterceptor($q, $window) {
+    return {
+      'responseError': function(rejection) {
+        if (rejection.status === 404) {
+          $window.location.href = '/#!/404';
+        }
+        return $q.reject(rejection);
+      }
+    };
+  }
+
   function routeConfig($locationProvider, $routeProvider,
-    $disqusProvider) {
+    $disqusProvider, $httpProvider) {
     $locationProvider.hashPrefix('!');
     $disqusProvider.setShortname('platformio');
+    $httpProvider.interceptors.push('httpErrorInterceptor');
 
     $routeProvider
       .when('/', {
@@ -82,8 +95,11 @@
           ]
         }
       })
+      .when('/404', {
+        templateUrl: 'views/404.html'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404'
       });
   }
 

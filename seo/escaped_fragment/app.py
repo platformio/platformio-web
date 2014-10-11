@@ -16,6 +16,8 @@ def application(env, start_response):
         url = "http://platformio.ikravets.com/#!" + unquote(qs[19:])
         response = check_output(["/usr/local/bin/phantomjs",
                                  "--load-images=false", "crawler.js", url])
+        if "404 Not Found" in response:
+            status = "404 Not Found"
 
     start_response(status, [("Content-Type", "text/html"),
                             ("Content-Length", str(len(response)))])

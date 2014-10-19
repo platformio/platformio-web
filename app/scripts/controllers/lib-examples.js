@@ -10,15 +10,19 @@
     .controller('LibExamplesController', LibExamplesController);
 
   function LibExamplesController($location, $http, $templateCache, $q,
-    searchResult) {
+    dataService, searchResult) {
     var vm = this;
     var searchObject = $location.search();
 
+    vm.frameworks = dataService.getFrameworks();
+    vm.platforms = dataService.getPlatforms();
     vm.searchQuery = '';
     vm.searchResult = searchResult;
-    vm.seo = prepareSEOData();
+    vm.meta = getMeta();
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
+    vm.searchPath = '/#!/lib/examples';
+    vm.searchInputPlaceholder = 'Search for example ...';
 
     if (searchObject.query && searchObject.query.length) {
       vm.searchQuery = decodeURIComponent(searchObject.query);
@@ -29,6 +33,28 @@
     });
 
     ////////////
+
+    function getMeta() {
+      var data = {
+        'description': [],
+        'keywords': []
+      };
+
+      angular.forEach(vm.searchResult.items, function(item) {
+        data.description = data.description.concat([item.lib.name, item.name]);
+        data.keywords = data.keywords.concat(item.name.split(
+          /[\-\_\.]/));
+      });
+
+      data.description = data.description.filter(filterUniqueValues);
+      data.keywords = data.keywords.filter(filterUniqueValues);
+
+      // join to string
+      data.description = data.description.join(', ');
+      data.keywords = data.keywords.join(', ');
+
+      return data;
+    }
 
     function doSearch() {
       $location.search({
@@ -79,28 +105,6 @@
 
     function filterUniqueValues(value, index, self) {
       return self.indexOf(value) === index;
-    }
-
-    function prepareSEOData() {
-      var data = {
-        'description': [],
-        'keywords': []
-      };
-
-      angular.forEach(vm.searchResult.items, function(item) {
-        data.description = data.description.concat([item.lib.name, item.name]);
-        data.keywords = data.keywords.concat(item.name.split(
-          /[\-\_\.]/));
-      });
-
-      data.description = data.description.filter(filterUniqueValues);
-      data.keywords = data.keywords.filter(filterUniqueValues);
-
-      // join to string
-      data.description = data.description.join(', ');
-      data.keywords = data.keywords.join(', ');
-
-      return data;
     }
   }
 })();

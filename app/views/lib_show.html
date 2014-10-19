@@ -1,57 +1,79 @@
-<view-title>{{ vm.lib.name }} · Libraries</view-title>
-<meta name="author" content="{{ vm.lib.author.name }}" view-head />
-<meta name="description" content="{{ vm.lib.description }}" view-head />
-<meta name="keywords" content="{{ vm.seoKeywords }}" view-head />
+<view-title>{{ vm.meta.title }} · Libraries</view-title>
+<meta name="description" content="{{ vm.meta.description }}" view-head />
+<meta name="keywords" content="{{ vm.meta.keywords }}" view-head />
 
-<div class="page-header">
-  <h1>{{ vm.lib.name }}</h1>
-</div>
-<div class="lead">{{ vm.lib.description }}</div>
+<article>
+  <div class="page-header">
+    <h1>{{ vm.lib.name }} <small>by <span ng-repeat="author in vm.lib.authors | filter : {maintainer: false}">{{ author.name }}<span ng-if="!$last">, </span></span></small></h1>
+  </div>
 
-<div class="well well-sm">
-  <dl class="dl-horizontal libinfo">
-    <dt>Author</dt>
-    <dd>
-      <strong>{{ vm.lib.author.name }}</strong>
-      <br>
-      <div ng-if="vm.lib.author.email"><i class="fa fa-envelope"></i> <a href="mailto:{{ vm.lib.author.email }}">{{ vm.lib.author.email }}</a>
+  <div class="lead">{{ vm.lib.description }}</div>
+
+  <div class="well well-sm">
+    <dl class="dl-horizontal libinfo">
+      <dt>Authors</dt>
+      <dd>
+        <div ng-repeat="author in vm.lib.authors">
+          <strong>{{ author.name }}</strong><span ng-if="author.maintainer"> (maintainer)</span>
+          <br>
+          <div ng-if="author.email"><i class="fa fa-envelope"></i> <a href="mailto:{{ author.email }}">{{ author.email }}</a>
+          </div>
+          <div ng-if="author.url"><i class="fa fa-globe"></i> <a href="{{ author.url }}" target="_blank">{{ author.url }}</a>
+          </div>
+          <i class="fa fa-book"></i> <a href="/#!/lib/search?query=author%253A%2522{{ author.name }}%2522">Libraries</span></a>
+          <br ng-if="!$last"></br>
+        </div>
+      </dd>
+
+      <dt>Compatibility</dt>
+      <dd>
+        <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i> <span ng-repeat="name in vm.lib.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">, </span></span><br></span>
+        <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i> <span ng-repeat="name in vm.lib.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">, </span></span></span>
+      </dd>
+
+      <dt>Downloads</dt>
+      <dd>
+        {{ vm.lib.dlstats.day }} downloads in the last day
+        <br>{{ vm.lib.dlstats.week }} downloads in the last week
+        <br>{{ vm.lib.dlstats.month }} downloads in the last month
+      </dd>
+
+      <dt>Version</dt>
+      <dd><strong>{{ vm.lib.version.name}}</strong>  <small tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
+      </dd>
+
+      <dt>Keywords</dt>
+      <dd>
+        <div class="keywords">
+          <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-sm" ng-repeat="keyword in vm.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+        </div>
+      </dd>
+    </dl>
+  </div>
+
+  <h2>Installation <small>using <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_install.html">PlatformIO Library Manager</a></small></h2>
+  <div class="row lib-installation">
+    <div class="col-md-11 lib-install">
+      <div class="well terminal">
+        <i class="fa fa-terminal fa-lg"></i> platformio <font color="silver">lib install</font>  <span class="plri" tooltip="PlatformIO Library Registry ID">{{ vm.lib.id }}</span>
       </div>
-      <div ng-if="vm.lib.author.url"><i class="fa fa-globe"></i> <a href="{{ vm.lib.author.url }}" target="_blank">{{ vm.lib.author.url }}</a>
-      </div>
-      <i class="fa fa-book"></i>  <a href="/#!/lib/search?query=author%253A%2522{{ vm.lib.author.name }}%2522">Libraries</span></a>
-    </dd>
-
-    <dt>Downloads</dt>
-    <dd>
-      {{ vm.lib.dlstats.day }} downloads in the last day
-      <br>{{ vm.lib.dlstats.week }} downloads in the last week
-      <br>{{ vm.lib.dlstats.month }} downloads in the last month
-    </dd>
-
-    <dt>Version</dt>
-    <dd><strong>{{ vm.lib.version.name}}</strong>  <small tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
-    </dd>
-
-
-    <dt>Keywords</dt>
-    <dd>
-      <div class="keywords">
-        <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-sm" ng-repeat="keyword in vm.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
-      </div>
-    </dd>
-  </dl>
-</div>
-
-<div class="row lib-installation">
-  <div class="col-md-11 lib-install">
-    <div class="well terminal">
-      <i class="fa fa-terminal fa-lg"></i> platformio <font color="silver">lib install</font>  <font color="cyan">{{ vm.lib.name }}</font>
+    </div>
+    <div class="col-md-1 lib-dl">
+      <button type="button" class="btn btn-success" tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-2x"></i></button>
     </div>
   </div>
-  <div class="col-md-1 lib-dl">
-    <button type="button" class="btn btn-success" tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-2x"></i></button>
-  </div>
-</div>
+
+  <div class="alert alert-info" role="alert">
+    <ul class="fa-ul">
+      <li>
+        <i class="fa fa-info-circle fa-lg fa-li"></i>
+        Don't forget that you can <a href="http://docs.platformio.ikravets.com/en/latest/ide.html#" class="alert-link">Integrate PlatformIO with your favourite IDE</a>
+        (Arduino, Energia, Eclipse, VIM and etc.).
+      </li>
+    </ul>
+  </div> 
+
+</article>
 
 <tabset>
   <tab>

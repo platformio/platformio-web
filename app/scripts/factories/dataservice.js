@@ -16,7 +16,9 @@
       getLibExamples: getLibExamples,
       getLibInfo: getLibInfo,
       getLibDlUrl: getLibDlUrl,
-      getLibStats: getLibStats
+      getLibStats: getLibStats,
+      getFrameworks: getFrameworks,
+      getPlatforms: getPlatforms
     };
 
     function getLibSearchResult(data) {
@@ -27,17 +29,32 @@
       return $resource(siteConfig.apiURL + '/lib/examples', data).get();
     }
 
-    function getLibInfo(name) {
-      return $resource(siteConfig.apiURL + '/lib/info/' + name).get();
+    function getLibInfo(id) {
+      return $resource(siteConfig.apiURL + '/lib/info/' + id).get();
     }
 
-    function getLibDlUrl(name) {
+    function getLibDlUrl(id) {
       return $resource(
-        siteConfig.apiURL + '/lib/download/' + name).get();
+        siteConfig.apiURL + '/lib/download/' + id).get();
     }
 
     function getLibStats() {
       return $resource(siteConfig.apiURL + '/lib/stats').get();
+    }
+
+    function getFrameworks() {
+      return [
+        {name: 'arduino', title: 'Arduino'},
+        {name: 'energia', title: 'Energia'}
+      ];
+    }
+
+    function getPlatforms() {
+      return [
+        {name: 'atmelavr', title: 'Atmel AVR'},
+        {name: 'timsp430', title: 'TI MSP430'},
+        {name: 'titiva', title: 'TI TIVA'}
+      ];
     }
   }
 

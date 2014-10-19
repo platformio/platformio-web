@@ -1,49 +1,66 @@
 <view-title>{{ vm.searchResult.page > 1 ? 'Page ' + vm.searchResult.page + ' ·'  : '' }} {{ vm.searchQuery ? vm.searchQuery + ' ·' : '' }} Libraries</view-title>
-<meta name="description" content="{{ vm.seo.description }}" view-head />
-<meta name="keywords" content="{{ vm.seo.keywords }}" view-head />
+<meta name="description" content="{{ vm.meta.description }}" view-head />
+<meta name="keywords" content="{{ vm.meta.keywords }}" view-head />
 
 <div class="page-header">
   <h1>Libraries <small>Search</small></h1>
 </div>
 
-<form ng-submit="vm.submitSearchForm()" novalidate role="search">
-  <div class="input-group input-group-lg">
-    <input type="text" class="form-control" placeholder="Search for library" name="query" ng-model="vm.searchQuery">
-    <div class="input-group-btn">
-      <button type="submit" class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-      </button>
-    </div>
+<ng-include src="'views/lib_search_form.html'"></ng-include>
+<hr>
+
+<div class="search-filters text-right">
+  <div class="btn-group" dropdown>
+    <button type="button" class="btn default dropdown-toggle">
+      <i class="fa fa-cogs"></i> Frameworks <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a></li>
+      <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a></li>
+    </ul>
   </div>
-</form>
-<br>
+
+  <div class="btn-group" dropdown>
+    <button type="button" class="btn default dropdown-toggle">
+      <i class="fa fa-laptop"></i> Platforms <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a></li>
+      <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a></li>
+    </ul>
+  </div>
+</div>
 
 <div ng-if="vm.searchResult.items.length">
-  <div class="search-result">
+  <section class="search-result">
     <div class="well well-sm" ng-repeat="item in vm.searchResult.items">
       <div class="row">
-        <div class="col-xs-10">
-          <h3 class="title"><a href="/#!/lib/show/{{ item.name }}">{{ item.name }}</a> <small>by {{ item.author_name }}</small></h3>
+        <div class="col-xs-6">
+          <h3 class="title"><a href="/#!/lib/show/{{ item.id }}">{{ item.name }}</a>
+            <small> by <span ng-repeat="name in item.authornames">{{ name }}<span ng-if="!$last">, </span></span></small>
+          </h3>
         </div>
-        <div class="col-xs-2 text-right">
-          {{ item.example_nums }} <i class="fa fa-graduation-cap" tooltip="Examples"></i> {{ item.dlmonth }} <i class="fa fa-download" tooltip="Downloads per month"></i>
+        <div class="col-xs-6 text-right">
+          <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i><span ng-repeat="name in item.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">, </span></span> &nbsp;</span>
+          <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i><span ng-repeat="name in item.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">, </span></span> &nbsp;</span>
+          <span tooltip="Examples">{{ item.examplenums }} <i class="fa fa-graduation-cap"></i></span> &nbsp;  <span tooltip="Downloads per month">{{ item.dlmonth }} <i class="fa fa-download"></i></span>
         </div>
       </div>
 
       <p>{{ item.description }}</p>
 
       <div class="keywords">
-        <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span>
-</a>
+        <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="text-center">
     <pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" ng-change="vm.pageChanged()" class="pagination-sm">
     </pagination>
   </div>
 </div>
-<br>
+
 <div ng-if="!vm.searchResult.items.length" class="jumbotron">
   <h3>Nothing has been found by your request</h3>
   <p>Try <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>, like asterisk <code>*</code>. For example,

@@ -1,54 +1,63 @@
 <view-title>{{ vm.searchResult.page > 1 ? 'Page ' + vm.searchResult.page + ' ·'  : '' }} {{ vm.searchQuery ? vm.searchQuery + ' ·' : '' }} Library Examples</view-title>
-<meta name="description" content="{{ vm.seo.description }}" view-head />
-<meta name="keywords" content="{{ vm.seo.keywords }}" view-head />
+<meta name="description" content="{{ vm.meta.description }}" view-head />
+<meta name="keywords" content="{{ vm.meta.keywords }}" view-head />
 
 <div class="page-header">
   <h1>Library <small>Examples</small></h1>
-</div>   
+</div>
 
-<form ng-submit="vm.submitSearchForm()" novalidate role="search">
-  <div class="input-group input-group-lg">
-    <input type="text" class="form-control" placeholder="Search for example" name="query" ng-model="vm.searchQuery">
-    <div class="input-group-btn">
-      <button type="submit" class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-      </button>
-    </div>
-  </div>
-</form>
+<ng-include src="'views/lib_search_form.html'"></ng-include>
+<hr> 
 
-<div class="row search-examples">
-  <div class="col col-xs-10">
-    Examples:
-    <a href="/#!/lib/examples?query=arduino" class="btn btn-default btn-xs" tooltip="Search in library's name, keywords and description fields"><i class="fa fa-search"></i> Arduino</span></a>
-    <a href="/#!/lib/examples?query=msp430" class="btn btn-default btn-xs" tooltip="Search in library's name, keywords and description fields"><i class="fa fa-search"></i> MSP430</span></a>
-    <a href="/#!/lib/examples?query=arduino%20%2Bi2c" class="btn btn-default btn-xs" tooltip="I2C Arduino-based libraries"><i class="fa fa-search"></i> Arduino +i2c</span></a>
-    <a href="/#!/lib/examples?query=keyword%253Asensor" class="btn btn-default btn-xs" tooltip="Filter libraries by keyword"><i class="fa fa-search"></i> keyword:sensor</span></a>
-    <a href="/#!/lib/examples?query=author%253A%2522Adafruit%2520Industries%2522" class="btn btn-default btn-xs" tooltip="Filter by author"><i class="fa fa-search"></i> author:"Adafruit Industries"</span></a>
-  </div>
-  <div class="col col-xs-2 text-right"><a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>
+<div class="text-right">
+  <div class="btn-group" dropdown>
+    <button type="button" class="btn default dropdown-toggle">
+      Frameworks <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a></li>
+      <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a></li>
+    </ul>
+  </div>  
+
+  <div class="btn-group" dropdown>
+    <button type="button" class="btn default dropdown-toggle">
+      Platforms <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a></li>
+      <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a></li>
+    </ul>
   </div>
 </div>
 
-<div ng-if="vm.searchResult.items.length">
-  <div class="examples" ng-repeat="item in vm.searchResult.items">
-    <h3 class="title"><a href="/#!/lib/show/{{ item.lib.name }}?example={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a> <small>by {{ item.author_name }}</small></h3>
+<br>
 
+<div ng-if="vm.searchResult.items.length">
+  <section class="examples" ng-repeat="item in vm.searchResult.items">
     <div class="row">
-      <div class="col-xs-8">
-        <p>{{ item.lib.description }}</p>
+      <div class="col-xs-7">
+        <h3 class="title"><a href="/#!/lib/show/{{ item.lib.id }}?example={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a>
+          <small> by <span ng-repeat="name in item.lib.authornames">{{ name }}<span ng-if="!$last">, </span></span></small>
+        </h3>
       </div>
-      <div class="col-xs-4 text-right">
-        <div class="keywords">
-          <a href="/#!/lib/examples?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
-        </div>
+      <div class="col-xs-5 text-right">
+        <span ng-if="item.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i><span ng-repeat="name in item.lib.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">, </span></span> &nbsp;</span>
+        <span ng-if="item.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i><span ng-repeat="name in item.lib.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">, </span></span> &nbsp;</span>
       </div>
     </div>
+
+    <p>{{ item.lib.description }}</p>  
+
+    <p class="keywords">
+      <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+    </p>      
 
     <div class="text-right code-toogle"><button class="btn btn-primary code-toogle-btn" type="button" ng-click="item.fullCode=!item.fullCode"><i ng-class="{'fa fa-expand': !item.fullCode, 'fa fa-compress': item.fullCode}"></i></button></div>
 
     <div hljs source="item.shortCode" language="cpp" ng-show="!item.fullCode"></div>
     <div hljs include="item.url" language="cpp" ng-show="item.fullCode"></div>
-  </div>
+  </section>
 
   <div class="text-center">
     <pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" ng-change="vm.pageChanged()" class="pagination-sm">
@@ -56,4 +65,13 @@
   </div>
 </div>
 <br>
-<div ng-if="!vm.searchResult.items.length" class="alert alert-warning text-center" role="alert">Nothing has been found by your request</div>
+<div ng-if="!vm.searchResult.items.length" class="jumbotron">
+  <h3>Nothing has been found by your request</h3>
+  <p>Try <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>, like asterisk <code>*</code>. For example,
+    <a href="/#!/lib/examples?query=DS18*" class="btn btn-default btn-xs" tooltip="The asterisk serves as the truncation (or wildcard) operator"><i class="fa fa-search"></i> DS18*</span></a>
+  </p>
+  <p class="text-center">
+    <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html" class="btn btn-success"><i class="fa fa-plus"></i> Create Library</a>
+    <a href="https://github.com/ivankravets/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>
+  </p>
+</div> 

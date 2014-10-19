@@ -1,0 +1,23 @@
+<form ng-submit="vm.submitSearchForm()" novalidate role="search">
+  <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="{{ vm.searchInputPlaceholder }}" name="query" ng-model="vm.searchQuery">
+    <div class="input-group-btn">
+      <button type="submit" class="btn btn-default" type="submit"><i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row search-examples">
+  <div class="col col-xs-10">
+    Examples:
+    <a href="{{ vm.searchPath }}?query=tft%2520display" class="btn btn-default btn-xs" tooltip="Search in 'library.json' fields"><i class="fa fa-search"></i> tft display</span></a>
+    <a href="{{ vm.searchPath }}?query=ds18*" class="btn btn-default btn-xs" tooltip="Search for libraries which are compatible with Dallas Temperature ICs (DS18B20, DS18S20, DS1822, DS1820)"><i class="fa fa-search"></i> DS18*</span></a>
+    <a href="{{ vm.searchPath }}?query=framework%253Aarduino%2520web" class="btn btn-default btn-xs" tooltip="Arduino-based libraries for Web"><i class="fa fa-search"></i> framework:arduino web</span></a>
+    <a href="{{ vm.searchPath }}?query=platform%253Atimsp430" class="btn btn-default btn-xs" tooltip="Search for TI MSP430 compatible libraries"><i class="fa fa-search"></i> platform:timsp430</span></a>
+    <a href="{{ vm.searchPath }}?query=keyword%253Asensor" class="btn btn-default btn-xs" tooltip="Filter libraries by keyword"><i class="fa fa-search"></i> keyword:sensor</span></a>
+    <a href="{{ vm.searchPath }}?query=author%253A%2522Adafruit%2520Industries%2522" class="btn btn-default btn-xs" tooltip="Filter by author"><i class="fa fa-search"></i> author:"Adafruit Industries"</span></a>
+  </div>
+  <div class="col col-xs-2 text-right"><a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html#description">advanced search syntax</a>
+  </div>
+</div>

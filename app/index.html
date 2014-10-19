@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title ng-bind="viewTitle + ' · PlatformIO'">A cross-platform code builder and library manager (Arduino, MSP430, ARM) · PlatformIO</title>
-  <meta name="copyright" content="Ivan Kravets" />
+  <title ng-bind="(viewTitle ? viewTitle : 'A cross-platform code builder and library manager') + ' · PlatformIO'">A cross-platform code builder and library manager · PlatformIO</title>
+  <meta name="author" content="Ivan Kravets" />
   <meta name="robots" content="all" />
   <meta name="viewport" content="width=device-width" />
   <meta name="fragment" content="!" />
@@ -51,7 +51,7 @@
             <ul class="nav navbar-nav navbar-right">
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="http://docs.platformio.ikravets.com/en/latest/quickstart.html">Quickstart</a>
                   </li>
@@ -76,30 +76,6 @@
                   </li>
                 </ul>
               </li>
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="http://docs.platformio.ikravets.com/" target="_blank"><i class="fa fa-book"></i>&nbsp;Documentation</a>
-                  </li>
-                  <li><a href="https://github.com/ivankravets/platformio" target="_blank"><i class="fa fa-github"></i>&nbsp;Source Code</a>
-                  </li>
-                  <li><a href="https://github.com/ivankravets/platformio/issues" target="_blank"><i class="fa fa-bug"></i>&nbsp;Bugs / Issues</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li><a href="http://www.ikravets.com/category/computer-life/platformio" target="_blank"><i class="fa fa-pencil"></i>&nbsp; Blog</a>
-                  </li>
-                  <li><a href="https://twitter.com/smartanthill" target="_blank"><i class="fa fa-twitter"></i>&nbsp; Twitter</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li><a href="http://docs.platformio.ikravets.com/en/latest/history.html"><i class="fa fa-history"></i>&nbsp; Release History</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li><a href="http://www.ikravets.com/about-me" target="_blank"><i class="fa fa-envelope"></i>&nbsp; Contact</a>
-                  </li>
-                </ul>
-              </li>
-
             </ul>
           </div>
 
@@ -110,11 +86,41 @@
     <div ng-view=""></div>
 
     <footer class="footer text-center">
+      <ul class="list-inline">
+        <li>
+          <a href="https://twitter.com/SmartAnthill" class="twitter-follow-button" data-show-count="false">Follow @SmartAnthill</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=PlatformIO&text=A%20cross-platform%20code%20builder%20and%20library%20manager" class="twitter-hashtag-button" data-related="ikravets" data-url="http://platformio.ikravets.com">Tweet #PlatformIO</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+        </li>
+      </ul>
+      <p>Designed and built with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a></p>
       <p>
-        <i class="fa fa-copyright"></i> Copyright 2014, <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a> 
-        | This site is open source. Get the <a href="https://github.com/ivankravets/platformio-web" target="_blank">source on Github</a> or 
-        <a href="https://github.com/ivankravets/platformio-web/issues" target="_blank">report an issue</a>.
+        The open source code of <a href="https://github.com/ivankravets/platformio" target="_blank">PlatformIO</a>, 
+        <a href="https://github.com/ivankravets/platformio/tree/develop/docs" target="_blank">Documentation</a>, 
+        <a href="https://github.com/ivankravets/platformio-api" target="_blank">API</a> and 
+        <a href="https://github.com/ivankravets/platformio-web" target="_blank">Web Site</a> are licensed under <a href="https://github.com/ivankravets/platformio/blob/master/LICENSE" target="_blank">MIT</a>.
       </p>
+
+      <ul class="list-inline">
+        <li><i class="fa fa-file-code-o"></i> <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/config.html">library.json</a></li>
+        <li>·</li>
+        <li><i class="fa fa-book"></i> <a href="http://docs.platformio.ikravets.com/">Documentation</a></li>
+        <li>·</li>
+        <li><i class="fa fa-github"></i> <a href="https://github.com/ivankravets/platformio" target="_blank">GitHub</a></li>
+        <li>·</li>
+        <li><i class="fa fa-bug"></i> <a href="https://github.com/ivankravets/platformio/issues" target="_blank">Issues</a></li>
+        <li>·</li>
+        <li><i class="fa fa-pencil"></i> <a href="http://www.ikravets.com/category/computer-life/platformio" target="_blank">Blog</a> </li>
+        <li>·</li>
+        <li><i class="fa fa-history"></i> <a href="http://docs.platformio.ikravets.com/en/latest/history.html">Releases</a></li>
+        <li>·</li>
+        <li><i class="fa fa-envelope"></i> <a href="http://www.ikravets.com/about-me" target="_blank">Contact</a></li>
+      </ul>
+
     </footer>
 
   </div>
@@ -166,17 +172,15 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/factories/dataservice.js"></script>
   <script src="scripts/app-routes.js"></script>
+  <script src="scripts/factories/dataservice.js"></script>
+  <script src="scripts/filters/name-to-title.js"></script>
   <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/lib_main.js"></script>
-  <script src="scripts/controllers/lib_search.js"></script>
-  <script src="scripts/controllers/lib_show.js"></script>
-  <script src="scripts/controllers/lib_examples.js"></script>
+  <script src="scripts/controllers/lib-main.js"></script>
+  <script src="scripts/controllers/lib-search.js"></script>
+  <script src="scripts/controllers/lib-show.js"></script>
+  <script src="scripts/controllers/lib-examples.js"></script>
 
   <!-- endbuild -->
-
-  <a href="https://github.com/ivankravets/platformio"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 </body>
-
 </html>

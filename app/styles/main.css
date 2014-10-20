@@ -109,6 +109,10 @@
   padding-bottom: 10px;
 }
 
+.libinfo .author-detail {
+  margin-top: 5px;
+}
+
 .lib-installation {
   margin-right: 0;
 }

@@ -13,7 +13,7 @@
     <dl class="dl-horizontal libinfo">
       <dt>Authors</dt>
       <dd>
-        <div ng-repeat="author in vm.lib.authors">
+        <div ng-repeat="author in vm.lib.authors" ng-class="{'author-detail': !$first}">
           <strong>{{ author.name }}</strong><span ng-if="author.maintainer"> (maintainer)</span>
           <br>
           <div ng-if="author.email"><i class="fa fa-envelope"></i> <a href="mailto:{{ author.email }}">{{ author.email }}</a>
@@ -21,7 +21,6 @@
           <div ng-if="author.url"><i class="fa fa-globe"></i> <a href="{{ author.url }}" target="_blank">{{ author.url }}</a>
           </div>
           <i class="fa fa-book"></i> <a href="/#!/lib/search?query=author%253A%2522{{ author.name }}%2522">Libraries</span></a>
-          <br ng-if="!$last"></br>
         </div>
       </dd>
 

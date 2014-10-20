@@ -50,7 +50,7 @@
     <p>{{ item.lib.description }}</p>  
 
     <p class="keywords">
-      <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+      <a href="/#!/lib/examples?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
     </p>      
 
     <div class="text-right code-toogle"><button class="btn btn-primary code-toogle-btn" type="button" ng-click="item.fullCode=!item.fullCode"><i ng-class="{'fa fa-expand': !item.fullCode, 'fa fa-compress': item.fullCode}"></i></button></div>
@@ -60,7 +60,7 @@
   </section>
 
   <div class="text-center">
-    <pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" ng-change="vm.pageChanged()" class="pagination-sm">
+    <pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" rotate="false" ng-change="vm.pageChanged()" class="pagination-sm">
     </pagination>
   </div>
 </div>

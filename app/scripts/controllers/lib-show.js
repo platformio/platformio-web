@@ -47,9 +47,7 @@
       // prepare title
       var authornames = [];
       angular.forEach(vm.lib.authors, function(item) {
-        if (!item.maintainer) {
-          authornames.push(item.name);
-        }
+        authornames.push(item.name);
       });
       if (authornames.length) {
         data.title += ' by ' + authornames.join(', ');

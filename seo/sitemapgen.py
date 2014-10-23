@@ -100,8 +100,8 @@ def main():
         # libs
         for item in PIOLibsGenerator():
             b.add_url(
-                loc=("http://platformio.ikravets.com/#!/lib/show/%d" %
-                     item['id']),
+                loc=("http://platformio.ikravets.com/#!/lib/show/%d/%s" %
+                     (item['id'], item['name'])),
                 lastmod=item['updated'],
                 changefreq="weekly")
 

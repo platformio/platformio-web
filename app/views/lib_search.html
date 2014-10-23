@@ -36,7 +36,7 @@
     <div class="well well-sm" ng-repeat="item in vm.searchResult.items">
       <div class="row">
         <div class="col-xs-6">
-          <h3 class="title"><a href="/#!/lib/show/{{ item.id }}">{{ item.name }}</a>
+          <h3 class="title"><a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
             <small> by <span ng-repeat="name in item.authornames">{{ name }}<span ng-if="!$last">, </span></span></small>
           </h3>
         </div>

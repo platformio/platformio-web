@@ -82,7 +82,7 @@
           ]
         }
       })
-      .when('/lib/show/:libName', {
+      .when('/lib/show/:libId/:libName', {
         templateUrl: 'views/lib_show.html',
         controller: 'LibShowController',
         controllerAs: 'vm',
@@ -90,7 +90,7 @@
           libInfo: ['$route', 'dataService',
             function($route, dataService) {
               return dataService.getLibInfo(
-                $route.current.params.libName).$promise;
+                $route.current.params.libId).$promise;
             }
           ]
         }

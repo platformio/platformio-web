@@ -53,7 +53,8 @@
       return [
         {name: 'atmelavr', title: 'Atmel AVR'},
         {name: 'timsp430', title: 'TI MSP430'},
-        {name: 'titiva', title: 'TI TIVA'}
+        {name: 'titiva', title: 'TI TIVA'},
+        {name: 'teensy', title: 'Teensy'}
       ];
     }
   }

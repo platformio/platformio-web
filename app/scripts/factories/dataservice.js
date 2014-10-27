@@ -52,6 +52,7 @@
     function getPlatforms() {
       return [
         {name: 'atmelavr', title: 'Atmel AVR'},
+        {name: 'atmelsam', title: 'Atmel SAM'},
         {name: 'timsp430', title: 'TI MSP430'},
         {name: 'titiva', title: 'TI TIVA'},
         {name: 'teensy', title: 'Teensy'}

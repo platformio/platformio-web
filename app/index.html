@@ -41,7 +41,7 @@
             <ul class="nav navbar-nav">
               <li ng-class="{active: vm.isRouteActive('/platforms')}"><a href="/#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a>
               </li>
-              <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="/#!/boards"><i class="fa fa-gamepad fa-lg"></i>Embedded Boards</a>
+              <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="/#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a>
               </li>
               <li ng-class="{active: vm.isRouteActive('/(lib|lib/[^e].*)$')}"><a href="/#!/lib"><i class="fa fa-book fa-lg"></i>Libraries</a>
               </li>
@@ -50,7 +50,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-
+              <li><a href="http://docs.platformio.ikravets.com/en/latest/quickstart.html"><i class="fa fa-rocket"></i> Get Started</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -87,7 +87,7 @@
     <div ng-view=""></div>
 
     <footer class="footer text-center">
-      <ul class="list-inline">
+      <ul class="list-inline" ng-if="!vm.isPhJSCrawler">
         <li>
           <a href="https://twitter.com/SmartAnthill" class="twitter-follow-button" data-show-count="false">Follow @SmartAnthill</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </li>
@@ -95,14 +95,14 @@
           <a href="https://twitter.com/intent/tweet?button_hashtag=PlatformIO&text=A%20cross-platform%20code%20builder%20and%20library%20manager" class="twitter-hashtag-button" data-related="ikravets" data-url="http://platformio.ikravets.com">Tweet #PlatformIO</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </li>
         <li>
-          <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+          <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
         </li>
       </ul>
       <p>Designed and built with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a></p>
       <p>
-        The open source code of <a href="https://github.com/ivankravets/platformio" target="_blank">PlatformIO</a>, 
-        <a href="https://github.com/ivankravets/platformio/tree/develop/docs" target="_blank">Documentation</a>, 
-        <a href="https://github.com/ivankravets/platformio-api" target="_blank">API</a> and 
+        The open source code of <a href="https://github.com/ivankravets/platformio" target="_blank">PlatformIO</a>,
+        <a href="https://github.com/ivankravets/platformio/tree/develop/docs" target="_blank">Documentation</a>,
+        <a href="https://github.com/ivankravets/platformio-api" target="_blank">API</a> and
         <a href="https://github.com/ivankravets/platformio-web" target="_blank">Web Site</a> are licensed under <a href="https://github.com/ivankravets/platformio/blob/master/LICENSE" target="_blank">MIT</a>.
       </p>
 

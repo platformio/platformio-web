@@ -1,11 +1,11 @@
 <meta name="description" content="PlatformIO Library Manager is a missing library manager for embedded platforms (Atmel AVR, Arduino, Energia, MSP430 and ARM from Texas Instruments)" view-head />
-<meta name="keywords" content="PlatformIO, libraries, manager, library.json, search, atmel, avr, msp430, arm, ti, arduino, energia" view-head /> 
+<meta name="keywords" content="PlatformIO, libraries, manager, library.json, search, atmel, avr, msp430, arm, ti, arduino, energia" view-head />
 
 <div class="page-header">
   <h1 view-title>Libraries <small>Registry</small></h1>
 </div>
 
-<div class="well"> 
+<div class="well">
   <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/index.html">PlatformIO Library Manager</a> allows you to organize external embedded libraries.
   You can search for new libraries via <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html">Command Line</a>
   or this <a href="http://platformio.ikravets.com/#!/lib">WebSite</a> interfaces. <br>
@@ -13,7 +13,7 @@
   <i class="fa fa-refresh fa-spin"></i> <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_update.html">platformio lib update</a> command you will have up-to-date external libraries.
 </div>
 
-<ng-include src="'views/lib_search_form.html'"></ng-include> 
+<ng-include src="'views/lib_search_form.html'"></ng-include>
 
 <div class="page-header libs-stats">
   <div class="row">
@@ -40,11 +40,18 @@
   </div>
   <div class="col col-md-4 keywords-stats">
     <h3>Keywords</h3>
-    <p ng-repeat="keyword in vm.stats.keywords">
+    <p ng-repeat="keyword in vm.stats.lastkeywords">
       <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
     </p>
   </div>
 </div>
+
+<div class="page-header">
+  <h2>Popular Keywords</h2>
+</div>
+<div class="keywords-stats-top">
+  <a ng-repeat="keyword in vm.stats.topkeywords" href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" ng-class="{'btn btn-primary': $index <= 15, 'btn btn-primary btn-sm': $index > 15 && $index < 30, 'btn btn-primary btn-xs': $index >= 30}"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+</div> 
 
 <div class="page-header libs-stats">
   <h2>Most Downloaded</h2>

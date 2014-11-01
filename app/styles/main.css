@@ -101,6 +101,10 @@
   margin-bottom: 6px;
 }
 
+.keywords-stats-top a {
+  margin: 0 3px 3px 0;
+}
+
 .libinfo {
   margin: 0;
 }

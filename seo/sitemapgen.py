@@ -81,6 +81,10 @@ def main():
             changefreq="weekly"
         )
         b.add_url(
+            loc="http://platformio.ikravets.com/#!/get-started",
+            changefreq="weekly"
+        )
+        b.add_url(
             loc="http://platformio.ikravets.com/#!/platforms",
             changefreq="weekly"
         )

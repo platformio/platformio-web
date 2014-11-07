@@ -15,7 +15,7 @@
     return {
       'responseError': function(rejection) {
         if (rejection.status === 404) {
-          $window.location.href = '/#!/404';
+          $window.location.href = '#!/404';
         }
         return $q.reject(rejection);
       }
@@ -32,11 +32,18 @@
       .when('/', {
         templateUrl: 'views/home.html'
       })
-      .when('/platforms', {
-        templateUrl: 'views/platforms.html'
+      .when('/get-started', {
+        templateUrl: 'views/get_started.html'
       })
-      .when('/boards', {
-        templateUrl: 'views/boards.html'
+      .when('/platforms/:platformType?', {
+        templateUrl: 'views/platforms.html',
+        controller: 'PlatformsController',
+        controllerAs: 'vm'
+      })
+      .when('/boards/:vendorType?', {
+        templateUrl: 'views/boards.html',
+        controller: 'BoardsController',
+        controllerAs: 'vm'
       })
       .when('/lib', {
         templateUrl: 'views/lib_main.html',

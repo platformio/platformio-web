@@ -1,75 +1,82 @@
 <meta name="description" content="PlatformIO Library Manager is a missing library manager for embedded platforms (Atmel AVR, Arduino, Energia, MSP430 and ARM from Texas Instruments)" view-head />
 <meta name="keywords" content="PlatformIO, libraries, manager, library.json, search, atmel, avr, msp430, arm, ti, arduino, energia" view-head />
 
-<div class="page-header">
-  <h1 view-title>Libraries <small>Registry</small></h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 view-title><i class="fa fa-book"></i> Libraries <small>Registry</small></h1>
+
+    <p>
+      <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/index.html">PlatformIO Library Manager</a> is the missing library manager which allows you to organize external libraries. You can search for new libraries via <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html">Command Line Interface</a> or this <i>Web 2.0 Library Search</i>.
+    </p>
+    <p>
+      You don't need to bother for finding the latest version of library. Due to
+      <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_update.html">platformio lib update</a> command you will have up-to-date external libraries.
+    </p>
+
+  </div>
 </div>
 
-<div class="well">
-  <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/index.html">PlatformIO Library Manager</a> allows you to organize external embedded libraries.
-  You can search for new libraries via <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_search.html">Command Line</a>
-  or this <a href="http://platformio.ikravets.com/#!/lib">WebSite</a> interfaces. <br>
-  You don't need to bother for finding the latest version of library. Due to
-  <i class="fa fa-refresh fa-spin"></i> <a href="http://docs.platformio.ikravets.com/en/latest/userguide/lib/cmd_update.html">platformio lib update</a> command you will have up-to-date external libraries.
-</div>
+<div class="container">
 
-<ng-include src="'views/lib_search_form.html'"></ng-include>
+  <ng-include src="'views/lib_search_form.html'"></ng-include>
 
-<div class="page-header libs-stats">
+  <div class="page-header libs-stats">
+    <div class="row">
+      <div class="col col-md-6">
+        <h2>Recently</h2>
+      </div>
+      <div class="col col-md-6 text-right lib-recently-btn">
+        <a href="#!/lib/search?query=" class="btn btn-primary"><i class="fa fa-list"></i> All Libraries</a>
+        <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html" class="btn btn-success"><i class="fa fa-plus"></i> Create Library</a>
+        <a href="https://github.com/ivankravets/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>
+      </div>
+    </div>
+  </div>
   <div class="row">
-    <div class="col col-md-6">
-      <h2>Recently</h2>
+    <div class="col col-md-4">
+      <h3>Updated</h3>
+      <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh fa-spin"></i> <a ng-href="#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
+      </p>
     </div>
-    <div class="col col-md-6 text-right lib-recently-btn">
-      <a href="/#!/lib/search?query=" class="btn btn-primary"><i class="fa fa-list"></i> All Libraries</a>
-      <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html" class="btn btn-success"><i class="fa fa-plus"></i> Create Library</a>
-      <a href="https://github.com/ivankravets/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>
+    <div class="col col-md-4">
+      <h3>Added</h3>
+      <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i> <a ng-href="#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
+      </p>
+    </div>
+    <div class="col col-md-4 keywords-stats">
+      <h3>Keywords</h3>
+      <p ng-repeat="keyword in vm.stats.lastkeywords">
+        <a ng-href="#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+      </p>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col col-md-4">
-    <h3>Updated</h3>
-    <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh"></i> <a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
-    </p>
-  </div>
-  <div class="col col-md-4">
-    <h3>Added</h3>
-    <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i> <a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
-    </p>
-  </div>
-  <div class="col col-md-4 keywords-stats">
-    <h3>Keywords</h3>
-    <p ng-repeat="keyword in vm.stats.lastkeywords">
-      <a href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
-    </p>
-  </div>
-</div>
 
-<div class="page-header">
-  <h2>Popular Keywords</h2>
-</div>
-<div class="keywords-stats-top">
-  <a ng-repeat="keyword in vm.stats.topkeywords" href="/#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" ng-class="{'btn btn-primary': $index <= 15, 'btn btn-primary btn-sm': $index > 15 && $index < 30, 'btn btn-primary btn-xs': $index >= 30}"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
-</div> 
+  <div class="page-header">
+    <h2>Popular Keywords</h2>
+  </div>
+  <div class="keywords-stats-top">
+    <a ng-repeat="keyword in vm.stats.topkeywords" ng-href="#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" ng-class="{'btn btn-primary': $index <= 15, 'btn btn-primary btn-sm': $index > 15 && $index < 30, 'btn btn-primary btn-xs': $index >= 30}"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+  </div>
 
-<div class="page-header libs-stats">
-  <h2>Most Downloaded</h2>
-</div>
-<div class="row">
-  <div class="col col-md-4">
-    <h3>Day's</h3>
-    <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i> <a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
-    </p>
+  <div class="page-header libs-stats">
+    <h2>Most Downloaded</h2>
   </div>
-  <div class="col col-md-4">
-    <h3>Week's</h3>
-    <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i> <a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
-    </p>
+  <div class="row">
+    <div class="col col-md-4">
+      <h3>Day's</h3>
+      <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      </p>
+    </div>
+    <div class="col col-md-4">
+      <h3>Week's</h3>
+      <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      </p>
+    </div>
+    <div class="col col-md-4">
+      <h3>Month's</h3>
+      <p ng-repeat="item in vm.stats.dlmonth">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      </p>
+    </div>
   </div>
-  <div class="col col-md-4">
-    <h3>Month's</h3>
-    <p ng-repeat="item in vm.stats.dlmonth">{{ item.total }} <i class="fa fa-download"></i>  <a href="/#!/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
-    </p>
-  </div>
+
 </div>

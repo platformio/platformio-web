@@ -5,7 +5,8 @@
 
 @media screen and (max-width: 992px) {
   .collapse {
-    display: block !important;
+    display: block;
+    visibility: visible;
   }
 }
 

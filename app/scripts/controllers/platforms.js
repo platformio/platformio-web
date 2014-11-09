@@ -10,7 +10,7 @@
     .module('siteApp')
     .controller('PlatformsController', PlatformsController);
 
-  function PlatformsController($routeParams, $location) {
+  function PlatformsController($routeParams, $window) {
     var vm = this;
 
     vm.changePlatform = changePlatform;
@@ -26,7 +26,7 @@
     ////////////
 
     function changePlatform(type) {
-      $location.path('#!/platforms/' + type);
+      $window.location.href = '#!/platforms/' + type;
     }
 
     function getPlatforms() {

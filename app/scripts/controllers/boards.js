@@ -10,7 +10,7 @@
     .module('siteApp')
     .controller('BoardsController', BoardsController);
 
-  function BoardsController($routeParams, $location) {
+  function BoardsController($routeParams, $window) {
     var vm = this;
 
     vm.changeVendor = changeVendor;
@@ -26,7 +26,7 @@
     ////////////
 
     function changeVendor(type) {
-      $location.path('#!/boards/' + type);
+      $window.location.href = '#!/boards/' + type;
     }
 
     function getVendors() {

@@ -286,10 +286,34 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
+    // cdnify: {
+    //   dist: {
+    //     options: {
+    //       base: 'http://cdn.platformio.ikravets.com/'
+    //     },
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= yeoman.dist %>',
+    //       src: '**/*.{css,html}',
+    //       dest: '<%= yeoman.dist %>'
+    //     }]
+    //   }
+    // },
+
+    cdn: {
+      options: {
+      /** @required - root URL of your CDN (may contains sub-paths as shown below) */
+      cdn: 'http://cdn.platformio.ikravets.com/',
+      /** @optional  - if provided both absolute and relative paths will be converted */
+      flatten: true,
+      /** @optional  - if provided will be added to the default supporting types */
+      // supportedTypes: { 'phtml': 'html' }
+      },
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        /** @required  - string (or array of) including grunt glob variables */
+        src: ['<%= yeoman.dist %>/**/*.{css,html}']
+        /** @optional  - if provided a copy will be stored without modifying original file */
+        // dest: '<%= yeoman.dist %>'
       }
     },
 
@@ -314,16 +338,17 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
+
+        // }, {
         //   expand: true,
         //   cwd: 'bower_components/bootstrap/dist',
         //   src: 'fonts/*',
         //   dest: '<%= yeoman.dist %>'
         // }, {
-          expand: true,
-          cwd: 'bower_components/components-font-awesome',
-          src: 'fonts/*',
-          dest: '<%= yeoman.dist %>'
+          // expand: true,
+          // cwd: 'bower_components/components-font-awesome',
+          // src: 'fonts/*',
+          // dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -396,12 +421,12 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'cdn'
   ]);
 
   grunt.registerTask('default', [

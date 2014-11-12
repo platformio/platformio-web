@@ -28,6 +28,9 @@
   },
   "appPath": "app",
   "overrides": {
+    "components-font-awesome": {
+      "main": []
+    },
     "jquery": {
       "main": []
     },

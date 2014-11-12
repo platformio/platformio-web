@@ -1,52 +1,27 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <html lang="en" ng-app="siteApp" ng-controller="MainController as vm"> <head> <meta charset="utf-8"> <title ng-bind="(viewTitle ? viewTitle : 'A cross-platform code builder and library manager') + ' · PlatformIO'">A cross-platform code builder and library manager · PlatformIO</title> <meta name="author" content="Ivan Kravets"> <meta name="robots" content="all"> <meta name="viewport" content="width=device-width"> <meta name="fragment" content="!"> <meta name="google-site-verification" content="INQ8W7_wRE_VQGe8tWftsLLMITh2xLTOltZAyKjGRgU"> <meta name="msvalidate.01" content="5CD2E0D7BC5235EDBE29F65F0DD0A180"> <link rel="shortcut icon" href="http://cdn.platformio.ikravets.com/favicon.ico" type="image/x-icon"> <link rel="apple-touch-icon" href="http://cdn.platformio.ikravets.com/apple-touch-icon.png"> <link rel="stylesheet" href="http://cdn.platformio.ikravets.com/styles/vendor.6e1dad5d.css"> <link rel="stylesheet" href="http://cdn.platformio.ikravets.com/styles/main.aa655127.css">  <body> <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]--> <header class="navbar navbar-inverse"> <div class="container container-fluid"> <div class="navbar-header"> <a class="navbar-brand" href="#!/">PlatformIO</a> </div> <nav role="navigation"> <div class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li ng-class="{active: vm.isRouteActive('/get-started')}"><a href="#!/get-started"><i class="fa fa-rocket fa-lg"></i>Get Started</a> </li> <li ng-class="{active: vm.isRouteActive('/platforms')}"><a href="#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a> </li> <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a> </li> <li ng-class="{active: vm.isRouteActive('/(lib|lib/[^e].*)$')}"><a href="#!/lib"><i class="fa fa-book fa-lg"></i>Libraries</a> </li> <li ng-class="{active: vm.isRouteActive('/lib/examples')}"><a href="#!/lib/examples"><i class="fa fa-graduation-cap fa-lg"></i>Examples</a> </li> </ul> <ul class="nav navbar-nav navbar-right"> <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="caret"></span></a> <ul class="dropdown-menu" role="menu"> <li><a href="http://docs.platformio.ikravets.com/en/latest/quickstart.html">Quickstart</a> </li> <li><a href="http://docs.platformio.ikravets.com/en/latest/installation.html">Installation</a> </li> <li><a href="http://docs.platformio.ikravets.com/en/latest/projectconf.html">Project Configuration File</a> </li> <li><a href="http://docs.platformio.ikravets.com/en/latest/platforms/index.html">Platforms & Embedded Boards</a> </li> <li class="divider"></li> <li><a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/index.html">Library Manager</a> </li> <li><a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html">Creating Library</a> </li> <li><a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/config.html">library.json</a> </li> <li class="divider"></li> <li><a href="http://docs.platformio.ikravets.com/en/latest/ide.html">IDE Integration</a> </li> <li class="divider"></li> <li><a href="http://docs.platformio.ikravets.com/en/latest/userguide/index.html">User Guide</a> </li> </ul> </li> </ul> </div> </nav> </div> </header> <div ng-view="" autoscroll="true"></div> <hr> <footer class="container footer text-center"> <ul class="list-inline" ng-if="!vm.isPhJSCrawler"> <li> <a href="https://twitter.com/PlatformIOTool" class="twitter-follow-button" data-show-count="false">Follow @PlatformIOTool</a> </li> <li> <a href="https://twitter.com/intent/tweet?button_hashtag=PlatformIO&text=A%20cross-platform%20code%20builder%20and%20library%20manager" class="twitter-hashtag-button" data-related="ikravets" data-url="http://platformio.ikravets.com">Tweet #PlatformIO</a> <script>! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = p + '://platform.twitter.com/widgets.js';
+              fjs.parentNode.insertBefore(js, fjs);
+            }
+          }(document, 'script', 'twitter-wjs');</script> </li> <li> <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px" allowtransparency="true"></iframe> </li> </ul> <p>Designed and built with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a> </p> <p> The open source code of <a href="https://github.com/ivankravets/platformio" target="_blank">PlatformIO</a>, <a href="https://github.com/ivankravets/platformio/tree/develop/docs" target="_blank">Documentation</a>, <a href="https://github.com/ivankravets/platformio-api" target="_blank">API</a> and <a href="https://github.com/ivankravets/platformio-web" target="_blank">Web Site</a> is licensed under <a href="https://github.com/ivankravets/platformio/blob/master/LICENSE" target="_blank">MIT</a>. </p> <ul class="list-inline"> <li><i class="fa fa-file-code-o"></i> <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/config.html">library.json</a> </li> <li>·</li> <li><i class="fa fa-book"></i> <a href="http://docs.platformio.ikravets.com/">Documentation</a> </li> <li>·</li> <li><i class="fa fa-github"></i> <a href="https://github.com/ivankravets/platformio" target="_blank">GitHub</a> </li> <li>·</li> <li><i class="fa fa-bug"></i> <a href="https://github.com/ivankravets/platformio/issues" target="_blank">Issues</a> </li> <li>·</li> <li><i class="fa fa-pencil"></i> <a href="http://www.ikravets.com/category/computer-life/platformio" target="_blank">Blog</a> </li> <li>·</li> <li><i class="fa fa-history"></i> <a href="http://docs.platformio.ikravets.com/en/latest/history.html">Releases</a> </li> <li>·</li> <li><i class="fa fa-envelope"></i> <a href="http://www.ikravets.com/about-me" target="_blank">Contact</a> </li> </ul> <a href="https://github.com/ivankravets/platformio" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0" src="http://cdn.platformio.ikravets.com/images/forkme-right-red.8c41cde9.png" alt="Fork PlatformIO on GitHub"></a> </footer> <script>(function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Platformio-web : A WebSite for PlatformIO">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Platformio-web</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ivankravets/platformio-web">View on GitHub</a>
-
-          <h1 id="project_title">Platformio-web</h1>
-          <h2 id="project_tagline">A WebSite for PlatformIO</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ivankravets/platformio-web/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ivankravets/platformio-web/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="platformio-web" class="anchor" href="#platformio-web" aria-hidden="true"><span class="octicon octicon-link"></span></a>PlatformIO-Web</h1>
-
-<p>A source code of PlatformIO WebSite <code>http://platformio.ikravets.com &lt;http://platformio.ikravets.com&gt;</code>_.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Platformio-web maintained by <a href="https://github.com/ivankravets">ivankravets</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+    ga('create', 'UA-1768265-8', 'auto');
+    // ga('send', 'pageview');</script> <!--[if lt IE 9]>
+  <script src="http://cdn.platformio.ikravets.com/scripts/oldieshim.d48d8270.js"></script>
+  <![endif]--> <script src="http://cdn.platformio.ikravets.com/scripts/vendor.e49d46b8.js"></script> <script src="http://cdn.platformio.ikravets.com/scripts/scripts.63079692.js"></script>  

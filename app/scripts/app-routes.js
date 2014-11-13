@@ -103,7 +103,7 @@
         }
       })
       .when('/404', {
-        templateUrl: '404.html'
+        templateUrl: 'views/404.html'
       })
       .otherwise({
         redirectTo: '/404'

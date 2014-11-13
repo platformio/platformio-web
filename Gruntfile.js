@@ -302,18 +302,33 @@ module.exports = function (grunt) {
 
     cdn: {
       options: {
-      /** @required - root URL of your CDN (may contains sub-paths as shown below) */
-      cdn: 'http://cdn.platformio.ikravets.com/',
-      /** @optional  - if provided both absolute and relative paths will be converted */
-      flatten: true,
-      /** @optional  - if provided will be added to the default supporting types */
-      // supportedTypes: { 'phtml': 'html' }
+        cdn: 'http://cdn.platformio.ikravets.com/',
+        flatten: true
       },
       dist: {
-        /** @required  - string (or array of) including grunt glob variables */
-        src: ['<%= yeoman.dist %>/**/*.{css,html}']
-        /** @optional  - if provided a copy will be stored without modifying original file */
-        // dest: '<%= yeoman.dist %>'
+        src: [
+          '<%= yeoman.dist %>/{,*/}*.{css,html}'
+        ]
+      }
+    },
+
+    ngtemplates: {
+      app: {
+        cwd: '<%= yeoman.dist %>',
+        src: 'views/*.html',
+        dest: '<%= yeoman.dist %>/scripts/templates.js'
+      },
+      options: {
+        module: 'siteApp',
+        htmlmin: {
+          collapseBooleanAttributes:      true,
+          collapseWhitespace:             true,
+          removeAttributeQuotes:          true,
+          removeEmptyAttributes:          true,
+          removeRedundantAttributes:      true,
+          removeScriptTypeAttributes:     true,
+          removeStyleLinkTypeAttributes:  true
+        }
       }
     },
 
@@ -399,6 +414,13 @@ module.exports = function (grunt) {
     ]);
   });
 
+  grunt.registerTask('fixtplsrev', 'Fix templates.js revision', function () {
+    var scriptsDir = './dist/scripts/';
+    var revFile = grunt.file.expand({cwd: scriptsDir}, 'templates.*.js');
+    grunt.file.copy(scriptsDir + 'templates.js', scriptsDir + revFile);
+    grunt.file.delete(scriptsDir + 'templates.js');
+  });
+
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
@@ -426,7 +448,10 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin',
-    'cdn'
+    'cdn',
+    'ngtemplates',
+    'usemin',
+    'fixtplsrev'
   ]);
 
   grunt.registerTask('default', [

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title ng-bind="(viewTitle ? viewTitle : 'A cross-platform code builder and library manager') + ' · PlatformIO'">A cross-platform code builder and library manager · PlatformIO</title>
+  <title ng-bind="(viewTitle ? viewTitle : 'A cross-platform code builder and the missing library manager') + ' · PlatformIO'">A cross-platform code builder and the missing library manager · PlatformIO</title>
   <meta name="author" content="Ivan Kravets" />
   <meta name="robots" content="all" />
   <meta name="viewport" content="width=device-width" />
@@ -89,28 +89,16 @@
   <hr>
   <footer class="container footer text-center">
     <ul class="list-inline" ng-if="!vm.isPhJSCrawler">
+     <li>
+        <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
+      </li>        
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://platformio.ikravets.com" data-text="#PlatformIO is a cross-platform code builder and the missing library manager" data-via="PlatformIOTool">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
       <li>
         <a href="https://twitter.com/PlatformIOTool" class="twitter-follow-button" data-show-count="false">Follow @PlatformIOTool</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/intent/tweet?button_hashtag=PlatformIO&text=A%20cross-platform%20code%20builder%20and%20library%20manager" class="twitter-hashtag-button" data-related="ikravets" data-url="http://platformio.ikravets.com">Tweet #PlatformIO</a>
-        <script>
-          ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-              p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-              js = d.createElement(s);
-              js.id = id;
-              js.src = p + '://platform.twitter.com/widgets.js';
-              fjs.parentNode.insertBefore(js, fjs);
-            }
-          }(document, 'script', 'twitter-wjs');
-        </script>
-      </li>
-      <li>
-        <iframe src="http://ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
-      </li>
-    </ul>
+      </li>       
+     </ul>
     <p>Designed and built with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
     </p>
     <p>
@@ -198,8 +186,6 @@
   <!-- build:js({.tmp,app}) scripts/templates.js -->
   <script src="scripts/templates.js"></script>
   <!-- endbuild -->
-
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5468fbe66b75b1cd" async="async" ng-if="!vm.isPhJSCrawler"></script>
 </body>
 
 </html>

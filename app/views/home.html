@@ -8,7 +8,7 @@
     <h1>PlatformIO is a cross-platform code builder and the missing library manager</h1>
     <p><a class="btn btn-primary btn-lg" href="#!/get-started" role="button" analytics-on="click" analytics-event="HomeGetStartedButton"><i class="fa fa-rocket fa-lg"></i> &nbsp;Getting Started</a>
     </p>
-    <p>                                          
+    <p>
       <ul class="list-inline">
         <li>Version 0.8.0</li>
         <li>·</li>
@@ -18,10 +18,22 @@
         <li><i class="fa fa-book"></i> <a href="http://docs.platformio.ikravets.com/">Documentation</a>
         </li>
         <li>·</li>
-        <li>Created by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
+        <li><i class="fa fa-heart" tooltip="Made in Ukraine"></i> Created by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
         </li>
       </ul>
-
+    </p>
+    <p ng-controller="MainController as vm">
+      <ul class="list-inline" ng-if="!vm.isPhJSCrawler">
+        <li>
+          <iframe src="//ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+        </li>
+        <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://platformio.ikravets.com" data-text="#PlatformIO is a cross-platform code builder and the missing library manager" data-via="PlatformIOTool">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <a href="https://twitter.com/PlatformIOTool" class="twitter-follow-button" data-show-count="false">Follow @PlatformIOTool</a>
+        </li>
+      </ul>
     </p>
   </div>
 </div>
@@ -114,7 +126,7 @@
         <p class="lead"><i class="fa fa-thumbs-up"></i> Pre-built tool chains, frameworks for the popular <a href="#!/platforms">Hardware Platforms</a></p>
       </div>
       <div class="col-md-5">
-        <img src="images/platformio-embedded-development.png" class="img-thumbnail" alt="PlatformIO Embedded Development architecture" title="PlatformIO Embedded Development architecture">
+        <img src="images/platformio-embedded-development.png" class="img-thumbnail" alt="PlatformIO Embedded Development Architecture" title="PlatformIO Embedded Development Architecture" tooltip="PlatformIO Embedded Development Architecture">
       </div>
     </div>
 
@@ -122,7 +134,7 @@
 
     <div class="row featurette text-left">
       <div class="col-md-5">
-        <img src="images/platformio-library-manager.png" class="img-thumbnail" alt="PlatformIO Library Manager architecture" title="PlatformIO Library Manager architecture">
+        <img src="images/platformio-library-manager.png" class="img-thumbnail" alt="PlatformIO Library Manager Architecture" title="PlatformIO Library Manager Architecture" tooltip="PlatformIO Library Manager Architecture">
       </div>
       <div class="col-md-7">
         <h2 class="featurette-heading">The Missing Library Manager. <span class="text-muted">It's here!</span></h2>
@@ -151,9 +163,9 @@
         <p class="lead"><i class="fa fa-thumbs-up"></i> <strong>Lookup</strong> for external libraries which are installed via <a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/index.html"><i class="fa fa-book"></i> Library Manager</a></p>
       </div>
       <div class="col-md-5">
-        <img src="images/platformio-scons-builder.png" class="img-thumbnail" alt="PlatformIO code builder architecture" title="PlatformIO code builder architecture">
+        <img src="images/platformio-scons-builder.png" class="img-thumbnail" alt="PlatformIO Code Builder Architecture" title="PlatformIO Code Builder Architecture" tooltip="PlatformIO Code Builder Architecture">
       </div>
-    </div>  
+    </div>
 
   </div>
 

@@ -14,7 +14,7 @@
     "angular-route": "~1.2.0",
 
     "bootstrap": "~3.3.0",
-    "angular-bootstrap": "~0.11.0",
+    "angular-bootstrap": "~0.12.0",
     "components-font-awesome": "~4",
     "angularjs-viewhead": "~0",
     "angulartics": "~0",

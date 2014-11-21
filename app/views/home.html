@@ -10,7 +10,7 @@
     </p>
     <p>
       <ul class="list-inline">
-        <li>Version 0.8.0</li>
+        <li>Version <a href="http://docs.platformio.ikravets.com/en/latest/history.html" target="_blank">0.8.0</a></li>
         <li>·</li>
         <li><i class="fa fa-github"></i> <a href="https://github.com/ivankravets/platformio" target="_blank">GitHub</a>
         </li>
@@ -18,21 +18,20 @@
         <li><i class="fa fa-book"></i> <a href="http://docs.platformio.ikravets.com/">Documentation</a>
         </li>
         <li>·</li>
-        <li><i class="fa fa-heart" tooltip="Made in Ukraine"></i> Created by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
+        <li>Made with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> in <a href="http://www.ikravets.com/about-me" target="_blank">Ukraine</a>
         </li>
       </ul>
     </p>
     <p ng-controller="MainController as vm">
-      <ul class="list-inline" ng-if="!vm.isPhJSCrawler">
-        <li>
-          <iframe src="//ghbtns.com/github-btn.html?user=ivankravets&repo=platformio&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-        </li>
-        <li>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://platformio.ikravets.com" data-text="#PlatformIO is a cross-platform code builder and the missing library manager" data-via="PlatformIOTool">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </li>
-        <li>
-          <a href="https://twitter.com/PlatformIOTool" class="twitter-follow-button" data-show-count="false">Follow @PlatformIOTool</a>
-        </li>
+      <ul ng-if="!vm.isPhJSCrawler" ng-social-buttons
+         data-url="'http://platformio.ikravets.com'"
+         data-title="'#PlatformIO is a cross-platform code builder and the missing library manager'"
+         data-description="'You have no need to install any IDE or compile any tool chains. PlatformIO has pre-built different development platforms and allows you to organise external libraries.'"
+         data-image="'https://raw.githubusercontent.com/ivankravets/platformio-web/develop/app/images/platformio-embedded-development.png'">
+        <li class="ng-social-github" user="ivankravets" repository="platformio">GitHub</li>
+        <li class="ng-social-twitter">Twitter</li>
+        <li class="ng-social-facebook">Facebook</li>
+        <li class="ng-social-google-plus">Google+</li>
       </ul>
     </p>
   </div>
@@ -123,6 +122,7 @@
         <p class="lead"><i class="fa fa-check"></i> Configurable <a href="http://docs.platformio.ikravets.com/en/latest/projectconf.html#build-flags">build -flags/-options</a></p>
         <p class="lead"><i class="fa fa-check"></i> Automatic <b>firmware uploading</b></p>
         <p class="lead"><i class="fa fa-check"></i> Integration with <a href="http://docs.platformio.ikravets.com/en/latest/ide.html">development environments (IDE)</a></p>
+        <p class="lead"><i class="fa fa-check"></i> Ready for <b>cloud compilers</b></p>
         <p class="lead"><i class="fa fa-thumbs-up"></i> Pre-built tool chains, frameworks for the popular <a href="#!/platforms">Hardware Platforms</a></p>
       </div>
       <div class="col-md-5">

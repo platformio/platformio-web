@@ -133,6 +133,10 @@
   margin-bottom: 5px;
 }
 
+.search-filters .btn-group {
+  margin-left: 3px;
+}
+
 .search-examples {
   margin: 5px 0 20px 0;
 }
@@ -261,3 +265,10 @@
   background-position: 0 -150px;
   width: 132px;
 }
+
+/* Miscellaneous */
+
+.fa-heart {
+  color: #A80008;
+}
+

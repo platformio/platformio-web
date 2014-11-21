@@ -316,7 +316,7 @@ module.exports = function (grunt) {
       app: {
         cwd: '<%= yeoman.dist %>',
         src: 'views/*.html',
-        dest: '<%= yeoman.dist %>/scripts/templates.js'
+        dest: '.tmp/concat/scripts/templates.js'
       },
       options: {
         module: 'siteApp',
@@ -417,8 +417,7 @@ module.exports = function (grunt) {
   grunt.registerTask('fixtplsrev', 'Fix templates.js revision', function () {
     var scriptsDir = './dist/scripts/';
     var revFile = grunt.file.expand({cwd: scriptsDir}, 'templates.*.js');
-    grunt.file.copy(scriptsDir + 'templates.js', scriptsDir + revFile);
-    grunt.file.delete(scriptsDir + 'templates.js');
+    grunt.file.copy('.tmp/concat/scripts/templates.js', scriptsDir + revFile);
   });
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
@@ -443,6 +442,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'ngtemplates',
     'cssmin',
     'uglify',
     'filerev',
@@ -450,7 +450,6 @@ module.exports = function (grunt) {
     'htmlmin',
     'cdn',
     'ngtemplates',
-    'usemin',
     'fixtplsrev'
   ]);
 

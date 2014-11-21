@@ -9,8 +9,8 @@
   angular.module('siteApp')
     .controller('LibShowController', LibShowController);
 
-  function LibShowController($window, $location, $filter, dataService,
-    libInfo) {
+  function LibShowController($window, $location, $filter, $analytics,
+    dataService, libInfo) {
     var vm = this;
 
     vm.frameworks = dataService.getFrameworks();
@@ -88,6 +88,11 @@
     }
 
     function downloadLib() {
+      $analytics.eventTrack('Download', {
+        category: 'Library',
+        label: '#' + vm.lib.id + ' ' +  vm.lib.name
+      });
+
       var defer = dataService.getLibDlUrl(vm.lib.id).$promise;
       defer.then(function(data) {
         $window.location.href = (data.url + '?filename=' + [

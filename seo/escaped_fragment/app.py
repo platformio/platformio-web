@@ -14,7 +14,7 @@ def application(env, start_response):
         status = "500 Internal Server Error"
     else:
         url = "http://platformio.ikravets.com/#!" + unquote(qs[19:])
-        response = check_output(["/usr/local/bin/phantomjs",
+        response = check_output(["phantomjs",
                                  "--load-images=false", "crawler.js", url])
         if "404 Not Found" in response:
             status = "404 Not Found"

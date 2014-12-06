@@ -4,8 +4,8 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>{{ vm.lib.name }} <small>by <span ng-repeat="author in vm.lib.authors">{{ author.name }}<span ng-if="!$last">, </span></span></small></h1>
-    
+    <h1>{{ vm.lib.name }} <small>by <span ng-repeat="author in vm.lib.authors">{{ author.name }}<span ng-if="!$last">,&nbsp;</span></span></small></h1>
+
     <p>
       {{ vm.lib.description }}
     </p>
@@ -34,10 +34,10 @@
 
         <dt>Compatibility</dt>
         <dd>
-          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i> <span ng-repeat="name in vm.lib.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">, </span></span>
+          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="name in vm.lib.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span>
           <br>
           </span>
-          <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i> <span ng-repeat="name in vm.lib.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">, </span></span>
+          <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="name in vm.lib.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span>
           </span>
         </dd>
 

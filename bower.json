@@ -47,16 +47,6 @@
         "src/angulartics.js",
         "src/angulartics-ga.js"
       ]
-    },
-    "angular-social": {
-      "main": [
-        "src/scripts/00-directive.js",
-        "src/scripts/02-facebook.js",
-        "src/scripts/03-twitter.js",
-        "src/scripts/04-google-plus.js",
-        "src/scripts/09-github.js",
-        "angular-social.css"
-      ]
     }
   }
 }

@@ -10,10 +10,11 @@
     .controller('LibExamplesController', LibExamplesController);
 
   function LibExamplesController($location, $http, $templateCache, $q,
-    dataService, searchResult) {
+    dataService, siteUtils, searchResult) {
     var vm = this;
     var searchObject = $location.search();
 
+    vm.siteUtils = siteUtils;
     vm.frameworks = dataService.getFrameworks();
     vm.platforms = dataService.getPlatforms();
     vm.searchQuery = '';
@@ -41,7 +42,9 @@
       };
 
       angular.forEach(vm.searchResult.items, function(item) {
-        data.description = data.description.concat([item.lib.name, item.name]);
+        data.description = data.description.concat([item.lib.name,
+          item.name
+        ]);
         data.keywords = data.keywords.concat(item.name.split(
           /[\-\_\.]/));
       });

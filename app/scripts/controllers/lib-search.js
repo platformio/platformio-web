@@ -9,10 +9,12 @@
   angular.module('siteApp')
     .controller('LibSearchController', LibSearchController);
 
-  function LibSearchController($location, $filter, dataService, searchResult) {
+  function LibSearchController($location, $filter, dataService, siteUtils,
+    searchResult) {
     var vm = this;
     var searchObject = $location.search();
 
+    vm.siteUtils = siteUtils;
     vm.frameworks = dataService.getFrameworks();
     vm.platforms = dataService.getPlatforms();
     vm.searchQuery = '';
@@ -42,9 +44,12 @@
         // frameworks & platforms
         angular.forEach(['frameworks', 'platforms'], function(what) {
           angular.forEach(item[what], function(item2) {
-            var _title = $filter('nameToTitle')(item2, vm[what]);
+            var _title = $filter('nameToTitle')(item2, vm[
+              what]);
             data.description.push(_title);
-            data.keywords = data.keywords.concat([item2, _title]);
+            data.keywords = data.keywords.concat([item2,
+              _title
+            ]);
           });
         });
       });

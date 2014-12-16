@@ -24,6 +24,10 @@
 
     function link($scope, element, attrs) {
       $timeout(function() {
+        if (typeof addthis === 'undefined') {
+          return;
+        }
+
         var hashFrameworks = $scope.lib.frameworks.join(' #'),
           hashKeywords = $scope.lib.keywords.join(' #');
 

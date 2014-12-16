@@ -20,7 +20,6 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
-  <link rel="stylesheet" href="bower_components/angular-social/angular-social.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -133,7 +132,7 @@
       <li><i class="fa fa-envelope"></i> <a href="http://www.ikravets.com/about-me" target="_blank">Contact</a>
       </li>
     </ul>
-    <a href="https://github.com/ivankravets/platformio" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/forkme-right-red.png" alt="Fork PlatformIO on GitHub"></a>
+    <!-- <a href="https://github.com/ivankravets/platformio" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/forkme-right-red.png" alt="Fork PlatformIO on GitHub"></a>-->
   </footer>
 
   <script>
@@ -145,7 +144,7 @@
     // ga('send', 'pageview');
   </script>
 
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5468fbe66b75b1cd" async="async"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5468fbe66b75b1cd" async="async" ng-if="!vm.isPhJSCrawler"></script>
 
   <!-- build:js(.) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
@@ -172,7 +171,6 @@
   <script src="bower_components/angular-highlightjs/angular-highlightjs.js"></script>
   <script src="bower_components/angular-disqus/angular-disqus.js"></script>
   <script src="bower_components/angular-relative-date/angular-relative-date.js"></script>
-  <script src="bower_components/angular-social/angular-social.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

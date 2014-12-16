@@ -18,8 +18,7 @@
     'angulartics.google.analytics',
     'hljs',
     'ngDisqus',
-    'relativeDate',
-    'ngSocial'
+    'relativeDate'
   ])
 
   .constant('siteConfig', {

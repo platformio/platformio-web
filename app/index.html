@@ -153,7 +153,15 @@
       'data_track_addressbar': false,
       'data_ga_property': 'UA-1768265-8',
       'data_ga_social': true ,
-      'url': 'http://platformio.ikravets.com'
+      'url': 'http://platformio.ikravets.com',
+      'templates': {
+        twitter: '{{title}} {{url}} via @PlatformIOTool '
+      },
+      'url_transforms': {
+        shorten: {
+          twitter: 'bitly'
+        }
+      }
     }
   </script>
 

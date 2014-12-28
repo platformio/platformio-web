@@ -32,6 +32,7 @@
     function getVendors() {
       var data = {
         'arduino': {'title': 'Arduino', 'active': false},
+        'engduino': {'title': 'Engduino', 'active': false},
         'microduino': {'title': 'Microduino', 'active': false},
         'raspduino': {'title': 'Raspduino', 'active': false},
         'timsp430': {'title': 'TI MSP430 LaunchPads', 'active': false},

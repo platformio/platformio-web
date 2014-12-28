@@ -21,7 +21,7 @@
   <tabset>
     <tab active="vm.vendors.arduino.active">
       <tab-heading>
-        <a href="#!/boards/arduino" ng-click="vm.changeVendor('arduino')"><h3>Arduino</h3></a>
+        <a href="#!/boards/arduino" ng-click="vm.changeVendor('arduino')"><h4>Arduino</h4></a>
       </tab-heading>
 
       <table class="table table-striped">
@@ -242,9 +242,65 @@
 
     </tab>
 
+
+    <tab active="vm.vendors.engduino.active">
+      <tab-heading>
+        <a href="#!/boards/engduino" ng-click="vm.changeVendor('engduino')"><h4>Engduino</h4></a>
+      </tab-heading>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Type <span class="label label-default">board</span>
+            </th>
+            <th>Name</th>
+            <th>Microcontroller
+            </th>
+            <th>Frequency
+            </th>
+            <th>Flash</th>
+            <th>RAM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="label label-default">engduinov1</span>
+            </td>
+            <td><a href="http://www.engduino.org/" target="_blank">Engduino 1</a>
+            </td>
+            <td>ATmega32u4</td>
+            <td>16 MHz</td>
+            <td>32 Kb</td>
+            <td>2.5 Kb</td>
+          </tr>
+          <tr>
+            <td><span class="label label-default">engduinov2</span>
+            </td>
+            <td><a href="http://www.engduino.org/" target="_blank">Engduino 2</a>
+            </td>
+            <td>ATmega32u4</td>
+            <td>16 MHz</td>
+            <td>32 Kb</td>
+            <td>2.5 Kb</td>
+          </tr> 
+          <tr>
+            <td><span class="label label-default">engduinov3</span>
+            </td>
+            <td><a href="http://www.engduino.org/" target="_blank">Engduino 3</a>
+            </td>
+            <td>ATmega32u4</td>
+            <td>16 MHz</td>
+            <td>32 Kb</td>
+            <td>2.5 Kb</td>
+          </tr>           
+        </tbody>
+      </table>
+
+    </tab>
+
     <tab active="vm.vendors.microduino.active">
       <tab-heading>
-        <a href="#!/boards/microduino" ng-click="vm.changeVendor('microduino')"><h3>Microduino</h3></a>
+        <a href="#!/boards/microduino" ng-click="vm.changeVendor('microduino')"><h4>Microduino</h4></a>
       </tab-heading>
 
       <table class="table table-striped">
@@ -377,7 +433,7 @@
 
     <tab active="vm.vendors.raspduino.active">
       <tab-heading>
-        <a href="#!/boards/raspduino" ng-click="vm.changeVendor('raspduino')"><h3>Raspduino</h3></a>
+        <a href="#!/boards/raspduino" ng-click="vm.changeVendor('raspduino')"><h4>Raspduino</h4></a>
       </tab-heading>
 
       <table class="table table-striped">
@@ -414,7 +470,7 @@
 
     <tab active="vm.vendors.timsp430.active">
       <tab-heading>
-        <a href="#!/boards/timsp430" ng-click="vm.changeVendor('timsp430')"><h3>TI MSP430 LaunchPads</h3></a>
+        <a href="#!/boards/timsp430" ng-click="vm.changeVendor('timsp430')"><h4>TI MSP430 LaunchPads</h4></a>
       </tab-heading>
 
       <table class="table table-striped">
@@ -524,7 +580,7 @@
 
     <tab active="vm.vendors.titiva.active">
       <tab-heading>
-        <a href="#!/boards/titiva" ng-click="vm.changeVendor('titiva')"><h3>TI Tiva C LaunchPads</h3></a>
+        <a href="#!/boards/titiva" ng-click="vm.changeVendor('titiva')"><h4>TI Tiva C LaunchPads</h4></a>
       </tab-heading>
 
       <table class="table table-striped">

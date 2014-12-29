@@ -46,6 +46,12 @@
   padding-right: 3px;
 }
 
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  border-color: #080808;
+}
+
 .terminal {
   color: #fff;
   background-color: #000;

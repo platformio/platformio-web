@@ -42,6 +42,10 @@
   color: #e0e0e0;
 }
 
+.navbar-nav .btn-group .btn-main {
+  padding-right: 3px;
+}
+
 .terminal {
   color: #fff;
   background-color: #000;

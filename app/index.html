@@ -49,9 +49,21 @@
             </li>
             <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a>
             </li>
-            <li ng-class="{active: vm.isRouteActive('/(lib|lib/[^e].*)$')}"><a href="#!/lib"><i class="fa fa-book fa-lg"></i>Libraries</a>
-            </li>
-            <li ng-class="{active: vm.isRouteActive('/lib/examples')}"><a href="#!/lib/examples"><i class="fa fa-graduation-cap fa-lg"></i>Examples</a>
+            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" dropdown>
+              <a href="#!/lib" class="btn btn-main"><i class="fa fa-book fa-lg"></i>Libraries</a>
+              <a class="btn dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#!/lib"><i class="fa fa-bar-chart"></i> Stats</a></li>
+                <li><a href="#!/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
+                <li class="divider"></li>
+                <li><a href="#!/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
+                <li class="divider"></li>
+                <li><a href="http://docs.platformio.ikravets.com/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
+                <li><a href="https://github.com/ivankravets/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
+              </ul>
             </li>
           </ul>
 

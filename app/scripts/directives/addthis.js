@@ -51,7 +51,7 @@
               hashFrameworks ? ' for ' : '') + hashFrameworks),
             description: $scope.lib.description + ' ' + hashKeywords,
             templates: {
-              twitter: '{{title}} {{url}} via @PlatformIOTool ' +
+              twitter: '{{title}} {{url}} via @PlatformIO_Org ' +
                 hashKeywords
             },
             'url_transforms': {

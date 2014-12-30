@@ -13,7 +13,7 @@ def application(env, start_response):
     if not qs or not qs.startswith("_escaped_fragment_="):
         status = "500 Internal Server Error"
     else:
-        url = "http://platformio.ikravets.com/#!" + unquote(qs[19:])
+        url = "http://platformio.org/#!" + unquote(qs[19:])
         try:
             response = get_webcontent(url)
             if "404 Not Found" in response:

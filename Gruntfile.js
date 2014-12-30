@@ -289,7 +289,7 @@ module.exports = function (grunt) {
     // cdnify: {
     //   dist: {
     //     options: {
-    //       base: 'http://cdn.platformio.ikravets.com/'
+    //       base: 'http://cdn.platformio.org/'
     //     },
     //     files: [{
     //       expand: true,
@@ -302,7 +302,7 @@ module.exports = function (grunt) {
 
     cdn: {
       options: {
-        cdn: 'http://cdn.platformio.ikravets.com/',
+        cdn: 'http://cdn.platformio.org/',
         flatten: true
       },
       dist: {

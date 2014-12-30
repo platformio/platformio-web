@@ -23,6 +23,6 @@
 
   .constant('siteConfig', {
     apiURL: (parseInt(location.port) === 9000 ? 'http://localhost:8080' :
-      'http://api.platformio.ikravets.com')
+      'http://api.platformio.org')
   })
 })();

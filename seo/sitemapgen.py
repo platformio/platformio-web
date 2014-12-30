@@ -9,7 +9,7 @@ except ImportError:
     from urllib.request import urlopen
 
 
-PLATFORMIOAPILIB_URL = "http://api.platformio.ikravets.com/lib/search"
+PLATFORMIOAPILIB_URL = "http://api.platformio.org/lib/search"
 SITEMAPXML_PATH = abspath("../htdocs/sitemap.xml")
 
 
@@ -77,34 +77,34 @@ def main():
     with SiteMapBuilder(SITEMAPXML_PATH) as b:
         # main
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/",
+            loc="http://platformio.org/#!/",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/get-started",
+            loc="http://platformio.org/#!/get-started",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/platforms",
+            loc="http://platformio.org/#!/platforms",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/boards",
+            loc="http://platformio.org/#!/boards",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/lib",
+            loc="http://platformio.org/#!/lib",
             changefreq="daily"
         )
         b.add_url(
-            loc="http://platformio.ikravets.com/#!/lib/examples",
+            loc="http://platformio.org/#!/lib/examples",
             changefreq="daily"
         )
 
         # libs
         for item in PIOLibsGenerator():
             b.add_url(
-                loc=("http://platformio.ikravets.com/#!/lib/show/%d/%s" %
+                loc=("http://platformio.org/#!/lib/show/%d/%s" %
                      (item['id'], item['name'])),
                 lastmod=item['updated'],
                 changefreq="weekly")

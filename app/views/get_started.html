@@ -17,7 +17,7 @@
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> If you haven't installed PlatformIO yet, you can do it now  &nbsp; <i class="fa fa-hand-o-right fa-lg"></i> &nbsp; <a href="http://docs.platformio.ikravets.com/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
+        <i class="fa fa-info-circle fa-lg fa-li"></i> If you haven't installed PlatformIO yet, you can do it now  &nbsp; <i class="fa fa-hand-o-right fa-lg"></i> &nbsp; <a href="http://docs.platformio.org/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
       </li>
     </ul>
   </div>
@@ -124,22 +124,22 @@ board = lptm4c1230c3pm
 build_flags = "-DLED_PIN=GREEN_LED"</pre>
     </div>
   </div>
-  
+
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-github fa-lg fa-li"></i>  The source code and results of this <code>Blink Project</code> can be downloaded from <a href="https://github.com/ivankravets/platformio/tree/develop/examples/wiring-blink" class="alert-link" target="_blank"><i class="fa fa-download fa-lg"></i> PlatformIO Project Examples</a> repository. 
+        <i class="fa fa-github fa-lg fa-li"></i>  The source code and results of this <code>Blink Project</code> can be downloaded from <a href="https://github.com/ivankravets/platformio/tree/develop/examples/wiring-blink" class="alert-link" target="_blank"><i class="fa fa-download fa-lg"></i> PlatformIO Project Examples</a> repository.
       </li>
     </ul>
-  </div> 
+  </div>
 
   <h3 class="header-underlined">Install platforms</h3>
   <p>
-    <i>PlatformIO</i> allows you to install already pre-built platforms via <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command.
+    <i>PlatformIO</i> allows you to install already pre-built platforms via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command.
     You can pass multiple platform names separated by space.
   </p>
 
-  <span class="label label-default">Terminal</span> 
+  <span class="label label-default">Terminal</span>
   <div class="well terminal">
     <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio install atmelavr timsp430 titiva</p>
     <small>
@@ -182,21 +182,21 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i>  The full list with pre-built platforms is available by <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_search.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio search</a> command. 
+        <i class="fa fa-info-circle fa-lg fa-li"></i>  The full list with pre-built platforms is available by <a href="http://docs.platformio.org/en/latest/userguide/cmd_search.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio search</a> command.
       </li>
     </ul>
-  </div>      
+  </div>
 
   <h3 class="header-underlined">Initialize PlatformIO-based empty project</h3>
   <p>
-    <i>PlatformIO</i>-based project consists of <strong>2 main parts</strong>: 
+    <i>PlatformIO</i>-based project consists of <strong>2 main parts</strong>:
     <ul>
-      <li><a href="http://docs.platformio.ikravets.com/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> - where you can setup different environments with specific options (platform type, firmware uploading settings, pre-built framework, build flags and many more)</li>
+      <li><a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> - where you can setup different environments with specific options (platform type, firmware uploading settings, pre-built framework, build flags and many more)</li>
       <li><code>src</code> directory - where your source code should be placed</li>
     </ul>
   </p>
-  <p>There is <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
-  <span class="label label-default">Terminal</span> 
+  <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
+  <span class="label label-default">Terminal</span>
   <div class="well terminal">
     <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init</p>
     <small>
@@ -209,11 +209,11 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
   </div>
 
   <h3 class="header-underlined">Process environments</h3>
-  <p>Copy <code>main.c</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above. 
-    <br>Then process environments with <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.</p> 
+  <p>Copy <code>main.c</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
+    <br>Then process environments with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.</p>
 
-  <span class="label label-default">Terminal</span> 
-  <div class="well terminal">    
+  <span class="label label-default">Terminal</span>
+  <div class="well terminal">
    <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run</p>
     <small>
     Processing <font color="cyan">arduino_uno</font> environment: <br />
@@ -295,23 +295,23 @@ arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pi
 </pre>
 
   <h3 class="header-underlined">Firmware uploading</h3>
-  <p>For uploading firmware to embedded device you can use <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command with <code>--target upload</code> option.</p>
-  <span class="label label-default">Terminal</span> 
+  <p>For uploading firmware to embedded device you can use <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command with <code>--target upload</code> option.</p>
+  <span class="label label-default">Terminal</span>
   <div class="well terminal">
     <span class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span>
   </div>
-  <p>If you want to enable "auto-uploading" when source code is built successfully, then define for the specific environment's option <code>targets = upload</code>. More detailed information about <code>targets</code> option is available in the <a href="http://docs.platformio.ikravets.com/en/latest/projectconf.html#targets">documentation</a>.</p>
+  <p>If you want to enable "auto-uploading" when source code is built successfully, then define for the specific environment's option <code>targets = upload</code>. More detailed information about <code>targets</code> option is available in the <a href="http://docs.platformio.org/en/latest/projectconf.html#targets">documentation</a>.</p>
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can process only specific environments <code>-e</code> or targets <code>-t</code>. Read more about it in <a href="http://docs.platformio.ikravets.com/en/latest/userguide/cmd_run.html#examples" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command examples. 
+        <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can process only specific environments <code>-e</code> or targets <code>-t</code>. Read more about it in <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html#examples" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command examples.
       </li>
     </ul>
-  </div>   
+  </div>
 
   <h2>Further Reading</h2>
   <ul>
-    <li><a href="http://docs.platformio.ikravets.com">Documentation</a>
+    <li><a href="http://docs.platformio.org">Documentation</a>
     </li>
     <li><a href="https://github.com/ivankravets/platformio/tree/develop/examples" target="_blank">Project Examples</a>
     </li>

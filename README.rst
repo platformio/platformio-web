@@ -1,4 +1,4 @@
 PlatformIO-Web
 ==============
 
-A source code of PlatformIO WebSite `http://platformio.ikravets.com <http://platformio.ikravets.com>`_.
+A source code of PlatformIO WebSite `http://platformio.org <http://platformio.org>`_.

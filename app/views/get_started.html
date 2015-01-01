@@ -6,7 +6,7 @@
     <h1 view-title><i class="fa fa-rocket"></i> Getting Started</h1>
 
     <p>
-      Learn how to install development platforms, configure and build your first cross-platform <i>"Blink"</i> project
+      Learn how to install and use <i>PlatformIO</i>, configure and build your first cross-platform <i>"Blink"</i> project
     </p>
 
   </div>
@@ -14,16 +14,76 @@
 
 <div class="container">
 
+  <h2>Installation</h2>
+  <p>
+    <b>PlatformIO</b> can easily be installed on the popular <i>OS</i>:
+    <ul>
+      <li><i>Mac OS X</i></li>
+      <li><i>Linux</i> (including <i>ARMv6</i>)</li>
+      <li><i>Windows</i></li>
+    </ul>
+    More detailed information is described in the main documentation: &nbsp;
+    <a href="http://docs.platformio.org/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
+  </p>
+
+  <h2>Quickstart</h2>
+
+  <ol>
+    <li>Find board <code>type</code> on this <a href="#!/boards">Embedded Boards</a> page (you can choose multiple board types)</li>
+    <li>
+      Initialize new <i>PlatformIO</i> based project with the pre-configured environments for your boards:
+      <br>
+      <span class="label label-default">Terminal</span>
+      <div class="well terminal">
+        <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE1 --board=TYPE2</p>
+        <small>
+          <font color="yellow">
+            The current working directory <font color="cyan">***</font> will be used for the new project.<br />
+            You can specify another project directory via<br />
+            `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
+          </font><br /><br />
+
+          The next files/directories will be created in <font color="cyan">***</font><br />
+          <font color="cyan">`platformio.ini`</font> - Project Configuration File<br />
+          <font color="cyan">`src`</font> - a source directory. Put your source code here<br />
+          <font color="cyan">`lib`</font> - a directory for the project specific libraries<br />
+          Do you want to continue? [y/N]: y<br />
+          <font color="green">Project has been successfully initialized!</font>
+        </small>
+      </div>
+    </li>
+    <li>
+      Now you can process it with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command:
+      <br>
+      <span class="label label-default">Terminal</span>
+      <div class="well terminal">
+        <span class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run</span>
+      </div>
+    </li>
+  </ol>
+
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> If you haven't installed PlatformIO yet, you can do it now  &nbsp; <i class="fa fa-hand-o-right fa-lg"></i> &nbsp; <a href="http://docs.platformio.org/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
+        <i class="fa fa-info fa-lg fa-li"></i> Firmware "auto-uploading" is enabled by default.
+        You can disable it in <a href="http://docs.platformio.org/en/latest/projectconf.html" class="alert-link">Project Configuration File (platformio.ini)</a> through commenting <code># targets = upload</code> line.
+        <br>The manual firmware uploading is allowed via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</a> command.
       </li>
     </ul>
   </div>
 
+  <div class="alert alert-info">
+    <ul class="fa-ul">
+      <li>
+        <i class="fa fa-info fa-lg fa-li"></i> If you have specific board which isn't supported by <i>PlatformIO</i>, then you can install development platform via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command 
+        in manual mode or <a href="https://github.com/ivankravets/platformio/issues" target="_blink" class="alert-link">create new issue and ask to add it</a>. 
+      </li>
+    </ul>
+  </div> 
 
-  <h2>"Blink" Project</h2>
+  <hr>
+
+  <h2>"Blink" project example</h2>
 
   <p>
     With the help of <em>PlatformIO</em> we can <strong>build the same code</strong> for the different development platforms. Let's define example environments for the most popular boards from the different platforms:
@@ -66,14 +126,12 @@
   </p>
 
   <p>
-    The source code located below in <code>main.c</code> will turn <em>ON</em> and <em>OFF</em> the <a href="http://wiring.org.co" target="_blank">Wiring</a> compatible board <mark>LED</mark> with intervals of 1 second (1000 milliseconds).
+    The source code located below in <code>main.cpp</code> will turn <em>ON</em> and <em>OFF</em> the <a href="http://wiring.org.co" target="_blank">Wiring</a> compatible board <mark>LED</mark> with intervals of 1 second (1000 milliseconds).
   </p>
-
-
 
   <div class="row">
     <div class="col-md-6">
-      <span class="label label-default">main.c</span>
+      <span class="label label-default">main.cpp</span>
       <pre class="hljscode" hljs language="cpp">
 #ifdef ENERGIA
 #include "Energia.h"
@@ -100,17 +158,17 @@ void loop() {
     <div class="col-md-6">
       <span class="label label-default">platformio.ini</span>
       <pre class="hljscode" hljs language="ini">
-; Environments list which will be processed by
-; `$ platformio run` command
-
+;
+; Project Configuration File
+;
+; A detailed documentation with the EXAMPLES is located here:
+; http://docs.platformio.org/en/latest/projectconf.html
+;
 
 [env:arduino_uno]
 platform = atmelavr
 framework = arduino
 board = uno
-upload_port = /dev/ttyUSB0
-; Windows COM port
-; upload_port = COM1
 
 [env:launchpad_msp430g2]
 platform = timsp430
@@ -121,7 +179,7 @@ board = lpmsp430g2553
 platform = titiva
 framework = energia
 board = lptm4c1230c3pm
-build_flags = "-DLED_PIN=GREEN_LED"</pre>
+build_flags = -DLED_PIN=GREEN_LED</pre>
     </div>
   </div>
 
@@ -133,61 +191,7 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
     </ul>
   </div>
 
-  <h3 class="header-underlined">Install platforms</h3>
-  <p>
-    <i>PlatformIO</i> allows you to install already pre-built platforms via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command.
-    You can pass multiple platform names separated by space.
-  </p>
-
-  <span class="label label-default">Terminal</span>
-  <div class="well terminal">
-    <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio install atmelavr timsp430 titiva</p>
-    <small>
-    Installing <font color="cyan">toolchain-atmelavr</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">tool-avrdude</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">framework-arduinoavr</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    <font color="green">The platform 'atmelavr' has been successfully installed!</font><br />
-
-    Installing <font color="cyan">toolchain-timsp430</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">tool-mspdebug</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">framework-energiamsp430</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    <font color="green">The platform 'timsp430' has been successfully installed!</font><br />
-
-    Installing <font color="cyan">toolchain-gccarmnoneeabi</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">tool-lm4flash</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    Installing <font color="cyan">framework-energiativa</font> package:<br />
-    Downloading  [####################################]  100%<br />
-    Unpacking  [####################################]  100%<br />
-    <font color="green">The platform 'titiva' has been successfully installed!</font>
-    <br />
-    </small>
-  </div>
-
-  <div class="alert alert-info">
-    <ul class="fa-ul">
-      <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i>  The full list with pre-built platforms is available by <a href="http://docs.platformio.org/en/latest/userguide/cmd_search.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio search</a> command.
-      </li>
-    </ul>
-  </div>
-
-  <h3 class="header-underlined">Initialize PlatformIO-based empty project</h3>
+  <h3 class="header-underlined">Initialize empty project</h3>
   <p>
     <i>PlatformIO</i>-based project consists of <strong>2 main parts</strong>:
     <ul>
@@ -198,18 +202,25 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
   <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
-    <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init</p>
+    <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=uno --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
     <small>
-      <font color="green">
-        Project has been initialized!<br />
-        Please put your source code to `src` directory, external libraries to `lib` and setup environments in `platformio.ini` file.<br />
-        Then process project with `platformio run` command.
-      </font>
+      <font color="yellow">
+        The current working directory <font color="cyan">***</font> will be used for the new project.<br />
+        You can specify another project directory via<br />
+        `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
+      </font><br /><br />
+
+      The next files/directories will be created in <font color="cyan">***</font><br />
+      <font color="cyan">`platformio.ini`</font> - Project Configuration File<br />
+      <font color="cyan">`src`</font> - a source directory. Put your source code here<br />
+      <font color="cyan">`lib`</font> - a directory for the project specific libraries<br />
+      Do you want to continue? [y/N]: y<br />
+      <font color="green">Project has been successfully initialized!</font>
     </small>
-  </div>
+  </div>  
 
   <h3 class="header-underlined">Process environments</h3>
-  <p>Copy <code>main.c</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
+  <p>Copy <code>main.cpp</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
     <br>Then process environments with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.</p>
 
   <span class="label label-default">Terminal</span>
@@ -218,48 +229,41 @@ build_flags = "-DLED_PIN=GREEN_LED"</pre>
     <small>
     Processing <font color="cyan">arduino_uno</font> environment: <br />
     <font color="green">
-      avr-gcc -o .pioenvs/arduino_uno/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=157 -DARDUINO_AVR_UNO -I.pioenvs/arduino_uno/core -I.pioenvs/arduino_uno/variant .pioenvs/arduino_uno/src/main.c <br />
+      avr-g++ -o .pioenvs/arduino_uno/src/main.o -c -fno-exceptions -fno-threadsafe-statics -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=158 -DARDUINO_AVR_UNO -I.pioenvs/arduino_uno/FrameworkArduino -I.pioenvs/arduino_uno/FrameworkArduinoVariant .pioenvs/arduino_uno/src/main.cpp<br />
       [... a list of the rest compiled files ...]<br />
-      avr-ranlib .pioenvs/arduino_uno/libcore.a<br />
-      avr-gcc -o .pioenvs/arduino_uno/firmware.elf -Os -Wl,--gc-sections -mmcu=atmega328p .pioenvs/arduino_uno/src/main.o -L.pioenvs/arduino_uno .pioenvs/arduino_uno/libcore.a -lm<br />
+      avr-ranlib .pioenvs/arduino_uno/libFrameworkArduino.a<br />
+      avr-g++ -o .pioenvs/arduino_uno/firmware.elf -Os -Wl,--gc-sections -mmcu=atmega328p .pioenvs/arduino_uno/src/main.o -L.pioenvs/arduino_uno .pioenvs/arduino_uno/libFrameworkArduino.a -lm<br />
       avr-objcopy -O ihex -R .eeprom .pioenvs/arduino_uno/firmware.elf .pioenvs/arduino_uno/firmware.hex<br />
     </font>
-    <font color="yellow">
-      .pioenvs/arduino_uno/core/Stream.cpp: In member function 'bool Stream::find(char*)':<br />
-      .pioenvs/arduino_uno/core/Stream.cpp:78:30: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]<br />
-   return findUntil(target, "");<br /><br />
-    </font>
-
+    <br>
     Processing <font color="cyan">launchpad_msp430g2</font> environment: <br />
     <font color="green">
-      msp430-gcc -o .pioenvs/launchpad_msp430g2/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=msp430g2553 -DF_CPU=16000000L -DARDUINO=101 -DENERGIA=12 -I.pioenvs/launchpad_msp430g2/core -I.pioenvs/launchpad_msp430g2/variant .pioenvs/launchpad_msp430g2/src/main.c <br />
+      msp430-g++ -o .pioenvs/launchpad_msp430g2/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=msp430g2553 -DF_CPU=16000000L -DARDUINO=101 -DENERGIA=13 -I.pioenvs/launchpad_msp430g2/FrameworkEnergia -I.pioenvs/launchpad_msp430g2/FrameworkEnergiaVariant .pioenvs/launchpad_msp430g2/src/main.cpp <br />
       [... a list of the rest compiled files ...]<br />
-      msp430-ranlib .pioenvs/launchpad_msp430g2/libcore.a<br />
-      msp430-gcc -o .pioenvs/launchpad_msp430g2/firmware.elf -Os -mmcu=msp430g2553 -Wl,-gc-sections,-u,main .pioenvs/launchpad_msp430g2/src/main.o -L.pioenvs/launchpad_msp430g2 .pioenvs/launchpad_msp430g2/libcore.a -lm<br />
-      msp430-objcopy -O ihex -R .eeprom .pioenvs/launchpad_msp430g2/firmware.elf .pioenvs/launchpad_msp430g2/firmware.hex<br /><br />
+      msp430-ranlib .pioenvs/launchpad_msp430g2/libFrameworkEnergia.a<br />
+      msp430-gcc -o .pioenvs/launchpad_msp430g2/firmware.elf -Os -mmcu=msp430g2553 -Wl,-gc-sections,-u,main .pioenvs/launchpad_msp430g2/src/main.o -L.pioenvs/launchpad_msp430g2 .pioenvs/launchpad_msp430g2/libFrameworkEnergia.a -lm<br />
+      msp430-objcopy -O ihex -R .eeprom .pioenvs/launchpad_msp430g2/firmware.elf .pioenvs/launchpad_msp430g2/firmware.hex<br />
     </font>
+    <font color="yellow">
+      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp: In member function 'bool Stream::find(char*)':<br /> 
+      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp:78:30: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]<br /><br /> 
+    </font>     
 
     Processing <font color="cyan">launchpad_tm4c1230c3pm</font> environment: <br />
     <font color="green">
-      arm-none-eabi-gcc -o .pioenvs/launchpad_tm4c1230c3pm/src/main.o -c -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -MMD -DF_CPU=80000000L -DLED_PIN=GREEN_LED -DARDUINO=101 -DENERGIA=12 -I.pioenvs/launchpad_tm4c1230c3pm/core -I.pioenvs/launchpad_tm4c1230c3pm/variant .pioenvs/launchpad_tm4c1230c3pm/src/main.c <br />
+      arm-none-eabi-g++ -o .pioenvs/launchpad_tm4c1230c3pm/src/main.o -c -fno-rtti -fno-exceptions -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -MMD -DF_CPU=80000000L -DLED_PIN=GREEN_LED -DARDUINO=101 -DENERGIA=13 -I.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia -I.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergiaVariant .pioenvs/launchpad_tm4c1230c3pm/src/main.cpp<br />
       [... a list of the rest compiled files ...]<br />
-      arm-none-eabi-ranlib .pioenvs/launchpad_tm4c1230c3pm/libcore.a<br />
-arm-none-eabi-gcc -o .pioenvs/launchpad_tm4c1230c3pm/firmware.elf -Os -nostartfiles -nostdlib -Wl,--gc-sections -Wl,--entry=ResetISR -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -T /Users/ikravets/.platformio/titiva/frameworks/energia/cores/lm4f/lm4fcpp_blizzard.ld .pioenvs/launchpad_tm4c1230c3pm/src/main.o -L.pioenvs/launchpad_tm4c1230c3pm .pioenvs/launchpad_tm4c1230c3pm/libcore.a -lc -lgcc -lm<br />
-arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pioenvs/launchpad_tm4c1230c3pm/firmware.bin<br />
+
+      arm-none-eabi-ranlib .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a<br /> 
+      arm-none-eabi-g++ -o .pioenvs/launchpad_tm4c1230c3pm/firmware.elf -Os -nostartfiles -nostdlib -Wl,--gc-sections -Wl,--entry=ResetISR -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -T /Users/ikravets/.platformio/packages/framework-energiativa/cores/lm4f/lm4fcpp_blizzard.ld .pioenvs/launchpad_tm4c1230c3pm/src/main.o -L.pioenvs/launchpad_tm4c1230c3pm .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a -lc -lgcc -lm<br /> 
+      arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pioenvs/launchpad_tm4c1230c3pm/firmware.bin<br /> 
     </font>
     <font color="yellow">
-      In file included from .pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.cpp:3:0:<br />
-.pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h: In member function 'IPAddress::operator uint32_t()':<br />
-.pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h:51:55: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br />
-     operator uint32_t() { return *((uint32_t*)_address); };<br />
-                                                       ^
-.pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h: In member function 'bool IPAddress::operator==(const IPAddress&)':<br />
-.pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h:52:75: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br />
-     bool operator==(const IPAddress& addr) { return (*((uint32_t*)_address)) == (*((uint32_t*)addr._address)); };<br />
-                                                                           ^
-.pioenvs/launchpad_tm4c1230c3pm/core/IPAddress.h:52:108: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br />
-     bool operator==(const IPAddress& addr) { return (*((uint32_t*)_address)) == (*((uint32_t*)addr._address)); };<br />
-   return findUntil(target, "");<br /><br />
+In file included from .pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.cpp:3:0:
+.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.h: In member function 'IPAddress::operator uint32_t()':
+.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.h:51:55: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br /> 
+     operator uint32_t() { return *((uint32_t*)_address); };<br /> 
+    [... the rest warnings ...]
     </font>
   </small>
   </div>
@@ -268,30 +272,32 @@ arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pi
   <pre>
 |-- .pioenvs
 |   |-- arduino_uno
-|   |   |-- core
+|   |   |-- FrameworkArduino
+|   |   |-- FrameworkArduinoVariant
 |   |   |-- firmware.elf
 |   |   |-- firmware.hex
-|   |   |-- libcore.a
-|   |   |-- src
-|   |   `-- variant
+|   |   |-- libFrameworkArduino.a
+|   |   `-- src
 |   |-- launchpad_msp430g2
-|   |   |-- core
+|   |   |-- FrameworkEnergia
+|   |   |-- FrameworkEnergiaVariant
 |   |   |-- firmware.elf
 |   |   |-- firmware.hex
-|   |   |-- libcore.a
-|   |   |-- src
-|   |   `-- variant
+|   |   |-- libFrameworkEnergia.a
+|   |   `-- src
 |   `-- launchpad_tm4c1230c3pm
-|       |-- core
+|       |-- FrameworkEnergia
+|       |-- FrameworkEnergiaVariant
 |       |-- firmware.bin
 |       |-- firmware.elf
-|       |-- libcore.a
-|       |-- src
-|       `-- variant
-|-- lib
+|       |-- libFrameworkEnergia.a
+|       `-- src
+|-- .sconsign.dblite
+|--   README.rst
+|-- console-result.png
 |-- platformio.ini
 `-- src
-    `-- main.c
+    `-- main.cpp
 </pre>
 
   <h3 class="header-underlined">Firmware uploading</h3>

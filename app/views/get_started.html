@@ -26,16 +26,16 @@
     <a href="http://docs.platformio.org/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
   </p>
 
-  <h2>Quickstart</h2>
+  <h2>QuickStart</h2>
 
   <ol>
-    <li>Find board <code>type</code> on this <a href="#!/boards">Embedded Boards</a> page (you can choose multiple board types)</li>
+    <li>Find board <code>type</code> on this <a href="#!/boards">Embedded Boards</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command</li>
     <li>
       Initialize new <i>PlatformIO</i> based project with the pre-configured environments for your boards:
       <br>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE1 --board=TYPE2</p>
+        <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
         <small>
           <font color="yellow">
             The current working directory <font color="cyan">***</font> will be used for the new project.<br />
@@ -292,9 +292,6 @@ In file included from .pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress
 |       |-- firmware.elf
 |       |-- libFrameworkEnergia.a
 |       `-- src
-|-- .sconsign.dblite
-|--   README.rst
-|-- console-result.png
 |-- platformio.ini
 `-- src
     `-- main.cpp

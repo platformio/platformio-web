@@ -102,6 +102,9 @@
           ]
         }
       })
+      .when('/who-uses', {
+        templateUrl: 'views/who_uses.html'
+      })
       .when('/404', {
         templateUrl: 'views/404.html'
       })

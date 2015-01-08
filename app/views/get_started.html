@@ -31,7 +31,8 @@
   <ol>
     <li>Find board <code>type</code> on this <a href="#!/boards">Embedded Boards</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command</li>
     <li>
-      Initialize new <i>PlatformIO</i> based project with the pre-configured environments for your boards:
+      Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command
+      with the pre-configured environments for your boards:
       <br>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
@@ -51,10 +52,11 @@
           <font color="green">Project has been successfully initialized!</font>
         </small>
       </div>
+      <p>Put your source code <code>*.h, *.c, *.cpp or *.ino</code> files to <code>src</code> directory.</p>
     </li>
     <li>
-      Now you can process it with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command:
-      <br>
+      Process the projects's environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.
+      <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and run:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
         <span class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run</span>

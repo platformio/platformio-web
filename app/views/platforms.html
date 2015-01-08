@@ -171,11 +171,40 @@
               </td>
             </tr>
       </table>
+      </tab>
+
+    <tab active="vm.platforms.creating.active">
+      <tab-heading>
+        <a href="#!/platforms/creating" ng-click="vm.changePlatform('creating')"><h2><i class="fa fa-plus"></i> Create Platform</h2></a>
+      </tab-heading>
+
+      <br>
+
+      <p class="lead">
+        <b>PlatformIO</b> was developed like a tool which would build the same source code for the different development platforms via single command
+        <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a>
+        without any dependent software or requirements.
+      </p>
+
+      <p>For this purpose <i>PlatformIO</i> uses own pre-configured platforms data:
+        build scripts, tool chains, the settings for the most popular embedded boards and etc.
+        These data are pre-built and packaged to the different "packages".
+      </p>
+
+      <p>
+        It allows <i>PlatformIO</i> to have multiple development platforms which can use the same packages(tool chains, frameworks),
+        but have different/own build scripts, uploader and etc.
+      </p>
+
+      <p class="text-center">
+        <a href="http://docs.platformio.org/en/latest/platforms/creating_platform.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Create Platform" target="_blank"><i class="fa fa-plus fa-lg"></i> Create Platform</a>
+      </p>      
+
     </tab>
 
   </tabset>
 
-  <div class="alert alert-info">
+  <div class="alert alert-info" ng-if="!vm.platforms.creating.active">
     <ul class="fa-ul">
       <li>
         <i class="fa fa-info-circle fa-lg fa-li"></i> For more detailed information about the <em>Platforms</em> please go to the

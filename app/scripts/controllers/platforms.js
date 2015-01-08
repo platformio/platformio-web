@@ -33,7 +33,8 @@
       var data = {
         'atmelavr': {'title': 'Atmel AVR', 'active': false},
         'timsp430': {'title': 'TI MSP430', 'active': false},
-        'titiva': {'title': 'TI TIVA', 'active': false}
+        'titiva': {'title': 'TI TIVA', 'active': false},
+        'creating': {'title': 'Creating Platform', 'active': false}
       };
 
       var _type = 'atmelavr';

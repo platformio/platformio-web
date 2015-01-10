@@ -49,8 +49,8 @@
           </h3>
           </div>
           <div class="col-xs-6 text-right">
-            <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i><span ng-repeat="name in item.frameworks">&nbsp;{{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
-            <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i><span ng-repeat="name in item.platforms">&nbsp;{{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="name in item.frameworks">{{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="name in item.platforms">{{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
             <span tooltip="Examples">{{ item.examplenums }} <i class="fa fa-graduation-cap"></i></span> &nbsp; <span tooltip="Downloads per month">{{ item.dlmonth }} <i class="fa fa-download"></i></span>
           </div>
         </div>

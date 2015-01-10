@@ -50,8 +50,8 @@
         </h3>
         </div>
         <div class="col-xs-5 text-right">
-          <span ng-if="item.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i><span ng-repeat="name in item.lib.frameworks"> {{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
-          <span ng-if="item.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i><span ng-repeat="name in item.lib.platforms"> {{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+          <span ng-if="item.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i><span ng-repeat="name in item.lib.frameworks">&nbsp;{{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+          <span ng-if="item.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i><span ng-repeat="name in item.lib.platforms">&nbsp;{{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
         </div>
       </div>
 

@@ -32,9 +32,6 @@
     "jquery": {
       "main": []
     },
-    "jquery-waypoints": {
-      "main": []
-    },
     "bootstrap": {
       "main": [
         "less/bootstrap.less",
@@ -46,6 +43,9 @@
         "src/angulartics.js",
         "src/angulartics-ga.js"
       ]
+    },
+    "waypoints": {
+      "main": []
     }
   }
 }

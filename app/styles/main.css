@@ -46,6 +46,11 @@
   padding-right: 3px;
 }
 
+.navbar-nav .btn-group .btn {
+  border: 0;
+  border-radius: none;
+}
+
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {

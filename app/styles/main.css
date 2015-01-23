@@ -48,7 +48,7 @@
 
 .navbar-nav .btn-group .btn {
   border: 0;
-  border-radius: none;
+  border-radius: 0;
 }
 
 .nav .open > a,

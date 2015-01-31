@@ -39,6 +39,11 @@
       <div class="well terminal">
         <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
         <small>
+          <p>
+            Would you like to enable firmware auto-uploading when project is successfully built using `platformio run` command?<br />
+            Don't forget that you can upload firmware manually using `platformio run --target upload` command. [y/N]:
+          </p>
+
           <font color="yellow">
             The current working directory <font color="cyan">***</font> will be used for the new project.<br />
             You can specify another project directory via<br />
@@ -46,21 +51,29 @@
           </font><br /><br />
 
           The next files/directories will be created in <font color="cyan">***</font><br />
-          <font color="cyan">`platformio.ini`</font> - Project Configuration File<br />
-          <font color="cyan">`src`</font> - a source directory. Put your source code here<br />
-          <font color="cyan">`lib`</font> - a directory for the project specific libraries<br />
+          <font color="cyan">`platformio.ini`</font> - Project Configuration File. |-&gt; PLEASE EDIT ME &lt;-| <br />
+          <font color="cyan">`src`</font> - Put your source code here<br />
+          <font color="cyan">`lib`</font> - Put here project specific or 3-rd party libraries<br />
           Do you want to continue? [y/N]: y<br />
-          <font color="green">Project has been successfully initialized!</font>
+          <font color="green">
+            Project has been successfully initialized!<br />
+            Useful commands:<br />
+            `platformio run` - process/build project from the current directory<br />
+            `platformio run --target upload` or `platformio run -t upload` - upload firmware to embedded board<br />
+            `platformio run --target clean` - clean project (remove compiled files)<br />
+          </font>
         </small>
       </div>
       <p>Put your source code <code>*.h, *.c, *.cpp or *.ino</code> files to <code>src</code> directory.</p>
     </li>
     <li>
       Process the project's environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.
-      <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and run:</p>
+      <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <span class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run</span>
+        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-terminal fa-lg"></i> platformio run</span><br /><br /> 
+        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then upload firmware manually</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span><br /><br /> 
+        <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target clean</span>
       </div>
     </li>
   </ol>
@@ -78,11 +91,11 @@
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info fa-lg fa-li"></i> If you have specific board which isn't supported by <i>PlatformIO</i>, then you can install development platform via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command 
-        in manual mode or <a href="https://github.com/ivankravets/platformio/issues" target="_blink" class="alert-link">create new issue and ask to add it</a>. 
+        <i class="fa fa-info fa-lg fa-li"></i> If you have specific board which isn't supported by <i>PlatformIO</i>, then you can install development platform via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command
+        in manual mode or <a href="https://github.com/ivankravets/platformio/issues" target="_blink" class="alert-link">create new issue and ask to add it</a>.
       </li>
     </ul>
-  </div> 
+  </div>
 
   <hr>
 
@@ -220,7 +233,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
       Do you want to continue? [y/N]: y<br />
       <font color="green">Project has been successfully initialized!</font>
     </small>
-  </div>  
+  </div>
 
   <h3 class="header-underlined">Process environments</h3>
   <p>Copy <code>main.cpp</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
@@ -248,24 +261,24 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
       msp430-objcopy -O ihex -R .eeprom .pioenvs/launchpad_msp430g2/firmware.elf .pioenvs/launchpad_msp430g2/firmware.hex<br />
     </font>
     <font color="yellow">
-      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp: In member function 'bool Stream::find(char*)':<br /> 
-      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp:78:30: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]<br /><br /> 
-    </font>     
+      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp: In member function 'bool Stream::find(char*)':<br />
+      .pioenvs/launchpad_msp430g2/FrameworkEnergia/Stream.cpp:78:30: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]<br /><br />
+    </font>
 
     Processing <font color="cyan">launchpad_tm4c1230c3pm</font> environment: <br />
     <font color="green">
       arm-none-eabi-g++ -o .pioenvs/launchpad_tm4c1230c3pm/src/main.o -c -fno-rtti -fno-exceptions -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -MMD -DF_CPU=80000000L -DLED_PIN=GREEN_LED -DARDUINO=101 -DENERGIA=13 -I.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia -I.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergiaVariant .pioenvs/launchpad_tm4c1230c3pm/src/main.cpp<br />
       [... a list of the rest compiled files ...]<br />
 
-      arm-none-eabi-ranlib .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a<br /> 
-      arm-none-eabi-g++ -o .pioenvs/launchpad_tm4c1230c3pm/firmware.elf -Os -nostartfiles -nostdlib -Wl,--gc-sections -Wl,--entry=ResetISR -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -T /Users/ikravets/.platformio/packages/framework-energiativa/cores/lm4f/lm4fcpp_blizzard.ld .pioenvs/launchpad_tm4c1230c3pm/src/main.o -L.pioenvs/launchpad_tm4c1230c3pm .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a -lc -lgcc -lm<br /> 
-      arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pioenvs/launchpad_tm4c1230c3pm/firmware.bin<br /> 
+      arm-none-eabi-ranlib .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a<br />
+      arm-none-eabi-g++ -o .pioenvs/launchpad_tm4c1230c3pm/firmware.elf -Os -nostartfiles -nostdlib -Wl,--gc-sections -Wl,--entry=ResetISR -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -T /Users/ikravets/.platformio/packages/framework-energiativa/cores/lm4f/lm4fcpp_blizzard.ld .pioenvs/launchpad_tm4c1230c3pm/src/main.o -L.pioenvs/launchpad_tm4c1230c3pm .pioenvs/launchpad_tm4c1230c3pm/libFrameworkEnergia.a -lc -lgcc -lm<br />
+      arm-none-eabi-objcopy -O binary .pioenvs/launchpad_tm4c1230c3pm/firmware.elf .pioenvs/launchpad_tm4c1230c3pm/firmware.bin<br />
     </font>
     <font color="yellow">
 In file included from .pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.cpp:3:0:
 .pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.h: In member function 'IPAddress::operator uint32_t()':
-.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.h:51:55: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br /> 
-     operator uint32_t() { return *((uint32_t*)_address); };<br /> 
+.pioenvs/launchpad_tm4c1230c3pm/FrameworkEnergia/IPAddress.h:51:55: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]<br />
+     operator uint32_t() { return *((uint32_t*)_address); };<br />
     [... the rest warnings ...]
     </font>
   </small>

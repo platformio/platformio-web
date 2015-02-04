@@ -16,7 +16,7 @@
     "components-font-awesome": "~4.3.0",
     "angularjs-viewhead": "~0.0.1",
     "angulartics": "~0.17.1",
-    "angular-highlightjs": "~0.3.2",
+    "angular-highlightjs": "~0.4.0",
     "angular-disqus": "~1.1.0",
     "angular-relative-date": "~0.2.0"
   },

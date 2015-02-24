@@ -32,6 +32,9 @@
     function getPlatforms() {
       var data = {
         'atmelavr': {'title': 'Atmel AVR', 'active': false},
+        'atmelsam': {'title': 'Atmel SAM', 'active': false},
+        'stm32': {'title': 'STM32', 'active': false},
+        'teensy': {'title': 'Teensy', 'active': false},
         'timsp430': {'title': 'TI MSP430', 'active': false},
         'titiva': {'title': 'TI TIVA', 'active': false},
         'creating': {'title': 'Creating Platform', 'active': false}

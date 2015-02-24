@@ -10,11 +10,12 @@
     .module('siteApp')
     .controller('BoardsController', BoardsController);
 
-  function BoardsController($routeParams, $window) {
+  function BoardsController($routeParams, $window, dataService) {
     var vm = this;
 
     vm.changeVendor = changeVendor;
     vm.vendors = getVendors();
+    vm.boards = dataService.getBoards();
     vm.activeVendor = '';
 
     angular.forEach(vm.vendors, function(item, key) {
@@ -30,22 +31,26 @@
     }
 
     function getVendors() {
-      var data = {
-        'arduino': {'title': 'Arduino', 'active': false},
-        'engduino': {'title': 'Engduino', 'active': false},
-        'microduino': {'title': 'Microduino', 'active': false},
-        'raspduino': {'title': 'Raspduino', 'active': false},
-        'timsp430': {'title': 'TI MSP430 LaunchPads', 'active': false},
-        'titiva': {'title': 'TI Tiva C LaunchPads', 'active': false}
-      };
+      var data = [
+        {'type': 'arduino', 'title': 'Arduino', 'active': false},
+        {'type': 'adafruit', 'title': 'Adafruit', 'active': false},
+        {'type': 'digispark', 'title': 'Digispark', 'active': false},
+        {'type': 'engduino', 'title': 'Engduino', 'active': false},
+        {'type': 'microduino', 'title': 'Microduino', 'active': false},
+        {'type': 'raspduino', 'title': 'Raspduino', 'active': false},
+        {'type': 'stm32', 'title': 'STM32 Discovery', 'active': false},
+        {'type': 'teensy', 'title': 'Teensy', 'active': false},
+        {'type': 'timsp430', 'title': 'TI MSP430 LaunchPads', 'active': false},
+        {'type': 'titiva', 'title': 'TI Tiva C LaunchPads', 'active': false}
+      ];
 
       var _type = 'arduino';
       if ($routeParams.hasOwnProperty('vendorType')) {
         _type = $routeParams.vendorType;
       }
 
-      angular.forEach(data, function(item, key) {
-        data[key].active = key === _type;
+      angular.forEach(data, function(item) {
+        item.active = item['type'] === _type;
       });
 
       return data;

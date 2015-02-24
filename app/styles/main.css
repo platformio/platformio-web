@@ -72,6 +72,14 @@
   word-wrap: break-word;
 }
 
+.terminal small .dashed-line {
+  border-bottom: 1px dashed #cecece;
+}
+
+.terminal small table td {
+  padding-right: 10px;
+}
+
 .header-underlined {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;

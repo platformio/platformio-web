@@ -38,10 +38,10 @@
         {'type': 'engduino', 'title': 'Engduino', 'active': false},
         {'type': 'microduino', 'title': 'Microduino', 'active': false},
         {'type': 'raspduino', 'title': 'Raspduino', 'active': false},
-        {'type': 'stm32', 'title': 'STM32 Discovery', 'active': false},
+        {'type': 'stm32', 'title': 'STM32', 'active': false},
         {'type': 'teensy', 'title': 'Teensy', 'active': false},
-        {'type': 'timsp430', 'title': 'TI MSP430 LaunchPads', 'active': false},
-        {'type': 'titiva', 'title': 'TI Tiva C LaunchPads', 'active': false}
+        {'type': 'timsp430', 'title': 'TI MSP430', 'active': false},
+        {'type': 'titiva', 'title': 'TI Tiva', 'active': false}
       ];
 
       var _type = 'arduino';

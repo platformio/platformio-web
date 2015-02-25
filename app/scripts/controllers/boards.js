@@ -34,7 +34,7 @@
       var data = [
         {'type': 'arduino', 'title': 'Arduino', 'active': false},
         {'type': 'adafruit', 'title': 'Adafruit', 'active': false},
-        {'type': 'digispark', 'title': 'Digispark', 'active': false},
+        {'type': 'digistump', 'title': 'Digistump', 'active': false},
         {'type': 'engduino', 'title': 'Engduino', 'active': false},
         {'type': 'microduino', 'title': 'Microduino', 'active': false},
         {'type': 'raspduino', 'title': 'Raspduino', 'active': false},

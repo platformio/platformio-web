@@ -364,7 +364,7 @@
           'rom': 32,
           'ram': 2
         }],
-        'digispark': [{
+        'digistump': [{
           'type': 'digispark-tiny',
           'name': 'Digispark USB Development Board',
           'url': 'http://digistump.com/products/1',

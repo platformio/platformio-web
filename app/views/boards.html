@@ -41,7 +41,7 @@
           <tr ng-repeat="board in vm.boards[vendor.type]">
             <td><span class="label label-default">{{ board.type }}</span>
             </td>
-            <td><a href="{{ board.url }}" target="_blank">{{ board.name }}</a></td>
+            <th>{{ board.name }}</th>
             <td>{{ board.mcu }}</td>
             <td>{{ board.f_cpu }} MHz</td>
             <td>{{ board.rom }} Kb</td>
@@ -49,16 +49,17 @@
           </tr>
         </tbody>
       </table>
+
+      <div class="alert alert-info">
+        <ul class="fa-ul">
+          <li>
+            <i class="fa fa-info-circle fa-lg fa-li"></i> For more detailed information about <b>{{ vendor.title }} Boards</b> please go to 
+            <a href="http://docs.platformio.org/en/latest/platforms/index.html" class="alert-link">Documentation</a> or use <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command.
+          </li>
+        </ul>
+      </div>        
+
     </tab>
   </tabset>
-
-  <div class="alert alert-info">
-    <ul class="fa-ul">
-      <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> For more detailed information about the <em>Embedded Boards</em> please go to the
-        <a href="http://docs.platformio.org/en/latest/platforms/index.html" class="alert-link">Documentation</a> or use <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command.
-      </li>
-    </ul>
-  </div>
 
 </div>

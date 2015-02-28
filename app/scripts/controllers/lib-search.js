@@ -44,11 +44,11 @@
         // frameworks & platforms
         angular.forEach(['frameworks', 'platforms'], function(what) {
           angular.forEach(item[what], function(item2) {
-            var _title = $filter('nameToTitle')(item2, vm[
+            var _name = $filter('typeToName')(item2, vm[
               what]);
-            data.description.push(_title);
+            data.description.push(_name);
             data.keywords = data.keywords.concat([item2,
-              _title
+              _name
             ]);
           });
         });

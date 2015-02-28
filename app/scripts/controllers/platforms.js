@@ -10,46 +10,36 @@
     .module('siteApp')
     .controller('PlatformsController', PlatformsController);
 
-  function PlatformsController($routeParams, $window) {
+  function PlatformsController($routeParams, $window, dataService) {
     var vm = this;
 
     vm.changePlatform = changePlatform;
-    vm.platforms = getPlatforms();
-    vm.activePlatform = '';
+    vm.activeTabName = '';
+    vm.platforms = dataService.getPlatforms();
+    vm.packages = dataService.getPackages();
 
-    angular.forEach(vm.platforms, function(item, key) {
+    // activate platform by hash
+    var _type = 'atmelavr';
+    if ($routeParams.hasOwnProperty('platformType')) {
+      _type = $routeParams.platformType;
+    }
+
+    angular.forEach(vm.platforms, function(item) {
+      item.active = item.type === _type;
+
       if (item.active) {
-        vm.activePlatform = key;
+        vm.activeTabName = item.name;
       }
     });
+
+    if (_type === 'creating') {
+      vm.activeTabName = 'Create Platform';
+    }
 
     ////////////
 
     function changePlatform(type) {
       $window.location.href = '#!/platforms/' + type;
-    }
-
-    function getPlatforms() {
-      var data = {
-        'atmelavr': {'title': 'Atmel AVR', 'active': false},
-        'atmelsam': {'title': 'Atmel SAM', 'active': false},
-        'stm32': {'title': 'STM32', 'active': false},
-        'teensy': {'title': 'Teensy', 'active': false},
-        'timsp430': {'title': 'TI MSP430', 'active': false},
-        'titiva': {'title': 'TI TIVA', 'active': false},
-        'creating': {'title': 'Creating Platform', 'active': false}
-      };
-
-      var _type = 'atmelavr';
-      if ($routeParams.hasOwnProperty('platformType')) {
-        _type = $routeParams.platformType;
-      }
-
-      angular.forEach(data, function(item, key) {
-        data[key].active = key === _type;
-      });
-
-      return data;
     }
   }
 })();

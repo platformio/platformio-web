@@ -1,5 +1,5 @@
-<view-title>{{ vm.vendors[vm.activeVendor].title }} · Embedded Boards</view-title>
-<meta name="description" content="Pre-configured settings for {{ vm.vendors[vm.activeVendor].title }}" view-head />
+<view-title>{{ vm.vendors[vm.activeVendor].name }} · Embedded Boards</view-title>
+<meta name="description" content="Pre-configured settings for {{ vm.vendors[vm.activeVendor].name }}" view-head />
 <meta name="keywords" content="arduino, microduino, raspduino, msp430, tiva, arm, launchpad" view-head />
 
 <div class="jumbotron">
@@ -10,8 +10,8 @@
       <b>PlatformIO</b> has pre-configured settings for the most popular <i>Embedded Boards</i>.
     </p>
     <p>
-      You can quickly initialize new project with specified <span class="label label-default">board</span> via 
-      <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init --board</a> 
+      You can quickly initialize new project with specified <span class="label label-default">board</span> via
+      <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init --board</a>
       command.
     </p>
 
@@ -23,7 +23,7 @@
   <tabset>
     <tab ng-repeat="vendor in vm.vendors" active="vendor.active">
       <tab-heading>
-        <a href="#!/boards/{{ vendor.type }}" ng-click="vm.changeVendor('{{ vendor.type }}')">{{ vendor.title }}</a>
+        <a href="#!/boards/{{ vendor.type }}" ng-click="vm.changeVendor('{{ vendor.type }}')">{{ vendor.name }}</a>
       </tab-heading>
 
       <table class="table table-striped">
@@ -43,7 +43,7 @@
             </td>
             <th>{{ board.name }}</th>
             <td>{{ board.mcu }}</td>
-            <td>{{ board.f_cpu }} MHz</td>
+            <td>{{ board.fCPU }} MHz</td>
             <td>{{ board.rom }} Kb</td>
             <td>{{ board.ram }} Kb</td>
           </tr>
@@ -53,11 +53,11 @@
       <div class="alert alert-info">
         <ul class="fa-ul">
           <li>
-            <i class="fa fa-info-circle fa-lg fa-li"></i> For more detailed information about <b>{{ vendor.title }} Boards</b> please go to 
+            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information about <b>{{ vendor.name }}</b> boards is located in
             <a href="http://docs.platformio.org/en/latest/platforms/index.html" class="alert-link">Documentation</a> or use <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command.
           </li>
         </ul>
-      </div>        
+      </div>
 
     </tab>
   </tabset>

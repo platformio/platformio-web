@@ -32,16 +32,16 @@
 
     function getVendors() {
       var data = [
-        {'type': 'arduino', 'title': 'Arduino', 'active': false},
-        {'type': 'adafruit', 'title': 'Adafruit', 'active': false},
-        {'type': 'digistump', 'title': 'Digistump', 'active': false},
-        {'type': 'engduino', 'title': 'Engduino', 'active': false},
-        {'type': 'microduino', 'title': 'Microduino', 'active': false},
-        {'type': 'raspduino', 'title': 'Raspduino', 'active': false},
-        {'type': 'stm32', 'title': 'STM32', 'active': false},
-        {'type': 'teensy', 'title': 'Teensy', 'active': false},
-        {'type': 'timsp430', 'title': 'TI MSP430', 'active': false},
-        {'type': 'titiva', 'title': 'TI Tiva', 'active': false}
+        {'type': 'arduino', 'name': 'Arduino', 'active': false},
+        {'type': 'adafruit', 'name': 'Adafruit', 'active': false},
+        {'type': 'digistump', 'name': 'Digistump', 'active': false},
+        {'type': 'engduino', 'name': 'Engduino', 'active': false},
+        {'type': 'microduino', 'name': 'Microduino', 'active': false},
+        {'type': 'raspduino', 'name': 'Raspduino', 'active': false},
+        {'type': 'stm32', 'name': 'STM32', 'active': false},
+        {'type': 'teensy', 'name': 'Teensy', 'active': false},
+        {'type': 'timsp430', 'name': 'TI MSP430', 'active': false},
+        {'type': 'titiva', 'name': 'TI Tiva', 'active': false}
       ];
 
       var _type = 'arduino';

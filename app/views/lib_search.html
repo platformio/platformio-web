@@ -21,7 +21,7 @@
       <ul class="dropdown-menu" role="menu">
         <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a>
         </li>
-        <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a>
+        <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:{{ item.type }}'; vm.submitSearchForm()">{{ item.name }}</a>
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
       <ul class="dropdown-menu" role="menu">
         <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a>
         </li>
-        <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a>
+        <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:{{ item.type }}'; vm.submitSearchForm()">{{ item.name }}</a>
         </li>
       </ul>
     </div>
@@ -49,8 +49,8 @@
           </h3>
           </div>
           <div class="col-xs-6 text-right">
-            <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="name in item.frameworks">{{ name | nameToTitle : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
-            <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="name in item.platforms">{{ name | nameToTitle : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in item.frameworks">{{ type | typeToName : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in item.platforms">{{ type | typeToName : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
             <span tooltip="Examples">{{ item.examplenums }} <i class="fa fa-graduation-cap"></i></span> &nbsp; <span tooltip="Downloads per month">{{ item.dlmonth }} <i class="fa fa-download"></i></span>
           </div>
         </div>

@@ -298,6 +298,36 @@
   width: 132px;
 }
 
+.brand-stm {
+  background-position: 0 -200px;
+  width: 192px;
+}
+
+.brand-adafruit {
+  background-position: 0 -250px;
+  width: 146px;
+}
+
+.brand-digistump {
+  background-position: 0 -300px;
+  width: 126px;
+}
+
+.brand-engduino {
+  background-position: 0 -350px;
+  width: 196px;
+}
+
+.brand-microduino {
+  background-position: 0 -400px;
+  width: 192px;
+}
+
+.brand-teensy {
+  background-position: 0 -450px;
+  width: 152px;
+}
+
 /* Miscellaneous */
 
 .fa-heart {

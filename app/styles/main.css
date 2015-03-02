@@ -89,6 +89,11 @@
   padding: 20px;
 }
 
+.footer .brands:hover,
+.footer .brands:focus {
+  text-decoration: none;
+}
+
 /* Home */
 
 .home h1 {

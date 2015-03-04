@@ -38,6 +38,7 @@
         {'type': 'engduino', 'name': 'Engduino', 'active': false},
         {'type': 'microduino', 'name': 'Microduino', 'active': false},
         {'type': 'raspduino', 'name': 'Raspduino', 'active': false},
+        {'type': 'sainsmart', 'name': 'SainSmart', 'active': false},
         {'type': 'stm32', 'name': 'STM32', 'active': false},
         {'type': 'teensy', 'name': 'Teensy', 'active': false},
         {'type': 'timsp430', 'name': 'TI MSP430', 'active': false},

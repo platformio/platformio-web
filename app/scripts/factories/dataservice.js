@@ -407,7 +407,14 @@
           ram: 2.5
         }, {
           type: 'due',
-          name: 'Arduino Due',
+          name: 'Arduino Due (Programming Port)',
+          mcu: 'AT91SAM3x8e',
+          fCPU: 84,
+          rom: 512,
+          ram: 32
+        }, {
+          type: 'dueUSB',
+          name: 'Arduino Due (USB Native Port)',
           mcu: 'AT91SAM3x8e',
           fCPU: 84,
           rom: 512,
@@ -608,6 +615,22 @@
           rom: 32,
           ram: 2
         }],
+        sainsmart: [{
+          type: 'sainSmartDue',
+          name: 'SainSmart Due (Programming Port)',
+          mcu: 'AT91SAM3x8e',
+          fCPU: 84,
+          rom: 512,
+          ram: 32
+        }, {
+          type: 'sainSmartDueUSB',
+          name: 'SainSmart Due (USB Native Port)',
+          mcu: 'AT91SAM3x8e',
+          fCPU: 84,
+          rom: 512,
+          ram: 32
+        }
+        ],
         teensy: [{
           type: 'teensy20',
           name: 'Teensy 2.0',

@@ -52,6 +52,9 @@
         type: 'energia',
         name: 'Energia'
       }, {
+        type: 'mbed',
+        name: 'MBED'
+      }, {
         type: 'opencm3',
         name: 'OpenCM3'
       }];
@@ -122,6 +125,12 @@
         },
         'framework-energiativa': {
           contents: 'Energia Wiring-based Framework (LM4F Core)'
+        },
+        'framework-mbed': {
+          contents: (
+            'Framework for internet-connected devices ' + 
+            'based on 32-bit ARM Cortex-M microcontrollers'
+            )
         }
       };
     }
@@ -153,8 +162,18 @@
           'framework-arduinosam'
         ]
       }, {
-        type: 'stm32',
-        name: 'STM32',
+        type: 'freescalekinetis',
+        name: 'Freescale Kinetis',
+        description: (
+          '<a href="http://docs.platformio.org/en/latest/platforms/freescalekinetis.html" target="_blank">' +
+          'The Freescale Kinetis Microcontrollers is family of multiple hardware- and software-compatible ' +
+          'ARM® Cortex®-M0+, Cortex-M4 and Cortex-M7-based MCU series. Kinetis MCUs offer exceptional '+
+          'low-power performance, scalability and feature integration.'
+        ),
+        packages: ['toolchain-gccarmnoneeabi', 'framework-mbed']
+      },{
+        type: 'ststm32',
+        name: 'ST STM32',
         description: (
           '<a href="http://docs.platformio.org/en/latest/platforms/stm32.html" target="_blank">' +
           'The STM32 family of 32-bit Flash MCUs</a> based on the ARM® Cortex®-M processor ' +
@@ -204,6 +223,29 @@
         packages: ['toolchain-gccarmnoneeabi', 'tool-lm4flash',
           'framework-energiativa', 'framework-opencm3'
         ]
+      }, {
+        type: 'nordicnrf51',
+        name: 'Nordic nRF51',
+        description: (
+          '<a href="http://docs.platformio.org/en/latest/platforms/nordicnrf51.html" target="_blank">' +
+          'The Nordic nRF51 Series is a family of highly flexible, multi-protocol ' +
+          'system-on-chip (SoC) devices for ultra-low power wireless applications. ' +
+          'nRF51 Series devices support a range of protocol stacks including Bluetooth Smart ' +
+          '(previously called Bluetooth low energy), ANT and proprietary 2.4GHz protocols.'
+        ),
+        packages: ['toolchain-gccarmnoneeabi', 'framework-mbed']
+      }, {
+        type: 'nxplpc',
+        name: 'NXP LPC',
+        description: (
+          '<a href="http://docs.platformio.org/en/latest/platforms/nxplpc.html" target="_blank">' +
+          'The NXP LPC is a family of 32-bit microcontroller integrated circuits by NXP. ' +
+          'The LPC chips are grouped into related series that are based around the same ' +
+          '32-bit ARM processor core, such as the Cortex-M4F, Cortex-M3, Cortex-M0+,' +
+          'or Cortex-M0. Internally, each microcontroller consists of the processor core, '+
+          'static RAM memory, flash memory, debugging interface, and various peripherals.'
+        ),
+        packages: ['toolchain-gccarmnoneeabi', 'framework-mbed']
       }];
     }
 
@@ -585,27 +627,332 @@
           rom: 32,
           ram: 2.5
         }],
+        freescalekinetis: [{
+          type: 'frdm_kl05z',
+          name: 'Freescale Kinetis FRDM-KL05Z',
+          mcu: 'MKL05Z32VFM4',
+          fCPU: 48,
+          rom: 32,
+          ram: 4
+        }, {
+          type: 'frdm_kl25z',
+          name: 'Freescale Kinetis FRDM-KL25Z',
+          mcu: 'MKL25Z128VLK4',
+          fCPU: 48,
+          rom: 128,
+          ram: 16
+        }, {
+          type: 'frdm_kl46z',
+          name: 'Freescale Kinetis FRDM-KL46Z',
+          mcu: 'MKL46Z256Vll4',
+          fCPU: 48,
+          rom: 256,
+          ram: 32
+        }, {
+          type: 'frdm_k22f',
+          name: 'Freescale Kinetis FRDM-K22F',
+          mcu: 'MK22FN512VLH12',
+          fCPU: 120,
+          rom: 512,
+          ram: 128
+        }, {
+          type: 'frdm_k64f',
+          name: 'Freescale Kinetis FRDM-K64F',
+          mcu: 'MK64fN1M0VLL12',
+          fCPU: 120,
+          rom: 1024,
+          ram: 256
+        }, {
+          type: 'frdm_k20d50m',
+          name: 'Freescale Kinetis FRDM-K20D50M',
+          mcu: 'MK20DX128VLH5',
+          fCPU: 48,
+          rom: 128,
+          ram: 16
+        }],
+        raspduino: [{
+          type: 'raspduino',
+          name: 'Raspduino',
+          mcu: 'ATmega328P',
+          fCPU: 16,
+          rom: 32,
+          ram: 2
+        }],
+        nordicnrf51: [{
+          type: 'nrf51_mkit',
+          name: 'Nordic nRF51822-mKIT',
+          mcu: 'NRF51822',
+          fCPU: 16,
+          rom: 128,
+          ram: 16
+          }, {
+          type: 'nrf51_dongle',
+          name: 'Nordic nRF51-Dongle',
+          mcu: 'NRF51822/NRF51422',
+          fCPU: 32,
+          rom: 256,
+          ram: 16
+          }, {
+          type: 'nrf51_dk',
+          name: 'Nordic nRF51-DK',
+          mcu: 'NRF51822/NRF51422',
+          fCPU: 32,
+          rom: 256,
+          ram: 16
+          }, {
+          type: 'redBearLab',
+          name: 'RedBearLab nRF51822',
+          mcu: 'NRF51822',
+          fCPU: 16,
+          rom: 256,
+          ram: 16
+          }, {
+          type: 'redBearLabBLENano',
+          name: 'RedBearLab BLE Nano',
+          mcu: 'NRF51822',
+          fCPU: 16,
+          rom: 256,
+          ram: 16
+          }, {
+          type: 'wallBotBLE',
+          name: 'JKSoft Wallbot BLE',
+          mcu: 'NRF51822',
+          fCPU: 16,
+          rom: 128,
+          ram: 16
+          }, {
+          type: 'hrm1017',
+          name: 'Switch Science mbed HRM1017',
+          mcu: 'NRF51822',
+          fCPU: 16,
+          rom: 128,
+          ram: 16
+        }],
+        nxplpc: [{
+          type: 'lpc1549',
+          name: 'LPCXpresso1549',
+          mcu: 'LPC1549',
+          fCPU: 72,
+          rom: 256,
+          ram: 36
+          }, {
+          type: 'lpc1768',
+          name: 'mbed LPC1768',
+          mcu: 'LPC1768',
+          fCPU: 96,
+          rom: 512,
+          ram: 32
+          }, {
+          type: 'seeeduinoArchPro',
+          name: 'Seeeduino-Arch-Pro',
+          mcu: 'LPC1768',
+          fCPU: 96,
+          rom: 512,
+          ram: 32
+          }, {
+          type: 'ubloxc027',
+          name: 'U-blox C027',
+          mcu: 'LPC1768',
+          fCPU: 96,
+          rom: 512,
+          ram: 32
+          }, {
+          type: 'lpc1114fn28',
+          name: 'mbed LPC1114FN28',
+          mcu: 'LPC1114FN28',
+          fCPU: 48,
+          rom: 32,
+          ram: 4
+          }, {
+          type: 'lpc11u24',
+          name: 'mbed LPC11U24',
+          mcu: 'LPC11U24',
+          fCPU: 48,
+          rom: 32,
+          ram: 8
+          }, {
+          type: 'dipcortexm0',
+          name: 'DipCortex M0',
+          mcu: 'LPC11U24',
+          fCPU: 50,
+          rom: 32,
+          ram: 8
+          }, {
+          type: 'blueboard_lpc11u24',
+          name: 'BlueBoard-LPC11U24',
+          mcu: 'LPC11U24',
+          fCPU: 48,
+          rom: 32,
+          ram: 8
+          }, {
+          type: 'mbuino',
+          name: 'Outrageous Circuits mBuino',
+          mcu: 'LPC11U24',
+          fCPU: 50,
+          rom: 32,
+          ram: 8
+          }, {
+          type: 'lpc11u35',
+          name: 'EA LPC11U35 QuickStart Board',
+          mcu: 'LPC11U35',
+          fCPU: 48,
+          rom: 64,
+          ram: 10
+          }, {
+          type: 'lpc11u35_501',
+          name: 'TG-LPC11U35-501 QuickStart Board',
+          mcu: 'LPC11U35',
+          fCPU: 48,
+          rom: 64,
+          ram: 10
+          }, {
+          type: 'lpc4088',
+          name: 'EA LPC4088 QuickStart Board',
+          mcu: 'LPC4088',
+          fCPU: 120,
+          rom: 512,
+          ram: 96
+          }, {
+          type: 'lpc4088_dm',
+          name: 'EA LPC4088 Display Module',
+          mcu: 'LPC4088',
+          fCPU: 120,
+          rom: 512,
+          ram: 96
+        }],
         stm32: [{
-          type: 'stm32ldiscovery',
-          name: 'Discovery kit for STM32L151/152 line',
+          type: 'disco_l152rb',
+          name: 'STM32LDISCOVERY',
           mcu: 'STM32L152rbt6',
           fCPU: 32,
           rom: 128,
           ram: 16
         }, {
-          type: 'stm32f3discovery',
-          name: 'Discovery kit for STM32F303xx microcontrollers',
+          type: 'disco_f303vc',
+          name: 'STM32F3DISCOVERY',
           mcu: 'STM32F303vct6',
           fCPU: 72,
           rom: 256,
           ram: 48
         }, {
-          type: 'stm32f4discovery',
-          name: 'Discovery kit for STM32F407/417 lines',
+          type: 'disco_f407vg',
+          name: 'STM32F4DISCOVERY',
           mcu: 'STM32F407vgt6',
           fCPU: 168,
           rom: 1024,
           ram: 192
+        }, {
+          type: 'disco_f100rb',
+          name: 'STM32VLDISCOVERY',
+          mcu: 'STM32F100rbt6',
+          fCPU: 24,
+          rom: 128,
+          ram: 8
+        }, {
+          type: 'disco_f051r8',
+          name: 'STM32F0DISCOVERY',
+          mcu: 'STM32F051r8t6',
+          fCPU: 48,
+          rom: 64,
+          ram: 8
+        }, {
+          type: 'disco_f334c8',
+          name: '32F3348DISCOVERY',
+          mcu: 'STM32F334c8t6',
+          fCPU: 72,
+          rom: 64,
+          ram: 16
+        }, {
+          type: 'disco_f401vc',
+          name: '32F401CDISCOVERY',
+          mcu: 'STM32F401vct6',
+          fCPU: 84,
+          rom: 256,
+          ram: 64
+        }, {
+          type: 'disco_f429zi',
+          name: '32F429IDISCOVERY',
+          mcu: 'STM32F429zit6',
+          fCPU: 180,
+          rom: 2048,
+          ram: 256
+        }, {
+          type: 'nucleo_f030r8',
+          name: 'ST Nucleo F030R8',
+          mcu: 'STM32F030r8t6',
+          fCPU: 48,
+          rom: 64,
+          ram: 8
+        }, {
+          type: 'nucleo_f070rb',
+          name: 'ST Nucleo F070RB',
+          mcu: 'STM32F070rbt6',
+          fCPU: 48,
+          rom: 128,
+          ram: 16
+        }, {
+          type: 'nucleo_f072rb',
+          name: 'ST Nucleo F072RB',
+          mcu: 'STM32F072rbt6',
+          fCPU: 48,
+          rom: 128,
+          ram: 16
+        }, {
+          type: 'nucleo_f091rc',
+          name: 'ST Nucleo F091RC',
+          mcu: 'STM32F091rct6',
+          fCPU: 48,
+          rom: 256,
+          ram: 32
+        }, {
+          type: 'nucleo_f103rb',
+          name: 'ST Nucleo F103RB',
+          mcu: 'STM32F103rbt6',
+          fCPU: 72,
+          rom: 128,
+          ram: 20
+        }, {
+          type: 'nucleo_f302r8',
+          name: 'ST Nucleo F302R8',
+          mcu: 'STM32F302r8t6',
+          fCPU: 72,
+          rom: 64,
+          ram: 16
+        }, {
+          type: 'nucleo_f334r8',
+          name: 'ST Nucleo F334R8',
+          mcu: 'STM32F334r8t6',
+          fCPU: 72,
+          rom: 64,
+          ram: 16
+        }, {
+          type: 'nucleo_f401re',
+          name: 'ST Nucleo F401RE',
+          mcu: 'STM32F401ret6',
+          fCPU: 84,
+          rom: 512,
+          ram: 96
+        }, {
+          type: 'nucleo_f411re',
+          name: 'ST Nucleo F411RE',
+          mcu: 'STM32F411ret6',
+          fCPU: 100,
+          rom: 512,
+          ram: 128
+        }, {
+          type: 'nucleo_l053r8',
+          name: 'ST Nucleo L053R8',
+          mcu: 'STM32L053r8t6',
+          fCPU: 48,
+          rom: 64,
+          ram: 8
+        }, {
+          type: 'nucleo_l152re',
+          name: 'ST Nucleo L152RE',
+          mcu: 'STM32L152ret6',
+          fCPU: 32,
+          rom: 512,
+          ram: 80
         }],
         raspduino: [{
           type: 'raspduino',

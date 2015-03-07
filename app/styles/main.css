@@ -333,6 +333,26 @@
   width: 140px;
 }
 
+.brand-freescale {
+  background-position: 0 -500px;
+  width: 204px;
+}
+
+.brand-nordic {
+  background-position: 0 -550px;
+  width: 172px;
+}
+
+.brand-nxp {
+  background-position: 0 -600px;
+  width: 140px;
+}
+
+.brand-mbed {
+  background-position: 0 -650px;
+  width: 166px;
+}
+
 /* Miscellaneous */
 
 .fa-heart {

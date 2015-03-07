@@ -36,13 +36,15 @@
         {'type': 'adafruit', 'name': 'Adafruit', 'active': false},
         {'type': 'digistump', 'name': 'Digistump', 'active': false},
         {'type': 'engduino', 'name': 'Engduino', 'active': false},
+        {'type': 'freescale', 'name': 'Freescale', 'active': false},
         {'type': 'microduino', 'name': 'Microduino', 'active': false},
+        {'type': 'nordic', 'name': 'Nordic', 'active': false},
+        {'type': 'nxp', 'name': 'NXP', 'active': false},
         {'type': 'raspduino', 'name': 'Raspduino', 'active': false},
         {'type': 'sainsmart', 'name': 'SainSmart', 'active': false},
-        {'type': 'stm32', 'name': 'STM32', 'active': false},
+        {'type': 'st', 'name': 'ST', 'active': false},
         {'type': 'teensy', 'name': 'Teensy', 'active': false},
-        {'type': 'timsp430', 'name': 'TI MSP430', 'active': false},
-        {'type': 'titiva', 'name': 'TI Tiva', 'active': false}
+        {'type': 'ti', 'name': 'TI LaunchPads', 'active': false}
       ];
 
       var _type = 'arduino';

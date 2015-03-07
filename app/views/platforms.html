@@ -1,6 +1,6 @@
 <view-title>{{ vm.activeTabName }} · Development Platforms</view-title>
 <meta name="description" content="{{ vm.activeTabName }} pre-built development platform" view-head />
-<meta name="keywords" content="embedded, platform, atmel, avr, sam, teensy, msp430, arduino, energia" view-head />
+<meta name="keywords" content="embedded, platform, atmel, avr, sam, teensy, msp430, arduino, energia, MBED" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -45,7 +45,7 @@
           <td><span class="label label-default">{{ package }}</span>
           </td>
           <td>{{ vm.packages[package].alias }}</td>
-          <td>{{ vm.packages[package].contents }}</a>
+          <td ng-bind-html="vm.packages[package].contents"></a>
           </td>
         </tr>
       </table>
@@ -53,8 +53,8 @@
       <div class="alert alert-info" ng-if="!vm.platforms.creating.active">
         <ul class="fa-ul">
           <li>
-            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information about <b>{{ platform.name }}</b> platform is located in
-            <a href="http://docs.platformio.org/en/latest/platforms/index.html" class="alert-link">Documentation</a>.
+            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in documentation
+            <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html" class="alert-link">Platform {{ platform.name }}</a>.
           </li>
         </ul>
       </div>        

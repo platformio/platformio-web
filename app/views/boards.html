@@ -23,7 +23,7 @@
   <tabset>
     <tab ng-repeat="vendor in vm.vendors" active="vendor.active">
       <tab-heading>
-        <a href="#!/boards/{{ vendor.type }}" ng-click="vm.changeVendor('{{ vendor.type }}')">{{ vendor.name }}</a>
+        <a href="#!/boards/{{ vendor.type }}" ng-click="vm.changeVendor('{{ vendor.type }}')"><h3>{{ vendor.name }}</h3></a>
       </tab-heading>
 
       <table class="table table-striped">

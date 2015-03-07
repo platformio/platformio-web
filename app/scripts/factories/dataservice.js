@@ -103,10 +103,10 @@
           contents: 'Flash Programmer'
         },
         'framework-arduinoavr': {
-          contents: 'Arduino Wiring-based Framework (AVR Core, 1.6)'
+          contents: '<code>Arduino</code> Wiring-based Framework (AVR Core, 1.6)'
         },
         'framework-arduinosam': {
-          contents: 'Arduino Wiring-based Framework (SAM Core, 1.6)'
+          contents: '<code>Arduino</code> Wiring-based Framework (SAM Core, 1.6)'
         },
         'framework-cmsis': {
           contents: 'Vendor-independent hardware abstraction layer for the Cortex-M processor series'
@@ -115,22 +115,22 @@
           contents: 'Standard Peripheral Library for STM32 MCUs'
         },
         'framework-opencm3': {
-          contents: 'libOpenCM3 Framework'
+          contents: '<code>libOpenCM3</code>  Framework'
         },
         'framework-arduinoteensy': {
-          contents: 'Arduino Wiring-based Framework'
+          contents: '<code>Arduino</code>  Wiring-based Framework'
         },
         'framework-energiamsp430': {
-          contents: 'Energia Wiring-based Framework (MSP430 Core)'
+          contents: '<code>Energia</code>  Wiring-based Framework (MSP430 Core)'
         },
         'framework-energiativa': {
-          contents: 'Energia Wiring-based Framework (LM4F Core)'
+          contents: '<code>Energia</code>  Wiring-based Framework (LM4F Core)'
         },
         'framework-mbed': {
           contents: (
-            'Framework for internet-connected devices ' + 
+            '<code>MBED</code> Framework for internet-connected devices ' +
             'based on 32-bit ARM Cortex-M microcontrollers'
-            )
+          )
         }
       };
     }
@@ -166,24 +166,25 @@
         name: 'Freescale Kinetis',
         description: (
           '<a href="http://docs.platformio.org/en/latest/platforms/freescalekinetis.html" target="_blank">' +
-          'The Freescale Kinetis Microcontrollers is family of multiple hardware- and software-compatible ' +
-          'ARM® Cortex®-M0+, Cortex-M4 and Cortex-M7-based MCU series. Kinetis MCUs offer exceptional '+
+          'Freescale Kinetis Microcontrollers</a> is family of multiple hardware- and software-compatible ' +
+          'ARM® Cortex®-M0+, Cortex-M4 and Cortex-M7-based MCU series. Kinetis MCUs offer exceptional ' +
           'low-power performance, scalability and feature integration.'
         ),
         packages: ['toolchain-gccarmnoneeabi', 'framework-mbed']
-      },{
+      }, {
         type: 'ststm32',
         name: 'ST STM32',
         description: (
-          '<a href="http://docs.platformio.org/en/latest/platforms/stm32.html" target="_blank">' +
-          'The STM32 family of 32-bit Flash MCUs</a> based on the ARM® Cortex®-M processor ' +
+          '<a href="http://docs.platformio.org/en/latest/platforms/ststm32.html" target="_blank">' +
+          'STM32 family of 32-bit Flash MCUs</a> based on the ARM® Cortex®-M processor ' +
           'is designed to offer new degrees of freedom to MCU users. It offers a 32-bit ' +
           'product range that combines very high performance, real-time capabilities, ' +
           'digital signal processing, and low-power, low-voltage operation, while ' +
           'maintaining full integration and ease of development. '
         ),
         packages: ['toolchain-gccarmnoneeabi', 'tool-stlink',
-          'framework-cmsis', 'framework-spl', 'framework-opencm3'
+          'framework-cmsis', 'framework-spl', 'framework-opencm3',
+          'framework-mbed'
         ]
       }, {
         type: 'teensy',
@@ -228,7 +229,7 @@
         name: 'Nordic nRF51',
         description: (
           '<a href="http://docs.platformio.org/en/latest/platforms/nordicnrf51.html" target="_blank">' +
-          'The Nordic nRF51 Series is a family of highly flexible, multi-protocol ' +
+          'Nordic nRF51</a> Series is a family of highly flexible, multi-protocol ' +
           'system-on-chip (SoC) devices for ultra-low power wireless applications. ' +
           'nRF51 Series devices support a range of protocol stacks including Bluetooth Smart ' +
           '(previously called Bluetooth low energy), ANT and proprietary 2.4GHz protocols.'
@@ -239,10 +240,10 @@
         name: 'NXP LPC',
         description: (
           '<a href="http://docs.platformio.org/en/latest/platforms/nxplpc.html" target="_blank">' +
-          'The NXP LPC is a family of 32-bit microcontroller integrated circuits by NXP. ' +
+          'NXP LPC</a> is a family of 32-bit microcontroller integrated circuits by NXP. ' +
           'The LPC chips are grouped into related series that are based around the same ' +
           '32-bit ARM processor core, such as the Cortex-M4F, Cortex-M3, Cortex-M0+,' +
-          'or Cortex-M0. Internally, each microcontroller consists of the processor core, '+
+          'or Cortex-M0. Internally, each microcontroller consists of the processor core, ' +
           'static RAM memory, flash memory, debugging interface, and various peripherals.'
         ),
         packages: ['toolchain-gccarmnoneeabi', 'framework-mbed']
@@ -627,7 +628,7 @@
           rom: 32,
           ram: 2.5
         }],
-        freescalekinetis: [{
+        freescale: [{
           type: 'frdm_kl05z',
           name: 'Freescale Kinetis FRDM-KL05Z',
           mcu: 'MKL05Z32VFM4',
@@ -670,57 +671,49 @@
           rom: 128,
           ram: 16
         }],
-        raspduino: [{
-          type: 'raspduino',
-          name: 'Raspduino',
-          mcu: 'ATmega328P',
-          fCPU: 16,
-          rom: 32,
-          ram: 2
-        }],
-        nordicnrf51: [{
+        nordic: [{
           type: 'nrf51_mkit',
           name: 'Nordic nRF51822-mKIT',
           mcu: 'NRF51822',
           fCPU: 16,
           rom: 128,
           ram: 16
-          }, {
+        }, {
           type: 'nrf51_dongle',
           name: 'Nordic nRF51-Dongle',
           mcu: 'NRF51822/NRF51422',
           fCPU: 32,
           rom: 256,
           ram: 16
-          }, {
+        }, {
           type: 'nrf51_dk',
           name: 'Nordic nRF51-DK',
           mcu: 'NRF51822/NRF51422',
           fCPU: 32,
           rom: 256,
           ram: 16
-          }, {
+        }, {
           type: 'redBearLab',
           name: 'RedBearLab nRF51822',
           mcu: 'NRF51822',
           fCPU: 16,
           rom: 256,
           ram: 16
-          }, {
+        }, {
           type: 'redBearLabBLENano',
           name: 'RedBearLab BLE Nano',
           mcu: 'NRF51822',
           fCPU: 16,
           rom: 256,
           ram: 16
-          }, {
+        }, {
           type: 'wallBotBLE',
           name: 'JKSoft Wallbot BLE',
           mcu: 'NRF51822',
           fCPU: 16,
           rom: 128,
           ram: 16
-          }, {
+        }, {
           type: 'hrm1017',
           name: 'Switch Science mbed HRM1017',
           mcu: 'NRF51822',
@@ -728,91 +721,91 @@
           rom: 128,
           ram: 16
         }],
-        nxplpc: [{
+        nxp: [{
           type: 'lpc1549',
-          name: 'LPCXpresso1549',
+          name: 'NXP LPCXpresso1549',
           mcu: 'LPC1549',
           fCPU: 72,
           rom: 256,
           ram: 36
-          }, {
+        }, {
           type: 'lpc1768',
           name: 'mbed LPC1768',
           mcu: 'LPC1768',
           fCPU: 96,
           rom: 512,
           ram: 32
-          }, {
+        }, {
           type: 'seeeduinoArchPro',
           name: 'Seeeduino-Arch-Pro',
           mcu: 'LPC1768',
           fCPU: 96,
           rom: 512,
           ram: 32
-          }, {
+        }, {
           type: 'ubloxc027',
           name: 'U-blox C027',
           mcu: 'LPC1768',
           fCPU: 96,
           rom: 512,
           ram: 32
-          }, {
+        }, {
           type: 'lpc1114fn28',
           name: 'mbed LPC1114FN28',
           mcu: 'LPC1114FN28',
           fCPU: 48,
           rom: 32,
           ram: 4
-          }, {
+        }, {
           type: 'lpc11u24',
           name: 'mbed LPC11U24',
           mcu: 'LPC11U24',
           fCPU: 48,
           rom: 32,
           ram: 8
-          }, {
+        }, {
           type: 'dipcortexm0',
           name: 'DipCortex M0',
           mcu: 'LPC11U24',
           fCPU: 50,
           rom: 32,
           ram: 8
-          }, {
+        }, {
           type: 'blueboard_lpc11u24',
           name: 'BlueBoard-LPC11U24',
           mcu: 'LPC11U24',
           fCPU: 48,
           rom: 32,
           ram: 8
-          }, {
+        }, {
           type: 'mbuino',
           name: 'Outrageous Circuits mBuino',
           mcu: 'LPC11U24',
           fCPU: 50,
           rom: 32,
           ram: 8
-          }, {
+        }, {
           type: 'lpc11u35',
           name: 'EA LPC11U35 QuickStart Board',
           mcu: 'LPC11U35',
           fCPU: 48,
           rom: 64,
           ram: 10
-          }, {
+        }, {
           type: 'lpc11u35_501',
           name: 'TG-LPC11U35-501 QuickStart Board',
           mcu: 'LPC11U35',
           fCPU: 48,
           rom: 64,
           ram: 10
-          }, {
+        }, {
           type: 'lpc4088',
           name: 'EA LPC4088 QuickStart Board',
           mcu: 'LPC4088',
           fCPU: 120,
           rom: 512,
           ram: 96
-          }, {
+        }, {
           type: 'lpc4088_dm',
           name: 'EA LPC4088 Display Module',
           mcu: 'LPC4088',
@@ -820,58 +813,58 @@
           rom: 512,
           ram: 96
         }],
-        stm32: [{
+        st: [{
           type: 'disco_l152rb',
-          name: 'STM32LDISCOVERY',
+          name: 'ST STM32LDISCOVERY',
           mcu: 'STM32L152rbt6',
           fCPU: 32,
           rom: 128,
           ram: 16
         }, {
           type: 'disco_f303vc',
-          name: 'STM32F3DISCOVERY',
+          name: 'ST STM32F3DISCOVERY',
           mcu: 'STM32F303vct6',
           fCPU: 72,
           rom: 256,
           ram: 48
         }, {
           type: 'disco_f407vg',
-          name: 'STM32F4DISCOVERY',
+          name: 'ST STM32F4DISCOVERY',
           mcu: 'STM32F407vgt6',
           fCPU: 168,
           rom: 1024,
           ram: 192
         }, {
           type: 'disco_f100rb',
-          name: 'STM32VLDISCOVERY',
+          name: 'ST STM32VLDISCOVERY',
           mcu: 'STM32F100rbt6',
           fCPU: 24,
           rom: 128,
           ram: 8
         }, {
           type: 'disco_f051r8',
-          name: 'STM32F0DISCOVERY',
+          name: 'ST STM32F0DISCOVERY',
           mcu: 'STM32F051r8t6',
           fCPU: 48,
           rom: 64,
           ram: 8
         }, {
           type: 'disco_f334c8',
-          name: '32F3348DISCOVERY',
+          name: 'ST 32F3348DISCOVERY',
           mcu: 'STM32F334c8t6',
           fCPU: 72,
           rom: 64,
           ram: 16
         }, {
           type: 'disco_f401vc',
-          name: '32F401CDISCOVERY',
+          name: 'ST 32F401CDISCOVERY',
           mcu: 'STM32F401vct6',
           fCPU: 84,
           rom: 256,
           ram: 64
         }, {
           type: 'disco_f429zi',
-          name: '32F429IDISCOVERY',
+          name: 'ST 32F429IDISCOVERY',
           mcu: 'STM32F429zit6',
           fCPU: 180,
           rom: 2048,
@@ -976,8 +969,7 @@
           fCPU: 84,
           rom: 512,
           ram: 32
-        }
-        ],
+        }],
         teensy: [{
           type: 'teensy20',
           name: 'Teensy 2.0',
@@ -1007,7 +999,7 @@
           rom: 256,
           ram: 64
         }],
-        timsp430: [{
+        ti: [{
           type: 'lpmsp430g2231',
           name: 'MSP430G2231 LaunchPad',
           mcu: 'MSP430G2231',
@@ -1056,8 +1048,7 @@
           fCPU: 16,
           rom: 64,
           ram: 2
-        }],
-        titiva: [{
+        }, {
           type: 'lplm4f120h5qr',
           name: 'Stellaris LM4F120 LaunchPad',
           mcu: 'LM4F120H5QR',

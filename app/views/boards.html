@@ -1,4 +1,4 @@
-<view-title>{{ vm.vendors[vm.activeVendor].name }} · Embedded Boards</view-title>
+<view-title>Embedded Boards</view-title>
 <meta name="description" content="Pre-configured settings for {{ vm.vendors[vm.activeVendor].name }}" view-head />
 <meta name="keywords" content="arduino, microduino, raspduino, msp430, tiva, arm, launchpad" view-head />
 
@@ -10,9 +10,8 @@
       <b>PlatformIO</b> has pre-configured settings for the most popular <i>Embedded Boards</i>.
     </p>
     <p>
-      You can quickly initialize new project with specified <span class="label label-default">board</span> via
-      <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init --board</a>
-      command.
+      <code>Hint!</code> You can quickly initialize new project with specified board <span class="label label-default">type</span> via
+      <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init --board</a> command.
     </p>
 
   </div>
@@ -20,46 +19,61 @@
 
 <div class="container">
 
-  <tabset>
-    <tab ng-repeat="vendor in vm.vendors" active="vendor.active">
-      <tab-heading>
-        <a href="#!/boards/{{ vendor.type }}" ng-click="vm.changeVendor('{{ vendor.type }}')"><h3>{{ vendor.name }}</h3></a>
-      </tab-heading>
-
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Type <span class="label label-default">board</span></th>
-            <th>Name</th>
-            <th>Microcontroller</th>
-            <th>Frequency</th>
-            <th>Flash</th>
-            <th>RAM</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="board in vm.boards[vendor.type]">
-            <td><span class="label label-default">{{ board.type }}</span>
-            </td>
-            <th>{{ board.name }}</th>
-            <td>{{ board.mcu }}</td>
-            <td>{{ board.fCPU }} MHz</td>
-            <td>{{ board.rom }} Kb</td>
-            <td>{{ board.ram }} Kb</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="alert alert-info">
-        <ul class="fa-ul">
-          <li>
-            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information about <b>{{ vendor.name }}</b> boards is located in
-            <a href="http://docs.platformio.org/en/latest/platforms/index.html" class="alert-link">Documentation</a> or use <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command.
-          </li>
-        </ul>
+  <div class="row">
+    <div class="col-md-8"><b>Group by</b> &nbsp;
+      <div class="btn-group">
+        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'vendor'">Vendor</label>
+        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'platform'">Platform</label>
+        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'mcu'">MCU</label>
       </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <button ng-click="vm.tableParams.filter({})" class="btn btn-default">Clear filters</button>
+        <button ng-click="vm.tableParams.sorting({'vendor' : 'asc'})" class="btn btn-default">Clear sorting</button>
+    </div>
+  </div>
 
-    </tab>
-  </tabset>
+  <br>
+
+  <table ng-table="vm.tableParams" show-filter="true" class="table">
+    <tbody ng-repeat="group in $groups">
+      <tr class="ng-table-group">
+        <td colspan="{{$columns.length}}">
+          <a href="" ng-click="group.$hideRows = !group.$hideRows">
+            <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+            <strong>{{ group.value }}</strong>
+          </a>
+        </td>
+      </tr>
+      <tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
+        <td sortable="'type'" data-title="'Type'" filter="{ 'type': 'text' }">
+          <span class="label label-default">{{ item.type }}</span>
+        </td>
+        <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
+          <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+        </td>
+        <td sortable="'platform'" data-title="'Platform'" filter="{ 'platform': 'select' }" filter-data="vm.getFilterData('platforms')">
+          <a href="#!/platforms/{{ item.platform }}">{{ item.platform | typeToName : vm.platforms }}</a>
+        </td>
+        <td data-title="'Frameworks'" filter="{ 'frameworks': 'select' }" filter-data="vm.getFilterData('frameworks')">
+            <span ng-repeat="framework in item.frameworks">
+              <a href="#!/frameworks/{{ framework }}">{{ framework | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span>
+            </span>           
+        </td>          
+        <td sortable="'mcu'" data-title="'MCU'" filter="{ 'mcu': 'text' }">
+          {{ item.mcu }}
+        </td>
+        <td sortable="'fcpu'" data-title="'Frequency'">
+          {{ item.fcpu | embeddedFormatter : 'frequency' }}
+        </td>
+        <td sortable="'ram'" data-title="'RAM'">
+          {{ item.ram | embeddedFormatter : 'size' }}
+        </td>
+        <td sortable="'rom'" data-title="'Flash'">
+          {{ item.rom | embeddedFormatter : 'size' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>

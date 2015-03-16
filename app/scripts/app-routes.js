@@ -42,9 +42,27 @@
         controllerAs: 'vm'
       })
       .when('/boards/:vendorType?', {
+      .when('/boards', {
         templateUrl: 'views/boards.html',
         controller: 'BoardsController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          boardsList: ['dataService',
+            function(dataService) {
+              return dataService.getBoards().$promise;
+            }
+          ],
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ]
+        }
       })
       .when('/lib', {
         templateUrl: 'views/lib_main.html',

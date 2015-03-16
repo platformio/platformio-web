@@ -22,6 +22,7 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
+  <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -193,6 +194,10 @@
     }
   </script>
 
+  <!--[if lt IE 9]>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <![endif]-->  
+
   <!-- build:js(.) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -219,6 +224,7 @@
   <script src="bower_components/angular-disqus/angular-disqus.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>
   <script src="bower_components/angular-relative-date/angular-relative-date.js"></script>
+  <script src="bower_components/ng-table/dist/ng-table.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -228,6 +234,7 @@
   <script src="scripts/factories/dataservice.js"></script>
   <script src="scripts/factories/utils.js"></script>
   <script src="scripts/directives/addthis.js"></script>
+  <script src="scripts/filters/embedded-formatter.js"></script>
   <script src="scripts/filters/type-to-name.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/platforms.js"></script>

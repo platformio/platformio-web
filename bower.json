@@ -1,6 +1,6 @@
 {
   "name": "platformio-web",
-  "version": "0.1.0-dev",
+  "version": "0.2.0",
   "dependencies": {
     "json3": "*",
     "es5-shim": "*",
@@ -18,7 +18,8 @@
     "angulartics": "~0.17.1",
     "angular-highlightjs": "~0.4.0",
     "angular-disqus": "~1.1.0",
-    "angular-relative-date": "~0.2.0"
+    "angular-relative-date": "~0.2.0",
+    "ng-table": "~0.5.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

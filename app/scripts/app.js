@@ -18,11 +18,13 @@
     'angulartics.google.analytics',
     'hljs',
     'ngDisqus',
-    'relativeDate'
+    'relativeDate',
+    'ngTable'
   ])
 
   .constant('siteConfig', {
     apiURL: (parseInt(location.port) === 9000 ? 'http://localhost:8080' :
       'http://api.platformio.org')
-  })
+  });
+
 })();

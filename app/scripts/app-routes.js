@@ -27,6 +27,7 @@
     $locationProvider.hashPrefix('!');
     $disqusProvider.setShortname('platformio');
     $httpProvider.interceptors.push('httpErrorInterceptor');
+    $httpProvider.defaults.cache = true;
 
     $routeProvider
       .when('/', {

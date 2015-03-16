@@ -25,7 +25,9 @@
   function routeConfig($locationProvider, $routeProvider,
     $disqusProvider, $httpProvider) {
     $locationProvider.hashPrefix('!');
+
     $disqusProvider.setShortname('platformio');
+
     $httpProvider.interceptors.push('httpErrorInterceptor');
     $httpProvider.defaults.cache = true;
 
@@ -39,9 +41,32 @@
       .when('/platforms/:platformType?', {
         templateUrl: 'views/platforms.html',
         controller: 'PlatformsController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
+          ],
+          packagesList: ['dataService',
+            function(dataService) {
+              return dataService.getPackages().$promise;
+            }
+          ]
+        }
       })
-      .when('/boards/:vendorType?', {
+      .when('/frameworks/:frameworkType?', {
+        templateUrl: 'views/frameworks.html',
+        controller: 'FrameworksController',
+        controllerAs: 'vm',
+        resolve: {
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ]
+        }
+      })
       .when('/boards', {
         templateUrl: 'views/boards.html',
         controller: 'BoardsController',

@@ -1,5 +1,5 @@
-<view-title>{{ vm.activeTabName }} · Development Platforms</view-title>
-<meta name="description" content="{{ vm.activeTabName }} pre-built development platform" view-head />
+<view-title>{{ vm.tabs[vm.activeTab].name }} · Development Platforms</view-title>
+<meta name="description" content="{{ vm.tabs[vm.activeTab].name }} pre-built development platform" view-head />
 <meta name="keywords" content="embedded, platform, atmel, avr, sam, teensy, msp430, arduino, energia, MBED" view-head />
 
 <div class="jumbotron">
@@ -19,36 +19,16 @@
 
 <div class="container">
 
-  <tabset>
+  <tabset type="pills">
 
-
-    <tab ng-repeat="platform in vm.platforms" active="platform.active">
+    <tab ng-repeat="platform in vm.platforms" active="vm.tabs[platform.type].active">
       <tab-heading>
         <a href="#!/platforms/{{ platform.type }}" ng-click="vm.changePlatform('{{ platform.type }}')"><h3>{{ platform.name }}</h3></a>
       </tab-heading>
 
       <br>
 
-      <p class="lead" ng-bind-html="platform.description"></p>
-
-      <h2>Packages</h2>
-
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Alias</th>
-            <th>Contents</th>
-          </tr>
-        </thead>
-        <tr ng-repeat="package in platform.packages">
-          <td><span class="label label-default">{{ package }}</span>
-          </td>
-          <td>{{ vm.packages[package].alias }}</td>
-          <td ng-bind-html="vm.packages[package].contents"></a>
-          </td>
-        </tr>
-      </table>
+      <p class="lead"><code>{{ platform.type }}</code> {{ platform.description }}</p>
 
       <div class="alert alert-info" ng-if="!vm.platforms.creating.active">
         <ul class="fa-ul">
@@ -57,11 +37,36 @@
             <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html" class="alert-link">Platform {{ platform.name }}</a>.
           </li>
         </ul>
-      </div>        
+      </div> 
+
+      <h2>Packages</h2>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contents</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="package in platform.packages">
+          <td><span class="label label-default">{{ package }}</span>
+          </td>
+          <td>
+            <span ng-repeat="content in vm.packages[package]">
+              <a href="{{ content.url }}">{{ content.name }}</a><span ng-if="!$last">,&nbsp;</span>
+            </span>
+          </td>
+        </tr>
+      </table>
+
+      <h2>Boards</h2>
+
+      To list supported boards by <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+      or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.       
 
     </tab>
 
-    <tab>
+    <tab  active="vm.tabs[platform.type].active">
       <tab-heading>
         <a href="#!/platforms/creating" ng-click="vm.changePlatform('creating')"><h3><i class="fa fa-plus"></i> Create Platform</h3></a>
       </tab-heading>
@@ -77,10 +82,10 @@
         For this purpose <i>PlatformIO</i> uses own pre-configured platforms data:
         build scripts, tool chains, the settings for the most popular embedded boards and etc.
         These data are pre-built and packaged to the different "packages".
-        
+
         <br> <br>
         It allows <i>PlatformIO</i> to have multiple development platforms which can use the same packages(tool chains, frameworks),
-        but have different/own build scripts, uploader and etc.                 
+        but have different/own build scripts, uploader and etc.
       </p>
 
       <p class="text-center">

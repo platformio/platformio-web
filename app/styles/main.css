@@ -140,6 +140,10 @@
   font-size: 40px;
 }
 
+.nav-pills .active a {
+  color: #fff;
+}
+
 /* Code highlighting */
 
 .hljs {
@@ -353,6 +357,30 @@
   width: 166px;
 }
 
+.brand-libopencm3 {
+  background-position: 0 -700px;
+  width: 186px;
+}
+
+.brand-seeed {
+  background-position: 0 -750px;
+  width: 208px;
+}
+
+.brand-redbearlab {
+  background-position: 0 -800px;
+  width: 178px;
+}
+
+.brand-panstamp {
+  background-position: 0 -850px;
+  width: 152px;
+}
+
+.brand-ea {
+  background-position: 0 -900px;
+  width: 82px;
+}
 /* Miscellaneous */
 
 .fa-heart {

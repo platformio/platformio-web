@@ -45,6 +45,7 @@
           <ul class="nav navbar-nav">
             <li ng-class="{active: vm.isRouteActive('/get-started')}"><a href="#!/get-started"><i class="fa fa-rocket fa-lg"></i>Get Started</a></li>
             <li ng-class="{active: vm.isRouteActive('/platforms')}"><a href="#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a></li>
+            <li ng-class="{active: vm.isRouteActive('/frameworks')}"><a href="#!/frameworks"><i class="fa fa-cogs fa-lg"></i>Frameworks</a></li>
             <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a></li>
             <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" dropdown>
               <a href="#!/lib" class="btn btn-main"><i class="fa fa-book fa-lg"></i>Libraries</a>
@@ -72,6 +73,7 @@
                 <li><a href="http://docs.platformio.org/en/latest/installation.html">Installation</a></li>
                 <li><a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File</a></li>
                 <li><a href="http://docs.platformio.org/en/latest/platforms/index.html">Platforms & Embedded Boards</a></li>
+                <li><a href="http://docs.platformio.org/en/latest/frameworks/index.html">Frameworks</a></li>
                 <li class="divider"></li>
                 <li><a href="http://docs.platformio.org/en/latest/librarymanager/index.html">Library Manager</a></li>
                 <li><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html">Creating Library</a></li>
@@ -224,6 +226,7 @@
   <script src="scripts/filters/type-to-name.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/platforms.js"></script>
+  <script src="scripts/controllers/frameworks.js"></script>
   <script src="scripts/controllers/boards.js"></script>
   <script src="scripts/controllers/lib-main.js"></script>
   <script src="scripts/controllers/lib-modalse.js"></script>

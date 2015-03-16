@@ -41,7 +41,7 @@
 
         <dt>Compatibility</dt>
         <dd>
-          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> {{ type | typeToName : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> <a href="#!/frameworks/{{ type }}">{{ type | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
           <br>
           </span>
           <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in vm.lib.platforms"> {{ type | typeToName : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span>

@@ -1,0 +1,50 @@
+<view-title>{{ vm.tabs[vm.activeTab].name }} · Frameworks</view-title>
+<meta name="description" content="{{ vm.tabs[vm.activeTab].name }} pre-built development framework" view-head />
+<meta name="keywords" content="embedded, framework, arduino, energia, mbed, libopencm3, cmsis, spl" view-head />
+
+<div class="jumbotron">
+  <div class="container">
+    <h1><i class="fa fa-cogs"></i> Frameworks</h1>
+
+    <p>
+      <b>PlatformIO</b> has pre-built different development frameworks with auto-updating feature.
+    </p>
+    <p>
+      <code>Hint!</code> You can specify multiple frameworks per project environment using <a href="http://docs.platformio.org/en/latest/projectconf.html#framework">framework</a> option.
+    </p>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <tabset>
+
+    <tab ng-repeat="framework in vm.frameworks" active="vm.tabs[framework.type].active">
+      <tab-heading>
+        <a href="#!/frameworks/{{ framework.type }}" ng-click="vm.changeFramework('{{ framework.type }}')"><h3>{{ framework.name }}</h3></a>
+      </tab-heading>
+
+      <br>
+
+      <p class="lead"><code>{{ framework.type }}</code> {{ framework.description }}</p>
+
+      <div class="alert alert-info">
+        <ul class="fa-ul">
+          <li>
+            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in documentation
+            <a href="http://docs.platformio.org/en/latest/frameworks/{{ framework.type }}.html" class="alert-link">Framework {{ framework.name }}</a>.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Boards</h2>
+
+      To list supported boards by <b>Framework {{ framework.name }}</b> please use <a href="/#!/boards?filter%5Bframeworks%5D={{ framework.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+      or <a href="http://docs.platformio.org/en/latest/frameworks/{{ framework.type }}.html#boards">documentation for {{ framework.name }} framework</a>.
+
+    </tab>
+
+  </tabset>
+
+</div>

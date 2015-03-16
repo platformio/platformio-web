@@ -89,6 +89,10 @@ def main():
             changefreq="weekly"
         )
         b.add_url(
+            loc="http://platformio.org/#!/frameworks",
+            changefreq="weekly"
+        )
+        b.add_url(
             loc="http://platformio.org/#!/boards",
             changefreq="weekly"
         )

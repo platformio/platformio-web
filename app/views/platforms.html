@@ -28,7 +28,7 @@
 
       <br>
 
-      <p class="lead"><code>{{ platform.type }}</code> {{ platform.description }}</p>
+      <p class="lead">{{ platform.description }}</p>
 
       <div class="alert alert-info" ng-if="!vm.platforms.creating.active">
         <ul class="fa-ul">
@@ -59,9 +59,24 @@
         </tr>
       </table>
 
+      <h2>Frameworks</h2>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="framework in vm.frameworks" ng-if="vm.isCompatibleFramework(framework.type, platform.type)">
+          <td><a href="/#!/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
+          <td>{{ framework.description }}</td>
+        </tr>
+      </table>         
+
       <h2>Boards</h2>
 
-      To list supported boards by <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+      To list compatible boards by <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
       or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.       
 
     </tab>

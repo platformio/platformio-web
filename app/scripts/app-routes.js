@@ -52,6 +52,11 @@
             function(dataService) {
               return dataService.getPackages().$promise;
             }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
           ]
         }
       })
@@ -63,6 +68,11 @@
           frameworksList: ['dataService',
             function(dataService) {
               return dataService.getFrameworks().$promise;
+            }
+          ],
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
             }
           ]
         }

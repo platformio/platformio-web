@@ -11,12 +11,15 @@
     .controller('PlatformsController', PlatformsController);
 
   function PlatformsController($routeParams, $window, platformsList,
-    packagesList) {
+    packagesList, frameworksList) {
     var vm = this;
 
     vm.changePlatform = changePlatform;
+    vm.isCompatibleFramework = isCompatibleFramework;
+
     vm.platforms = platformsList;
     vm.packages = packagesList;
+    vm.frameworks = frameworksList;
     vm.activeTab = 'atmelavr';
 
     // activate platform by hash
@@ -57,6 +60,22 @@
       }
 
       return tabs;
+    }
+
+    function isCompatibleFramework(frameworkType, platformType) {
+      var compatible = false;
+      angular.forEach(platformsList, function(platform) {
+        if (platform.type !== platformType) {
+          return;
+        }
+        angular.forEach(platform.packages, function(pkg) {
+            if (pkg.indexOf('framework-' + frameworkType) !== -1) {
+              compatible = true;
+            }
+          });
+
+      });
+      return compatible;
     }
 
   }

@@ -48,7 +48,7 @@
           </tr>
         </thead>
         <tr ng-repeat="platform in vm.platforms" ng-if="vm.isCompatiblePlatform(platform.type, framework.type)">
-          <td><a href="/#!/platforms/{{ platform.type }}">{{ platform.name }}</a></td>
+          <td class="text-nowrap"><a href="/#!/platforms/{{ platform.type }}">{{ platform.name }}</a></td>
           <td>{{ platform.description }}</td>
         </tr>
       </table>

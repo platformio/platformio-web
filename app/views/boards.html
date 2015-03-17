@@ -57,19 +57,19 @@
         </td>
         <td data-title="'Frameworks'" filter="{ 'frameworks': 'select' }" filter-data="vm.getFilterData('frameworks')">
             <span ng-repeat="framework in item.frameworks">
-              <a href="#!/frameworks/{{ framework }}">{{ framework | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span>
+              <a href="#!/frameworks/{{ framework }}">{{ framework | typeToName : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
             </span>           
         </td>          
         <td sortable="'mcu'" data-title="'MCU'" filter="{ 'mcu': 'text' }">
           {{ item.mcu }}
         </td>
-        <td sortable="'fcpu'" data-title="'Frequency'">
+        <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
           {{ item.fcpu | embeddedFormatter : 'frequency' }}
         </td>
-        <td sortable="'ram'" data-title="'RAM'">
+        <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
           {{ item.ram | embeddedFormatter : 'size' }}
         </td>
-        <td sortable="'rom'" data-title="'Flash'">
+        <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
           {{ item.rom | embeddedFormatter : 'size' }}
         </td>
       </tr>

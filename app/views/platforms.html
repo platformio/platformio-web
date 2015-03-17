@@ -69,7 +69,7 @@
           </tr>
         </thead>
         <tr ng-repeat="framework in vm.frameworks" ng-if="vm.isCompatibleFramework(framework.type, platform.type)">
-          <td><a href="/#!/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
+          <td class="text-nowrap"><a href="/#!/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
           <td>{{ framework.description }}</td>
         </tr>
       </table>         

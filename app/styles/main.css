@@ -284,103 +284,64 @@
 
 .brands {
   background: url("../images/brands-tpl.jpg") no-repeat;
-  height: 50px;
+  height: 40px;
   margin: 15px;
 }
 
 .brand-atmel {
-  width: 201px;
+  width: 122px;
 }
 
 .brand-ti {
-  background-position: 0 -50px;
-  width: 212px;
-}
-
-.brand-arduino {
-  background-position: 0 -100px;
-  width: 74px;
-}
-
-.brand-energia {
-  background-position: 0 -150px;
-  width: 132px;
-}
-
-.brand-stm {
-  background-position: 0 -200px;
-  width: 192px;
-}
-
-.brand-adafruit {
-  background-position: 0 -250px;
-  width: 146px;
-}
-
-.brand-digistump {
-  background-position: 0 -300px;
-  width: 126px;
-}
-
-.brand-engduino {
-  background-position: 0 -350px;
-  width: 196px;
-}
-
-.brand-microduino {
-  background-position: 0 -400px;
-  width: 192px;
-}
-
-.brand-teensy {
-  background-position: 0 -450px;
-  width: 140px;
-}
-
-.brand-freescale {
-  background-position: 0 -500px;
-  width: 204px;
-}
-
-.brand-nordic {
-  background-position: 0 -550px;
+  background-position: 0 -40px;
   width: 172px;
 }
 
+.brand-arduino {
+  background-position: 0 -80px;
+  width: 60px;
+}
+
+.brand-energia {
+  background-position: 0 -120px;
+  width: 106px;
+}
+
+.brand-stm {
+  background-position: 0 -160px;
+  width: 182px;
+}
+
+.brand-teensy {
+  background-position: 0 -200px;
+  width: 114px;
+}
+
+.brand-freescale {
+  background-position: 0 -240px;
+  width: 164px;
+}
+
+.brand-nordic {
+  background-position: 0 -280px;
+  width: 138px;
+}
+
 .brand-nxp {
-  background-position: 0 -600px;
-  width: 140px;
+  background-position: 0 -320px;
+  width: 84px;
 }
 
 .brand-mbed {
-  background-position: 0 -650px;
-  width: 166px;
+  background-position: 0 -360px;
+  width: 132px;
 }
 
 .brand-libopencm3 {
-  background-position: 0 -700px;
-  width: 186px;
+  background-position: 0 -400px;
+  width: 154px;
 }
 
-.brand-seeed {
-  background-position: 0 -750px;
-  width: 208px;
-}
-
-.brand-redbearlab {
-  background-position: 0 -800px;
-  width: 178px;
-}
-
-.brand-panstamp {
-  background-position: 0 -850px;
-  width: 152px;
-}
-
-.brand-ea {
-  background-position: 0 -900px;
-  width: 82px;
-}
 /* Miscellaneous */
 
 .fa-heart {

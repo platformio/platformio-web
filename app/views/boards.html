@@ -58,8 +58,8 @@
         <td data-title="'Frameworks'" filter="{ 'frameworks': 'select' }" filter-data="vm.getFilterData('frameworks')">
             <span ng-repeat="framework in item.frameworks">
               <a href="#!/frameworks/{{ framework }}">{{ framework | typeToName : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
-            </span>           
-        </td>          
+            </span>
+        </td>
         <td sortable="'mcu'" data-title="'MCU'" filter="{ 'mcu': 'text' }">
           {{ item.mcu }}
         </td>

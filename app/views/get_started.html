@@ -71,8 +71,8 @@
       <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-terminal fa-lg"></i> platformio run</span><br /><br /> 
-        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span><br /><br /> 
+        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-terminal fa-lg"></i> platformio run</span><br /><br />
+        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span><br /><br />
         <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target clean</span>
       </div>
     </li>
@@ -82,7 +82,7 @@
     <ul class="fa-ul">
       <li>
         <i class="fa fa-info fa-lg fa-li"></i> If you have specific board which isn't supported by <i>PlatformIO</i>, then you can install development platform via <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio install</a> command
-        in manual mode or <a href="https://github.com/ivankravets/platformio/issues" target="_blink" class="alert-link">create new issue and ask to add it</a>.
+        in manual mode or <a href="https://github.com/platformio/platformio/issues" target="_blink" class="alert-link">create new issue and ask to add it</a>.
       </li>
     </ul>
   </div>
@@ -118,7 +118,7 @@
           </td>
           <td><span class="label label-default">arduino</span> <a href="#!/platforms/teensy">Arduino Wiring-based Framework</a>
           </td>
-        </tr>         
+        </tr>
         <tr>
           <td><span class="label label-default">timsp430</span> <a href="#!/platforms/timsp430">MSP430 16-bit microcontrollers (MCUs) from TI</a>
           </td>
@@ -206,7 +206,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-github fa-lg fa-li"></i>  The source code and results of this <code>Blink Project</code> can be downloaded from <a href="https://github.com/ivankravets/platformio/tree/develop/examples/wiring-blink" class="alert-link" target="_blank"><i class="fa fa-download fa-lg"></i> PlatformIO Project Examples</a> repository.
+        <i class="fa fa-github fa-lg fa-li"></i>  The source code and results of this <code>Blink Project</code> can be downloaded from <a href="https://github.com/platformio/platformio/tree/develop/examples/wiring-blink" class="alert-link" target="_blank"><i class="fa fa-download fa-lg"></i> PlatformIO Project Examples</a> repository.
       </li>
     </ul>
   </div>
@@ -262,7 +262,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
       Data:          9 bytes (0.4% Full)<br />
       (.data + .bss + .noinit)
       <p>====================================== [ <font color="green">SUCCESS</font> ] Took 3.59 seconds ======================================</p>
-      
+
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">autogen_teensy31</font> (platform: teensy, board: teensy31, framework: arduino) <br />
       <div class="dashed-line"></div>
       arm-none-eabi-g++ -o .pioenvs/autogen_teensy31/src/main.o -c -fno-rtti -fno-exceptions -std=gnu++0x -felide-constructors -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -nostdlib -MMD -DF_CPU=72000000L -DUSB_SERIAL -DLAYOUT_US_ENGLISH -D__MK20DX256__ -DARDUINO=10600 -DTEENSYDUINO=120 -I.pioenvs/autogen_teensy31/FrameworkArduino .pioenvs/autogen_teensy31/src/main.cpp<br />
@@ -285,9 +285,9 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
           <td>14216</td>
           <td>3788</td>
           <td>.pioenvs/autogen_teensy31/firmware.elf</td>
-       </tr>         
+       </tr>
       </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 7.56 seconds ====================================== </p> 
+      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 7.56 seconds ====================================== </p>
 
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">autogen_lpmsp430g2553</font> (platform: timsp430, board: lpmsp430g2553, framework: energia) <br />
       <div class="dashed-line"></div>
@@ -311,9 +311,9 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
           <td>842</td>
           <td>34a</td>
           <td>.pioenvs/autogen_lpmsp430g2553/firmware.elf</td>
-       </tr>         
+       </tr>
       </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 3.00 seconds ====================================== </p>        
+      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 3.00 seconds ====================================== </p>
 
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">autogen_lptm4c1230c3pm</font> (platform: titiva, build_flags: -DLED_PIN=GREEN_LED, board: lptm4c1230c3pm, framework: energia) <br />
       <div class="dashed-line"></div>
@@ -337,7 +337,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
           <td>2776</td>
           <td>ad8</td>
           <td>.pioenvs/autogen_lptm4c1230c3pm/firmware.elf</td>
-       </tr>         
+       </tr>
       </table>
       <p>======================================  [ <font color="green">SUCCESS</font> ] Took 10.03 seconds ====================================== </p>
 
@@ -399,7 +399,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
   <ul>
     <li><a href="http://docs.platformio.org">Documentation</a>
     </li>
-    <li><a href="https://github.com/ivankravets/platformio/tree/develop/examples" target="_blank">Project Examples</a>
+    <li><a href="https://github.com/platformio/platformio/tree/develop/examples" target="_blank">Project Examples</a>
     </li>
   </ul>
 

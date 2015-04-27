@@ -26,6 +26,9 @@
 
     <div class="well well-sm">
       <dl class="dl-horizontal libinfo">
+        <dt ng-if="vm.lib.url">Home</dt>
+        <dd ng-if="vm.lib.url"><a href="{{ vm.lib.url }}" target="_blank">{{ vm.lib.url }}</a></dd> 
+
         <dt>Authors</dt>
         <dd>
           <div ng-repeat="author in vm.lib.authors" ng-class="{'author-detail': !$first}">

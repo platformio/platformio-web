@@ -10,11 +10,11 @@
     .controller('LibShowController', LibShowController);
 
   function LibShowController($window, $location, $filter, $analytics,
-    dataService, libInfo) {
+    dataService, libInfo, frameworksList, platformsList) {
     var vm = this;
 
-    vm.frameworks = dataService.getFrameworks();
-    vm.platforms = dataService.getPlatforms();
+    vm.frameworks = frameworksList;
+    vm.platforms = platformsList;
     vm.lib = libInfo;
     vm.meta = getMeta();
     vm.examples = getExamples();
@@ -57,7 +57,6 @@
       angular.forEach(['frameworks', 'platforms'], function(what) {
         angular.forEach(vm.lib[what], function(item) {
           var _name = $filter('typeToName')(item, vm[what]);
-          data.keywords.push(item);
           nametitles.push(_name);
         });
       });

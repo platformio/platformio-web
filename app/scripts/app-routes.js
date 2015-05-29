@@ -153,6 +153,16 @@
               return dataService.getLibInfo(
                 $route.current.params.libId).$promise;
             }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ],
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
           ]
         }
       })

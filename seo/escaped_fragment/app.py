@@ -28,12 +28,16 @@ def application(env, start_response):
 
 def get_webcontent(url):
     retrynums = 0
-    while retrynums < 3:
+    while retrynums < 5:
         try:
             response = check_output([
                 "phantomjs", "--disk-cache=true", "--load-images=false",
                 "crawler.js", url
             ])
+
+            if 'class="ng-scope"' not in response:
+                raise CalledProcessError()
+
             return response
         except CalledProcessError:
             retrynums += 1

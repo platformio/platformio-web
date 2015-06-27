@@ -101,17 +101,6 @@
   text-shadow: none;
 }
 
-.home .logo {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-  font-size: 50px;
-  padding: 10px 30px 10px 30px;
-  background-color: #222;
-  color: #fff;
-  border-radius: 10px;
-}
-
 .home .btn-lg {
   padding: 15px 30px;
   margin: 10px;

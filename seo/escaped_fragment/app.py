@@ -1,6 +1,7 @@
 # Copyright (C) Ivan Kravets <me@ikravets.com>
 # See LICENSE for details.
 
+from time import sleep
 from subprocess import check_output, CalledProcessError
 from urllib import unquote
 
@@ -35,10 +36,12 @@ def get_webcontent(url):
                 "crawler.js", url
             ])
 
-            if 'ng-view=' not in response:
+            if "ng-view=" not in response:
                 raise CalledProcessError()
 
             return response
         except CalledProcessError:
             retrynums += 1
+            sleep(retrynums * 1)
+
     raise Exception("Could not retrieve content from %s" % url)

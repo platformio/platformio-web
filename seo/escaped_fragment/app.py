@@ -35,7 +35,7 @@ def get_webcontent(url):
                 "crawler.js", url
             ])
 
-            if 'class="ng-scope"' not in response:
+            if 'ng-view=' not in response:
                 raise CalledProcessError()
 
             return response

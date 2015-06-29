@@ -6,6 +6,10 @@ from subprocess import check_output, CalledProcessError
 from urllib import unquote
 
 
+class PhJSFailedException(Exception):
+    pass
+
+
 def application(env, start_response):
     status = "200 OK"
     response = ""
@@ -37,10 +41,10 @@ def get_webcontent(url):
             ])
 
             if "ng-view=" not in response:
-                raise CalledProcessError()
+                raise PhJSFailedException()
 
             return response
-        except CalledProcessError:
+        except (CalledProcessError, PhJSFailedException):
             retrynums += 1
             sleep(retrynums * 1)
 

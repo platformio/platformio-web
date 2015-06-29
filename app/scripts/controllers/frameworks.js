@@ -40,6 +40,7 @@
       angular.forEach(frameworksList, function(item) {
         tabs[item.type] = {
           name: item.name,
+          description: item.description.split(".")[0],
           active: item.type === activeType
         };
       });

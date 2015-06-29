@@ -42,6 +42,7 @@
       angular.forEach(platformsList, function(item) {
         tabs[item.type] = {
           name: item.name,
+          description: item.description.split(".")[0],
           active: item.type === activeType
         };
 
@@ -52,6 +53,7 @@
 
       tabs['creating'] = {
         name: 'Create Platform',
+        description: 'Create Platform',
         active: !activated
       };
 

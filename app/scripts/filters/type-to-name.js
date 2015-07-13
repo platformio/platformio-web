@@ -11,7 +11,7 @@
 
   function typeToName() {
     return function(type, data) {
-      var name = name;
+      var name = type;
       angular.forEach(data, function(item) {
         if ('type' in item && 'name' in item && item.type === type) {
           name = item.name;

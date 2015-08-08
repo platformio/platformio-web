@@ -28,6 +28,12 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  <script>
+    (function (url){
+      var pos=url.lastIndexOf('_escaped_fragment_=');
+      if (pos !== -1) window.location.replace('/#!' + url.substr(pos + 19));
+    })(window.location.href);
+  </script>
 </head>
 
 <body>
@@ -225,7 +231,7 @@
   <script src="bower_components/SHA-1/sha1.js"></script>
   <script src="bower_components/angulartics/src/angulartics.js"></script>
   <script src="bower_components/angulartics/src/angulartics-ga.js"></script>
-  <script src="bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="bower_components/highlightjs/highlight.pack.min.js"></script>
   <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
   <script src="bower_components/angular-disqus/angular-disqus.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>

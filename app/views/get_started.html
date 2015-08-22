@@ -1,5 +1,5 @@
 <meta name="description" content="Learn how to install and use PlatformIO, configure and build your first cross-platform 'Blink' project for Arduino, Teensy and MSP430" view-head />
-<meta name="keywords" content="PlatformIO, cli, command line, arduino, msp430, builder, teensy" view-head />
+<meta name="keywords" content="PlatformIO, cli, command line, arduino, msp430, builder, teensy, raspberry, beaglebone" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -15,22 +15,49 @@
 <div class="container">
 
   <h2>Installation</h2>
+
   <p>
-    <b>PlatformIO</b> can easily be installed on the popular <i>OS</i> including credit-card computers (<a href="http://www.raspberrypi.org" target="_blank">Raspberry Pi</a>,
-  <a href="http://beagleboard.org" target="_blank">BeagleBone</a>, <a href="http://cubieboard.org" target="_blank">CubieBoard</a>):
-    <ul>
-      <li>Mac OS X</li>
-      <li>Linux, +ARM</li>
-      <li>Windows</li>
-    </ul>
-    More detailed information is described in the main documentation: &nbsp;
-    <a href="http://docs.platformio.org/en/latest/installation.html" class="btn btn-success" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Install PlatformIO" target="_blank">Install PlatformIO</a>
+    <b>PlatformIO</b> is written in <i>Python</i> and works on <i>Mac OS X, Linux, Windows OS</i> and ARM-based credit-card sized computers (<i>Raspberry Pi, BeagleBone, CubieBoard</i>).
   </p>
+
+  <p>
+    All commands below should be executed in <a href="http://en.wikipedia.org/wiki/Command-line_interface" target="_blank">Command-line</a> application (Terminal):
+    <ul>
+      <li>Mac OS X / Linux – Terminal application</li>
+      <li>Windows – <code>cmd.exe</code> application.</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <ul class="fa-ul">
+        <li>
+          <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it. <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage.
+        </li>
+      </ul>
+    </div>      
+
+    <p>Paste each command at a Terminal prompt and run (<b>MAY require</b> administrator access <code>sudo</code>):</p>
+
+    <span class="label label-default">Terminal</span>
+    <div class="well terminal">
+      <p class="cmd"><font color="gray"># update dependent packages to the latest versions</font><br><i class="fa fa-terminal fa-lg"></i> pip install -U pip setuptools scons</p>
+      <p class="cmd"><font color="gray"># install the latest version of PlatformIO</font><br><i class="fa fa-terminal fa-lg"></i> pip install platformio</p>
+    </div>
+
+    <div class="alert alert-info">
+      <ul class="fa-ul">
+        <li>
+          <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link"><i class="fa fa-book"></i> Documentation</a>.
+        </li>
+      </ul>
+    </div>
+  </p>
+
+  <hr>
 
   <h2>Quickstart</h2>
 
   <ol>
-    <li>Find board <code>type</code> on <a href="#!/boards">Embedded Boards</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command</li>
+    <li>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command</li>
     <li>
       Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command
       with the pre-configured environments for your boards:
@@ -38,31 +65,6 @@
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
         <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
-        <small>
-          <p>
-            Would you like to enable firmware auto-uploading when project is successfully built using `platformio run` command?<br />
-            Don't forget that you can upload firmware manually using `platformio run --target upload` command. [y/N]:
-          </p>
-
-          <font color="yellow">
-            The current working directory <font color="cyan">***</font> will be used for the new project.<br />
-            You can specify another project directory via<br />
-            `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
-          </font><br /><br />
-
-          The next files/directories will be created in <font color="cyan">***</font><br />
-          <font color="cyan">`platformio.ini`</font> - Project Configuration File. |-&gt; PLEASE EDIT ME &lt;-| <br />
-          <font color="cyan">`src`</font> - Put your source code here<br />
-          <font color="cyan">`lib`</font> - Put here project specific or 3-rd party libraries<br />
-          Do you want to continue? [y/N]: y<br />
-          <font color="green">
-            Project has been successfully initialized!<br />
-            Useful commands:<br />
-            `platformio run` - process/build project from the current directory<br />
-            `platformio run --target upload` or `platformio run -t upload` - upload firmware to embedded board<br />
-            `platformio run --target clean` - clean project (remove compiled files)<br />
-          </font>
-        </small>
       </div>
       <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.pde or *.ino</code> files to <code>src</code> directory.</p>
     </li>
@@ -214,20 +216,31 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
     <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=uno --board=teensy31 --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
-    <small>
-      <font color="yellow">
-        The current working directory <font color="cyan">***</font> will be used for the new project.<br />
-        You can specify another project directory via<br />
-        `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
-      </font><br /><br />
+      <small>
+        <p>
+          Would you like to enable firmware auto-uploading when project is successfully built using `platformio run` command?<br />
+          Don't forget that you can upload firmware manually using `platformio run --target upload` command. [y/N]:
+        </p>
 
-      The next files/directories will be created in <font color="cyan">***</font><br />
-      <font color="cyan">`platformio.ini`</font> - Project Configuration File<br />
-      <font color="cyan">`src`</font> - a source directory. Put your source code here<br />
-      <font color="cyan">`lib`</font> - a directory for the project specific libraries<br />
-      Do you want to continue? [y/N]: y<br />
-      <font color="green">Project has been successfully initialized!</font>
-    </small>
+        <font color="yellow">
+          The current working directory <font color="cyan">***</font> will be used for the new project.<br />
+          You can specify another project directory via<br />
+          `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
+        </font><br /><br />
+
+        The next files/directories will be created in <font color="cyan">***</font><br />
+        <font color="cyan">`platformio.ini`</font> - Project Configuration File. |-&gt; PLEASE EDIT ME &lt;-| <br />
+        <font color="cyan">`src`</font> - Put your source code here<br />
+        <font color="cyan">`lib`</font> - Put here project specific (private) libraries<br />
+        Do you want to continue? [y/N]: y<br />
+        <font color="green">
+          Project has been successfully initialized!<br />
+          Useful commands:<br />
+          `platformio run` - process/build project from the current directory<br />
+          `platformio run --target upload` or `platformio run -t upload` - upload firmware to embedded board<br />
+          `platformio run --target clean` - clean project (remove compiled files)<br />
+        </font>
+      </small>
   </div>
 
   <h3 class="header-underlined">Process environments</h3>

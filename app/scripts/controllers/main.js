@@ -10,11 +10,12 @@
     .module('siteApp')
     .controller('MainController', MainController);
 
-  function MainController($location, $window) {
+  function MainController($location, $window, siteUtils) {
     var vm = this;
 
     vm.isRouteActive = isRouteActive;
     vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
+    vm.siteUtils = siteUtils;
 
     ////////////
 

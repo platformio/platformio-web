@@ -12,7 +12,8 @@
 
   function siteUtils($modal) {
     return {
-      showSearchExamples: showSearchExamples
+      showSearchExamples: showSearchExamples,
+      showDemo: showDemo
     };
 
     function showSearchExamples(searchPath) {
@@ -26,6 +27,15 @@
             return searchPath;
           }
         }
+      });
+    }
+
+    function showDemo() {
+      $modal.open({
+        templateUrl: 'views/demo_modal.html',
+        controller: 'DemoModalController',
+        controllerAs: 'vm',
+        size: 'piodemo',
       });
     }
   }

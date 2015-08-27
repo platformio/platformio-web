@@ -39,14 +39,14 @@
 
     <span class="label label-default">Terminal</span>
     <div class="well terminal">
-      <p class="cmd"><font color="gray"># update dependent packages to the latest versions</font><br><i class="fa fa-terminal fa-lg"></i> pip install -U pip setuptools scons</p>
-      <p class="cmd"><font color="gray"># install the latest version of PlatformIO</font><br><i class="fa fa-terminal fa-lg"></i> pip install platformio</p>
+      <p class="cmd"><font color="gray"># update dependent packages to the latest versions</font><br><i class="fa fa-arrow-right"></i> pip install -U pip setuptools scons</p>
+      <p class="cmd"><font color="gray"># install the latest version of PlatformIO</font><br><i class="fa fa-angle-right fa-lg"></i> pip install platformio</p>
     </div>
 
     <div class="alert alert-info">
       <ul class="fa-ul">
         <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link"><i class="fa fa-book"></i> Documentation</a>.
+          <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link" analytics-on analytics-event="Button" analytics-category="Docs" analytics-label="GetStarted"><i class="fa fa-book"></i> Documentation</a>.
         </li>
       </ul>
     </div>
@@ -57,25 +57,25 @@
   <h2>Quickstart</h2>
 
   <ol>
-    <li>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-terminal fa-lg"></i> platformio boards</a> command</li>
+    <li>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</li>
     <li>
-      Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command
+      Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command
       with the pre-configured environments for your boards:
       <br>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
+        <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
       </div>
       <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.pde or *.ino</code> files to <code>src</code> directory.</p>
     </li>
     <li>
-      Process the project's environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.
+      Process the project's environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
       <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-terminal fa-lg"></i> platformio run</span><br /><br />
-        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span><br /><br />
-        <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-terminal fa-lg"></i> platformio run --target clean</span>
+        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</span><br /><br />
+        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</span><br /><br />
+        <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
       </div>
     </li>
   </ol>
@@ -212,10 +212,10 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
       <li><code>src</code> directory - where your source code should be placed</li>
     </ul>
   </p>
-  <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-terminal fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
+  <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
-    <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio init --board=uno --board=teensy31 --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
+    <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=teensy31 --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
       <small>
         <p>
           Would you like to enable firmware auto-uploading when project is successfully built using `platformio run` command?<br />
@@ -245,11 +245,11 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
 
   <h3 class="header-underlined">Process environments</h3>
   <p>Copy <code>main.cpp</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
-    <br>Then process environments with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command.</p>
+    <br>Then process environments with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.</p>
 
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
-   <p class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run</p>
+   <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
    <small>
 
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">uno</font> (platform: atmelavr, board: uno, framework: arduino) <br />
@@ -385,16 +385,16 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
 </pre>
 
   <h3 class="header-underlined">Firmware uploading</h3>
-  <p>For uploading firmware to embedded device you can use <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command with <code>--target upload</code> option.</p>
+  <p>For uploading firmware to embedded device you can use <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command with <code>--target upload</code> option.</p>
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
-    <span class="cmd"><i class="fa fa-terminal fa-lg"></i> platformio run --target upload</span>
+    <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</span>
   </div>
   <p>If you want to enable "auto-uploading" when source code is built successfully, then define for the specific environment's option <code>targets = upload</code>. More detailed information about <code>targets</code> option is available in the <a href="http://docs.platformio.org/en/latest/projectconf.html#targets">documentation</a>.</p>
   <div class="alert alert-info">
     <ul class="fa-ul">
       <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can process only specific environments <code>-e</code> or targets <code>-t</code>. Read more about it in <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html#examples" class="alert-link"><i class="fa fa-terminal fa-lg"></i> platformio run</a> command examples.
+        <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can process only specific environments <code>-e</code> or targets <code>-t</code>. Read more about it in <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html#examples" class="alert-link"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command examples.
       </li>
     </ul>
   </div>

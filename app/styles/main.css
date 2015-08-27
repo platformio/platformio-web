@@ -104,6 +104,7 @@
 .home .btn-lg {
   padding: 15px 30px;
   margin: 10px;
+  width: 240px;
 }
 
 .home .top-banner h2 {
@@ -345,5 +346,9 @@
 
 .fa-heart {
   color: #A80008;
+}
+
+.modal-piodemo {
+  width: 760px;
 }
 

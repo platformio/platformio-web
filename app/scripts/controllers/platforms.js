@@ -28,8 +28,36 @@
     }
 
     vm.tabs = getTabs(vm.activeTab);
+    vm.groups = getGroups(vm.tabs, vm.activeTab);
 
     ////////////
+
+    function getGroups(tabs, activeType) {
+      var groups = {
+        embedded: false,
+        desktop: false,
+        creating: false
+      };
+
+      var stop = false;
+      angular.forEach(tabs, function(item, key) {
+        if (stop || !item.active) {
+          return;
+        }
+        stop = true;
+        if (key === 'creating') {
+          groups.creating = true;
+        }
+        else if (item.forDesktop) {
+          groups.desktop = true;
+        }
+        else {
+          groups.embedded = true;
+        }
+      });
+
+      return groups;
+    }
 
     function changePlatform(type) {
       $window.location.href = '#!/platforms/' + type;
@@ -42,8 +70,9 @@
       angular.forEach(platformsList, function(item) {
         tabs[item.type] = {
           name: item.name,
-          description: item.description.split(".")[0],
-          active: item.type === activeType
+          description: item.description.split('.')[0],
+          active: item.type === activeType,
+          forDesktop: item.forDesktop
         };
 
         if (!activated && tabs[item.type].active) {

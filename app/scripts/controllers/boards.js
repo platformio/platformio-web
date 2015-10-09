@@ -63,6 +63,9 @@
       angular.forEach(type_ === 'platforms' ? platformsList :
         frameworksList,
         function(item) {
+          if (type_ === 'platforms' && item.forDesktop) {
+            return;
+          }
           if (angular.isObject(item) && 'name' in item) {
             data.push({
               'id': item.type,

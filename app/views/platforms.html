@@ -77,12 +77,12 @@
               <td>{{ framework.description }}</td>
           </tr>
           </table>
+
+          <h2>Boards</h2>
+
+          To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+          or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.
         </div>
-
-        <h2>Boards</h2>
-
-        To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
-        or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.
       </tab>
     </tabset>
   </tab>

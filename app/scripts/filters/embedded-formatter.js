@@ -17,17 +17,10 @@
           break;
 
         case 'size':
-          if (value < 1024) {
+          if (value % 1024 === 0) {
             value /= 1024;
           } else {
-            value = Math.ceil(value / 1024);
-            var stop = false;
-            angular.forEach([64, 32, 16, 8, 4, 2, 1], function(b) {
-              if (!stop && b < value) {
-                value = Math.ceil(value / b) * b;
-                stop = true;
-              }
-            });
+            value = Math.round(value / 1024 * 10) / 10;
           }
           value += ' Kb';
           break;

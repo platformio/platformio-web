@@ -363,3 +363,7 @@
   width: 760px;
 }
 
+.addthis_native_toolbox .at-share-tbx-element {
+  margin-bottom: -5px;
+}
+

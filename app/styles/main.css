@@ -363,7 +363,7 @@
   width: 760px;
 }
 
-.addthis_native_toolbox .at-share-tbx-element {
-  margin-bottom: -5px;
+.social-btns .btns-fb {
+  padding-left: 30px;
+  padding-bottom: 5px;
 }
-

@@ -10,8 +10,9 @@
   <meta name="fragment" content="!" />
   <meta name="google-site-verification" content="Zl6qDONgzdAFCj4uEbUNSuJdIKdk3MZYBcrc79fj0BY" />
   <meta name="msvalidate.01" content="5CD2E0D7BC5235EDBE29F65F0DD0A180" />
-  <meta property="og:title" content="PlatformIO" />
-  <meta property="og:description" content="PlatformIO is an open-source cross-platform code builder and the missing library manager (Ready for embedded development, IDE and Continuous integration, Arduino and MBED compatible)" />
+  <meta property="og:site_name" content="PlatformIO" />
+  <meta property="og:title" content="An open-source cross-platform code builder and the missing library manager" />
+  <meta property="og:description" content="Ready for embedded development, IDE and Continuous integration, Arduino and MBED compatible" />
   <meta property="og:image" content="images/platformio-embedded-development.png" />
   <meta property="og:url" content="http://platformio.org" />
   <link rel="canonical" href="http://platformio.org" />
@@ -133,15 +134,20 @@
 
     <hr>
 
-    <ul class="list-inline" ng-if="!vm.isPhJSCrawler">
-     <li>
+    <table border="0" ng-if="!vm.isPhJSCrawler" align="center" class="social-btns">
+    <tr>
+     <td>
         <iframe src="http://ghbtns.com/github-btn.html?user=platformio&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
-      </li>
-      <li>
+      </td>
+      <td>
         <a href="https://twitter.com/PlatformIO_Org" class="twitter-follow-button" data-show-count="true">Follow @PlatformIO_Org</a>
-      </li>
-      <li><div class="addthis_native_toolbox"></div></li>
-     </ul>
+      </td>
+      <td class="btns-fb">
+        <div class="fb-like" data-href="https://www.facebook.com/platformio/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div id="fb-root"></div>
+      </td>
+    </tr>
+    </table>
     <p>Designed and built with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
     </p>
     <p>
@@ -192,6 +198,16 @@
       (function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
         if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
           fjs.parentNode.insertBefore(js,fjs);}})(document, 'script', 'twitter-wjs');
+
+      // facebook
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.5&appId=813321708714704";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
       // addthis
       (function(s,o,g){ a=s.createElement(o),m=s.getElementsByTagName(o)[0];
        a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

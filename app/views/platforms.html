@@ -21,7 +21,7 @@
     <tab-heading>
       <h3 ng-if="group == 'embedded'"><a href="#!/platforms/atmelavr" ng-click="vm.changePlatform('atmelavr')">Embedded Platforms</a></h3>
       <h3 ng-if="group == 'desktop'"><a href="#!/platforms/linux_arm" ng-click="vm.changePlatform('linux_arm')">Desktop Platforms</a></h3>
-    </tab-heading> 
+    </tab-heading>
     <br>
     <tabset type="pills">
       <tab ng-repeat="platform in vm.platforms" active="vm.tabs[platform.type].active" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
@@ -101,7 +101,7 @@
 
       <br> <br>
       For this purpose <i>PlatformIO</i> uses own pre-configured platforms data:
-      build scripts, tool chains, the settings for the most popular embedded boards and etc.
+      build scripts, toolchains, the settings for the most popular embedded boards and etc.
       These data are pre-built and packaged to the different "packages".
 
       <br> <br>
@@ -113,6 +113,6 @@
       <a href="http://docs.platformio.org/en/latest/platforms/creating_platform.html" class="btn btn-success btn-lg" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Create Platform" target="_blank"><i class="fa fa-plus fa-lg"></i> Create Platform</a>
     </p>
   </tab>
-</tabset>  
+</tabset>
 
 </div>

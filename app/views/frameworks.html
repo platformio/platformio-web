@@ -18,12 +18,12 @@
 
 <div class="container">
 
-  <tabset>
+  <uib-tabset>
 
-    <tab ng-repeat="framework in vm.frameworks" active="vm.tabs[framework.type].active">
-      <tab-heading>
+    <uib-tab ng-repeat="framework in vm.frameworks" active="vm.tabs[framework.type].active">
+      <uib-tab-heading>
         <a href="#!/frameworks/{{ framework.type }}" ng-click="vm.changeFramework('{{ framework.type }}')"><h3>{{ framework.name }}</h3></a>
-      </tab-heading>
+      </uib-tab-heading>
 
       <br>
 
@@ -58,8 +58,8 @@
       To list compatible boards by <b>Framework {{ framework.name }}</b> please use <a href="/#!/boards?filter%5Bframeworks%5D={{ framework.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
       or <a href="http://docs.platformio.org/en/latest/frameworks/{{ framework.type }}.html#boards">documentation for {{ framework.name }} framework</a>.
 
-    </tab>
+    </uib-tab>
 
-  </tabset>
+  </uib-tabset>
 
 </div>

@@ -18,7 +18,7 @@
   <link rel="canonical" href="http://platformio.org" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -55,9 +55,9 @@
             <li ng-class="{active: vm.isRouteActive('/platforms')}"><a href="#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a></li>
             <li ng-class="{active: vm.isRouteActive('/frameworks')}"><a href="#!/frameworks"><i class="fa fa-cogs fa-lg"></i>Frameworks</a></li>
             <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a></li>
-            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" dropdown>
+            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" uib-dropdown>
               <a href="#!/lib" class="btn btn-main"><i class="fa fa-code fa-lg"></i>Libraries</a>
-              <a class="btn dropdown-toggle" dropdown-toggle>
+              <a class="btn dropdown-toggle" uib-dropdown-toggle>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
@@ -74,9 +74,9 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li ng-class="{active: vm.isRouteActive('/who-uses')}"><a href="#!/who-uses"><i class="fa fa-heart-o fa-lg"></i>Who uses</a></li>
-            <li class="btn-group" dropdown>
+            <li class="btn-group" uib-dropdown>
               <a href="http://docs.platformio.org/" class="btn btn-main"><i class="fa fa-book fa-lg"></i>Docs</a>
-              <a class="btn dropdown-toggle" dropdown-toggle>
+              <a class="btn dropdown-toggle" uib-dropdown-toggle>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
@@ -255,7 +255,7 @@
   <script src="bower_components/angularjs-viewhead/angularjs-viewhead.js"></script>
   <script src="bower_components/SHA-1/sha1.js"></script>
   <script src="bower_components/angulartics/src/angulartics.js"></script>
-  <script src="bower_components/angulartics/src/angulartics-ga.js"></script>
+  <script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
   <script src="bower_components/highlightjs/highlight.pack.js"></script>
   <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
   <script src="bower_components/angular-disqus/angular-disqus.js"></script>

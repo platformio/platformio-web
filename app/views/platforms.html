@@ -16,18 +16,18 @@
 
 <div class="container">
 
-<tabset>
-  <tab ng-repeat="group in ['embedded', 'desktop']" active="vm.groups[group]">
-    <tab-heading>
+<uib-tabset>
+  <uib-tab ng-repeat="group in ['embedded', 'desktop']" active="vm.groups[group]">
+    <uib-tab-heading>
       <h3 ng-if="group == 'embedded'"><a href="#!/platforms/atmelavr" ng-click="vm.changePlatform('atmelavr')">Embedded Platforms</a></h3>
       <h3 ng-if="group == 'desktop'"><a href="#!/platforms/linux_arm" ng-click="vm.changePlatform('linux_arm')">Desktop Platforms</a></h3>
-    </tab-heading>
+    </uib-tab-heading>
     <br>
-    <tabset type="pills">
-      <tab ng-repeat="platform in vm.platforms" active="vm.tabs[platform.type].active" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
-        <tab-heading>
+    <uib-tabset type="pills">
+      <uib-tab ng-repeat="platform in vm.platforms" active="vm.tabs[platform.type].active" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
+        <uib-tab-heading>
           <h4><a href="#!/platforms/{{ platform.type }}" ng-click="vm.changePlatform('{{ platform.type }}')">{{ platform.name }}</a></h4>
-        </tab-heading>
+        </uib-tab-heading>
 
         <br>
 
@@ -83,14 +83,14 @@
           To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
           or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.
         </div>
-      </tab>
-    </tabset>
-  </tab>
+      </uib-tab>
+    </uib-tabset>
+  </uib-tab>
 
-  <tab>
-    <tab-heading>
+  <uib-tab>
+    <uib-tab-heading>
       <h3><a href="#!/platforms/creating" ng-click="vm.changePlatform('creating')"><i class="fa fa-plus"></i> Create Platform</a></h3>
-    </tab-heading>
+    </uib-tab-heading>
 
     <br>
 
@@ -112,7 +112,7 @@
     <p class="text-center">
       <a href="http://docs.platformio.org/en/latest/platforms/creating_platform.html" class="btn btn-success btn-lg" role="button" analytics-on analytics-event="Click" analytics-category="Button" analytics-label="Create Platform" target="_blank"><i class="fa fa-plus fa-lg"></i> Create Platform</a>
     </p>
-  </tab>
-</tabset>
+  </uib-tab>
+</uib-tabset>
 
 </div>

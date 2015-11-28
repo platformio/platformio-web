@@ -16,16 +16,16 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-8"><b>Group by</b> &nbsp;
+    <div class="col-md-9"><b>Group by</b> &nbsp;
       <div class="btn-group">
         <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'vendor'">Vendor</label>
         <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'platform'">Platform</label>
         <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'mcu'">MCU</label>
       </div>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-3 text-right">
         <button ng-click="vm.tableParams.filter({})" class="btn btn-default">Clear filters</button>
-        <button ng-click="vm.tableParams.sorting({'vendor' : 'asc'})" class="btn btn-default">Clear sorting</button>
+        <!-- <button ng-click="vm.tableParams.sorting({'vendor' : 'asc'})" class="btn btn-default">Clear sorting</button> -->
     </div>
   </div>
 

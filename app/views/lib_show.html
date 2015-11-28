@@ -94,11 +94,11 @@
 
   </article>
 
-  <tabset>
-    <tab>
-      <tab-heading>
+  <uib-tabset>
+    <uib-tab>
+      <uib-tab-heading>
         <i class="fa fa-graduation-cap"></i> Examples</span>
-      </tab-heading>
+      </uib-tab-heading>
 
       <div ng-if="!vm.examples.length" class="alert alert-warning" role="alert">The library doesn't have any examples.</div>
 
@@ -112,14 +112,14 @@
         </p>
         <div hljs include="vm.currentExample.url" language="cpp"></div>
       </div>
-    </tab>
+    </uib-tab>
 
-    <tab>
-      <tab-heading>
+    <uib-tab>
+      <uib-tab-heading>
         <i class="fa fa-comments"></i> Discussion
-      </tab-heading>
+      </uib-tab-heading>
       <div disqus="vm.lib.id"></div>
-    </tab>
-  </tabset>
+    </uib-tab>
+  </uib-tabset>
 
 </div>

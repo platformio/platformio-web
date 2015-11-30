@@ -366,3 +366,7 @@
 .social-btns {
   margin-bottom: 10px;
 }
+
+.social-btns > li {
+  vertical-align: top;
+}

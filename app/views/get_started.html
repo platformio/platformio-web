@@ -63,7 +63,8 @@
       <br>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</span>
+        <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
+        <span class="cmd"><font color="gray"># For example, initialize cross-platform project for Arduino Uno and Teensy 3.1</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=teensy31</span>
       </div>
       <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.pde or *.ino</code> files to <code>src</code> directory.</p>
     </li>
@@ -72,8 +73,8 @@
       <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
-        <span class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</span><br /><br />
-        <span class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</span><br /><br />
+        <p class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
+        <p class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</p>
         <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
       </div>
     </li>
@@ -216,11 +217,6 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
   <div class="well terminal">
     <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=teensy31 --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
       <small>
-        <p>
-          Would you like to enable firmware auto-uploading when project is successfully built using `platformio run` command?<br />
-          Don't forget that you can upload firmware manually using `platformio run --target upload` command. [y/N]:
-        </p>
-
         <font color="yellow">
           The current working directory <font color="cyan">***</font> will be used for the new project.<br />
           You can specify another project directory via<br />

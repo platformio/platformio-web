@@ -359,6 +359,19 @@
   color: #A80008;
 }
 
+.get-started-nav li {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.get-started-nav li i {
+  margin-right: 5px;
+}
+
+.get-started-nav a {
+  font-size: 18px;
+}
+
 .modal-piodemo {
   width: 760px;
 }

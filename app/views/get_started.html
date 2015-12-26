@@ -67,21 +67,28 @@
   <a name="quickstart"></a>
   <h2>Quickstart</h2>
 
-  <ol>
-    <li>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</li>
-    <li>
+  <dl>
+    <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
+    <dd>
+      <p>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</p>
+    </dd>
+
+    <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
+    <dd>
       Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command
       with the pre-configured environments for your boards:
       <br>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
         <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
-        <span class="cmd"><font color="gray"># for example, initialize cross-platform project for Arduino Uno and Teensy 3.1</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=teensy31</span>
+        <span class="cmd"><font color="gray"># for example, initialize cross-platform project for Arduino Uno and Espressif Generic ESP8266 ESP-01</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=esp01</span>
       </div>
-      <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.pde or *.ino</code> files to <code>src</code> directory.</p>
-    </li>
-    <li>
-      Process the project's environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
+      <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
+    </dd>
+
+    <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
+    <dd>
+      Process the project environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
       <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
       <span class="label label-default">Terminal</span>
       <div class="well terminal">
@@ -89,8 +96,8 @@
         <p class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</p>
         <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
       </div>
-    </li>
-  </ol>
+    </dd>
+  </dl>
 </div>
 
 <hr>
@@ -99,7 +106,7 @@
   <a name="blink-project-example"></a>
   <h2>"Blink" project example</h2>
 
-  <p>
+  <div>
     With the help of <em>PlatformIO</em> we can <strong>build the same code</strong> for the different development platforms. Let's define example environments for the most popular boards from the different platforms:
 
     <table class="table table-striped">
@@ -112,86 +119,88 @@
       </thead>
       <tbody>
         <tr>
-          <td><span class="label label-default">atmelavr</span> <a href="#!/platforms/atmelavr">Atmel AVR® 8- and 32-bit MCUs</a>
+          <td><a href="#!/platforms/atmelavr">Atmel AVR</a>
           </td>
-          <td><span class="label label-default">uno</span> <a href="/#!/boards?filter%5Btype%5D=uno">Arduino Uno (ATmega328P)</a>
+          <td><a href="/#!/boards?filter%5Btype%5D=uno">Arduino Uno (8-bit ATmega328P)</a>
           </td>
-          <td><span class="label label-default">arduino</span> <a href="#!/frameworks/arduino">Arduino Wiring-based Framework</a>
-          </td>
-        </tr>
-        <tr>
-          <td><span class="label label-default">teensy</span> <a href="#!/platforms/teensy">Teensy</a>
-          </td>
-          <td><span class="label label-default">teensy31</span> <a href="/#!/boards?filter%5Btype%5D=teensy31">Teensy 3.1</a>
-          </td>
-          <td><span class="label label-default">arduino</span> <a href="#!/frameworks/arduino">Arduino Wiring-based Framework</a>
+          <td><a href="#!/frameworks/arduino">Arduino Wiring-based Framework</a>
           </td>
         </tr>
         <tr>
-          <td><span class="label label-default">timsp430</span> <a href="#!/platforms/timsp430">MSP430 16-bit MCUs from TI</a>
+          <td><a href="#!/platforms/espressif">Espressif</a>
           </td>
-          <td><span class="label label-default">lpmsp430g2553</span> <a href="/#!/boards?filter%5Btype%5D=lpmsp430g2553">MSP430G2553 LaunchPad</a>
+          <td><a href="/#!/boards?filter%5Btype%5D=nodemcu">NodeMCU 0.9 &amp; 1.0 (32-bit ESP8266)</a>
           </td>
-          <td><span class="label label-default">energia</span> <a href="#!/frameworks/energia">Energia Wiring-based Framework</a>
+          <td><a href="#!/frameworks/arduino">Arduino Wiring-based Framework</a>
           </td>
         </tr>
         <tr>
-          <td><span class="label label-default">titiva</span> <a href="#!/platforms/titiva">TI TM4C12x MCUs ARM® Cortex®-M4</a>
+          <td><a href="#!/platforms/teensy">Teensy</a>
           </td>
-          <td><span class="label label-default">lptm4c1230c3pm</span> <a href="/#!/boards?filter%5Btype%5D=lptm4c1230c3pm">Tiva C Series TM4C123G LaunchPad</a>
+          <td><a href="/#!/boards?filter%5Btype%5D=teensy31">Teensy 3.1 (32-bit ARM MK20DX256)</a>
           </td>
-          <td><span class="label label-default">energia</span> <a href="#!/frameworks/energia">Energia Wiring-based Framework</a>
+          <td><a href="#!/frameworks/arduino">Arduino Wiring-based Framework</a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="#!/platforms/timsp430">TI MSP430</a>
+          </td>
+          <td><a href="/#!/boards?filter%5Btype%5D=lpmsp430g2553">TI LaunchPad (16-bit MSP430G2553)</a>
+          </td>
+          <td><a href="#!/frameworks/energia">Energia Wiring-based Framework</a>
           </td>
         </tr>
       </tbody>
     </table>
-  </p>
-
-  <p>
-    The source code located below in <code>main.cpp</code> will turn <em>ON</em> and <em>OFF</em> the <a href="http://wiring.org.co" target="_blank">Wiring</a> compatible board <mark>LED</mark> with intervals of 1 second (1000 milliseconds).
-  </p>
+  </div>
 
   <div class="row">
     <div class="col-md-6">
       <span class="label label-default">main.cpp</span>
       <pre class="hljscode" hljs language="cpp">
-#ifdef ENERGIA
-  #include "Energia.h"
-#else
-  #include "Arduino.h"
-#endif
+/*
+ * Blink
+ * Turns on an LED on for one second,
+ * then off for one second, repeatedly.
+ */
 
-
-#ifndef LED_PIN
-  // Most Arduino boards already have a LED attached to pin 13 on the board itself
-  #define LED_PIN 13
-#endif
+#include "Arduino.h"
 
 void setup()
 {
-  pinMode(LED_PIN, OUTPUT);     // set pin as output
+  // initialize digital pin 13 as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop()
 {
-  digitalWrite(LED_PIN, HIGH);  // set the LED on
-  delay(1000);                  // wait for a second
-  digitalWrite(LED_PIN, LOW);   // set the LED off
-  delay(1000);                  // wait for a second
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);
+  // wait for a second
+  delay(1000);
+  // turn the LED off by making the voltage LOW
+  digitalWrite(LED_BUILTIN, LOW);
+   // wait for a second
+  delay(1000);
 }</pre>
     </div>
     <div class="col-md-6">
       <span class="label label-default">platformio.ini</span>
       <pre class="hljscode" hljs language="ini">
 ; Project Configuration File
-;
-; A detailed documentation with the EXAMPLES is located here:
-; http://docs.platformio.org/en/latest/projectconf.html
+; Docs: http://docs.platformio.org/en/latest/projectconf.html
+
 
 [env:uno]
 platform = atmelavr
 framework = arduino
 board = uno
+
+[env:nodemcu]
+platform = espressif
+framework = arduino
+board = nodemcu
+build_flags = -D LED_BUILTIN=BUILTIN_LED
 
 [env:teensy31]
 platform = teensy
@@ -202,12 +211,7 @@ board = teensy31
 platform = timsp430
 framework = energia
 board = lpmsp430g2553
-
-[env:lptm4c1230c3pm]
-platform = titiva
-framework = energia
-board = lptm4c1230c3pm
-build_flags = -DLED_PIN=GREEN_LED</pre>
+build_flags = -D LED_BUILTIN=RED_LED</pre>
     </div>
   </div>
 
@@ -230,7 +234,7 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
   <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
   <span class="label label-default">Terminal</span>
   <div class="well terminal">
-    <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=teensy31 --board=lpmsp430g2553 --board=lptm4c1230c3pm</p>
+    <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=nodemcu --board=teensy31 --board=lpmsp430g2553</p>
       <small>
         <font color="yellow">
           The current working directory <font color="cyan">***</font> will be used for the new project.<br />
@@ -264,22 +268,47 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
 
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">uno</font> (platform: atmelavr, board: uno, framework: arduino) <br />
       <div class="dashed-line"></div>
-      avr-g++ -o .pioenvs/uno/src/main.o -c -fno-exceptions -fno-threadsafe-statics -g -Os -Wall -ffunction-sections -fdata-sections -MMD -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO_AVR_UNO -DARDUINO=106000 -I.pioenvs/uno/FrameworkArduino -I.pioenvs/uno/FrameworkArduinoVariant .pioenvs/uno/src/main.cpp<br />
+      avr-g++ -o .pioenvs/uno/src/main.o -c -std=gnu++11 -fno-exceptions -fno-threadsafe-statics -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO_AVR_UNO -DARDUINO=10607 -DPLATFORMIO=020700 -I.pioenvs/uno/FrameworkArduino -I.pioenvs/uno/FrameworkArduinoVariant src/main.cpp<br />
       <font color="white">[... a list of the rest compiled files ...]</font><br />
       avr-objcopy -O ihex -R .eeprom .pioenvs/uno/firmware.elf .pioenvs/uno/firmware.hex<br />
       "avr-size" --mcu=atmega328p -C -d .pioenvs/uno/firmware.elf<br />
       AVR Memory Usage<br />
       ----------------<br />
       Device: atmega328p<br />
-      Program:    1030 bytes (3.1% Full)<br />
+      Program:    998 bytes (3.0% Full)<br />
       (.text + .data + .bootloader)<br />
       Data:          9 bytes (0.4% Full)<br />
       (.data + .bss + .noinit)
-      <p>====================================== [ <font color="green">SUCCESS</font> ] Took 3.59 seconds ======================================</p>
+      <p>====================================== [ <font color="green">SUCCESS</font> ] Took 2.04 seconds ======================================</p>
+
+      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">nodemcu</font> (platform: espressif, board: nodemcu, framework: arduino, build_flags: -D LED_BUILTIN=BUILTIN_LED) <br />
+      <div class="dashed-line"></div>
+      xtensa-lx106-elf-g++ -o .pioenvs/nodemcu/src/main.o -c -fno-rtti -fno-exceptions -std=c++11 -Os -mlongcalls -mtext-section-literals -falign-functions=4 -U__STRICT_ANSI__ -ffunction-sections -fdata-sections -MMD -DF_CPU=80000000L -D__ets__ -DICACHE_FLASH -DESP8266 -DARDUINO_ARCH_ESP8266 -DARDUINO_ESP8266_ESP12 -DLED_BUILTIN=BUILTIN_LED -DARDUINO=200 -DPLATFORMIO=020700 -I/Users/ikravets/.platformio/packages/framework-arduinoespressif/tools/sdk/include -I.pioenvs/nodemcu/FrameworkArduino -I.pioenvs/nodemcu/FrameworkArduinoVariant src/main.cpp<br />
+      <font color="white">[... a list of the rest compiled files ...]</font><br />
+      "/Users/ikravets/.platformio/packages/tool-esptool/esptool" -eo "/Users/ikravets/.platformio/packages/framework-arduinoespressif/bootloaders/eboot/eboot.elf" -bo .pioenvs/nodemcu/firmware.bin -bm dio -bf 80 -bz 4M -bs .text -bp 4096 -ec -eo .pioenvs/nodemcu/firmware.elf -bs .irom0.text -bs .text -bs .data -bs .rodata -bc -ec<br />
+      <table>
+        <tr>
+          <td>text</td>
+          <td>data</td>
+          <td>bss</td>
+          <td>dec</td>
+          <td>hex</td>
+          <td>filename</td>
+        </tr>
+        <tr>
+          <td>197714</td>
+          <td>978</td>
+          <td>31240</td>
+          <td>229932</td>
+          <td>3822c</td>
+          <td>.pioenvs/&#8203;nodemcu/&#8203;firmware.elf</td>
+       </tr>
+      </table>
+      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 5.72 seconds ====================================== </p>
 
       [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">teensy31</font> (platform: teensy, board: teensy31, framework: arduino) <br />
       <div class="dashed-line"></div>
-      arm-none-eabi-g++ -o .pioenvs/teensy31/src/main.o -c -fno-rtti -fno-exceptions -std=gnu++0x -felide-constructors -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -nostdlib -MMD -DF_CPU=72000000L -DUSB_SERIAL -DLAYOUT_US_ENGLISH -D__MK20DX256__ -DARDUINO=10600 -DTEENSYDUINO=120 -I.pioenvs/teensy31/FrameworkArduino .pioenvs/teensy31/src/main.cpp<br />
+      arm-none-eabi-g++ -o .pioenvs/teensy31/src/main.o -c -fno-rtti -fno-exceptions -std=gnu++0x -felide-constructors -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -nostdlib -MMD -DF_CPU=72000000L -DUSB_SERIAL -DLAYOUT_US_ENGLISH -D__MK20DX256__ -DARDUINO=10600 -DTEENSYDUINO=124 -DPLATFORMIO=020700 -I.pioenvs/teensy31/FrameworkArduino src/main.cpp<br />
       <font color="white">[... a list of the rest compiled files ...]</font><br />
       arm-none-eabi-objcopy -O ihex -R .eeprom .pioenvs/teensy31/firmware.elf .pioenvs/teensy31/firmware.hex<br />
       arm-none-eabi-size" -B -d .pioenvs/teensy31/firmware.elf<br />
@@ -293,19 +322,19 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
           <td>filename</td>
         </tr>
         <tr>
-          <td>10584</td>
+          <td>10032</td>
           <td>1232</td>
-          <td>2400</td>
-          <td>14216</td>
-          <td>3788</td>
+          <td>2268</td>
+          <td>13532</td>
+          <td>34dc</td>
           <td>.pioenvs/&#8203;teensy31/&#8203;firmware.elf</td>
        </tr>
       </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 7.56 seconds ====================================== </p>
+      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 4.32 seconds ====================================== </p>
 
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">lpmsp430g2553</font> (platform: timsp430, board: lpmsp430g2553, framework: energia) <br />
+      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">lpmsp430g2553</font> (platform: timsp430, board: lpmsp430g2553, framework: energia, build_flags: -D LED_BUILTIN=RED_LED) <br />
       <div class="dashed-line"></div>
-      msp430-g++ -o .pioenvs/lpmsp430g2553/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=msp430g2553 -DF_CPU=16000000L -DARDUINO=101 -DENERGIA=13 -I.pioenvs/lpmsp430g2553/FrameworkEnergia -I.pioenvs/lpmsp430g2553/FrameworkEnergiaVariant .pioenvs/lpmsp430g2553/src/main.cpp<br />
+      msp430-g++ -o .pioenvs/lpmsp430g2553/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=msp430g2553 -DF_CPU=16000000L -DLED_BUILTIN=RED_LED -DARDUINO=101 -DENERGIA=15 -DPLATFORMIO=020700 -I.pioenvs/lpmsp430g2553/FrameworkEnergia -I.pioenvs/lpmsp430g2553/FrameworkEnergiaVariant src/main.cpp<br />
       <font color="white">[... a list of the rest compiled files ...]</font><br />
       msp430-objcopy -O ihex -R .eeprom .pioenvs/lpmsp430g2553/firmware.elf .pioenvs/lpmsp430g2553/firmware.hex<br />
       "msp430-size" -B -d .pioenvs/lpmsp430g2553/firmware.elf<br />
@@ -319,48 +348,23 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
           <td>filename</td>
         </tr>
         <tr>
-          <td>822</td>
+          <td>816</td>
           <td>0</td>
           <td>20</td>
-          <td>842</td>
-          <td>34a</td>
+          <td>836</td>
+          <td>344</td>
           <td>.pioenvs/&#8203;lpmsp430g2553/&#8203;firmware.elf</td>
        </tr>
       </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 3.00 seconds ====================================== </p>
-
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">lptm4c1230c3pm</font> (platform: titiva, build_flags: -DLED_PIN=GREEN_LED, board: lptm4c1230c3pm, framework: energia) <br />
-      <div class="dashed-line"></div>
-      arm-none-eabi-g++ -o .pioenvs/lptm4c1230c3pm/src/main.o -c -fno-rtti -fno-exceptions -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -nostdlib -MMD -DF_CPU=80000000L -DLED_PIN=GREEN_LED -DARDUINO=101 -DENERGIA=14 -I.pioenvs/lptm4c1230c3pm/FrameworkEnergia -I.pioenvs/lptm4c1230c3pm/FrameworkEnergiaVariant .pioenvs/lptm4c1230c3pm/src/main.cpp<br />
-      <font color="white">[... a list of the rest compiled files ...]</font><br />
-      arm-none-eabi-objcopy -O binary .pioenvs/lptm4c1230c3pm/firmware.elf .pioenvs/lptm4c1230c3pm/firmware.bin<br />
-      "arm-none-eabi-size" -B -d .pioenvs/lptm4c1230c3pm/firmware.elf<br />
-      <table>
-        <tr>
-          <td>text</td>
-          <td>data</td>
-          <td>bss</td>
-          <td>dec</td>
-          <td>hex</td>
-          <td>filename</td>
-        </tr>
-        <tr>
-          <td>2256</td>
-          <td>0</td>
-          <td>520</td>
-          <td>2776</td>
-          <td>ad8</td>
-          <td>.pioenvs/&#8203;lptm4c1230c3pm/&#8203;firmware.elf</td>
-       </tr>
-      </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 10.03 seconds ====================================== </p>
-
+      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 2.18 seconds ====================================== </p>
     </small>
   </div>
 
   <h3 class="header-underlined">Project Structure <small>after processing</small></h3>
   <pre>
+├── .gitignore
 ├── .pioenvs
+│   ├── .sconsign.dblite
 │   ├── lpmsp430g2553
 │   │   ├── FrameworkEnergia
 │   │   ├── FrameworkEnergiaVariant
@@ -368,13 +372,15 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
 │   │   ├── firmware.hex
 │   │   ├── libFrameworkEnergia.a
 │   │   └── src
-│   ├── lptm4c1230c3pm
-│   │   ├── FrameworkEnergia
-│   │   ├── FrameworkEnergiaVariant
+│   ├── nodemcu
+│   │   ├── FrameworkArduino
+│   │   ├── FrameworkArduinoVariant
 │   │   ├── firmware.bin
 │   │   ├── firmware.elf
-│   │   ├── libFrameworkEnergia.a
+│   │   ├── libFrameworkArduino.a
+│   │   ├── libFrameworkArduinoVariant.a
 │   │   └── src
+│   ├── structure.hash
 │   ├── teensy31
 │   │   ├── FrameworkArduino
 │   │   ├── firmware.elf
@@ -389,6 +395,9 @@ build_flags = -DLED_PIN=GREEN_LED</pre>
 │       ├── libFrameworkArduino.a
 │       ├── libFrameworkArduinoVariant.a
 │       └── src
+├── .travis.yml
+├── lib
+│   └── readme.txt
 ├── platformio.ini
 └── src
     └── main.cpp

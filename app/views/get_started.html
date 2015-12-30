@@ -38,7 +38,8 @@
     <div class="alert alert-warning">
       <ul class="fa-ul">
         <li>
-          <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it. <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage.
+          <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it. 
+          <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage, otherwise <code>pip</code> command will not be available.
         </li>
       </ul>
     </div>
@@ -47,9 +48,10 @@
 
     <span class="label label-default">Terminal</span>
     <div class="well terminal">
-      <p class="cmd"><font color="gray"># update package installer </font><br><i class="fa fa-angle-right fa-lg"></i> pip install -U pip setuptools</p>
-      <span class="cmd"><font color="gray"># install or upgrade PlatformIO </font><br><i class="fa fa-angle-right fa-lg"></i> pip install -U platformio</span>
+      <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> pip install -U platformio</span>
     </div>
+
+    <p>If <code>pip</code> command is not available or you have problems with it try <a href="http://docs.platformio.org/en/latest/installation.html#b-installer-script">PlatformIO Installer Script</a> instead.</p>
 
     <div class="alert alert-info">
       <ul class="fa-ul">

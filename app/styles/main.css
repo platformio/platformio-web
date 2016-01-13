@@ -383,3 +383,23 @@
 .social-btns > li {
   vertical-align: top;
 }
+
+.top-banner {
+  display: block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background-color: #0275d8;
+}
+
+.top-banner:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #025ebb;
+}
+
+.top-banner:visited {
+  color: #fff;
+  text-decoration: none;
+}

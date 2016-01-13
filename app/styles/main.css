@@ -118,18 +118,18 @@
   width: 240px;
 }
 
-.home .top-banner h2 {
+.home .top-items h2 {
   font-weight: normal;
 }
 
-.home .top-banner .img-circle {
+.home .top-items .img-circle {
   background-color: #c0c0c0;
   width: 140px;
   height: 140px;
   padding-top: 30px;
 }
 
-.home .top-banner .img-circle:hover {
+.home .top-items .img-circle:hover {
   background-color: #d3d3d3;
 }
 

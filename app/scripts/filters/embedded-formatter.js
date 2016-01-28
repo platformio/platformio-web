@@ -33,7 +33,7 @@
           } else {
             value = Math.round(value / 1024 * 10) / 10;
           }
-          value += ' Kb';
+          value += ' kB';
           break;
       }
 

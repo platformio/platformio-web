@@ -25,68 +25,76 @@
   <a name="installation"></a>
   <h2>Installation</h2>
 
-  <div class="alert alert-success" role="alert">
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Image" analytics-category="PlatformIO IDE" analytics-label="Get Started">
-          <img class="media-object" src="images/platformio-ide-for-atom-small.png" alt="PlatformIO IDE for IoT development">
-        </a>
+  <uib-tabset justified="true">
+
+    <uib-tab>
+      <uib-tab-heading>PlatformIO IDE for IoT development</span></uib-tab-heading>
+      <br>
+      <div class="row text-left">
+        <div class="col-md-5">
+          <p class="lead">
+            <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Get Started">PlatformIO IDE</a> is the missing integrated development environment which provides comprehensive facilities for IoT development:
+          </p>
+          <p class="lead"><i class="fa fa-check"></i>
+            Cross-platform builder without external dependencies to the system software: <a href="#!/boards">200+ embedded boards</a>, <a href="#!/platforms">15+ development platforms</a>, <a href="#!/frameworks">10+ frameworks</a>
+          </p>
+          <p class="lead"><i class="fa fa-check"></i> C/C++  Intelligent code completion</p>
+          <p class="lead"><i class="fa fa-check"></i> C/C++ Smart code linter and super-fast coding</p>
+          <p class="lead"><i class="fa fa-check"></i> Multi-projects workflow, multiple panes and themes support with dark and light colors</p>
+          <p class="lead"><i class="fa fa-check"></i> Built-in Terminal with <a href="http://docs.platformio.org/en/latest/userguide/index.html">PlatformIO CLI</a> and Serial Port Monitor</p>
+          <p><a href="http://docs.platformio.org/en/latest/ide/atom.html" class="btn btn-success btn-lg" role="button" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Get Started"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a></p>
+        </div>
+        <div class="col-md-7">
+          <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Image" analytics-category="PlatformIO IDE" analytics-label="Get Started"><img src="images/platformio-ide-for-atom.png" class="img-thumbnail" alt="PlatformIO IDE for IoT development" title="PlatformIO IDE for IoT development" tooltip="PlatformIO IDE for IoT development"></a>
+        </div>
       </div>
-      <div class="media-body">
-        <h4 class="media-heading">PlatformIO IDE for IoT development</h4>
-          PlatformIO IDE is the missing integrated development environment which provides comprehensive facilities for IoT development:
 
-          <ul class="fa-ul" style="margin-top: 15px; margin-bottom: 20px;">
-            <li><i class="fa-li fa fa-check"></i> Cross-platform builder without external dependencies to the system software: <a href="#!/boards">200+ embedded boards</a>, <a href="#!/platforms">15+ development platforms</a>, <a href="#!/frameworks">10+ frameworks</a></li>
-            <li><i class="fa-li fa fa-check"></i> C/C++ Intelligent code completion</li>
-            <li><i class="fa-li fa fa-check"></i> C/C++ Smart code linter</li>
-            <li><i class="fa-li fa fa-check"></i> Built-in Terminal with <a href="http://docs.platformio.org/en/latest/userguide/index.html">PlatformIO CLI</a> (<code>pio</code>, <code>platformio</code>)</li>
-          </ul>  
+    </uib-tab>
 
-          <p><a href="http://docs.platformio.org/en/latest/ide/atom.html" class="btn btn-primary" role="button" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Get Started">Try PlatformIO IDE now!</a></p> 
-      </div>
-    </div> 
-  </div>
+    <uib-tab>
+      <uib-tab-heading>PlatformIO Command Line (CLI)</span></uib-tab-heading>
+      <br>
+      <p>
+        <b>PlatformIO</b> is written in <i>Python</i> (2.6 or 2.7 version is required) and works on <i>Mac OS X, Linux, Windows OS</i> and ARM-based credit-card sized computers (<i>Raspberry Pi, BeagleBone, CubieBoard</i>).
+      </p>
 
-  <hr>   
+      <p>
+        All commands below should be executed in <a href="http://en.wikipedia.org/wiki/Command-line_interface" target="_blank">Command-line</a> application (Terminal):
+        <ul>
+          <li>Mac OS X / Linux – Terminal application</li>
+          <li>Windows – <code>cmd.exe</code> application.</li>
+        </ul>
 
-  <p>
-    <b>PlatformIO</b> is written in <i>Python</i> (2.6 or 2.7 version is required) and works on <i>Mac OS X, Linux, Windows OS</i> and ARM-based credit-card sized computers (<i>Raspberry Pi, BeagleBone, CubieBoard</i>).
-  </p>
+        <div class="alert alert-warning">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it.
+              <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage, otherwise <code>pip</code> command will not be available.
+            </li>
+          </ul>
+        </div>
 
-  <p>
-    All commands below should be executed in <a href="http://en.wikipedia.org/wiki/Command-line_interface" target="_blank">Command-line</a> application (Terminal):
-    <ul>
-      <li>Mac OS X / Linux – Terminal application</li>
-      <li>Windows – <code>cmd.exe</code> application.</li>
-    </ul>
+        <p>To install or upgrade PlatformIO paste command at a Terminal prompt and run using <a href="https://pip.pypa.io" target="_blank">pip</a> (<b>MAY require</b> administrator access <code>sudo</code>):</p>
 
-    <div class="alert alert-warning">
-      <ul class="fa-ul">
-        <li>
-          <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it.
-          <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage, otherwise <code>pip</code> command will not be available.
-        </li>
-      </ul>
-    </div>
+        <span class="label label-default">Terminal</span>
+        <div class="well terminal">
+          <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> pip install -U platformio</span>
+        </div>
 
-    <p>To install or upgrade PlatformIO paste command at a Terminal prompt and run using <a href="https://pip.pypa.io" target="_blank">pip</a> (<b>MAY require</b> administrator access <code>sudo</code>):</p>
+        <p>If <code>pip</code> command is not available, run <kbd><i class="fa fa-angle-right fa-lg"></i> easy_install pip</kbd> or use <a href="http://docs.platformio.org/en/latest/installation.html#b-installer-script">PlatformIO Installer Script</a> which will install <code>pip</code> and <code>platformio</code> automatically.</p>
 
-    <span class="label label-default">Terminal</span>
-    <div class="well terminal">
-      <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> pip install -U platformio</span>
-    </div>
+        <div class="alert alert-info">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in the <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link" analytics-on analytics-event="Button" analytics-category="Docs" analytics-label="GetStarted"><i class="fa fa-book"></i> Installation</a> section of documentation.
+            </li>
+          </ul>
+        </div>
+      </p>
+    </uib-tab>
 
-    <p>If <code>pip</code> command is not available, run <kbd><i class="fa fa-angle-right fa-lg"></i> easy_install pip</kbd> or use <a href="http://docs.platformio.org/en/latest/installation.html#b-installer-script">PlatformIO Installer Script</a> which will install <code>pip</code> and <code>platformio</code> automatically.</p>
+  </uib-tabset>
 
-    <div class="alert alert-info">
-      <ul class="fa-ul">
-        <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in the <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link" analytics-on analytics-event="Button" analytics-category="Docs" analytics-label="GetStarted"><i class="fa fa-book"></i> Installation</a> section of documentation.
-        </li>
-      </ul>
-    </div>
-  </p>
 </div>
 
 <hr>
@@ -95,37 +103,78 @@
   <a name="quickstart"></a>
   <h2>Quickstart</h2>
 
-  <dl>
-    <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
-    <dd>
-      <p>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</p>
-    </dd>
+  <uib-tabset justified="true">
 
-    <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
-    <dd>
-      Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command
-      with the pre-configured environments for your boards:
+    <uib-tab>
+      <uib-tab-heading>PlatformIO IDE for IoT development</span></uib-tab-heading>
       <br>
-      <span class="label label-default">Terminal</span>
-      <div class="well terminal">
-        <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
-        <span class="cmd"><font color="gray"># for example, initialize cross-platform project for Arduino Uno and Espressif Generic ESP8266 ESP-01</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=esp01</span>
-      </div>
-      <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
-    </dd>
 
-    <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
-    <dd>
-      Process the project environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
-      <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
-      <span class="label label-default">Terminal</span>
-      <div class="well terminal">
-        <p class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
-        <p class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</p>
-        <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
-      </div>
-    </dd>
-  </dl>
+      <dl>
+        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
+        <dd>
+          <p>Create empty directory for the future project. Add it to <b>PlatformIO IDE</b> using <i class="fa fa-folder"></i> button on the Toolbar or <code>Menu: File > Add Project Folder...</code></p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
+        <dd>
+          Initialize new <i>PlatformIO</i> based project using <code>Menu: PlatformIO > Initialize new Project (or update existing)</code> and select boards.
+          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
+        <dd>
+          Process the project environments:
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-check"></i>Build</li>
+            <li><i class="fa-li fa fa-arrow-right"></i>Upload</li>
+            <li><i class="fa-li fa fa-trash"></i>Clean</li>
+          </ul>
+
+          For the more commands please follow to <code>Menu: PlatformIO</code>.
+        </dd>
+      </dl>
+
+    </uib-tab>
+
+    <uib-tab>
+      <uib-tab-heading>PlatformIO Command Line (CLI)</span></uib-tab-heading>
+      <br>
+
+      <dl>
+        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
+        <dd>
+          <p>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
+        <dd>
+          Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command
+          with the pre-configured environments for your boards:
+          <br>
+          <span class="label label-default">Terminal</span>
+          <div class="well terminal">
+            <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
+            <span class="cmd"><font color="gray"># for example, initialize cross-platform project for Arduino Uno and Espressif Generic ESP8266 ESP-01</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=esp01</span>
+          </div>
+          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
+        <dd>
+          Process the project environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
+          <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
+          <span class="label label-default">Terminal</span>
+          <div class="well terminal">
+            <p class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
+            <p class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</p>
+            <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
+          </div>
+        </dd>
+      </dl>
+    </uib-tab>
+
+  </uib-tabset>
+
 </div>
 
 <hr>

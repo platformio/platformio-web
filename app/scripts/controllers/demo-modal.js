@@ -20,7 +20,7 @@
   angular.module('siteApp')
     .controller('DemoModalController', DemoModalController);
 
-  function DemoModalController($window, $modalInstance, $location,
+  function DemoModalController($window, $uibModalInstance, $location,
     $analytics) {
     var vm = this;
 
@@ -34,7 +34,7 @@
         category: 'Install',
         label: 'Demo'
       });
-      $modalInstance.close('ok');
+      $uibModalInstance.close('ok');
       $location.path('/get-started');
     }
 
@@ -43,7 +43,7 @@
         category: 'Demo',
         label: 'Cancel'
       });
-      $modalInstance.dismiss('cancel');
+      $uibModalInstance.dismiss('cancel');
     }
 
   }

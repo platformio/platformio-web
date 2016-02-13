@@ -21,14 +21,14 @@
     .module('siteApp')
     .factory('siteUtils', siteUtils);
 
-  function siteUtils($modal) {
+  function siteUtils($uibModal) {
     return {
       showSearchExamples: showSearchExamples,
       showDemo: showDemo
     };
 
     function showSearchExamples(searchPath) {
-      $modal.open({
+      $uibModal.open({
         templateUrl: 'views/lib_search_examples.html',
         controller: 'LibModalSEController',
         controllerAs: 'vm',
@@ -42,7 +42,7 @@
     }
 
     function showDemo() {
-      $modal.open({
+      $uibModal.open({
         templateUrl: 'views/demo_modal.html',
         controller: 'DemoModalController',
         controllerAs: 'vm',

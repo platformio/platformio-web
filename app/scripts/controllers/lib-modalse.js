@@ -20,7 +20,7 @@
   angular.module('siteApp')
     .controller('LibModalSEController', LibModalSEController);
 
-  function LibModalSEController($window, $modalInstance, searchPath) {
+  function LibModalSEController($window, $uibModalInstance, searchPath) {
     var vm = this;
     vm.searchPath = searchPath;
     vm.search = doSearch;
@@ -29,7 +29,7 @@
 
     function doSearch(query) {
       $window.location.href = vm.searchPath + '?query=' + query;
-      $modalInstance.close();
+      $uibModalInstance.close();
     }
   }
 

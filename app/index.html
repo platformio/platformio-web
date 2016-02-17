@@ -42,144 +42,140 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-  <header class="navbar navbar-inverse">
-    <div class="container container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#!/">PlatformIO</a>
-      </div>
+  <header>
+    <nav role="navigation" class="navbar navbar-inverse">
+      <div class="container container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" ng-click="vm.isNavBarCollapsed = !vm.isNavBarCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#!/"> PlatformIO</a>
+        </div>
 
-      <nav role="navigation">
-        <div class="collapse navbar-collapse">
+        <div uib-collapse="vm.isNavBarCollapsed" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li ng-class="{active: vm.isRouteActive('/get-started')}"><a href="#!/get-started"><i class="fa fa-rocket fa-lg"></i>Get Started</a></li>
-            <li ng-class="{active: vm.isRouteActive('/platforms')}"><a href="#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a></li>
-            <li ng-class="{active: vm.isRouteActive('/frameworks')}"><a href="#!/frameworks"><i class="fa fa-cogs fa-lg"></i>Frameworks</a></li>
-            <li ng-class="{active: vm.isRouteActive('/boards')}"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a></li>
-            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" uib-dropdown>
-              <a href="#!/lib" class="btn btn-main"><i class="fa fa-code fa-lg"></i>Libraries</a>
-              <a class="btn dropdown-toggle" uib-dropdown-toggle>
-                <span class="caret"></span>
+            <li ng-class="{active: vm.isRouteActive('/platformio-ide')}"><a href="#!/platformio-ide"><i class="fa fa-cube fa-lg"></i>IDE</a></li>
+            <li ng-class="{active: vm.isRouteActive('/(platforms|frameworks|boards)')}" class="dropdown" uib-dropdown>
+              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-wrench fa-lg"></i>
+                Development <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#!/lib"><i class="fa fa-bar-chart"></i> Stats</a></li>
-                <li><a href="#!/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
-                <li class="divider"></li>
-                <li><a href="#!/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
-                <li><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
+                <li role="menuitem"><a href="#!/platforms"><i class="fa fa-laptop fa-lg"></i>Platforms</a></li>
+                <li role="menuitem"><a href="#!/frameworks"><i class="fa fa-cogs fa-lg"></i>Frameworks</a></li>
+                <li role="menuitem"><a href="#!/boards"><i class="fa fa-gamepad fa-lg"></i>Boards</a></li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem"><a href="http://docs.platformio.org/en/latest/ci/index.html"><i class="fa fa-refresh"></i> Continuous Integration</a></li>
+                <li role="menuitem"><a href="http://docs.platformio.org/en/latest/ide.html"><i class="fa fa-cube"></i> IDE Integration</a></li>
               </ul>
             </li>
+            <li ng-class="{active: vm.isRouteActive('/lib')}" class="dropdown" uib-dropdown>
+              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-code fa-lg"></i>
+                Libraries <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a href="#!/lib"><i class="fa fa-bar-chart"></i> Home &amp; Stats</a></li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem"><a href="#!/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
+                <li role="menuitem"><a href="#!/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem"><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
+                <li role="menuitem"><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
+              </ul>
+            </li>
+            <li><a href="http://docs.platformio.org/"><i class="fa fa-book fa-lg"></i>Docs</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li ng-class="{active: vm.isRouteActive('/who-uses')}"><a href="#!/who-uses"><i class="fa fa-heart-o fa-lg"></i>Who uses</a></li>
-            <li class="btn-group" uib-dropdown>
-              <a href="http://docs.platformio.org/" class="btn btn-main"><i class="fa fa-book fa-lg"></i>Docs</a>
-              <a class="btn dropdown-toggle" uib-dropdown-toggle>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://docs.platformio.org/en/latest/installation.html">Installation</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/quickstart.html">Quickstart</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/userguide/index.html">User Guide</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/envvars.html">Environment variables</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/platforms/index.html">Platforms & Embedded Boards</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/frameworks/index.html">Frameworks</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/librarymanager/index.html">Library Manager</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html">Creating Library</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/librarymanager/config.html">library.json</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/ci/index.html">Continuous Integration</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/ide.html">IDE Integration</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/articles.html">Articles about us</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/faq.html">FAQ</a></li>
-                <li><a href="http://docs.platformio.org/en/latest/history.html">Release Notes</a></li>
-              </ul>
-            </li>
+            <li ng-class="{active: vm.isRouteActive('/donate')}"><a href="#!/donate"><i class="fa fa-heart-o fa-lg"></i>Donate</a></li>
+            <li ng-class="{active: vm.isRouteActive('/contact')}"><a href="#!/contact"><i class="fa fa-envelope fa-lg"></i>Contact</a></li>
           </ul>
         </div>
-
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <div ng-view="" autoscroll="true"><div class="text-center"><i class="fa fa-spinner fa-pulse"></i></div></div>
 
   <hr>
-  <footer class="container footer text-center">
+  <footer class="footer text-center">
 
-    <a href="#!/boards" class="brands">
-      <ul class="list-inline">
-        <li><div class="brands brand-atmel"></div></li>
-        <li><div class="brands brand-espresiff"></div></li>
-        <li><div class="brands brand-freescale"></div></li>
-        <li><div class="brands brand-nordic"></div></li>
-        <li><div class="brands brand-nxp"></div></li>
-        <li><div class="brands brand-siliconlabs"></div></li>
-        <li><div class="brands brand-stm"></div></li>
-        <li><div class="brands brand-teensy"></div></li>
-        <li><div class="brands brand-ti"></div></li>
-        <li><div class="brands brand-arduino"></div></li>
-        <li><div class="brands brand-energia"></div></li>
-        <li><div class="brands brand-libopencm3"></div></li>
-        <li><div class="brands brand-mbed"></div></li>
-      </ul>
-    </a>
+    <div class="brands-contaier">
+      <div class="container">
+        <a href="#!/boards" class="brands">
+          <ul class="list-inline">
+            <li><div class="brands brand-atmel"></div></li>
+            <li><div class="brands brand-espresiff"></div></li>
+            <li><div class="brands brand-freescale"></div></li>
+            <li><div class="brands brand-nordic"></div></li>
+            <li><div class="brands brand-nxp"></div></li>
+            <li><div class="brands brand-siliconlabs"></div></li>
+            <li><div class="brands brand-stm"></div></li>
+            <li><div class="brands brand-teensy"></div></li>
+            <li><div class="brands brand-ti"></div></li>
+            <li><div class="brands brand-arduino"></div></li>
+            <li><div class="brands brand-energia"></div></li>
+            <li><div class="brands brand-libopencm3"></div></li>
+            <li><div class="brands brand-mbed"></div></li>
+          </ul>
+        </a>
+      </div>
+    </div>
 
-    <hr>
+    <div class="container">
+      <div class="row quick-links text-left">
+        <div class="col-md-3">
+          <h3>About</h3>
+          <ul>
+            <li><a href="http://docs.platformio.org/en/latest/faq.html#what-is-platformio">What is PlatformIO</a></li>
+            <li><a href="#!/who-uses">Who Uses</a></li>
+            <li><a href="http://docs.platformio.org/en/latest/articles.html">Articles</a></li>
+            <li><a href="http://www.ikravets.com/category/computer-life/platformio" target="_blank">Blog</a></li>
+            <li><a href="http://docs.platformio.org/en/latest/faq.html">FAQs</a></li>
+            <li><a href="http://docs.platformio.org/en/latest/history.html">Release Notes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Development</h3>
+          <ul>
+            <li><a href="#!/platformio-ide">PlatformIO IDE</a></li>
+            <li><a href="#!/platforms">Platforms</a></li>
+            <li><a href="#!/frameworks">Frameworks</a></li>
+            <li><a href="#!/boards">Embedded Boards</a></li>
+            <li><a href="#!/lib">Libraries</a></li>
+            <li><a href="http://docs.platformio.org/en/latest/ci/index.html">Continuous Integration</a></li>
+            <li><a href="http://docs.platformio.org/en/latest/ide.html">IDE Integration</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="https://github.com/platformio/platformio/issues" target="_blank">Open a support ticket</a></li>
+            <li><a href="https://github.com/platformio/platformio/issues" target="_blank">Submit a feature request</a></li>
+            <li><a href="https://gitter.im/platformio/platformio" target="_blank">Live Chat</a></li>
+            <li><a href="http://docs.platformio.org/">Documentation</a></li>
+            <li><a href="#!/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="https://github.com/platformio/platformio" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+            <li><a href="https://twitter.com/PlatformIO_Org" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/platformio" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://hackaday.io/project/7980-platformio" target="_blank"><i class="fa fa-hacker-news"></i> Hackaday</a></li>
+            <li><a href="http://www.reddit.com/r/platformio/" target="_blank"><i class="fa fa-reddit"></i> Reddit</a></li>
+            <li><a href="https://gitter.im/platformio/platformio" target="_blank"><i class="fa fa-comment"></i> Gitter</a></li>
+          </ul>
+        </div>
+      </div>
 
-    <ul class="list-inline social-btns" ng-if="!vm.isPhJSCrawler">
-      <li>
-        <iframe src="http://ghbtns.com/github-btn.html?user=platformio&repo=platformio&type=watch&count=true" height="20" width="118" frameborder="0" scrolling="0" style="width:118px; height: 20px;" allowTransparency="true"></iframe>
-      </li>
-      <li>
-        <a href="https://twitter.com/PlatformIO_Org" class="twitter-follow-button" data-show-count="true">Follow @PlatformIO_Org</a>
-      </li>
-      <li class="btns-fb">
-        <div class="fb-like" data-href="https://www.facebook.com/platformio/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-        <div id="fb-root"></div>
-      </li>
-    </ul>
+      <p class="copyright"><i class="fa fa-copyright"></i> 2014-2016 Ivan Kravets. All rights reserved.</p>
 
-    <p>Made with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> by <a href="http://www.ikravets.com/about-me" target="_blank">Ivan Kravets</a>
-    </p>
-    <p>
-      The open source code of <a href="https://github.com/platformio/platformio" target="_blank">PlatformIO</a>,
-      <a href="https://github.com/platformio/platformio/tree/develop/docs" target="_blank">Documentation</a>,
-      <a href="https://github.com/platformio/platformio-api" target="_blank">API</a> and
-      <a href="https://github.com/platformio/platformio-web" target="_blank">Web Site</a> is licensed under <a href="https://github.com/platformio/platformio/blob/master/LICENSE" target="_blank">Apache License v2.0</a>.
-    </p>
-
-    <ul class="list-inline">
-      <li><i class="fa fa-file-code-o"></i> <a href="http://docs.platformio.org/en/latest/librarymanager/config.html">library.json</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/">Documentation</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-github"></i> <a href="https://github.com/platformio/platformio" target="_blank">GitHub</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-bug"></i> <a href="https://github.com/platformio/platformio/issues" target="_blank">Issues</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-pencil"></i> <a href="http://www.ikravets.com/category/computer-life/platformio" target="_blank">Blog</a> </li>
-      <li>·</li>
-      <li><i class="fa fa-newspaper-o"></i> <a href="http://docs.platformio.org/en/latest/articles.html">Articles</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-history"></i> <a href="http://docs.platformio.org/en/latest/history.html">Releases</a>
-      </li>
-      <li>·</li>
-      <li><i class="fa fa-envelope"></i> <a href="http://www.ikravets.com/about-me" target="_blank">Contact</a>
-      </li>
-    </ul>
+    </div>
   </footer>
 
   <script>
@@ -193,20 +189,6 @@
 
   <script>
     if (window.navigator.userAgent.indexOf('PhantomJS') === -1) {
-      // twitter
-      (function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-        if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-          fjs.parentNode.insertBefore(js,fjs);}})(document, 'script', 'twitter-wjs');
-
-      // facebook
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.5&appId=813321708714704";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
       // addthis
       (function(s,o,g){ a=s.createElement(o),m=s.getElementsByTagName(o)[0];
        a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

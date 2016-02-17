@@ -5,7 +5,7 @@
   <div class="container text-center">
     <img src="images/platformio-logo.png" height="220" title="PlatformIO is an open source ecosystem for IoT development. Cross-platform code builder and library manager. Continuous and IDE integration. Arduino and MBED compatible. Ready for Cloud compiling" alt="PlatformIO is an open source ecosystem for IoT development. Cross-platform code builder. Continuous and IDE integration. Arduino and MBED compatible. Ready for Cloud compiling">
     <h1>
-      PlatformIO is an open source ecosystem for IoT development <br>
+      PlatformIO is an open source ecosystem for <abbr title="Internet of Things">IoT</abbr> development <br>
       <small>Cross-platform code builder. Continuous and IDE integration. Arduino and MBED compatible</small>
     </h1>
     <p>
@@ -29,12 +29,12 @@
     </p>
     <p>
       <ul class="list-inline">
-        <li>Version <a href="http://docs.platformio.org/en/latest/history.html">2.8.2</a></li>
+        <li><i class="fa fa-history"></i> <a href="http://docs.platformio.org/en/latest/history.html">Release Notes</a></li>
         <li>·</li>
         <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/">Documentation</a>
         </li>
         <li>·</li>
-        <li>Made with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> in <a href="http://www.ikravets.com/about-me" target="_blank">Ukraine</a>
+        <li>Made with <i class="fa fa-heart" tooltip="Made in Ukraine"></i> in <a href="#!/contact">Ukraine</a>
         </li>
       </ul>
     </p>
@@ -44,31 +44,37 @@
 <article>
   <div class="container home">
 
-    <div class="row text-center top-items">
+    <div class="row text-center top-items-lg">
       <div class="col-md-4">
         <center>
-          <a href="#!/platforms">
-            <div class="img-circle text-shadow"><i class="fa fa-laptop fa-5x"></i>
+          <a href="#!/platformio-ide">
+            <div class="img-circle text-shadow"><i class="fa fa-cube fa-5x"></i>
             </div>
           </a>
         </center>
-        <h2>Development Platforms</h2>
-        <p><b>Embedded and Desktop</b> development platforms with pre-built toolchains, debuggers, uploaders and frameworks which work under popular host OS: Mac, Windows, Linux (+ARM).</p>
-        <p><a class="btn btn-default" href="#!/platforms" role="button">Read More</a>
+        <h2>PlatformIO IDE</h2>
+        <p>
+          <b>The next generation</b> integrated development environment for IoT.
+          <br>C/C++ Intelligent code completion and Smart code linter with Built-in Terminal and Serial Monitor.
+        </p>
+        <p><a class="btn btn-default" href="#!/platformio-ide" role="button">Read More</a>
         </p>
       </div>
       <div class="col-md-4">
         <center>
-          <a href="#!/boards">
-            <div class="img-circle text-shadow"><i class="fa fa-gamepad fa-5x"></i>
+          <a>
+            <div class="img-circle text-shadow"><i class="fa fa-wrench fa-5x"></i>
             </div>
           </a>
         </center>
-        <h2>Embedded Boards</h2>
+        <h2>Development</h2>
         <p>
-          Rapid <b>Embedded Programming</b>, <b>Continuous and IDE integration</b> in a few steps with <em>PlatformIO</em> thanks to built-in project generator for the most popular embedded boards and IDE.
+          Rapid <b>Embedded Development</b>, <b>Continuous and IDE integration</b> in a few steps with <em>PlatformIO</em> thanks to built-in project generator for the most popular embedded boards and IDE.
         </p>
-        <p><a class="btn btn-default" href="#!/boards" role="button">Read More</a>
+        <p>
+          <a class="btn btn-default" href="#!/platforms" role="button">Platforms</a>
+          <a class="btn btn-default" href="#!/frameworks" role="button">Frameworks</a>
+          <a class="btn btn-default" href="#!/boards" role="button">Boards</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -91,7 +97,7 @@
       <div class="col-md-4">
         <h2 class="featurette-heading">PlatformIO IDE <span class="text-muted">for IoT development</span></h2>
         <p class="lead">
-          <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Home">PlatformIO IDE</a> is the next generation integrated development environment for IoT:
+          <a href="#!/platformio-ide" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Home">PlatformIO IDE</a> is the next generation integrated development environment for IoT:
         </p>
         <p class="lead"><i class="fa fa-check"></i>
           Cross-platform code builder without external dependencies to the system software: <a href="#!/boards">200+ embedded boards</a>, <a href="#!/platforms">15+ development platforms</a>, <a href="#!/frameworks">10+ frameworks</a>
@@ -103,13 +109,13 @@
         <p class="lead"><i class="fa fa-check"></i> Built-in Terminal with <a href="http://docs.platformio.org/en/latest/userguide/index.html">PlatformIO CLI</a> tool and Serial Port Monitor</p>
       </div>
       <div class="col-md-8">
-        <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Image" analytics-category="PlatformIO IDE" analytics-label="Home"><img src="images/platformio-ide-for-atom.png" class="img-thumbnail" alt="PlatformIO IDE for IoT development" title="PlatformIO IDE for IoT development" tooltip="PlatformIO IDE for IoT development"></a>
+        <a href="#!/platformio-ide" analytics-on analytics-event="Image" analytics-category="PlatformIO IDE" analytics-label="Home"><img src="images/platformio-ide-for-atom.png" class="img-thumbnail" alt="PlatformIO IDE for IoT development" title="PlatformIO IDE for IoT development" tooltip="PlatformIO IDE for IoT development"></a>
       </div>
-    </div>        
+    </div>
+  </div>
 
-    <hr class="home-divider">
-
-    <div class="text-center">
+  <div class="jumbotron">
+    <div class="container text-center">
       <h2>Use whenever. <span class="text-muted">Run everywhere.</span></h2>
       <p class="lead"><i>PlatformIO</i> is written in pure <i>Python</i> and <strong>doesn't depend</strong> on any additional libraries/tools from an operation system. It allows you to use <i>PlatformIO</i> beginning from <i>PC</i> and ending with credit-card sized computers (like <i>Raspberry Pi, BeagleBone, CubieBoard</i>)</p>
 
@@ -128,10 +134,7 @@
         </div>
       </div>
     </div>
-
   </div>
-
-  <hr class="home-divider">
 
   <div class="container text-center main-featurette">
 
@@ -192,20 +195,20 @@
 
   </div>
 
-  <hr class="home-divider">
+  <br>
+  <div class="jumbotron">
+    <div class="container text-center main-featurette">
+      <h2>Single source code. <span class="text-muted">Multiple platforms.</span></h2>
+      <p class="lead">
+        <i>PlatformIO</i> allows developer to compile the same code with different development platforms using the <i>Only One Command</i> <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html" class="text-nowrap"><i class="fa fa-angle-right"></i> platformio run</a>. This happens due to
+        <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> where you can setup different environments with specific options (platform type, firmware uploading settings, pre-built framework, build flags and many more).
+      </p>
+    </div>
+  </div>
 
   <div class="container text-center main-featurette">
-    <h2>Single source code. <span class="text-muted">Multiple platforms.</span></h2>
-    <p class="lead">
-      <i>PlatformIO</i> allows developer to compile the same code with different development platforms using the <i>Only One Command</i> <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html" class="text-nowrap"><i class="fa fa-angle-right"></i> platformio run</a>. This happens due to
-      <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> where you can setup different environments with specific options (platform type, firmware uploading settings, pre-built framework, build flags and many more).
-    </p>
-
-    <hr class="home-divider">
-
     <h2>Need more convincing? <span class="text-muted">Try PlatformIO Now!</span></h2>
     <p><a class="btn btn-success btn-lg" href="#!/get-started" role="button" analytics-on analytics-event="Button" analytics-category="Install" analytics-label="HomeBottom"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO</a> </p>
-
   </div>
 
 </article>

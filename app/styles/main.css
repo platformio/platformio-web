@@ -14,13 +14,6 @@
  * limitations under the License.
  */
 
-@media screen and (max-width: 992px) {
-  .collapse {
-    display: block;
-    visibility: visible;
-  }
-}
-
 .jumbotron h1, .text-shadow {
   text-shadow: 3px 2px 0px gray, 7px 6px 0px rgba(0, 0, 0, 0.15);
 }
@@ -51,6 +44,10 @@
 
 .navbar-header .navbar-brand {
   color: #e0e0e0;
+  background: url("../images/platformio-logo-xs.png") no-repeat;
+  background-position: 5px 0;
+  padding-left: 50px;
+  font-weight: 500;
 }
 
 .navbar-nav .btn-group .btn-main {
@@ -68,27 +65,17 @@
   border-color: #080808;
 }
 
-.terminal {
-  color: #fff;
-  background-color: #000;
-  padding: 10px;
+.navbar-collapse.in {
+    overflow-y: visible;
 }
 
-.terminal .cmd {
-  letter-spacing: 2px;
-}
-
-.terminal small {
-  color: #cecece;
-  word-wrap: break-word;
-}
-
-.terminal small .dashed-line {
-  border-bottom: 1px dashed #cecece;
-}
-
-.terminal small table td {
+.nav li a {
+  padding-left: 10px;
   padding-right: 10px;
+}
+
+.fa-heart {
+  color: #A80008;
 }
 
 .header-underlined {
@@ -96,13 +83,22 @@
   padding-bottom: 5px;
 }
 
-.footer {
-  padding: 20px;
+.top-items-xs .img-circle {
+  background-color: #c0c0c0;
+  width: 90px;
+  height: 90px;
+  padding-top: 15px;
 }
 
-.footer .brands:hover,
-.footer .brands:focus {
-  text-decoration: none;
+.top-items-lg .img-circle {
+  background-color: #c0c0c0;
+  width: 140px;
+  height: 140px;
+  padding-top: 30px;
+}
+
+.top-items .img-circle:hover {
+  background-color: #d3d3d3;
 }
 
 /* Home */
@@ -120,17 +116,6 @@
 
 .home .top-items h2 {
   font-weight: normal;
-}
-
-.home .top-items .img-circle {
-  background-color: #c0c0c0;
-  width: 140px;
-  height: 140px;
-  padding-top: 30px;
-}
-
-.home .top-items .img-circle:hover {
-  background-color: #d3d3d3;
 }
 
 .home-divider {
@@ -281,12 +266,54 @@
   min-height: 32px;
 }
 
-/* Brands */
+/* Footer */
+
+.footer {
+  padding: 0;
+  margin: 0;
+  color: #e0e0e0;
+  background-color: #222;
+}
+
+.footer a {
+  color: #9d9d9d;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer .quick-links {
+  margin: 25px 0;
+}
+
+.footer .quick-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .quick-links ul li {
+  padding-top: 5px;
+}
+
+.footer .copyright {
+  color: #777;
+}
+
+.footer .brands-contaier {
+  background-color: #fff;
+}
+
+.footer .brands:hover,
+.footer .brands:focus {
+  text-decoration: none;
+}
 
 .brands {
   background: url("../images/brands-tpl.jpg") no-repeat;
   height: 40px;
-  margin: 15px;
+  margin: 10px;
 }
 
 .brand-atmel {
@@ -355,33 +382,35 @@
 
 /* Miscellaneous */
 
-.fa-heart {
-  color: #A80008;
+.terminal {
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
 }
 
-.get-started-nav li {
-  padding-left: 20px;
-  padding-right: 20px;
+.terminal .cmd {
+  letter-spacing: 2px;
 }
 
-.get-started-nav li i {
-  margin-right: 5px;
+.terminal small {
+  color: #cecece;
+  word-wrap: break-word;
 }
 
-.get-started-nav a {
-  font-size: 18px;
+.terminal small .dashed-line {
+  border-bottom: 1px dashed #cecece;
+}
+
+.terminal small table td {
+  padding-right: 10px;
 }
 
 .modal-piodemo {
   width: 760px;
 }
 
-.social-btns {
-  margin-bottom: 10px;
-}
-
-.social-btns > li {
-  vertical-align: top;
+.donate .list-inline li {
+  padding-bottom: 15px;
 }
 
 .top-banner {

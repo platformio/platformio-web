@@ -14,47 +14,78 @@
 
 <div class="container">
 
-  <div>
-    <ul class="list-inline text-center get-started-nav">
-      <li><a href="#!/get-started#installation"><i class="fa fa-hand-o-right"></i>Installation</a></li>
-      <li><a href="#!/get-started#quickstart"><i class="fa fa-hand-o-right"></i>Quickstart</a></li>
-      <li><a href="#!/get-started#blink-project-example"><i class="fa fa-hand-o-right"></i>"Blink" project example</a></li>
-    </ul>
-  </div>
-
-  <a name="installation"></a>
-  <h2>Installation</h2>
-
-  <uib-tabset justified="true">
-
+  <uib-tabset justified="true" type="pills">
     <uib-tab>
-      <uib-tab-heading>PlatformIO IDE for IoT development</span></uib-tab-heading>
+      <uib-tab-heading><i class="fa fa-cube fa-lg"></i> PlatformIO IDE for IoT development</span></uib-tab-heading>
+      <hr>
+      <h2>Installation</h2>
+      <a href="#!/platformio-ide">PlatformIO IDE</a> is the next generation integrated development environment for IoT.
+      It's built on top of <a href="https://atom.io" target="_blank">GitHub's Atom "hackable" text editor</a>.
+
+      <p>If you have already Atom installed, please install <a href="https://atom.io/packages/platformio-ide" target="_blank">PlatformIO IDE for Atom</a> package. If you don't have, please download <b>PlatformIO IDE for Atom bundle with built-in auto installer</b>:</p>
       <br>
-      <div class="row text-left">
-        <div class="col-md-4">
-          <p class="lead">
-            <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Get Started">PlatformIO IDE</a> is the next generation integrated development environment for IoT:
-          </p>
-          <p class="lead"><i class="fa fa-check"></i>
-            Cross-platform code builder without external dependencies to the system software: <a href="#!/boards">200+ embedded boards</a>, <a href="#!/platforms">15+ development platforms</a>, <a href="#!/frameworks">10+ frameworks</a>
-          </p>
-          <p class="lead"><i class="fa fa-check"></i> C/C++  Intelligent code completion</p>
-          <p class="lead"><i class="fa fa-check"></i> C/C++ Smart code linter for super-fast coding</p>
-          <p class="lead"><i class="fa fa-check"></i> Multi-projects workflow with multiple panes</p>
-          <p class="lead"><i class="fa fa-check"></i> Themes support with dark and light colors</p>
-          <p class="lead"><i class="fa fa-check"></i> Built-in Terminal with <a href="http://docs.platformio.org/en/latest/userguide/index.html">PlatformIO CLI</a> tool and Serial Port Monitor</p>
-          <p><a href="http://docs.platformio.org/en/latest/ide/atom.html" class="btn btn-success btn-lg" role="button" analytics-on analytics-event="Button" analytics-category="PlatformIO IDE" analytics-label="Get Started"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a></p>
+
+      <div class="row text-center">
+        <div class="col-lg-3">
+          <p><i class="fa fa-apple fa-5x"></i></p>
+          <p><a class="btn btn-success" href="https://sourceforge.net/projects/platformio-storage/files/ide-bundles/platformio-atom-mac.zip/download" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a></p>
         </div>
-        <div class="col-md-8">
-          <a href="http://docs.platformio.org/en/latest/ide/atom.html" analytics-on analytics-event="Image" analytics-category="PlatformIO IDE" analytics-label="Get Started"><img src="images/platformio-ide-for-atom.png" class="img-thumbnail" alt="PlatformIO IDE for IoT development" title="PlatformIO IDE for IoT development" tooltip="PlatformIO IDE for IoT development"></a>
+        <div class="col-lg-3">
+          <p><i class="fa fa-windows fa-5x"></i></p>
+          <p><a class="btn btn-success" href="https://sourceforge.net/projects/platformio-storage/files/ide-bundles/platformio-atom-windows.exe/download" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a></p>
+        </div>
+        <div class="col-lg-3">
+          <p><i class="fa fa-linux fa-5x"></i></p>
+          <p>
+            <a class="btn btn-success" href="https://sourceforge.net/projects/platformio-storage/files/ide-bundles/platformio-atom-linux-amd64.deb/download" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"></i> &nbsp;Download .deb</a>
+            <a class="btn btn-success" href="https://sourceforge.net/projects/platformio-storage/files/ide-bundles/platformio-atom-linux-amd64.rpm/download" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"></i> &nbsp;Download .rpm</a>
+          </p>
+        </div>
+        <div class="col-lg-3">
+          <p><i class="fa fa-desktop fa-5x"></i></p>
+          <p><a class="btn btn-success" href="http://docs.platformio.org/en/latest/ide/atom.html#installation" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Other Platforms</a></p>
         </div>
       </div>
+
+      <h2>Quickstart</h2>
+
+      <dl>
+        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
+        <dd>
+          <p>Create empty directory for the future project. Add it to <b>PlatformIO IDE</b> using <i class="fa fa-folder"></i> button on the Toolbar or <code>Menu: File > Add Project Folder...</code></p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
+        <dd>
+          Initialize new <i>PlatformIO</i> based project using <code>Menu: PlatformIO > Initialize new Project (or update existing)</code> and select boards.
+          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
+        </dd>
+
+        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
+        <dd>
+          Process the project environments:
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-check"></i>Build</li>
+            <li><i class="fa-li fa fa-arrow-right"></i>Upload</li>
+            <li><i class="fa-li fa fa-trash"></i>Clean</li>
+          </ul>
+
+          <div class="alert alert-info">
+            <ul class="fa-ul">
+              <li>
+                <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in the <a href=" http://docs.platformio.org/en/latest/ide/atom.html" class="alert-link"><i class="fa fa-book"></i> PlatformIO IDE for Atom</a> section of documentation.
+              </li>
+            </ul>
+          </div>
+        </dd>
+      </dl>
 
     </uib-tab>
 
     <uib-tab>
-      <uib-tab-heading>PlatformIO Command Line (CLI)</span></uib-tab-heading>
-      <br>
+      <uib-tab-heading><i class="fa fa-lg fa-terminal"></i> PlatformIO Command Line (CLI)</span></uib-tab-heading>
+      <hr>
+      <h2>Installation</h2>
       <p>
         <b>PlatformIO</b> is written in <i>Python</i> (2.6 or 2.7 version is required) and works on <i>Mac OS X, Linux, Windows OS</i> and ARM-based credit-card sized computers (<i>Raspberry Pi, BeagleBone, CubieBoard</i>).
       </p>
@@ -87,59 +118,13 @@
         <div class="alert alert-info">
           <ul class="fa-ul">
             <li>
-              <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in the <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link" analytics-on analytics-event="Button" analytics-category="Docs" analytics-label="GetStarted"><i class="fa fa-book"></i> Installation</a> section of documentation.
+              <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in the <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link"><i class="fa fa-book"></i> Installation</a> section of documentation.
             </li>
           </ul>
         </div>
       </p>
-    </uib-tab>
 
-  </uib-tabset>
-
-</div>
-
-<hr>
-
-<div class="container">
-  <a name="quickstart"></a>
-  <h2>Quickstart</h2>
-
-  <uib-tabset justified="true">
-
-    <uib-tab>
-      <uib-tab-heading>PlatformIO IDE for IoT development</span></uib-tab-heading>
-      <br>
-
-      <dl>
-        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
-        <dd>
-          <p>Create empty directory for the future project. Add it to <b>PlatformIO IDE</b> using <i class="fa fa-folder"></i> button on the Toolbar or <code>Menu: File > Add Project Folder...</code></p>
-        </dd>
-
-        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
-        <dd>
-          Initialize new <i>PlatformIO</i> based project using <code>Menu: PlatformIO > Initialize new Project (or update existing)</code> and select boards.
-          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
-        </dd>
-
-        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
-        <dd>
-          Process the project environments:
-          <ul class="fa-ul">
-            <li><i class="fa-li fa fa-check"></i>Build</li>
-            <li><i class="fa-li fa fa-arrow-right"></i>Upload</li>
-            <li><i class="fa-li fa fa-trash"></i>Clean</li>
-          </ul>
-
-          For the more commands please follow to <code>Menu: PlatformIO</code>.
-        </dd>
-      </dl>
-
-    </uib-tab>
-
-    <uib-tab>
-      <uib-tab-heading>PlatformIO Command Line (CLI)</span></uib-tab-heading>
-      <br>
+      <h2>Quickstart</h2>
 
       <dl>
         <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
@@ -181,7 +166,6 @@
 <hr>
 
 <div class="container">
-  <a name="blink-project-example"></a>
   <h2>"Blink" project example</h2>
 
   <div>

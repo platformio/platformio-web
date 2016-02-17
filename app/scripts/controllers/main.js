@@ -24,14 +24,29 @@
   function MainController($location, $window, siteUtils) {
     var vm = this;
 
+    vm.isNavBarCollapsed = true;
     vm.isRouteActive = isRouteActive;
     vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
     vm.siteUtils = siteUtils;
+    vm.osType = getOSType();
 
     ////////////
 
     function isRouteActive(pattern) {
       return new RegExp(pattern).test($location.path());
+    }
+
+    function getOSType() {
+      if (navigator.appVersion.indexOf('Macintosh') !== -1) {
+        return 'Macintosh';
+      }
+      else if (navigator.appVersion.indexOf('Windows') !== -1) {
+        return 'Windows';
+      }
+      else if (navigator.appVersion.indexOf('Linux') !== -1) {
+        return 'Linux';
+      }
+      return '';
     }
   }
 

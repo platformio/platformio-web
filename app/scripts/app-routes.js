@@ -180,6 +180,15 @@
       .when('/who-uses', {
         templateUrl: 'views/who_uses.html'
       })
+      .when('/platformio-ide', {
+        templateUrl: 'views/platformio-ide.html'
+      })
+      .when('/donate', {
+        templateUrl: 'views/donate.html'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html'
+      })
       .when('/404', {
         templateUrl: 'views/404.html'
       })

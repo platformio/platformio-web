@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-.jumbotron h1, .text-shadow {
-  text-shadow: 3px 2px 0px gray, 7px 6px 0px rgba(0, 0, 0, 0.15);
-}
-
-.jumbotron h1 small {
-  text-shadow: none;
-}
-
 .page-header {
   margin-top: 20px;
 }
@@ -105,7 +97,6 @@
 
 .home h1 {
   font-size: 38px;
-  text-shadow: none;
 }
 
 .home .btn-lg {

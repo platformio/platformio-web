@@ -404,6 +404,10 @@
   padding-bottom: 15px;
 }
 
+.platformio-ide h1 small {
+  font-size: 45%;
+}
+
 .top-banner {
   display: block;
   padding: 10px 20px;

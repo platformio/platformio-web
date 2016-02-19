@@ -96,6 +96,14 @@ def main():
             changefreq="weekly"
         )
         b.add_url(
+            loc="http://platformio.org/#!/platformio-ide",
+            changefreq="weekly"
+        )
+        b.add_url(
+            loc="http://platformio.org/#!/contact",
+            changefreq="weekly"
+        )
+        b.add_url(
             loc="http://platformio.org/#!/platforms",
             changefreq="weekly"
         )

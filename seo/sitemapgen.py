@@ -14,6 +14,7 @@
 
 import json
 from os.path import abspath
+from time import sleep
 try:
     from urllib2 import urlopen
 except ImportError:
@@ -31,6 +32,8 @@ class PIOLibsGenerator(object):
         self._paginator()
 
     def _paginator(self):
+        sleep(0.3)  # avoid PlatformIO API Limit 503
+
         page = 1
         if self._data:
             page = self._data['page']

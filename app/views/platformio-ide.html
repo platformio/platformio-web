@@ -2,37 +2,37 @@
 <meta name="description" content="The next generation integrated development environment for IoT" view-head />
 <meta name="keywords" content="PlatformIO, IDE, IoT, development, mac, linux, windows, arduino, mbed" view-head />
 
-<div class="platformio-ide jumbotron text-center">
-  <div class="container" style="padding-bottom: 130px;">
+<div class="platformio-ide-top jumbotron text-center">
+  <div class="container">
     <h1>
       <i class="fa fa-cube"></i> PlatformIO IDE
       <br><small>The next generation integrated development environment for IoT</small>
     </h1>
     <p><small>It's built on top of <a href="https://atom.io" target="_blank">GitHub's Atom "hackable" text editor</a></small></p>
-    <p>
-      <a ng-if="vm.osType === 'Macintosh'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a>
-      <a ng-if="vm.osType === 'Windows'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a>
-      <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-linux-amd64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download .deb</a>
-      <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-linux-amd64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download .rpm</a>
-      <a ng-if="vm.osType === ''" class="btn btn-success btn-lg" href="#!/platformio-ide#other-platforms" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Download</a>
-      <a class="btn btn-primary btn-lg" href="https://atom.io/packages/platformio-ide" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Package" target="_blank"><i class="fa fa-cube fa-lg"></i> &nbsp;Install Atom Package</a>
-      <p style="font-size: 13px;">
-        <ul class="list-inline">
-          <li>Available on <a href="#!/platformio-ide#other-platforms">other platforms</a></li>
-          <li>·</li>
-          <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/en/latest/ide/atom.html">Documentation</a></li>
-        </ul>
-      </p>
+
+    <a ng-if="vm.osType === 'Macintosh'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a>
+    <a ng-if="vm.osType === 'Windows'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a>
+    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-linux-amd64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download .deb</a>
+    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="http://dl.platformio.org/ide-bundles/platformio-atom-linux-amd64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux" target="_blank"><i class="fa fa-download fa-lg"></i> &nbsp;Download .rpm</a>
+    <a ng-if="vm.osType === ''" class="btn btn-success btn-lg" href="#!/platformio-ide#other-platforms" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Download</a>
+    <a class="btn btn-primary btn-lg" href="https://atom.io/packages/platformio-ide" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Package" target="_blank"><i class="fa fa-cube fa-lg"></i> &nbsp;Install Atom Package</a>
+
+    <p class="other-links">
+      <ul class="list-inline">
+        <li>Available on <a href="#!/platformio-ide#other-platforms">other platforms</a></li>
+        <li>·</li>
+        <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/en/latest/ide/atom.html">Documentation</a></li>
+      </ul>
     </p>
   </div>
 </div>
 
-<div style="margin-top: -200px; margin-bottom: -35px">
-  <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next generation integrated development environment for IoT" title="PlatformIO IDE - the next generation integrated development environment for IoT" tooltip="PlatformIO IDE - the next generation integrated development environment for IoT" class="img-responsive center-block" style="max-width: 90%;">
+<div class="platformio-ide-laptop">
+  <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next generation integrated development environment for IoT" title="PlatformIO IDE - the next generation integrated development environment for IoT" tooltip="PlatformIO IDE - the next generation integrated development environment for IoT" class="img-responsive center-block">
 </div>
 
-<div class="jumbotron">
-  <div class="container" style="padding-top: 30px;">
+<div class="platformio-ide-features jumbotron">
+  <div class="container">
     <div class="row text-center top-items-lg">
       <div class="col-md-4">
         <center><div class="img-circle"><a><i class="fa fa-code fa-5x"></i></a></div></center>

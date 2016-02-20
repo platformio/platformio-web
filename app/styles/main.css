@@ -292,8 +292,18 @@
   color: #777;
 }
 
+.footer .copyright-vendors {
+  font-size: 9px;
+  color: #777;
+  text-align: left;
+}
+
 .footer .brands-contaier {
   background-color: #fff;
+}
+
+.footer .brands-contaier h2 {
+  color: #222;
 }
 
 .footer .brands:hover,
@@ -353,7 +363,7 @@
 
 .brand-mbed {
   background-position: 0 -360px;
-  width: 132px;
+  width: 182px;
 }
 
 .brand-libopencm3 {
@@ -404,14 +414,39 @@
   padding-bottom: 15px;
 }
 
-.platformio-ide h1 small {
+.platformio-ide-top .container {
+  padding-bottom: 130px;
+}
+
+.platformio-ide-top h1 small {
   font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {
-  .platformio-ide h1 small {
+  .platformio-ide-top h1 small {
     font-size: 30px;
   }
+}
+
+.platformio-ide-top .other-links {
+  font-size: 13px;
+}
+
+.platformio-ide-top .btn {
+  margin-top: 10px;
+}
+
+.platformio-ide-laptop {
+  margin-top: -200px;
+  margin-bottom: -35px;
+}
+
+.platformio-ide-laptop img {
+  max-width: 90%;
+}
+
+.platformio-ide-features .container {
+  padding-top: 30px;
 }
 
 .top-banner {

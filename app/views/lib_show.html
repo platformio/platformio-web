@@ -87,7 +87,7 @@
     <div class="alert alert-info" role="alert">
       <ul class="fa-ul">
         <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="http://docs.platformio.org/en/latest/ide.html#" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Arduino, Eclipse, Energia, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
+          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="http://docs.platformio.org/en/latest/ide.html#" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
         </li>
       </ul>
     </div>
@@ -106,7 +106,7 @@
         <p>
           <div class="text-center">
             <div class="btn-group">
-              <label class="btn btn-default btn-sm" ng-model="vm.currentExample" btn-radio="item" ng-repeat="item in vm.examples">{{ item.name }}</label>
+              <label class="btn btn-default btn-sm" ng-model="vm.currentExample" ng-repeat="item in vm.examples" uib-btn-radio="item">{{ item.name }}</label>
             </div>
           </div>
         </p>

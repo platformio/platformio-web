@@ -10,10 +10,10 @@
     </h1>
     <p><small>It's built on top of <a href="https://atom.io" target="_blank">GitHub's Atom "hackable" text editor</a></small></p>
 
-    <a ng-if="vm.osType === 'Macintosh'" class="btn btn-success btn-lg" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a>
-    <a ng-if="vm.osType === 'Windows'" class="btn btn-success btn-lg" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a>
-    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .deb</a>
-    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .rpm</a>
+    <a ng-if="vm.osType === 'Macintosh'" class="btn btn-success btn-lg" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a>
+    <a ng-if="vm.osType === 'Windows'" class="btn btn-success btn-lg" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a>
+    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .deb</a>
+    <a ng-if="vm.osType === 'Linux'" class="btn btn-success btn-lg" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .rpm</a>
     <a ng-if="vm.osType === ''" class="btn btn-success btn-lg" href="#!/platformio-ide#other-platforms" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Download</a>
     <a class="btn btn-primary btn-lg" href="https://atom.io/packages/platformio-ide" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Package" target="_blank"><i class="fa fa-cube fa-lg"></i> &nbsp;Install Atom Package</a>
 
@@ -21,7 +21,9 @@
       <ul class="list-inline">
         <li>Available on <a href="#!/platformio-ide#other-platforms">other platforms</a></li>
         <li>·</li>
-        <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/en/latest/ide/atom.html">Documentation</a></li>
+        <li><i class="fa fa-book"></i> <a href="http://docs.platformio.org/en/latest/ide/atom.html">Docs & Quickstart</a></li>
+        <li>·</li>
+        <li>Integration with <a href="http://docs.platformio.org/en/latest/ide.html">other IDEs</a></li>
       </ul>
     </p>
   </div>
@@ -72,16 +74,16 @@
   <div class="row">
     <div class="col-lg-3">
       <p><i class="fa fa-windows fa-5x"></i></p>
-      <p><a class="btn btn-success" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a></p>
+      <p><a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-apple fa-5x"></i></p>
-      <p><a class="btn btn-success" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a></p>
+      <p><a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-linux fa-5x"></i></p>
-      <p><a class="btn btn-success" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .deb</a>
-      <a class="btn btn-success" href="https://bintray.com/artifact/download/platformio/ide-bundles/platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .rpm</a></p>
+      <p><a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .deb</a>
+      <a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .rpm</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-desktop fa-5x"></i></p>

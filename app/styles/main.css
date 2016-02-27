@@ -76,21 +76,38 @@
 }
 
 .top-items-xs .img-circle {
-  background-color: #c0c0c0;
+  border: 1px solid #e6e6e6;
   width: 90px;
   height: 90px;
   padding-top: 15px;
 }
 
 .top-items-lg .img-circle {
-  background-color: #c0c0c0;
+  background-color: #f2f2f2;
+  border: 1px solid #e6e6e6;
   width: 140px;
   height: 140px;
   padding-top: 30px;
 }
 
-.top-items .img-circle:hover {
-  background-color: #d3d3d3;
+.top-items-lg .img-circle:hover {
+  background-color: #fff;
+}
+
+.jumbotron .top-items-xs .img-circle,
+.jumbotron .top-items-lg .img-circle {
+  background-color: #cccccc;
+  border: 1px solid #b3b3b3;
+}
+
+.top-items-lg .img-circle .fa-cube {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.top-items-lg .img-circle .fa-code {
+  padding-left: 3px;
+  padding-top: 3px;
 }
 
 /* Home */

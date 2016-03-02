@@ -1,6 +1,6 @@
-<view-title>{{ vm.tabs[vm.activeTab].name }} · Development Platforms</view-title>
-<meta name="description" content="{{ vm.tabs[vm.activeTab].description }}" view-head />
-<meta name="keywords" content="embedded, platform, {{ vm.tabs[vm.activeTab].name }}" view-head />
+<view-title>{{ vm.activeGroup == 2? 'Create Platform' : vm.platforms[vm.activePlatform].name }} · Development Platforms</view-title>
+<meta name="description" content="{{ vm.activeGroup == 2? 'Create Development Platform' : vm.platforms[vm.activePlatform].description | truncate : 200 }}" view-head />
+<meta name="keywords" content="embedded, platform, {{ vm.activeGroup == 2? 'creating' : vm.platforms[vm.activePlatform].name }}" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -16,15 +16,15 @@
 
 <div class="container">
 
-<uib-tabset>
-  <uib-tab ng-repeat="group in ['embedded', 'desktop']" active="vm.groups[group]">
+<uib-tabset active="vm.activeGroup">
+  <uib-tab ng-repeat="group in ['embedded', 'desktop']" index="$index">
     <uib-tab-heading>
       <h3 ng-if="group == 'embedded'"><a href="#!/platforms/atmelavr" ng-click="vm.changePlatform('atmelavr')">Embedded Platforms</a></h3>
       <h3 ng-if="group == 'desktop'"><a href="#!/platforms/linux_arm" ng-click="vm.changePlatform('linux_arm')">Desktop Platforms</a></h3>
     </uib-tab-heading>
     <br>
-    <uib-tabset type="pills">
-      <uib-tab ng-repeat="platform in vm.platforms" active="vm.tabs[platform.type].active" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
+    <uib-tabset type="pills" active="vm.activePlatform">
+      <uib-tab ng-repeat="platform in vm.platforms" index="$index" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
         <uib-tab-heading>
           <h4><a href="#!/platforms/{{ platform.type }}" ng-click="vm.changePlatform('{{ platform.type }}')">{{ platform.name }}</a></h4>
         </uib-tab-heading>
@@ -87,7 +87,7 @@
     </uib-tabset>
   </uib-tab>
 
-  <uib-tab>
+  <uib-tab index="2">
     <uib-tab-heading>
       <h3><a href="#!/platforms/creating" ng-click="vm.changePlatform('creating')"><i class="fa fa-plus"></i> Create Platform</a></h3>
     </uib-tab-heading>
@@ -95,7 +95,7 @@
     <br>
 
     <p class="lead">
-      <b>PlatformIO</b> was developed like a tool which would build the same source code for the different development platforms via single command
+      <b>PlatformIO</b> was developed like a tool which can build the same source code for the different development platforms via single command
       <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a>
       without any dependent software or requirements.
 
@@ -105,7 +105,7 @@
       These data are pre-built and packaged to the different "packages".
 
       <br> <br>
-      It allows <i>PlatformIO</i> to have multiple development platforms which can use the same packages(tool chains, frameworks),
+      It allows <i>PlatformIO</i> to have multiple development platforms which can use the same packages(toolchains, frameworks),
       but have different/own build scripts, uploader and etc.
     </p>
 

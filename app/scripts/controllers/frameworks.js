@@ -28,35 +28,23 @@
     vm.changeFramework = changeFramework;
     vm.isCompatiblePlatform = isCompatiblePlatform;
 
-    vm.activeTab = 'arduino';
+    vm.active = 0;
     vm.frameworks = frameworksList;
     vm.platforms = platformsList;
 
     // activate framework by hash
     if ($routeParams.hasOwnProperty('frameworkType')) {
-      vm.activeTab = $routeParams.frameworkType;
+      angular.forEach(frameworksList, function(item, index) {
+        if ($routeParams.frameworkType === item.type) {
+          vm.active = index;
+        }
+      });
     }
-
-    vm.tabs = getTabs(vm.activeTab);
 
     ////////////
 
     function changeFramework(type) {
       $window.location.href = '#!/frameworks/' + type;
-    }
-
-    function getTabs(activeType) {
-      var tabs = {};
-
-      angular.forEach(frameworksList, function(item) {
-        tabs[item.type] = {
-          name: item.name,
-          description: item.description.split('.')[0],
-          active: item.type === activeType
-        };
-      });
-
-      return tabs;
     }
 
     function isCompatiblePlatform(platformType, frameworkType) {

@@ -46,8 +46,10 @@
       .when('/', {
         templateUrl: 'views/home.html'
       })
-      .when('/get-started', {
-        templateUrl: 'views/get_started.html'
+      .when('/get-started/:gsType?', {
+        templateUrl: 'views/get_started.html',
+        controller: 'GetStartedController',
+        controllerAs: 'vm'
       })
       .when('/platforms/:platformType?', {
         templateUrl: 'views/platforms.html',

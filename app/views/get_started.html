@@ -5,482 +5,181 @@
   <div class="container">
     <h1 view-title><i class="fa fa-rocket"></i> Getting Started</h1>
 
-    <p>
-      Learn how to install and use <i>PlatformIO</i>, configure and build your first cross-platform <i>"Blink"</i> project
-    </p>
-
+    <p>Learn how to install PlatformIO IDE, create and build cross-platform <i>"Blink"</i> project</p>
+    <p>Find out how to integrate PlatformIO with the popular IDEs and Continuous Integration systems.</p>
   </div>
 </div>
 
-<div class="container">
+<div class="container get-started">
+  <div class="row text-center top-items-lg">
+    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'ide'}">
+      <center>
+        <div class="img-circle" ng-if="vm.gsType == 'ide'"><i class="fa fa-cube fa-5x"></i></div>
+        <a href="#!/get-started/ide" ng-if="vm.gsType != 'ide'"><div class="img-circle"><i class="fa fa-cube fa-5x"></i></div></a>
+      </center>
+      <h2>PlatformIO IDE</h2>
+      <p>
+        Learn how to install <b>the next generation</b> integrated development environment for IoT.
+        <br>Try-out our <b>Quick Start Guide</b> how to create cross-platform <i>"Blink"</i> project with illustrations.
+      </p>
+      <p ng-if="vm.gsType == 'ide'"><i class="fa fa-chevron-down fa-2x"></i></p>
+      <p ng-if="vm.gsType != 'ide'"><a class="btn btn-default" href="#!/get-started/ide" role="button">Get Started</a></p>
+    </div>
+    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
+      <center>
+        <div class="img-circle" ng-if="vm.gsType == 'cli'"><i class="fa fa-terminal fa-5x"></i></div>
+        <a href="#!/get-started/cli" ng-if="vm.gsType != 'cli'"><div class="img-circle"><i class="fa fa-terminal fa-5x"></i></div></a>
+      </center>
+      <h2>PlatformIO CLI</h2>
+      <p>
+        Learn how to install <b>PlatformIO Command Line Tool</b>, create and build cross-platform <i>"Blink"</i> project.
+        Watch our <b>interactive demo</b> for Platform and Library Manager (click on Tabs in Terminal).
+      </p>
+      <p ng-if="vm.gsType == 'cli'"><i class="fa fa-chevron-down fa-2x"></i></p>
+      <p ng-if="vm.gsType != 'cli'"><a class="btn btn-default" href="#!/get-started/cli" role="button">Get Started</a></p>
+    </div>
+    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'integration'}">
+      <center>
+        <div class="img-circle" ng-if="vm.gsType == 'integration'"><i class="fa fa-heart-o fa-5x"></i></div>
+        <a href="#!/get-started/integration" ng-if="vm.gsType != 'integration'"><div class="img-circle"><i class="fa fa-heart-o fa-5x"></i></div></a>
+      </center>
+      <h2>Integration</h2>
+      <p>
+        Find out how to integrate PlatformIO with the popular <b>Integrated Development Environments</b> (IDE) and <b>Continuous Integration</b> (CI) systems.
+        Extend your favourite environment with professional instruments.
+      </p>
+      <p ng-if="vm.gsType == 'integration'"><i class="fa fa-chevron-down fa-2x"></i></p>
+      <p ng-if="vm.gsType != 'integration'"><a class="btn btn-default" href="#!/get-started/integration" role="button">Get Started</a></p>
+    </div>
+  </div>
 
-  <uib-tabset justified="true" type="pills">
-    <uib-tab>
-      <uib-tab-heading><i class="fa fa-cube fa-lg"></i> PlatformIO IDE for IoT development</span></uib-tab-heading>
-      <hr>
-      <h2>Installation</h2>
-      <a href="#!/platformio-ide">PlatformIO IDE</a> is the next generation integrated development environment for IoT.
-      It's built on top of <a href="https://atom.io" target="_blank">GitHub's Atom "hackable" text editor</a>.
+  <hr ng-if="vm.gsType != ''">
 
-      <div class="alert alert-info" style="margin-top: 15px;">
-        <ul class="fa-ul">
-          <li>
-            <i class="fa fa-info-circle fa-lg fa-li"></i> If you have already Atom installed, you can <a class="btn btn-primary btn-sm" href="https://atom.io/packages/platformio-ide" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Package" target="_blank"><i class="fa fa-cube fa-lg"></i> &nbsp;Install Atom Package</a>. More details in documentation section for PlatformIO IDE <a href="http://docs.platformio.org/en/latest/ide/atom.html#manual-installation" class="alert-link">Manual Installation</a>.
-          </li>
-        </ul>
+  <div class="platformio-ide-laptop" style="margin-top: 0" ng-if="vm.gsType == 'ide'">
+    <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next generation integrated development environment for IoT" title="PlatformIO IDE - the next generation integrated development environment for IoT" tooltip="PlatformIO IDE - the next generation integrated development environment for IoT" class="img-responsive center-block">
+  </div>
+
+  <div class="terminal-window" ng-if="vm.gsType == 'cli'">
+    <div class="tw-panel">
+      <div class="pull-left">
+        <i class="fa fa-circle" style="color: #FD605B;"></i>
+        <i class="fa fa-circle" style="color: #FFBB3B;"></i>
+        <i class="fa fa-circle" style="color: #34C748;"></i>
       </div>
+      <i class="fa fa-terminal"></i> PlatformIO CLI - Terminal
+    </div>
 
-      <p>If you don't have, please download <b>PlatformIO IDE for Atom bundle with built-in auto installer</b>:</p>
-      <br>
+    <uib-tabset active="vm.cliDemoActive" type="pills" justified="true">
+      <uib-tab ng-repeat="demo in vm.cliDemos" index="$index">
+        <uib-tab-heading>
+          <i class="fa fa-{{demo.icon}}"></i> {{demo.title}}
+        </uib-tab-heading>
+        <div class="tw-content"><img ng-src="{{demo.image}}"></div>
+      </uib-tab>
+    </uib-tabset>
+  </div>
 
-      <div class="row text-center">
-        <div class="col-lg-3">
-          <p><i class="fa fa-windows fa-5x"></i></p>
-          <p><a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a></p>
-        </div>
-        <div class="col-lg-3">
-          <p><i class="fa fa-apple fa-5x"></i></p>
-          <p><a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a></p>
-        </div>
-        <div class="col-lg-3">
-          <p><i class="fa fa-linux fa-5x"></i></p>
-          <p>
-            <a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .deb</a>
-            <a class="btn btn-success" href="https://dl.bintray.com/platformio/ide-bundles/platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"></i> &nbsp;Download .rpm</a>
-          </p>
-        </div>
-        <div class="col-lg-3">
-          <p><i class="fa fa-desktop fa-5x"></i></p>
-          <p><a class="btn btn-success" href="http://docs.platformio.org/en/latest/ide/atom.html#installation" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Other Platforms</a></p>
+  <div ng-if="vm.gsType == 'integration'">
+    <h2 class="text-center">PlatformIO <i class="fa fa-heart-o"></i> {{vm.ideDemos[vm.ideDemoActive].title}}</h2>
+    <div class="ide-carousel" style="max-height: {{vm.slideHeight}}px;">
+      <uib-carousel active="vm.ideDemoActive" interval="vm.ideDemoInterval">
+        <uib-slide ng-repeat="demo in vm.ideDemos" index="$index">
+          <div class="ide-slide" style="background-image: url({{demo.image}}); height: {{vm.slideHeight}}px;" ng-click="alert('{{demo.title}}')"></div>
+        </uib-slide>
+      </uib-carousel>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron get-started" ng-if="vm.gsType != ''">
+  <div class="container top-items-xs" style="padding-top: 30px;">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4 img-circle">
+            <i class="fa fa-rocket fa-4x"></i>
+          </div>
+          <div class="col-md-8">
+            <h3 class="media-heading">Get Started</h3>
+
+            <div ng-if="vm.gsType == 'ide'">
+              Download and install the next generation PlatformIO IDE.
+              <p><a class="btn btn-success" href="#!/platformio-ide" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
+              <br>
+              PlatformIO IDE is built on top of <a href="https://atom.io/" target="_blank">GitHub's Atom "hackable" text editor</a>.
+              If you have Atom already installed please use our official package.
+              <p><a class="btn btn-primary" href="https://atom.io/packages/platformio-ide" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Package" target="_blank"><i class="fa fa-cube fa-lg"></i> &nbsp;Install Atom Package</a></p>
+            </div>
+
+            <div ng-if="vm.gsType != 'ide'">
+              Install PlatformIO tool with Command Line Interface (CLI).
+              <p><a class="btn btn-success" href="http://docs.platformio.org/en/latest/installation.html" role="button" analytics-on analytics-event="Install" analytics-category="CLI" analytics-label="Get Started"><i class="fa fa-terminal fa-lg"></i> &nbsp;Install PlatformIO CLI</a></p>
+              <br>
+              <b>PlatformIO</b> is written in Python and works on Mac OS X, Linux, Windows OS and ARM-based credit-card sized computers.
+            </div>
+
+          </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4 img-circle" style="padding-left: 19px; padding-top: 17px;">
+            <i class="fa fa-book fa-4x"></i>
+          </div>
+          <div class="col-md-8">
+            <h3 class="media-heading">Documentation</h3>
+            Documentation is a great resource to get you started with PlatformIO.
 
-      <h2>Quickstart</h2>
+            <div ng-if="vm.gsType == 'ide'">
+              <ul class="fa-ul">
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/ide/atom.html#quick-start">Quick Start Guide</a> how to create <i>"Blink"</i> Project</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with the <a href="http://docs.platformio.org/en/latest/ide/atom.html#user-guide">PlatformIO IDE User Guide</a>.</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Read <a href="http://docs.platformio.org/en/latest/ide/atom.html#articles-manuals">Articles and Manuals</a> with tutorials how to use PlatformIO IDE with the real embedded devices</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+              </ul>
+            </div>
 
-      <dl>
-        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
-        <dd>
-          <p>Initialize new <i>PlatformIO</i> based project using <i class="fa fa-file-code-o fa-2x"></i> button on the Toolbar or <code>Menu: PlatformIO > Initialize new PlatformIO Project or update existing</code>.</p>
-        </dd>
+            <div ng-if="vm.gsType == 'cli'">
+              <ul class="fa-ul">
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/quickstart.html">Quick Start Guide</a> how to create <i>"Blink"</i> Project</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with the <a href="http://docs.platformio.org/en/latest/userguide/index.html">PlatformIO CLI User Guide</a>.</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Advanced documentation for <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a>.</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Read <a href="http://docs.platformio.org/en/latest/articles.html">Articles about PlatformIO</a> with tutorials how to use PlatformIO CLI with the real embedded devices</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+              </ul>
+            </div>
 
-        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
-        <dd>
-          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
-        </dd>
+            <div ng-if="vm.gsType == 'integration'">
+              <ul class="fa-ul">
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/ide.html">IDE Integration</a> with Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM and Visual Studio</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/ci/index.html">Continuous Integration</a> with AppVeyor, Circle CI, Drone, Shippable and Travis CI</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Advanced using of <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html#cmdoption-platformio-init--ide">platformio init --ide</a> Project Generator.</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Learn how to use helper <a href="http://docs.platformio.org/en/latest/userguide/cmd_ci.html">platformio ci</a> command in combination with Continuous Integration Systems.</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+              </ul>
+            </div>
 
-        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
-        <dd>
-          Process the project environments using  <code>Menu: PlatformIO > Build / Upload / Clean</code> or buttons on the Toolbar:
-          <ul class="fa-ul">
-            <li><i class="fa-li fa fa-check"></i>Build</li>
-            <li><i class="fa-li fa fa-arrow-right"></i>Upload</li>
-            <li><i class="fa-li fa fa-trash"></i>Clean</li>
-          </ul>
-
-          <div class="alert alert-info">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4 img-circle" style="padding-left: 27px;">
+            <i class="fa fa-question fa-4x"></i>
+          </div>
+          <div class="col-md-8">
+            <h3 class="media-heading">Get Help</h3>
+            There are many sources of help in the PlatformIO community and ecosystem.
             <ul class="fa-ul">
-              <li>
-                <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in the <a href=" http://docs.platformio.org/en/latest/ide/atom.html" class="alert-link"><i class="fa fa-book"></i> PlatformIO IDE for Atom</a> section of documentation.
-              </li>
+              <li ng-if="false"><i class="fa-li fa fa-chevron-right"></i>Ask questions and get answers in our <a href="http://community.platformio.org" target="_blank">Community Forums</a></li>
+              <li><i class="fa-li fa fa-chevron-right"></i>Get quick responses and friendly chat in the <a href="https://gitter.im/platformio/platformio" target="_blank">Technical Support</a> room</li>
+              <li ng-if="vm.gsType != 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio" target="_blank">PlatformIO Issues</a></li>
+              <li ng-if="vm.gsType == 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio-atom-ide" target="_blank">PlaformIO IDE Issues</a></li>
+              <li><i class="fa-li fa fa-chevron-right"></i><a href="#!/contact">Contact Us</a> and we will integrate your products to PlatformIO ecosystem</li>
             </ul>
           </div>
-        </dd>
-      </dl>
-
-    </uib-tab>
-
-    <uib-tab>
-      <uib-tab-heading><i class="fa fa-lg fa-terminal"></i> PlatformIO Command Line (CLI)</span></uib-tab-heading>
-      <hr>
-      <h2>Installation</h2>
-      <p>
-        <b>PlatformIO</b> is written in <i>Python</i> (2.6 or 2.7 version is required) and works on <i>Mac OS X, Linux, Windows OS</i> and ARM-based credit-card sized computers (<i>Raspberry Pi, BeagleBone, CubieBoard</i>).
-      </p>
-
-      <p>
-        All commands below should be executed in <a href="http://en.wikipedia.org/wiki/Command-line_interface" target="_blank">Command-line</a> application (Terminal):
-        <ul>
-          <li>Mac OS X / Linux – Terminal application</li>
-          <li>Windows – <code>cmd.exe</code> application.</li>
-        </ul>
-
-        <div class="alert alert-warning">
-          <ul class="fa-ul">
-            <li>
-              <i class="fa fa-windows fa-lg fa-li"></i> Windows Users: Please <a href="https://www.python.org/downloads/" target="_blank" class="alert-link"><i class="fa fa-download"></i> Download the latest Python 2.7.x</a> and install it.
-              <b>DON’T FORGET</b> to select <code>Add python.exe to Path</code> feature on the "Customize" stage, otherwise <code>pip</code> command will not be available.
-            </li>
-          </ul>
         </div>
-
-        <p>To install or upgrade PlatformIO paste command at a Terminal prompt and run using Python Package Manager <a href="https://pip.pypa.io" target="_blank">pip</a> (<b>MAY require</b> administrator access <code>sudo</code>):</p>
-
-        <span class="label label-default">Terminal</span>
-        <div class="well terminal">
-          <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> pip install -U platformio</span>
-        </div>
-
-        <p>If <code>pip</code> command is not available, run <kbd><i class="fa fa-angle-right fa-lg"></i> easy_install pip</kbd> or use <a href="http://docs.platformio.org/en/latest/installation.html#b-installer-script">PlatformIO Installer Script</a> which will install <code>pip</code> and <code>platformio</code> automatically.</p>
-
-        <div class="alert alert-info">
-          <ul class="fa-ul">
-            <li>
-              <i class="fa fa-info-circle fa-lg fa-li"></i> More installation options, troubleshooting and detailed information are located in the <a href="http://docs.platformio.org/en/latest/installation.html" class="alert-link"><i class="fa fa-book"></i> Installation</a> section of documentation.
-            </li>
-          </ul>
-        </div>
-      </p>
-
-      <h2>Quickstart</h2>
-
-      <dl>
-        <dt><i class="fa fa-hand-o-right"></i> Step 1</dt>
-        <dd>
-          <p>Find board <code>type</code> using <a href="#!/boards">Embedded Boards Explorer</a> page or via <a href="http://docs.platformio.org/en/latest/userguide/cmd_boards.html"><i class="fa fa-angle-right fa-lg"></i> platformio boards</a> command</p>
-        </dd>
-
-        <dt><i class="fa fa-hand-o-right"></i> Step 2</dt>
-        <dd>
-          Initialize new <i>PlatformIO</i> based project via <a href="http://docs.platformio.org/en/latest/userguide/cmd_init.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command
-          with the pre-configured environments for your boards:
-          <br>
-          <span class="label label-default">Terminal</span>
-          <div class="well terminal">
-            <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N</p>
-            <span class="cmd"><font color="gray"># for example, initialize cross-platform project for Arduino Uno and Espressif Generic ESP8266 ESP-01</font><br><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=esp01</span>
-          </div>
-          <p>Put your source code <code>*.h, *.c, *.cpp, *.S, *.ino, etc.</code> files to <code>src</code> directory.</p>
-        </dd>
-
-        <dt><i class="fa fa-hand-o-right"></i> Step 3</dt>
-        <dd>
-          Process the project environments via <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.
-          <p><u>Change working directory</u> to the project's root where is located <a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> and use these commands:</p>
-          <span class="label label-default">Terminal</span>
-          <div class="well terminal">
-            <p class="cmd"><font color="gray"># process/build project from the current directory</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
-            <p class="cmd"><font color="gray"># if you don't have enabled auto-uploading, then you can upload firmware manually</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</p>
-            <span class="cmd"><font color="gray"># to clean cached/compiled files</font><br><i class="fa fa-angle-right fa-lg"></i> platformio run --target clean</span>
-          </div>
-        </dd>
-      </dl>
-    </uib-tab>
-
-  </uib-tabset>
-
-</div>
-
-<hr>
-
-<div class="container">
-  <h2>"Blink" project example</h2>
-
-  <div>
-    With the help of <em>PlatformIO</em> we can <strong>build the same code</strong> for the different development platforms. Let's define example environments for the most popular boards from the different platforms:
-
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Platform</th>
-          <th>Board</th>
-          <th>Framework</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Atmel AVR</td>
-          <td>Arduino Uno (8-bit ATmega328P)</td>
-          <td>Arduino Wiring-based Framework</td>
-        </tr>
-        <tr>
-          <td>Espressif</td>
-          <td>NodeMCU 0.9 &amp; 1.0 (32-bit ESP8266)</td>
-          <td>Arduino Wiring-based Framework</td>
-        </tr>
-        <tr>
-          <td>Teensy</td>
-          <td>Teensy 3.1 (32-bit ARM MK20DX256)</td>
-          <td>Arduino Wiring-based Framework</td>
-        </tr>
-        <tr>
-          <td>TI MSP430</td>
-          <td>TI LaunchPad (16-bit MSP430G2553)</td>
-          <td>Energia Wiring-based Framework</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <span class="label label-default">main.cpp</span>
-      <pre class="hljscode" hljs language="cpp">
-/*
- * Blink
- * Turns on an LED on for one second,
- * then off for one second, repeatedly.
- */
-
-#include "Arduino.h"
-
-void setup()
-{
-  // initialize LED digital pin as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop()
-{
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-  // wait for a second
-  delay(1000);
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
-   // wait for a second
-  delay(1000);
-}</pre>
-    </div>
-    <div class="col-md-6">
-      <span class="label label-default">platformio.ini</span>
-      <pre class="hljscode" hljs language="ini">
-; Project Configuration File
-; Docs: http://docs.platformio.org/en/latest/projectconf.html
-
-
-[env:uno]
-platform = atmelavr
-framework = arduino
-board = uno
-
-[env:nodemcu]
-platform = espressif
-framework = arduino
-board = nodemcu
-build_flags = -D LED_BUILTIN=BUILTIN_LED
-
-[env:teensy31]
-platform = teensy
-framework = arduino
-board = teensy31
-
-[env:lpmsp430g2553]
-platform = timsp430
-framework = energia
-board = lpmsp430g2553
-build_flags = -D LED_BUILTIN=RED_LED</pre>
+      </div>
     </div>
   </div>
-
-  <div class="alert alert-info">
-    <ul class="fa-ul">
-      <li>
-        <i class="fa fa-github fa-lg fa-li"></i>  The source code and results of this <code>Blink Project</code> can be downloaded from <a href="https://github.com/platformio/platformio/tree/develop/examples/wiring-blink" class="alert-link" target="_blank"><i class="fa fa-download fa-lg"></i> PlatformIO Project Examples</a> repository.
-      </li>
-    </ul>
-  </div>
-
-  <h3 class="header-underlined">Initialize empty project</h3>
-  <p>
-    <i>PlatformIO</i>-based project consists of <strong>2 main parts</strong>:
-    <ul>
-      <li><a href="http://docs.platformio.org/en/latest/projectconf.html">Project Configuration File (platformio.ini)</a> - where you can setup different environments with specific options (platform type, firmware uploading settings, pre-built framework, build flags and many more)</li>
-      <li><code>src</code> directory - where your source code should be placed</li>
-    </ul>
-  </p>
-  <p>There is <a href="http://docs.platformio.org/en/latest/userguide/cmd_install.html"><i class="fa fa-angle-right fa-lg"></i> platformio init</a> command which allows you to initialize empty project. We recommend to run this command within empty directory.</p>
-  <span class="label label-default">Terminal</span>
-  <div class="well terminal">
-    <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio init --board=uno --board=nodemcu --board=teensy31 --board=lpmsp430g2553</p>
-      <small>
-        <font color="yellow">
-          The current working directory <font color="cyan">***</font> will be used for the new project.<br />
-          You can specify another project directory via<br />
-          `platformio init -d %PATH_TO_THE_PROJECT_DIR%` command.
-        </font><br /><br />
-
-        The next files/directories will be created in <font color="cyan">***</font><br />
-        <font color="cyan">`platformio.ini`</font> - Project Configuration File. |-&gt; PLEASE EDIT ME &lt;-| <br />
-        <font color="cyan">`src`</font> - Put your source code here<br />
-        <font color="cyan">`lib`</font> - Put here project specific (private) libraries<br />
-        Do you want to continue? [y/N]: y<br />
-        <font color="green">
-          Project has been successfully initialized!<br />
-          Useful commands:<br />
-          `platformio run` - process/build project from the current directory<br />
-          `platformio run --target upload` or `platformio run -t upload` - upload firmware to embedded board<br />
-          `platformio run --target clean` - clean project (remove compiled files)<br />
-        </font>
-      </small>
-  </div>
-
-  <h3 class="header-underlined">Process environments</h3>
-  <p>Copy <code>main.cpp</code> file to <code>src</code> directory, replace the content of the <code>platformio.ini</code> file with the source code that is described above.
-    <br>Then process environments with <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command.</p>
-
-  <span class="label label-default">Terminal</span>
-  <div class="well terminal">
-   <p class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio run</p>
-   <small>
-
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">uno</font> (platform: atmelavr, board: uno, framework: arduino) <br />
-      <div class="dashed-line"></div>
-      avr-g++ -o .pioenvs/uno/src/main.o -c -std=gnu++11 -fno-exceptions -fno-threadsafe-statics -g -Os -Wall -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO_AVR_UNO -DARDUINO=10607 -DPLATFORMIO=020700 -I.pioenvs/uno/FrameworkArduino -I.pioenvs/uno/FrameworkArduinoVariant src/main.cpp<br />
-      <font color="white">[... a list of the rest compiled files ...]</font><br />
-      avr-objcopy -O ihex -R .eeprom .pioenvs/uno/firmware.elf .pioenvs/uno/firmware.hex<br />
-      "avr-size" --mcu=atmega328p -C -d .pioenvs/uno/firmware.elf<br />
-      AVR Memory Usage<br />
-      ----------------<br />
-      Device: atmega328p<br />
-      Program:    998 bytes (3.0% Full)<br />
-      (.text + .data + .bootloader)<br />
-      Data:          9 bytes (0.4% Full)<br />
-      (.data + .bss + .noinit)
-      <p>====================================== [ <font color="green">SUCCESS</font> ] Took 2.04 seconds ======================================</p>
-
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">nodemcu</font> (platform: espressif, board: nodemcu, framework: arduino, build_flags: -D LED_BUILTIN=BUILTIN_LED) <br />
-      <div class="dashed-line"></div>
-      xtensa-lx106-elf-g++ -o .pioenvs/nodemcu/src/main.o -c -fno-rtti -fno-exceptions -std=c++11 -Os -mlongcalls -mtext-section-literals -falign-functions=4 -U__STRICT_ANSI__ -ffunction-sections -fdata-sections -MMD -DF_CPU=80000000L -D__ets__ -DICACHE_FLASH -DESP8266 -DARDUINO_ARCH_ESP8266 -DARDUINO_ESP8266_ESP12 -DLED_BUILTIN=BUILTIN_LED -DARDUINO=200 -DPLATFORMIO=020700 -I/Users/ikravets/.platformio/packages/framework-arduinoespressif/tools/sdk/include -I.pioenvs/nodemcu/FrameworkArduino -I.pioenvs/nodemcu/FrameworkArduinoVariant src/main.cpp<br />
-      <font color="white">[... a list of the rest compiled files ...]</font><br />
-      "/Users/ikravets/.platformio/packages/tool-esptool/esptool" -eo "/Users/ikravets/.platformio/packages/framework-arduinoespressif/bootloaders/eboot/eboot.elf" -bo .pioenvs/nodemcu/firmware.bin -bm dio -bf 80 -bz 4M -bs .text -bp 4096 -ec -eo .pioenvs/nodemcu/firmware.elf -bs .irom0.text -bs .text -bs .data -bs .rodata -bc -ec<br />
-      <table>
-        <tr>
-          <td>text</td>
-          <td>data</td>
-          <td>bss</td>
-          <td>dec</td>
-          <td>hex</td>
-          <td>filename</td>
-        </tr>
-        <tr>
-          <td>197714</td>
-          <td>978</td>
-          <td>31240</td>
-          <td>229&#8203;932</td>
-          <td>3822c</td>
-          <td>.pioenvs/&#8203;nodemcu/&#8203;firmware.elf</td>
-       </tr>
-      </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 5.72 seconds ====================================== </p>
-
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">teensy31</font> (platform: teensy, board: teensy31, framework: arduino) <br />
-      <div class="dashed-line"></div>
-      arm-none-eabi-g++ -o .pioenvs/teensy31/src/main.o -c -fno-rtti -fno-exceptions -std=gnu++0x -felide-constructors -g -Os -ffunction-sections -fdata-sections -Wall -mthumb -mcpu=cortex-m4 -nostdlib -MMD -DF_CPU=72000000L -DUSB_SERIAL -DLAYOUT_US_ENGLISH -D__MK20DX256__ -DARDUINO=10600 -DTEENSYDUINO=124 -DPLATFORMIO=020700 -I.pioenvs/teensy31/FrameworkArduino src/main.cpp<br />
-      <font color="white">[... a list of the rest compiled files ...]</font><br />
-      arm-none-eabi-objcopy -O ihex -R .eeprom .pioenvs/teensy31/firmware.elf .pioenvs/teensy31/firmware.hex<br />
-      arm-none-eabi-size" -B -d .pioenvs/teensy31/firmware.elf<br />
-      <table>
-        <tr>
-          <td>text</td>
-          <td>data</td>
-          <td>bss</td>
-          <td>dec</td>
-          <td>hex</td>
-          <td>filename</td>
-        </tr>
-        <tr>
-          <td>10032</td>
-          <td>1232</td>
-          <td>2268</td>
-          <td>13532</td>
-          <td>34dc</td>
-          <td>.pioenvs/&#8203;teensy31/&#8203;firmware.elf</td>
-       </tr>
-      </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 4.32 seconds ====================================== </p>
-
-      [Thu Jan 1 00:00:00 1970] Processing <font color="cyan">lpmsp430g2553</font> (platform: timsp430, board: lpmsp430g2553, framework: energia, build_flags: -D LED_BUILTIN=RED_LED) <br />
-      <div class="dashed-line"></div>
-      msp430-g++ -o .pioenvs/lpmsp430g2553/src/main.o -c -g -Os -ffunction-sections -fdata-sections -MMD -mmcu=msp430g2553 -DF_CPU=16000000L -DLED_BUILTIN=RED_LED -DARDUINO=101 -DENERGIA=15 -DPLATFORMIO=020700 -I.pioenvs/lpmsp430g2553/FrameworkEnergia -I.pioenvs/lpmsp430g2553/FrameworkEnergiaVariant src/main.cpp<br />
-      <font color="white">[... a list of the rest compiled files ...]</font><br />
-      msp430-objcopy -O ihex -R .eeprom .pioenvs/lpmsp430g2553/firmware.elf .pioenvs/lpmsp430g2553/firmware.hex<br />
-      "msp430-size" -B -d .pioenvs/lpmsp430g2553/firmware.elf<br />
-      <table>
-        <tr>
-          <td>text</td>
-          <td>data</td>
-          <td>bss</td>
-          <td>dec</td>
-          <td>hex</td>
-          <td>filename</td>
-        </tr>
-        <tr>
-          <td>816</td>
-          <td>0</td>
-          <td>20</td>
-          <td>836</td>
-          <td>344</td>
-          <td>.pioenvs/&#8203;lpmsp430g2553/&#8203;firmware.elf</td>
-       </tr>
-      </table>
-      <p>======================================  [ <font color="green">SUCCESS</font> ] Took 2.18 seconds ====================================== </p>
-    </small>
-  </div>
-
-  <h3 class="header-underlined">Project Structure <small>after processing</small></h3>
-  <pre>
-├── .gitignore
-├── .pioenvs
-│   ├── .sconsign.dblite
-│   ├── lpmsp430g2553
-│   │   ├── FrameworkEnergia
-│   │   ├── FrameworkEnergiaVariant
-│   │   ├── firmware.elf
-│   │   ├── firmware.hex
-│   │   ├── libFrameworkEnergia.a
-│   │   └── src
-│   ├── nodemcu
-│   │   ├── FrameworkArduino
-│   │   ├── FrameworkArduinoVariant
-│   │   ├── firmware.bin
-│   │   ├── firmware.elf
-│   │   ├── libFrameworkArduino.a
-│   │   ├── libFrameworkArduinoVariant.a
-│   │   └── src
-│   ├── structure.hash
-│   ├── teensy31
-│   │   ├── FrameworkArduino
-│   │   ├── firmware.elf
-│   │   ├── firmware.hex
-│   │   ├── libFrameworkArduino.a
-│   │   └── src
-│   └── uno
-│       ├── FrameworkArduino
-│       ├── FrameworkArduinoVariant
-│       ├── firmware.elf
-│       ├── firmware.hex
-│       ├── libFrameworkArduino.a
-│       ├── libFrameworkArduinoVariant.a
-│       └── src
-├── .travis.yml
-├── lib
-│   └── readme.txt
-├── platformio.ini
-└── src
-    └── main.cpp
-</pre>
-
-  <h3 class="header-underlined">Firmware uploading</h3>
-  <p>For uploading firmware to embedded device you can use <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command with <code>--target upload</code> option.</p>
-  <span class="label label-default">Terminal</span>
-  <div class="well terminal">
-    <span class="cmd"><i class="fa fa-angle-right fa-lg"></i> platformio run --target upload</span>
-  </div>
-  <p>If you want to enable "auto-uploading" when source code is built successfully, then define for the specific environment's option <code>targets = upload</code>. More detailed information about <code>targets</code> option is available in the <a href="http://docs.platformio.org/en/latest/projectconf.html#targets">documentation</a>.</p>
-  <div class="alert alert-info">
-    <ul class="fa-ul">
-      <li>
-        <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can process only specific environments <code>-e</code> or targets <code>-t</code>. Read more about it in <a href="http://docs.platformio.org/en/latest/userguide/cmd_run.html#examples" class="alert-link"><i class="fa fa-angle-right fa-lg"></i> platformio run</a> command examples.
-      </li>
-    </ul>
-  </div>
-
-  <h2>Further Reading</h2>
-  <ul>
-    <li><a href="http://docs.platformio.org">Documentation</a>
-    </li>
-    <li><a href="https://github.com/platformio/platformio/tree/develop/examples" target="_blank">Project Examples</a>
-    </li>
-  </ul>
-
 </div>

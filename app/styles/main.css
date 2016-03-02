@@ -110,6 +110,23 @@
   padding-top: 3px;
 }
 
+/* Code highlighting */
+
+.hljs {
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.hljscode {
+  padding: 0;
+}
+
+.hljscode pre {
+  margin: 0;
+  border: none;
+  background: none;
+}
+
 /* Home */
 
 .home h1 {
@@ -119,7 +136,7 @@
 .home .btn-lg {
   padding: 15px 30px;
   margin: 10px;
-  width: 240px;
+  width: 200px;
 }
 
 .home .top-items h2 {
@@ -138,21 +155,146 @@
   color: #fff;
 }
 
-/* Code highlighting */
+/* Get Started */
 
-.hljs {
-  padding: 0;
-  background-color: #f5f5f5;
+.get-started .top-items-lg .item {
+  padding-top: 10px;
+  border: 1px solid #fff;
 }
 
-.hljscode {
-  padding: 0;
+.get-started .top-items-lg .active {
+  border: 1px solid #e6e6e6;
+  background-color: #fcfcfc;
+  border-radius: 6px;
 }
 
-.hljscode pre {
-  margin: 0;
-  border: none;
-  background: none;
+.get-started .top-items-lg .active .img-circle {
+  background-color: #fff;
+}
+
+.get-started .top-items-lg .fa-cube {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.get-started .top-items-lg .fa-heart-o {
+  padding-top: 10px;
+}
+
+.get-started .top-items-xs .btn {
+  margin-top: 10px;
+}
+
+.get-started .top-items-xs .fa-ul {
+  margin-left: 1.36685714em;
+}
+
+.get-started .top-items-xs .fa-ul li {
+  margin-top: 10px;
+}
+
+.get-started .ide-carousel {
+  box-shadow: 0 10px 50px #808080;
+  margin-bottom: 40px;
+}
+
+.get-started .ide-carousel .ide-slide {
+ background-repeat: no-repeat;
+ background-position: center top;
+ background-size: 100%;
+}
+
+.terminal-window {
+  max-width: 726px;
+  border: 1px solid #ECECEC;
+  margin: 30px auto;
+  border-radius: 6px;
+  box-shadow: 0 5px 20px grey;
+}
+
+.terminal-window .tw-panel {
+  background-color: #EEEEEE;
+  height: 25px;
+  padding-top: 3px;
+  border-bottom: 1px solid #A7A5A7;
+  text-align: center;
+}
+
+.terminal-window .tw-panel .pull-left {
+  margin-left: 10px;
+}
+
+.terminal-window .tw-content {
+  background-color: #000;
+}
+
+.terminal-window .tw-content img {
+  max-width: 100%;
+}
+
+.terminal-window .nav-pills li {
+  margin-left: 0;
+}
+
+.terminal-window .nav-pills a {
+  border-radius: 0;
+  background-color: #BDBCBD;
+  padding: 2px 10px;
+  margin: 1px 0;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .terminal-window .nav-pills a {
+    margin: 0;
+  }
+}
+
+.terminal-window .nav-pills a:hover {
+  background-color: #B3B1B3;
+}
+
+.terminal-window .nav-pills .active a,
+.terminal-window .nav-pills .active a:hover {
+  background-color: #D9D7D9;
+  color: #000;
+}
+
+/* PlatformIO IDE */
+
+.platformio-ide-top .container {
+  padding-bottom: 130px;
+}
+
+.platformio-ide-top h1 small {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .platformio-ide-top h1 small {
+    font-size: 30px;
+  }
+}
+
+.platformio-ide-top .other-links {
+  font-size: 13px;
+}
+
+.platformio-ide-top .btn {
+  margin-top: 10px;
+}
+
+.platformio-ide-laptop {
+  margin-top: -200px;
+  margin-bottom: -35px;
+}
+
+.platformio-ide-laptop img {
+  max-width: 90%;
+}
+
+.platformio-ide-features .container {
+  padding-top: 30px;
 }
 
 /* Lib */
@@ -233,7 +375,7 @@
   background-color: green;
   padding: 3px 6px;
   border-radius: 4px;
-  border: 1px solid lightgray;
+  border: 1px solid #d3d3d3;
 }
 
 .lib-installation .lib-dl .btn {
@@ -303,6 +445,21 @@
 
 .footer .quick-links ul li {
   padding-top: 5px;
+}
+
+.footer .quick-links .fa {
+  margin-right: 10px;
+  width: 15px;
+}
+
+.footer .quick-links .social .fa {
+  width: 28px;
+}
+
+.footer .quick-links .social a {
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.92857143em;
 }
 
 .footer .copyright {
@@ -400,70 +557,12 @@
 
 /* Miscellaneous */
 
-.terminal {
-  color: #fff;
-  background-color: #000;
-  padding: 10px;
-}
-
-.terminal .cmd {
-  letter-spacing: 2px;
-}
-
-.terminal small {
-  color: #cecece;
-  word-wrap: break-word;
-}
-
-.terminal small .dashed-line {
-  border-bottom: 1px dashed #cecece;
-}
-
-.terminal small table td {
-  padding-right: 10px;
-}
-
 .modal-piodemo {
   width: 760px;
 }
 
 .donate .list-inline li {
   padding-bottom: 15px;
-}
-
-.platformio-ide-top .container {
-  padding-bottom: 130px;
-}
-
-.platformio-ide-top h1 small {
-  font-size: 18px;
-}
-
-@media screen and (min-width: 768px) {
-  .platformio-ide-top h1 small {
-    font-size: 30px;
-  }
-}
-
-.platformio-ide-top .other-links {
-  font-size: 13px;
-}
-
-.platformio-ide-top .btn {
-  margin-top: 10px;
-}
-
-.platformio-ide-laptop {
-  margin-top: -200px;
-  margin-bottom: -35px;
-}
-
-.platformio-ide-laptop img {
-  max-width: 90%;
-}
-
-.platformio-ide-features .container {
-  padding-top: 30px;
 }
 
 .top-banner {

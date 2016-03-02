@@ -1,6 +1,6 @@
-<view-title>{{ vm.tabs[vm.activeTab].name }} · Frameworks</view-title>
-<meta name="description" content="{{ vm.tabs[vm.activeTab].description }}" view-head />
-<meta name="keywords" content="embedded, framework, {{ vm.tabs[vm.activeTab].name }}" view-head />
+<view-title>{{ vm.frameworks[vm.active].name }} · Frameworks</view-title>
+<meta name="description" content="{{ vm.frameworks[vm.active].description | truncate : 200 }}" view-head />
+<meta name="keywords" content="embedded, framework, {{ vm.frameworks[vm.active].name }}" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -18,9 +18,9 @@
 
 <div class="container">
 
-  <uib-tabset>
+  <uib-tabset active="vm.active">
 
-    <uib-tab ng-repeat="framework in vm.frameworks" active="vm.tabs[framework.type].active">
+    <uib-tab ng-repeat="framework in vm.frameworks" index="$index">
       <uib-tab-heading>
         <a href="#!/frameworks/{{ framework.type }}" ng-click="vm.changeFramework('{{ framework.type }}')"><h3>{{ framework.name }}</h3></a>
       </uib-tab-heading>

@@ -19,22 +19,23 @@
 
   angular
     .module('siteApp')
-    .controller('MainController', MainController);
+    .controller('GetStartedController', GetStartedController);
 
-  function MainController($location, $window, siteUtils) {
+  function GetStartedController($routeParams, $window, dataService, siteUtils) {
     var vm = this;
 
-    vm.isNavBarCollapsed = true;
-    vm.isRouteActive = isRouteActive;
-    vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
-    vm.siteUtils = siteUtils;
-
-    ////////////
-
-    function isRouteActive(pattern) {
-      return new RegExp(pattern).test($location.path());
+    vm.gsType = '';
+    if ($routeParams.hasOwnProperty('gsType')) {
+      vm.gsType = $routeParams.gsType;
     }
 
+    vm.siteUtils = siteUtils;
+    vm.cliDemos = dataService.getCLIDemos();
+    vm.cliDemoActive = 0;
+    vm.ideDemos = dataService.getIDEDemos();
+    vm.ideDemoActive = 0;
+    vm.ideDemoInterval = 5000;
+    vm.slideHeight = ($window.innerHeight ? Math.ceil($window.innerHeight / 2) :
+      240);
   }
-
 })();

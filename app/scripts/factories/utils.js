@@ -24,7 +24,8 @@
   function siteUtils($uibModal) {
     return {
       showSearchExamples: showSearchExamples,
-      showDemo: showDemo
+      showDemo: showDemo,
+      osType: getOSType()
     };
 
     function showSearchExamples(searchPath) {
@@ -48,6 +49,17 @@
         controllerAs: 'vm',
         size: 'piodemo',
       });
+    }
+
+    function getOSType() {
+      if (navigator.appVersion.indexOf('Macintosh') !== -1) {
+        return 'Macintosh';
+      } else if (navigator.appVersion.indexOf('Windows') !== -1) {
+        return 'Windows';
+      } else if (navigator.appVersion.indexOf('Linux') !== -1) {
+        return 'Linux';
+      }
+      return '';
     }
   }
 

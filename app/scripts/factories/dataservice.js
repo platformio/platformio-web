@@ -75,15 +75,15 @@
 
     function getCLIDemos() {
       return [{
-        'image': 'images/platformio-demo-wiring.gif',
+        'image': 'http://docs.platformio.org/en/latest/_images/platformio-demo-wiring.gif',
         'title': 'Blink Project',
         'icon': 'lightbulb-o'
       }, {
-        'image': 'images/platformio-demo-platforms.gif',
+        'image': 'http://docs.platformio.org/en/latest/_images/platformio-demo-platforms.gif',
         'title': 'Platform Manager',
         'icon': 'laptop'
       }, {
-        'image': 'images/platformio-demo-lib.gif',
+        'image': 'http://docs.platformio.org/en/latest/_images/platformio-demo-lib.gif',
         'title': 'Library Manager',
         'icon': 'code'
       }];

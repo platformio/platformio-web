@@ -557,6 +557,16 @@
 
 /* Miscellaneous */
 
+.terminal {
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+
+.terminal .cmd {
+  letter-spacing: 2px;
+}
+
 .donate .list-inline li {
   padding-bottom: 15px;
 }

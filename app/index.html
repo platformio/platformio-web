@@ -72,18 +72,19 @@
                 <li role="menuitem"><a href="#!/get-started/integration"><i class="fa fa-cube"></i> IDE Integration</a></li>
               </ul>
             </li>
-            <li ng-class="{active: vm.isRouteActive('/lib')}" class="dropdown" uib-dropdown>
-              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-code fa-lg"></i>
-                Libraries <span class="caret"></span>
+            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" uib-dropdown>
+              <a href="#!/lib" class="btn btn-main"><i class="fa fa-code fa-lg"></i>Libraries</a>
+              <a class="btn dropdown-toggle" uib-dropdown-toggle>
+                <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li role="menuitem"><a href="#!/lib"><i class="fa fa-bar-chart"></i> Home &amp; Stats</a></li>
-                <li role="separator" class="divider"></li>
-                <li role="menuitem"><a href="#!/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
-                <li role="menuitem"><a href="#!/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
-                <li role="separator" class="divider"></li>
-                <li role="menuitem"><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
-                <li role="menuitem"><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
+                <li><a href="#!/lib"><i class="fa fa-bar-chart"></i> Stats</a></li>
+                <li><a href="#!/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
+                <li class="divider"></li>
+                <li><a href="#!/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
+                <li class="divider"></li>
+                <li><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
+                <li><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
               </ul>
             </li>
             <li><a href="http://docs.platformio.org/"><i class="fa fa-book fa-lg"></i>Docs</a></li>

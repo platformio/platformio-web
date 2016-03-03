@@ -24,7 +24,6 @@
   function siteUtils($uibModal) {
     return {
       showSearchExamples: showSearchExamples,
-      showDemo: showDemo,
       osType: getOSType()
     };
 
@@ -39,15 +38,6 @@
             return searchPath;
           }
         }
-      });
-    }
-
-    function showDemo() {
-      $uibModal.open({
-        templateUrl: 'views/demo_modal.html',
-        controller: 'DemoModalController',
-        controllerAs: 'vm',
-        size: 'piodemo',
       });
     }
 

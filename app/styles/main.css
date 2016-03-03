@@ -136,7 +136,7 @@
 .home .btn-lg {
   padding: 15px 30px;
   margin: 10px;
-  width: 200px;
+  width: 220px;
 }
 
 .home .top-items h2 {
@@ -556,10 +556,6 @@
 }
 
 /* Miscellaneous */
-
-.modal-piodemo {
-  width: 760px;
-}
 
 .donate .list-inline li {
   padding-bottom: 15px;

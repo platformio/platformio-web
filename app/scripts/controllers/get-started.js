@@ -24,7 +24,7 @@
   function GetStartedController($routeParams, $window, dataService, siteUtils) {
     var vm = this;
 
-    vm.gsType = '';
+    vm.gsType = 'ide';
     if ($routeParams.hasOwnProperty('gsType')) {
       vm.gsType = $routeParams.gsType;
     }

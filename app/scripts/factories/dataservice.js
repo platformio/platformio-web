@@ -91,20 +91,20 @@
 
     function getIDEDemos() {
       return [{
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-atom-platformio.png',
-        'title': 'Atom',
-        'icon': 'lightbulb-o'
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-eclipse.png',
+        'title': 'Eclipse',
+        'icon': 'code'
+      }, {
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-vs-platformio-newproject-8.png',
+        'title': 'Visual Studio',
+        'icon': 'code'
       }, {
         'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-clion.png',
         'title': 'CLion',
         'icon': 'laptop'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-eclipse.png',
-        'title': 'Eclipse',
-        'icon': 'code'
-      }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-emacs.png',
-        'title': 'Emacs',
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-sublime-text-platformio-newproject-5.png',
+        'title': 'Sublime Text',
         'icon': 'code'
       }, {
         'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-netbeans.png',
@@ -115,17 +115,17 @@
         'title': 'Qt Creator',
         'icon': 'code'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-sublime-text-platformio-newproject-5.png',
-        'title': 'Sublime Text',
-        'icon': 'code'
-      }, {
         'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-vim.png',
         'title': 'VIM',
         'icon': 'code'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-vs-platformio-newproject-8.png',
-        'title': 'Visual Studio',
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-emacs.png',
+        'title': 'Emacs',
         'icon': 'code'
+      }, {
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-atom-platformio.png',
+        'title': 'Atom',
+        'icon': 'lightbulb-o'
       }];
     }
 

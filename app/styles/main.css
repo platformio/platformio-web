@@ -70,6 +70,10 @@
   color: #A80008;
 }
 
+.jumbotron h1 {
+  margin-bottom: 30px;
+}
+
 .header-underlined {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
@@ -179,6 +183,10 @@
 
 .get-started .top-items-lg .fa-heart-o {
   padding-top: 10px;
+}
+
+.get-started .top-items-xs .media-heading {
+  margin-bottom: 10px;
 }
 
 .get-started .top-items-xs .btn {

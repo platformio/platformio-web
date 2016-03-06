@@ -87,7 +87,7 @@
     <div class="alert alert-info" role="alert">
       <ul class="fa-ul">
         <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="http://docs.platformio.org/en/latest/ide.html#" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
+          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="#!/get-started/integration" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
         </li>
       </ul>
     </div>
@@ -118,9 +118,14 @@
       <uib-tab-heading>
         <i class="fa fa-file-code-o"></i> library.json
       </uib-tab-heading>
-        <br>
-        <p><a href="http://docs.platformio.org/en/latest/librarymanager/config.html">library.json</a> is a manifest file of development library.</p>
-       <div hljs include="vm.lib.confurl" language="json"></div>
+      <br>
+      <p>
+        <div class="row">
+          <div class="col-md-8">Documentation for <a href="http://docs.platformio.org/en/latest/librarymanager/config.html">library.json</a> manifest file.</div>
+          <div class="col-md-4 text-right"> <button class="btn btn-primary btn-sm" ng-click="vm.editLibraryConf(vm.lib.confurl)">Edit "library.json"</button></div>
+        </div>
+      </p>
+      <div hljs include="vm.lib.confurl" language="json"></div>
     </uib-tab>
 
     <uib-tab>

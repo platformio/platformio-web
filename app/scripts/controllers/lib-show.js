@@ -31,6 +31,7 @@
     vm.examples = getExamples();
     vm.currentExample = {};
     vm.downloadLib = downloadLib;
+    vm.editLibraryConf = editLibraryConf;
 
     if (vm.examples.length) {
       vm.currentExample = vm.examples[0];
@@ -109,6 +110,25 @@
           vm.lib.name, vm.lib.version.name, vm.lib.id
         ].join('_'));
       });
+    }
+
+    function editLibraryConf(confUrl) {
+      $analytics.eventTrack('Edit', {
+        category: 'Library',
+        label: '#' + vm.lib.id + ' ' +  vm.lib.name
+      });
+
+      if (confUrl.indexOf('https://raw.githubusercontent.com') === 0) {
+        var matches = confUrl.match(
+          new RegExp('content\.com/([^/]+/[^/]+)/(.+)$'));
+        if (matches) {
+          $window.location.href = (
+            'https://github.com/' + matches[1] + '/blob/' + matches[2]);
+          return;
+        }
+      }
+
+      $window.location.href = confUrl;
     }
   }
 

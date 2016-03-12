@@ -56,7 +56,7 @@
             'data_ga_social': true
           },
           sharingObject = {
-            url: ('http://platformio.org/#!/lib/show/' +
+            url: ('http://platformio.org/lib/show/' +
               $scope.lib.id + '/' + $scope.lib.name),
             title: ($scope.lib.name + ' library' + (
               hashFrameworks ? ' for ' : '') + hashFrameworks),

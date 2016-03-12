@@ -26,7 +26,7 @@
     vm.submitSearchForm = submitSearchForm;
     vm.searchQuery = '';
     vm.stats = libStats;
-    vm.searchPath = '#!/lib/search';
+    vm.searchPath = '/lib/search';
     vm.searchInputPlaceholder = 'Search for library ...';
 
     ////////////

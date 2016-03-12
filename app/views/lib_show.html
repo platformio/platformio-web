@@ -38,16 +38,16 @@
             </div>
             <div ng-if="author.url"><i class="fa fa-globe"></i> <a href="{{ author.url }}" target="_blank">{{ author.url }}</a>
             </div>
-            <i class="fa fa-book"></i> <a ng-href="#!/lib/search?query=author%253A%2522{{ author.name }}%2522">Libraries</span></a>
+            <i class="fa fa-book"></i> <a ng-href="/lib/search?query=author%253A%2522{{ author.name }}%2522">Libraries</span></a>
           </div>
         </dd>
 
         <dt>Compatibility</dt>
         <dd>
-          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> <a href="#!/frameworks/{{ type }}">{{ type | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> <a href="/frameworks/{{ type }}">{{ type | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
           <br>
           </span>
-          <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in vm.lib.platforms"> <a href="#!/platforms/{{ type }}">{{ type | typeToName : vm.platforms }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in vm.lib.platforms"> <a href="/platforms/{{ type }}">{{ type | typeToName : vm.platforms }}</a><span ng-if="!$last">,&nbsp;</span></span>
           </span>
         </dd>
 
@@ -65,7 +65,7 @@
         <dt>Keywords</dt>
         <dd>
           <div class="keywords">
-            <a ng-href="#!/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-sm" ng-repeat="keyword in vm.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+            <a ng-href="/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-sm" ng-repeat="keyword in vm.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
           </div>
         </dd>
       </dl>
@@ -87,7 +87,7 @@
     <div class="alert alert-info" role="alert">
       <ul class="fa-ul">
         <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="#!/get-started/integration" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
+          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="/get-started/integration" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
         </li>
       </ul>
     </div>

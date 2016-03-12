@@ -15,7 +15,7 @@
     <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
       <center>
         <div class="img-circle" ng-if="vm.gsType == 'cli'"><i class="fa fa-terminal fa-5x"></i></div>
-        <a href="#!/get-started/cli" ng-if="vm.gsType != 'cli'"><div class="img-circle"><i class="fa fa-terminal fa-5x"></i></div></a>
+        <a href="/get-started/cli" ng-if="vm.gsType != 'cli'"><div class="img-circle"><i class="fa fa-terminal fa-5x"></i></div></a>
       </center>
       <h2>PlatformIO CLI</h2>
       <p>
@@ -23,12 +23,12 @@
         Watch our <b>interactive demo</b> for Platform and Library Manager (click on Tabs in Terminal).
       </p>
       <p ng-if="vm.gsType == 'cli'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'cli'"><a class="btn btn-default" href="#!/get-started/cli" role="button">Get Started</a></p>
+      <p ng-if="vm.gsType != 'cli'"><a class="btn btn-default" href="/get-started/cli" role="button">Get Started</a></p>
     </div>
     <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'ide'}">
       <center>
         <div class="img-circle" ng-if="vm.gsType == 'ide'"><i class="fa fa-cube fa-5x"></i></div>
-        <a href="#!/get-started/ide" ng-if="vm.gsType != 'ide'"><div class="img-circle"><i class="fa fa-cube fa-5x"></i></div></a>
+        <a href="/get-started/ide" ng-if="vm.gsType != 'ide'"><div class="img-circle"><i class="fa fa-cube fa-5x"></i></div></a>
       </center>
       <h2>PlatformIO IDE</h2>
       <p>
@@ -36,12 +36,12 @@
         <br>Try-out our <b>Quick Start Guide</b> how to create cross-platform <i>"Blink"</i> project with illustrations.
       </p>
       <p ng-if="vm.gsType == 'ide'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'ide'"><a class="btn btn-default" href="#!/get-started/ide" role="button">Get Started</a></p>
+      <p ng-if="vm.gsType != 'ide'"><a class="btn btn-default" href="/get-started/ide" role="button">Get Started</a></p>
     </div>
     <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'integration'}">
       <center>
         <div class="img-circle" ng-if="vm.gsType == 'integration'"><i class="fa fa-heart-o fa-5x"></i></div>
-        <a href="#!/get-started/integration" ng-if="vm.gsType != 'integration'"><div class="img-circle"><i class="fa fa-heart-o fa-5x"></i></div></a>
+        <a href="/get-started/integration" ng-if="vm.gsType != 'integration'"><div class="img-circle"><i class="fa fa-heart-o fa-5x"></i></div></a>
       </center>
       <h2>Integration</h2>
       <p>
@@ -49,7 +49,7 @@
         Extend your favourite environment with professional instruments.
       </p>
       <p ng-if="vm.gsType == 'integration'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'integration'"><a class="btn btn-default" href="#!/get-started/integration" role="button">Get Started</a></p>
+      <p ng-if="vm.gsType != 'integration'"><a class="btn btn-default" href="/get-started/integration" role="button">Get Started</a></p>
     </div>
   </div>
 
@@ -104,7 +104,7 @@
 
             <div ng-if="vm.gsType == 'ide'">
               Download and install the next generation PlatformIO IDE.
-              <p><a class="btn btn-success" href="#!/platformio-ide" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
+              <p><a class="btn btn-success" href="/platformio-ide" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
               <br>
               PlatformIO IDE is built on top of GitHub's Atom "hackable" text editor. If you have Atom already installed please use
               <a href="http://docs.platformio.org/en/latest/ide/atom.html#manual-installation" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Package">PlatformIO IDE package for Atom</a>.
@@ -173,7 +173,7 @@
               <li><i class="fa-li fa fa-chevron-right"></i>Ask questions and get answers in our <a href="http://community.platformio.org">Community Forums</a></li>
               <li ng-if="vm.gsType != 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio" target="_blank">PlatformIO Issues</a></li>
               <li ng-if="vm.gsType == 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio-atom-ide" target="_blank">PlaformIO IDE Issues</a></li>
-              <li><i class="fa-li fa fa-chevron-right"></i><a href="#!/contact">Contact Us</a> and we will integrate your products to PlatformIO ecosystem</li>
+              <li><i class="fa-li fa fa-chevron-right"></i><a href="/contact">Contact Us</a> and we will integrate your products to PlatformIO ecosystem</li>
             </ul>
           </div>
         </div>

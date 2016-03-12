@@ -19,14 +19,14 @@
 <uib-tabset active="vm.activeGroup">
   <uib-tab ng-repeat="group in ['embedded', 'desktop']" index="$index">
     <uib-tab-heading>
-      <h3 ng-if="group == 'embedded'"><a href="#!/platforms/atmelavr" ng-click="vm.changePlatform('atmelavr')">Embedded Platforms</a></h3>
-      <h3 ng-if="group == 'desktop'"><a href="#!/platforms/linux_arm" ng-click="vm.changePlatform('linux_arm')">Desktop Platforms</a></h3>
+      <h3 ng-if="group == 'embedded'"><a href="/platforms/atmelavr" ng-click="vm.changePlatform('atmelavr')">Embedded Platforms</a></h3>
+      <h3 ng-if="group == 'desktop'"><a href="/platforms/linux_arm" ng-click="vm.changePlatform('linux_arm')">Desktop Platforms</a></h3>
     </uib-tab-heading>
     <br>
     <uib-tabset type="pills" active="vm.activePlatform">
-      <uib-tab ng-repeat="platform in vm.platforms" index="$index" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
+      <uib-tab ng-repeat="platform in vm.platforms" index="$index" select="vm.changePlatform(platform.type)" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
         <uib-tab-heading>
-          <h4><a href="#!/platforms/{{ platform.type }}" ng-click="vm.changePlatform('{{ platform.type }}')">{{ platform.name }}</a></h4>
+          <h4><a href="/platforms/{{ platform.type }}">{{ platform.name }}</a></h4>
         </uib-tab-heading>
 
         <br>
@@ -73,23 +73,23 @@
               </tr>
             </thead>
             <tr ng-repeat="framework in vm.frameworks" ng-if="vm.isCompatibleFramework(framework.type, platform.type)">
-              <td class="text-nowrap"><a href="/#!/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
+              <td class="text-nowrap"><a href="/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
               <td>{{ framework.description }}</td>
           </tr>
           </table>
 
           <h2>Boards</h2>
 
-          To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/#!/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+          To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
           or <a href="http://docs.platformio.org/en/latest/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.
         </div>
       </uib-tab>
     </uib-tabset>
   </uib-tab>
 
-  <uib-tab index="2">
-    <uib-tab-heading>
-      <h3><a href="#!/platforms/creating" ng-click="vm.changePlatform('creating')"><i class="fa fa-plus"></i> Create Platform</a></h3>
+  <uib-tab index="2" select="vm.changePlatform('creating')">
+    <uib-tab-heading >
+      <h3><a href="/platforms/creating"><i class="fa fa-plus"></i> Create Platform</a></h3>
     </uib-tab-heading>
 
     <br>

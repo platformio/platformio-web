@@ -19,6 +19,7 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+  var pushState = require('grunt-connect-pushstate/lib/utils').pushState;
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -75,6 +76,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              pushState(),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',

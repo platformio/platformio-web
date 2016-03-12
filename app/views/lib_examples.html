@@ -45,7 +45,7 @@
     <section class="examples" ng-repeat="item in vm.searchResult.items">
       <div class="row">
         <div class="col-xs-7">
-          <h3 class="title"><a ng-href="#!/lib/show/{{ item.lib.id }}/{{ item.lib.name }}?example={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a>
+          <h3 class="title"><a ng-href="/lib/show/{{ item.lib.id }}/{{ item.lib.name }}?example={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a>
           <small> by <span ng-repeat="name in item.lib.authornames">{{ name }}<span ng-if="!$last">, </span></span></small>
         </h3>
         </div>
@@ -58,7 +58,7 @@
       <p>{{ item.lib.description }}</p>
 
       <p class="keywords">
-        <a ng-href="#!/lib/examples?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
+        <a ng-href="/lib/examples?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.lib.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
       </p>
 
       <div class="text-right code-toogle">

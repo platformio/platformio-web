@@ -33,7 +33,7 @@
     vm.meta = getMeta();
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
-    vm.searchPath = '#!/lib/examples';
+    vm.searchPath = '/lib/examples';
     vm.searchInputPlaceholder = 'Search for example ...';
 
     if (searchObject.query && searchObject.query.length) {

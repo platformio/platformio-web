@@ -33,7 +33,7 @@
     vm.meta = getMeta();
     vm.submitSearchForm = doSearch;
     vm.pageChanged = doSearch;
-    vm.searchPath = '#!/lib/search';
+    vm.searchPath = '/lib/search';
     vm.searchInputPlaceholder = 'Search for library ...';
 
     if (searchObject.query && searchObject.query.length) {

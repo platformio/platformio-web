@@ -22,11 +22,11 @@
     .factory('httpErrorInterceptor', httpErrorInterceptor)
     .config(routeConfig);
 
-  function httpErrorInterceptor($q, $window) {
+  function httpErrorInterceptor($q, $location) {
     return {
       'responseError': function(rejection) {
         if (rejection.status === 404) {
-          $window.location.href = '#!/404';
+          $location.path('/404');
         }
         return $q.reject(rejection);
       }
@@ -35,8 +35,7 @@
 
   function routeConfig($locationProvider, $routeProvider,
     $disqusProvider, $httpProvider) {
-    $locationProvider.hashPrefix('!');
-
+    $locationProvider.html5Mode(true);
     $disqusProvider.setShortname('platformio');
 
     $httpProvider.interceptors.push('httpErrorInterceptor');

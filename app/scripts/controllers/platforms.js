@@ -21,7 +21,7 @@
     .module('siteApp')
     .controller('PlatformsController', PlatformsController);
 
-  function PlatformsController($routeParams, $window, platformsList,
+  function PlatformsController($routeParams, $location, platformsList,
     packagesList, frameworksList) {
     var vm = this;
 
@@ -37,6 +37,7 @@
     // activate platform by hash
     if ($routeParams.hasOwnProperty('platformType')) {
       vm.activeGroup = 2;
+      vm.activePlatform = -1;
       angular.forEach(platformsList, function(item, index) {
         if ($routeParams.platformType === item.type) {
           vm.activeGroup = item.forDesktop? 1 : 0;
@@ -48,7 +49,7 @@
     ////////////
 
     function changePlatform(type) {
-      $window.location.href = '#!/platforms/' + type;
+      $location.path('/platforms/' + type);
     }
 
     function isCompatibleFramework(frameworkType, platformType) {

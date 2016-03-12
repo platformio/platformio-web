@@ -21,7 +21,7 @@
     .module('siteApp')
     .controller('FrameworksController', FrameworksController);
 
-  function FrameworksController($routeParams, $window, frameworksList,
+  function FrameworksController($routeParams, $location, frameworksList,
     platformsList) {
     var vm = this;
 
@@ -44,7 +44,7 @@
     ////////////
 
     function changeFramework(type) {
-      $window.location.href = '#!/frameworks/' + type;
+      $location.path('/frameworks/' + type);
     }
 
     function isCompatiblePlatform(platformType, frameworkType) {

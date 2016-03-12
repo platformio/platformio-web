@@ -569,6 +569,12 @@
   padding-left: 20px;
 }
 
+.boards-settings .form-group div,
+.boards-settings .form-group>label,
+.boards-settings .form-group select {
+  margin-right: 5px;
+}
+
 .terminal {
   color: #fff;
   background-color: #000;

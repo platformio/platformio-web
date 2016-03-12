@@ -91,7 +91,7 @@ def main():
     with SiteMapBuilder(SITEMAPXML_PATH) as b:
         # main
         b.add_url(
-            loc="http://platformio.org/",
+            loc="http://platformio.org",
             changefreq="weekly"
         )
         b.add_url(

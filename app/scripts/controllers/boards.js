@@ -21,24 +21,31 @@
     .module('siteApp')
     .controller('BoardsController', BoardsController);
 
-  function BoardsController($scope, $filter, $location, $q, $window,
+  function BoardsController($scope, $httpParamSerializerJQLike, $filter,
+    $location, $q, $window,
     ngTableParams, boardsList, platformsList, frameworksList) {
     var vm = this;
 
     vm.groupBy = 'vendor';
+    vm.sortBy = 'vendor';
+    vm.sortOrder = 'asc';
+    vm.shareUrl = '';
     vm.platforms = platformsList;
     vm.frameworks = frameworksList;
     vm.getFilterData = getFilterData;
+    vm.applySorting = applySorting;
+    vm.resetSettings = resetSettings;
+    vm.updateShareUrl = updateShareUrl;
 
     /* jshint newcap:false */
+    var _sorting = {};
+    _sorting[vm.sortBy] = vm.sortOrder;
     vm.tableParams = new ngTableParams(
       angular.extend({
           page: 1,
           count: $window.navigator.userAgent.indexOf('PhantomJS') !== -1 ?
             1000 : 15,
-          sorting: {
-            'vendor': 'asc'
-          }
+          sorting: _sorting
         },
         $location.search()), {
         counts: [15, 30, 50, 100, 1000],
@@ -48,6 +55,7 @@
         total: boardsList.length,
         getData: function($defer, params) {
           // $location.search(params.url());
+          vm.updateShareUrl(params.url());
 
           var orderedData = params.sorting() ?
             $filter('orderBy')(boardsList, vm.tableParams.orderBy()) :
@@ -62,11 +70,33 @@
         }
       });
 
-    $scope.$watch('vm.groupBy', function(value) {
+    $scope.$watch('vm.groupBy', function() {
       vm.tableParams.reload();
     });
+    $scope.$watch('vm.sortBy', vm.applySorting);
+    $scope.$watch('vm.sortOrder', vm.applySorting);
+
 
     ////////////
+
+    function applySorting() {
+      vm.tableParams.sorting(vm.sortBy, vm.sortOrder);
+    }
+
+    function resetSettings() {
+      vm.sortBy = 'vendor';
+      vm.sortOrder = 'asc';
+      vm.tableParams.filter({});
+      vm.applySorting();
+    }
+
+    function updateShareUrl(params) {
+      vm.shareUrl = $location.protocol() + '://' + $location.host();
+      if (parseInt($location.port()) !== 80) {
+        vm.shareUrl += ':' + $location.port();
+      }
+      vm.shareUrl += '/boards?' + $httpParamSerializerJQLike(params);
+    }
 
     function getFilterData(type_) {
       var d = $q.defer(),
@@ -88,6 +118,5 @@
       d.resolve(data);
       return d;
     }
-
   }
 })();

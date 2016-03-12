@@ -15,21 +15,45 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-9"><b>Group by</b> &nbsp;
+  <form class="form-inline boards-settings">
+    <div class="form-group">
+      <label>Group by</label>
       <div class="btn-group">
-        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'vendor'">Vendor</label>
-        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'platform'">Platform</label>
-        <label class="btn btn-default" ng-model="vm.groupBy" btn-radio="'mcu'">MCU</label>
+        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'vendor'">Vendor</label>
+        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'platform'">Platform</label>
+        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'mcu'">MCU</label>
       </div>
     </div>
-    <div class="col-md-3 text-right">
-        <button ng-click="vm.tableParams.filter({})" class="btn btn-default">Clear filters</button>
-        <!-- <button ng-click="vm.tableParams.sorting({'vendor' : 'asc'})" class="btn btn-default">Clear sorting</button> -->
+    <div class="form-group extra-pad">
+      <label>Sort by</label>
+      <select ng-model="vm.sortBy" class="form-control">
+        <option value="vendor">Vendor</option>
+        <option value="type">Type</option>
+        <option value="name">Name</option>
+        <option value="platform">Platform</option>
+        <option value="frameworks">Frameworks</option>
+        <option value="mcu">MCU</option>
+        <option value="fcpu">Frequency</option>
+        <option value="ram">RAM</option>
+        <option value="rom">Flash</option>
+      </select>
     </div>
-  </div>
+    <div class="form-group">
+      <div class="btn-group">
+        <label class="btn btn-default" ng-model="vm.sortOrder" uib-btn-radio="'asc'">Asc</label>
+        <label class="btn btn-default" ng-model="vm.sortOrder" uib-btn-radio="'desc'">Desc</label>
+      </div>
+    </div>
+    <div class="form-group extra-pad">
+      <button ng-click="vm.resetSettings()" class="btn btn-link">Clear filters &amp; sorting</button>
+    </div>      
+    <div class="form-group  pull-right" uib-tooltip="Share Url">
+      <i class="fa fa-share-alt fa-lg"></i>
+      <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
+    </div>
+  </form>
 
-  <br>
+  <hr>
 
   <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
     <tbody ng-repeat="group in $groups">

@@ -1,3 +1,4 @@
 # robotstxt.org
 
 User-agent: *
+Disallow: /*_escaped_fragment_

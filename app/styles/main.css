@@ -212,6 +212,22 @@
  background-size: 100%;
 }
 
+.get-started .carousel-indicators li {
+  background-color: #fff;
+  border: 1px solid #000;
+  opacity: 0.7;
+  margin-left: 7px;
+  width: 13px;
+  height: 13px;
+}
+
+.get-started .carousel-indicators .active {
+  background-color: #000;
+  opacity: 0.5;
+  width: 15px;
+  height: 15px;
+}
+
 .terminal-window {
   max-width: 726px;
   border: 1px solid #ECECEC;
@@ -607,4 +623,23 @@
 .top-banner:visited {
   color: #fff;
   text-decoration: none;
+}
+
+/* Override glyphicon with font-awesome */
+
+.glyphicon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.glyphicon-chevron-left:before {
+  content: "\f053"
+}
+
+.glyphicon-chevron-right:before {
+  content: "\f054"
 }

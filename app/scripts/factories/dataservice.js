@@ -103,7 +103,7 @@
         'title': 'CLion',
         'icon': 'laptop'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-sublime-text-platformio-newproject-5.png',
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-sublime-text-deviot.gif',
         'title': 'Sublime Text',
         'icon': 'code'
       }, {

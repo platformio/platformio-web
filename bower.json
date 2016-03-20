@@ -18,7 +18,7 @@
     "angulartics": "~1.0.0",
     "angulartics-google-analytics": "~0.1.0",
     "highlightjs": "~9",
-    "angular-highlightjs": "~0.5.0",
+    "angular-highlightjs": "~0.6.0",
     "angular-disqus": "~1.1.0",
     "angular-relative-date": "~1.0.0",
     "ng-table": "~0.8.0"

@@ -21,7 +21,8 @@
     .module('siteApp')
     .controller('GetStartedController', GetStartedController);
 
-  function GetStartedController($routeParams, $window, dataService, siteUtils) {
+  function GetStartedController($location, $routeParams, $window, $analytics,
+    dataService, siteUtils) {
     var vm = this;
 
     vm.gsType = 'ide';
@@ -37,5 +38,15 @@
     vm.ideDemoInterval = 5000;
     vm.slideHeight = ($window.innerHeight ? Math.ceil($window.innerHeight / 2) :
       240);
+    vm.ideDlUrl = '';
+
+    if ($location.search().dl) {
+      vm.ideDlUrl = (
+        'https://dl.bintray.com/platformio/ide-bundles/' +
+        $location.search().dl
+      );
+      $window.location.href = vm.ideDlUrl;
+    }
   }
+
 })();

@@ -70,7 +70,7 @@
           <span class="label label-default">{{ item.type }}</span>
         </td>
         <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
-          <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+          {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
         </td>
         <td sortable="'platform'" data-title="'Platform'" filter="{ 'platform': 'select' }" filter-data="vm.getFilterData('platforms')">
           <a href="/platforms/{{ item.platform }}">{{ item.platform | typeToName : vm.platforms }}</a>

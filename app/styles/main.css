@@ -228,6 +228,10 @@
   height: 15px;
 }
 
+.get-started-dl {
+  padding-bottom: 35px;
+}
+
 .terminal-window {
   max-width: 726px;
   border: 1px solid #ECECEC;

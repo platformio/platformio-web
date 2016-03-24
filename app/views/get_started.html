@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div class="container get-started">
+<div class="container get-started" ng-if="vm.ideDlUrl == ''">
   <div class="row text-center top-items-lg">
     <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
       <center>
@@ -91,6 +91,15 @@
   </div>
 </div>
 
+<div class="container get-started-dl text-center" ng-if="vm.ideDlUrl != ''">
+  <h2>Thank you for downloading PlatformIO IDE</h2>
+  <h3>Participate in our success and together let's make PlatformIO ecosystem even better!</h3>
+
+  <p>If the download doesn't start in a few seconds, please <a href="{{ vm.ideDlUrl }}">click here</a> to start the download.</p>
+  <h4>Below is some info to help you get started...</h4>
+
+</div>
+
 <div class="jumbotron get-started" ng-if="vm.gsType != ''">
   <div class="container top-items-xs" style="padding-top: 30px;">
     <div class="row">
@@ -104,7 +113,7 @@
 
             <div ng-if="vm.gsType == 'ide'">
               Download and install the next generation PlatformIO IDE.
-              <p><a class="btn btn-success" href="/platformio-ide" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
+              <p><a class="btn btn-success" href="{{ vm.ideDlUrl? vm.ideDlUrl : '/platformio-ide' }}" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
               <br>
               PlatformIO IDE is built on top of GitHub's Atom "hackable" text editor. If you have Atom already installed please use
               <a href="http://docs.platformio.org/en/latest/ide/atom.html#manual-installation" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Package">PlatformIO IDE package for Atom</a>.
@@ -133,7 +142,7 @@
               <ul class="fa-ul">
                 <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/ide/atom.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
                 <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/en/latest/ide/atom.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
-                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with the <a href="http://docs.platformio.org/en/latest/ide/atom.html#user-guide">PlatformIO IDE User Guide</a</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with the <a href="http://docs.platformio.org/en/latest/ide/atom.html#user-guide">PlatformIO IDE User Guide</a></li>
                 <li><i class="fa-li fa fa-chevron-right"></i>Read <a href="http://docs.platformio.org/en/latest/ide/atom.html#articles-manuals">Articles about PlatformIO IDE</a></li>
                 <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
               </ul>

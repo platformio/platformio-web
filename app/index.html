@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="PlatformIO: An open source ecosystem for IoT development" />
   <meta property="og:site_name" content="PlatformIO" />
   <meta property="og:title" content="PlatformIO: An open source ecosystem for IoT development" />
-  <meta property="og:description" content="Cross-platform build system and library manager. Continuous and IDE integration. Arduino and MBED compatible. Ready for Cloud compiling." />
+  <meta property="og:description" content="Cross-platform build system and library manager. Continuous and IDE integration. Arduino and ARM mbed compatible. Ready for Cloud compiling." />
   <meta property="og:image" content="images/platformio-ide-laptop.png" />
   <meta property="og:url" content="http://platformio.org" />
   <link rel="canonical" href="http://platformio.org" />
@@ -77,21 +77,7 @@
                 <li role="menuitem"><a href="/get-started/integration"><i class="fa fa-cube"></i> IDE Integration</a></li>
               </ul>
             </li>
-            <li ng-class="{active: vm.isRouteActive('/lib')}" class="btn-group" uib-dropdown>
-              <a href="/lib" class="btn btn-main"><i class="fa fa-code fa-lg"></i>Libraries</a>
-              <a class="btn dropdown-toggle" uib-dropdown-toggle>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/lib"><i class="fa fa-bar-chart"></i> Stats</a></li>
-                <li><a href="/lib/search?query="><i class="fa fa-list"></i> Browse</a></li>
-                <li class="divider"></li>
-                <li><a href="/lib/examples"><i class="fa fa-graduation-cap"></i>Examples</a></li>
-                <li class="divider"></li>
-                <li><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create Library</a></li>
-                <li><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Propose Library</a></li>
-              </ul>
-            </li>
+            <li ng-class="{active: vm.isRouteActive('/lib')}"><a href="/lib"><i class="fa fa-code fa-lg"></i>Libraries</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">

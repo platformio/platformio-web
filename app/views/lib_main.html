@@ -22,9 +22,21 @@
         <h2>Recently</h2>
       </div>
       <div class="col col-md-6 text-right lib-recently-btn">
-        <a href="/lib/search?query=" class="btn btn-primary"><i class="fa fa-list"></i> All Libraries</a>
-        <a href="http://docs.platformio.org/en/latest/librarymanager/creating.html" class="btn btn-success"><i class="fa fa-plus"></i> Create Library</a>
-        <a href="https://github.com/platformio/platformio-libmirror/issues" class="btn btn-default"><i class="fa fa-share-square-o"></i> Propose Library</a>
+        <ul class="list-inline">
+          <li><a href="/lib/search?query=" class="btn btn-default"><i class="fa fa-list"></i> All Libraries</a></li>
+          <li><a href="/lib/examples" class="btn btn-default"><i class="fa fa-graduation-cap"></i> Exmaples</a></li>
+          <li>
+            <div class="btn-group" uib-dropdown>
+              <button type="button" class="btn btn-success" uib-dropdown-toggle>
+                <i class="fa fa-plus"></i>
+              </button>
+              <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li role="menuitem"><a href="http://docs.platformio.org/en/latest/librarymanager/creating.html"><i class="fa fa-plus"></i> Create & Register Library</a></li>
+                <li role="menuitem"><a href="https://github.com/platformio/platformio-libmirror/issues"><i class="fa fa-share-square-o"></i> Request to add existing Library</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

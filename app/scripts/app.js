@@ -34,7 +34,7 @@
   ])
 
   .constant('siteConfig', {
-    apiURL: (parseInt(location.port) === 9000 ? 'http://localhost:8080' :
+    apiURL: (parseInt(location.port) === 9013 ? 'http://localhost:8080' :
       'http://api.platformio.org')
   });
 

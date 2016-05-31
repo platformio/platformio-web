@@ -6,7 +6,7 @@
     <h1 view-title><i class="fa fa-code"></i> Libraries <small>Registry</small></h1>
 
     <p>
-      <i>Hundreds Popular Libraries</i> are organized into single <i>Web 2.0</i> platform: list by categories, keywords, authors, compatible platforms and frameworks; learn via examples; be up-to-date with the latest version.
+      <i>Hundreds of Popular Libraries</i> are organized into a single <i>Web 2.0</i> platform: list by categories, keywords, authors, compatible platforms and frameworks; learn via examples; be up-to-date with the latest version.
     </p>
 
   </div>
@@ -71,17 +71,17 @@
   </div>
   <div class="row">
     <div class="col col-md-4">
-      <h3>Day's</h3>
+      <h3>Daily</h3>
       <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
-      <h3>Week's</h3>
+      <h3>Weekly</h3>
       <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
-      <h3>Month's</h3>
+      <h3>Monthly</h3>
       <p ng-repeat="item in vm.stats.dlmonth">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>

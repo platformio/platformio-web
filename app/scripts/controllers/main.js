@@ -21,13 +21,31 @@
     .module('siteApp')
     .controller('MainController', MainController);
 
-  function MainController($location, $window, siteUtils) {
+  function MainController($rootScope, $location, $window, siteUtils) {
     var vm = this;
 
+    vm.viewAutoScroll = true;
     vm.isNavBarCollapsed = true;
     vm.isRouteActive = isRouteActive;
     vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
     vm.siteUtils = siteUtils;
+
+    $rootScope.$on('$routeChangeStart', function(angularEvent, next, current) {
+      vm.viewAutoScroll = true;
+      if (!current) {
+        return;
+      }
+      var noscrollCtrls = [
+        'GetStartedController', 'PlatformsController',
+        'FrameworksController', 'LibShowController'
+      ];
+      angular.forEach(noscrollCtrls, function(ctrlName) {
+        if (next.controller === ctrlName &&
+          current.controller === ctrlName) {
+          vm.viewAutoScroll = false;
+        }
+      });
+    });
 
     ////////////
 

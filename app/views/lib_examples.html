@@ -45,7 +45,7 @@
     <section class="examples" ng-repeat="item in vm.searchResult.items">
       <div class="row">
         <div class="col-xs-7">
-          <h3 class="title"><a ng-href="/lib/show/{{ item.lib.id }}/{{ item.lib.name }}?example={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a>
+          <h3 class="title"><a ng-href="/lib/show/{{ item.lib.id }}/{{ item.lib.name }}/examples?file={{ item.name }}">{{ item.lib.name }} / {{ item.name }}</a>
           <small> by <span ng-repeat="name in item.lib.authornames">{{ name }}<span ng-if="!$last">, </span></span></small>
         </h3>
         </div>

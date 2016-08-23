@@ -155,7 +155,7 @@
           ]
         }
       })
-      .when('/lib/show/:libId/:libName', {
+      .when('/lib/show/:libId/:libName/:activeTab?', {
         templateUrl: 'views/lib_show.html',
         controller: 'LibShowController',
         controllerAs: 'vm',

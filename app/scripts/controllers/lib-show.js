@@ -20,27 +20,38 @@
   angular.module('siteApp')
     .controller('LibShowController', LibShowController);
 
-  function LibShowController($window, $location, $filter, $analytics,
-    dataService, libInfo, frameworksList, platformsList) {
+  function LibShowController($window, $location, $filter, $routeParams,
+    $analytics, dataService, libInfo, frameworksList, platformsList) {
     var vm = this;
+    var tabs = ['examples', 'installation', 'manifest', 'discussion'];
 
     vm.frameworks = frameworksList;
     vm.platforms = platformsList;
     vm.lib = libInfo;
     vm.meta = getMeta();
     vm.examples = getExamples();
+    vm.activeTab = getActiveTab();
     vm.currentExample = {};
     vm.downloadLib = downloadLib;
     vm.editLibraryConf = editLibraryConf;
+    vm.changeTab = changeTab;
+
+    // redirect to discussion tab
+    if ($routeParams.activeTab !== 'discussion' &&
+      $location.hash().indexOf('comment-') === 0) {
+      $location.url(
+        '/lib/show/' + $routeParams.libId +
+        '/' + $routeParams.libName +
+        '/discussion#' + $location.hash());
+    }
 
     if (vm.examples.length) {
       vm.currentExample = vm.examples[0];
     }
-
     var searchObject = $location.search();
-    if (searchObject.example) {
+    if (searchObject.file) {
       angular.forEach(vm.examples, function(item) {
-        if (item.name === searchObject.example) {
+        if (item.name === searchObject.file) {
           vm.currentExample = item;
           return;
         }
@@ -101,13 +112,13 @@
     function downloadLib() {
       $analytics.eventTrack('Download', {
         category: 'Library',
-        label: '#' + vm.lib.id + ' ' +  vm.lib.name
+        label: '#' + vm.lib.id + ' ' + vm.lib.name
       });
 
       var defer = dataService.getLibDlUrl(vm.lib.id).$promise;
       defer.then(function(data) {
         $window.location.href = (data.url + '?filename=' + [
-          vm.lib.name.replace(' ', '-'), vm.lib.version.name, vm.lib.id
+          vm.lib.name.replace(/[\s]+/g, '-'), vm.lib.version.name, vm.lib.id
         ].join('_'));
       });
     }
@@ -115,7 +126,7 @@
     function editLibraryConf(confUrl) {
       $analytics.eventTrack('Edit', {
         category: 'Library',
-        label: '#' + vm.lib.id + ' ' +  vm.lib.name
+        label: '#' + vm.lib.id + ' ' + vm.lib.name
       });
 
       if (confUrl.indexOf('https://raw.githubusercontent.com') === 0) {
@@ -129,6 +140,24 @@
       }
 
       $window.location.href = confUrl;
+    }
+
+    function changeTab(name) {
+      if (vm.activeTab === tabs.indexOf(name)) {
+        return;
+      }
+      $location.url(
+        '/lib/show/' + $routeParams.libId +
+        '/' + $routeParams.libName +
+        '/' + name);
+    }
+
+    function getActiveTab() {
+      if (!$routeParams.hasOwnProperty('activeTab')) {
+        return 0;
+      }
+      var tabIndex = tabs.indexOf($routeParams.activeTab);
+      return tabIndex !== -1 ? tabIndex : 0;
     }
   }
 

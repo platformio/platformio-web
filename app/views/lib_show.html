@@ -26,8 +26,11 @@
 
     <div class="well well-sm">
       <dl class="dl-horizontal libinfo">
-        <dt ng-if="vm.lib.url">Home</dt>
-        <dd ng-if="vm.lib.url"><a href="{{ vm.lib.url }}" target="_blank">{{ vm.lib.url }}</a></dd>
+        <dt ng-if="vm.lib.homepage">Homepage</dt>
+        <dd ng-if="vm.lib.homepage"><a href="{{ vm.lib.homepage }}" target="_blank">{{ vm.lib.homepage }}</a></dd>
+
+        <dt ng-if="vm.lib.repository">Repository</dt>
+        <dd ng-if="vm.lib.repository"><a href="{{ vm.lib.repository }}" target="_blank">{{ vm.lib.repository }}</a></dd>
 
         <dt>Authors</dt>
         <dd>
@@ -71,35 +74,14 @@
       </dl>
     </div>
 
-    <h2>Installation <small>using <a href="http://docs.platformio.org/en/stable/librarymanager/index.html">PlatformIO Library Manager</a></small></h2>
-    <div class="row lib-installation">
-      <div class="col-md-11 lib-install">
-        <div class="well terminal">
-          <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> <span class="plri" tooltip="PlatformIO Library Registry ID">{{ vm.lib.id }}</span>
-        </div>
-      </div>
-      <div class="col-md-1 lib-dl">
-        <button type="button" class="btn btn-success" tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-2x"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="alert alert-info" role="alert">
-      <ul class="fa-ul">
-        <li>
-          <i class="fa fa-info-circle fa-lg fa-li"></i> Don't forget that you can <a href="/get-started/integration" class="alert-link">Integrate PlatformIO with your favourite IDE</a> (Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, etc.).
-        </li>
-      </ul>
-    </div>
-
   </article>
 
-  <uib-tabset>
-    <uib-tab>
+  <uib-tabset active="vm.activeTab">
+    <uib-tab select="vm.changeTab('examples')">
       <uib-tab-heading>
-        <i class="fa fa-graduation-cap"></i> Examples</span>
+        <h3><i class="fa fa-graduation-cap"></i> Examples</h3>
       </uib-tab-heading>
-
+      <br>
       <div ng-if="!vm.examples.length" class="alert alert-warning" role="alert">The library doesn't have any examples.</div>
 
       <div ng-if="vm.examples.length">
@@ -114,23 +96,89 @@
       </div>
     </uib-tab>
 
-    <uib-tab>
+    <uib-tab select="vm.changeTab('installation')">
       <uib-tab-heading>
-        <i class="fa fa-file-code-o"></i> library.json
+        <h3><i class="fa fa-download"></i> Installation</h3>
+      </uib-tab-heading>
+      <br>
+      <p>
+        <div class="alert alert-info" role="alert">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa fa-info-circle fa-lg fa-li"></i> Please make sure to read <a href="http://docs.platformio.org/en/latest/librarymanager/index.html" class="alert-link">PlatformIO Library Manager</a> guide first.
+              Please note that PlatformIO 2.0 supports installing of library only by <code>Id</code>
+            </li>
+          </ul>
+        </div>
+      </p>
+
+      <h3>Command Line Interface</h3>
+      <p>
+        <a href="/platformio-ide">PlatformIO IDE</a> has built-in <kbd><i class="fa fa-terminal"></i></kbd> Terminal
+        that can be used to manage libraries manually, <kbd>Menu: PlatformIO > Terminal > Toggle</kbd>
+      </p>
+
+      <div class="well terminal">
+        <small class="comment"># Using library <kbd>Id</kbd></small>
+        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}</p>
+        <small class="comment"># Using library <kbd>Name</kbd></small>
+        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}"</p>
+        <small class="comment"># Install specific <kbd>version</kbd></small><br>
+        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}@{{ vm.lib.version.name }}<br>
+        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}@{{ vm.lib.version.name }}"
+      </div>
+
+      <h3>Project Dependencies <small>platformio.ini</small></h3>
+      <p><b>PlatformIO Library Manager</b> allows to specify dependencies for the
+      specific project in <a href="http://docs.platformio.org/en/stable/projectconf.html">Project Configuration File "platformio.ini"</a>
+      using <code>lib_deps</code> option. PlatformIO will install dependent libraries automatically when processes (builds) a project.</p>
+      <div class="well terminal">
+        <b>[env:myenv]</b>
+        <div>platform = <font color="silver">{{ vm.lib.platforms[0] }}</font></div>
+        <p>framework = <font color="silver">{{ vm.lib.frameworks[0] }}</font></p>
+
+        <small class="comment"># Using library <kbd>Id</kbd></small>
+        <p>lib_deps = <font color="silver">{{ vm.lib.id }}</font></p>
+
+        <small class="comment"># Using library <kbd>Name</kbd></small>
+        <p>lib_deps = <font color="silver">{{ vm.lib.name }}</font></p>
+
+        <small class="comment"># Depend on specific <kbd>version</kbd></small><br>
+        <p>lib_deps = <font color="silver">{{ vm.lib.name }}@{{ vm.lib.version.name }}</font></p>
+        <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
+          <small class="comment"># <a href="http://docs.platformio.org/en/latest/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
+          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@^{{ vm.lib.version.name }}</font></div>
+          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@~{{ vm.lib.version.name }}</font></div>
+          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@>={{ vm.lib.version.name }}</font></div>
+        </div>
+     </div>
+
+     <h3>Download <small>source code</small></h3>
+     <button type="button" class="btn btn-success btn-lg" tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-lg"></i> {{ vm.lib.name }} @ {{ vm.lib.version.name }}</button>
+
+    </uib-tab>
+
+    <uib-tab select="vm.changeTab('manifest')">
+      <uib-tab-heading>
+        <h3><i class="fa fa-file-code-o"></i> Manifest</h3>
       </uib-tab-heading>
       <br>
       <p>
         <div class="row">
-          <div class="col-md-8">Documentation for <a href="http://docs.platformio.org/en/stable/librarymanager/config.html">library.json</a> manifest file.</div>
-          <div class="col-md-4 text-right"> <button class="btn btn-primary btn-sm" ng-click="vm.editLibraryConf(vm.lib.confurl)">Edit "library.json"</button></div>
+          <div class="col-md-8">Specification for manifests:
+            <a href="http://docs.platformio.org/en/stable/librarymanager/config.html">library.json</a>,
+            <a href="https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5:-Library-specification">library.properties</a>,
+           <a href="http://yottadocs.mbed.com/reference/module.html">module.json</a>
+          </div>
+          <div class="col-md-4 text-right"> <button class="btn btn-primary btn-sm" ng-click="vm.editLibraryConf(vm.lib.confurl)">Edit Manifest</button></div>
         </div>
       </p>
-      <div hljs include="vm.lib.confurl" language="json"></div>
+      <div hljs include="vm.lib.confurl"></div>
     </uib-tab>
 
-    <uib-tab>
+    <uib-tab select="vm.changeTab('discussion')">
       <uib-tab-heading>
-        <i class="fa fa-comments"></i> Discussion
+        <h3><i class="fa fa-comments"></i> Discussion</h3>
       </uib-tab-heading>
       <div disqus="vm.lib.id"></div>
     </uib-tab>

@@ -57,7 +57,7 @@
   <hr ng-if="vm.gsType != ''">
 
   <div class="platformio-ide-laptop" style="margin-top: 0" ng-if="vm.gsType == 'ide'">
-    <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next-generation integrated development environment for IoT" title="PlatformIO IDE - the next-generation integrated development environment for IoT" tooltip="PlatformIO IDE - the next-generation integrated development environment for IoT" class="img-responsive center-block">
+    <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next-generation integrated development environment for IoT" title="PlatformIO IDE - the next-generation integrated development environment for IoT" uib-tooltip="PlatformIO IDE - the next-generation integrated development environment for IoT" class="img-responsive center-block">
   </div>
 
   <div class="terminal-window" ng-if="vm.gsType == 'cli'">
@@ -83,11 +83,11 @@
   <div ng-if="vm.gsType == 'integration'">
     <h2 class="text-center">PlatformIO <i class="fa fa-heart-o"></i> {{vm.ideDemos[vm.ideDemoActive].title}}</h2>
     <div class="ide-carousel" style="max-height: {{vm.slideHeight}}px;">
-      <uib-carousel active="vm.ideDemoActive" interval="vm.ideDemoInterval">
-        <uib-slide ng-repeat="demo in vm.ideDemos" index="$index">
+      <div uib-carousel active="vm.ideDemoActive" interval="vm.ideDemoInterval">
+        <div uib-slide ng-repeat="demo in vm.ideDemos" index="$index">
           <div class="ide-slide" style="background-image: url({{demo.image}}); height: {{vm.slideHeight}}px;" ng-click="alert('{{demo.title}}')"></div>
-        </uib-slide>
-      </uib-carousel>
+        </div>
+      </div>
     </div>
   </div>
 </div>

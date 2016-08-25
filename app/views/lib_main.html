@@ -43,12 +43,12 @@
   <div class="row">
     <div class="col col-md-4">
       <h3>Updated</h3>
-      <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
+      <p ng-repeat="item in vm.stats.updated"><i class="fa fa-refresh"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small uib-tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
       </p>
     </div>
     <div class="col col-md-4">
       <h3>Added</h3>
-      <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
+      <p ng-repeat="item in vm.stats.added"><i class="fa fa-plus"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a> <small uib-tooltip="{{ item.date | date:'medium' }}">{{ item.date | relativeDate }}</small>
       </p>
     </div>
     <div class="col col-md-4 keywords-stats">

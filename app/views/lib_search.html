@@ -49,9 +49,9 @@
           </h3>
           </div>
           <div class="col-xs-6 text-right">
-            <span tooltip="Examples"><i class="fa fa-graduation-cap"></i> {{ item.examplenums }}</span> &nbsp; <span tooltip="Downloads per month"><i class="fa fa-download"></i> {{ item.dlmonth }} &nbsp;</span>
-            <span ng-if="item.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in item.frameworks">{{ type | typeToName : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
-            <span ng-if="item.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in item.platforms">{{ type | typeToName : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span uib-tooltip="Examples"><i class="fa fa-graduation-cap"></i> {{ item.examplenums }}</span> &nbsp; <span uib-tooltip="Downloads per month"><i class="fa fa-download"></i> {{ item.dlmonth }} &nbsp;</span>
+            <span ng-if="item.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in item.frameworks">{{ type | typeToName : vm.frameworks }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.platforms.length" uib-tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in item.platforms">{{ type | typeToName : vm.platforms }}<span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
           </div>
         </div>
 
@@ -64,8 +64,8 @@
     </section>
 
     <div class="text-center">
-      <uib-pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" rotate="false" ng-change="vm.pageChanged()" class="pagination-sm">
-      </uib-pagination>
+      <ul uib-pagination ng-model="vm.searchResult.page" total-items="vm.searchResult.total" items-per-page="vm.searchResult.perpage" max-size=10 boundary-links="true" rotate="false" ng-change="vm.pageChanged()" class="pagination-sm">
+      </ul>
     </div>
   </div>
 

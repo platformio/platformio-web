@@ -47,10 +47,10 @@
 
         <dt>Compatibility</dt>
         <dd>
-          <span ng-if="vm.lib.frameworks.length" tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> <a href="/frameworks/{{ type }}">{{ type | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="type in vm.lib.frameworks"> <a href="/frameworks/{{ type }}">{{ type | typeToName : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
           <br>
           </span>
-          <span ng-if="vm.lib.platforms.length" tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in vm.lib.platforms"> <a href="/platforms/{{ type }}">{{ type | typeToName : vm.platforms }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.platforms.length" uib-tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="type in vm.lib.platforms"> <a href="/platforms/{{ type }}">{{ type | typeToName : vm.platforms }}</a><span ng-if="!$last">,&nbsp;</span></span>
           </span>
         </dd>
 
@@ -62,7 +62,7 @@
         </dd>
 
         <dt>Version</dt>
-        <dd><strong>{{ vm.lib.version.name}}</strong> <small tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
+        <dd><strong>{{ vm.lib.version.name}}</strong> <small uib-tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
         </dd>
 
         <dt>Keywords</dt>
@@ -154,7 +154,7 @@
      </div>
 
      <h3>Download <small>source code</small></h3>
-     <button type="button" class="btn btn-success btn-lg" tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-lg"></i> {{ vm.lib.name }} @ {{ vm.lib.version.name }}</button>
+     <button type="button" class="btn btn-success btn-lg" uib-tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-lg"></i> {{ vm.lib.name }} @ {{ vm.lib.version.name }}</button>
 
     </uib-tab>
 

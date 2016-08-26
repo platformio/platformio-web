@@ -1,6 +1,6 @@
-<view-title>{{ vm.activeGroup == 2? 'Create Platform' : vm.platforms[vm.activePlatform].name }} · Development Platforms</view-title>
+<view-title>{{ vm.activeGroup == 2? 'Create Platform' : vm.platforms[vm.activePlatform].title }} · Development Platforms</view-title>
 <meta name="description" content="{{ vm.activeGroup == 2? 'Create Development Platform' : vm.platforms[vm.activePlatform].description | truncate : 200 }}" view-head />
-<meta name="keywords" content="embedded, platform, {{ vm.activeGroup == 2? 'creating' : vm.platforms[vm.activePlatform].name }}" view-head />
+<meta name="keywords" content="embedded, platform, {{ vm.activeGroup == 2? 'creating' : vm.platforms[vm.activePlatform].title }}" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -24,9 +24,9 @@
     </uib-tab-heading>
     <br>
     <uib-tabset type="pills" active="vm.activePlatform">
-      <uib-tab ng-repeat="platform in vm.platforms" index="$index" select="vm.changePlatform(platform.type)" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
+      <uib-tab ng-repeat="platform in vm.platforms" index="$index" select="vm.changePlatform(platform.name)" ng-if="(group == 'embedded' && !platform.forDesktop) || (group == 'desktop' && platform.forDesktop)">
         <uib-tab-heading>
-          <h4><a href="/platforms/{{ platform.type }}">{{ platform.name }}</a></h4>
+          <h4><a href="/platforms/{{ platform.name }}">{{ platform.title }}</a></h4>
         </uib-tab-heading>
 
         <br>
@@ -37,7 +37,7 @@
           <ul class="fa-ul">
             <li>
               <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in documentation
-              <a href="http://docs.platformio.org/en/stable/platforms/{{ platform.type }}.html" class="alert-link">Platform {{ platform.name }}</a>.
+              <a href="http://docs.platformio.org/en/stable/platforms/{{ platform.name }}.html" class="alert-link">Platform {{ platform.title }}</a>.
             </li>
           </ul>
         </div>
@@ -72,16 +72,16 @@
                 <th>Description</th>
               </tr>
             </thead>
-            <tr ng-repeat="framework in vm.frameworks" ng-if="vm.isCompatibleFramework(framework.type, platform.type)">
-              <td class="text-nowrap"><a href="/frameworks/{{ framework.type }}">{{ framework.name }}</a></td>
+            <tr ng-repeat="framework in vm.frameworks" ng-if="vm.isCompatibleFramework(framework.name, platform.name)">
+              <td class="text-nowrap"><a href="/frameworks/{{ framework.name }}">{{ framework.title }}</a></td>
               <td>{{ framework.description }}</td>
           </tr>
           </table>
 
           <h2>Boards</h2>
 
-          To list compatible boards with <b>Platform {{ platform.name }}</b> please use <a href="/boards?filter%5Bplatform%5D={{ platform.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
-          or <a href="http://docs.platformio.org/en/stable/platforms/{{ platform.type }}.html#boards">documentation for {{ platform.name }} platform</a>.
+          To list compatible boards with <b>Platform {{ platform.title }}</b> please use <a href="/boards?filter%5Bplatform%5D={{ platform.name }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+          or <a href="http://docs.platformio.org/en/stable/platforms/{{ platform.name }}.html#boards">documentation for {{ platform.title }} platform</a>.
         </div>
       </uib-tab>
     </uib-tabset>

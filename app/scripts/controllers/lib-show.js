@@ -79,8 +79,7 @@
       var nametitles = [];
       angular.forEach(['frameworks', 'platforms'], function(what) {
         angular.forEach(vm.lib[what], function(item) {
-          var _name = $filter('typeToName')(item, vm[what]);
-          nametitles.push(_name);
+          nametitles.push($filter('nameToTitle')(item, vm[what]));
         });
       });
 

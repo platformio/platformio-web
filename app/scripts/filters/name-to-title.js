@@ -18,17 +18,17 @@
   'use strict';
 
   angular.module('siteApp')
-    .filter('typeToName', typeToName);
+    .filter('nameToTitle', nameToTitle);
 
-  function typeToName() {
-    return function(type, data) {
-      var name = type;
+  function nameToTitle() {
+    return function(name, data) {
+      var title = name;
       angular.forEach(data, function(item) {
-        if ('type' in item && 'name' in item && item.type === type) {
-          name = item.name;
+        if ('name' in item && 'title' in item && item.name === name) {
+          title = item.title;
         }
       });
-      return name;
+      return title;
     };
   }
 

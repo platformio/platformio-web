@@ -35,11 +35,11 @@
     vm.activePlatform = 0;
 
     // activate platform by hash
-    if ($routeParams.hasOwnProperty('platformType')) {
+    if ($routeParams.hasOwnProperty('platformName')) {
       vm.activeGroup = 2;
       vm.activePlatform = -1;
       angular.forEach(platformsList, function(item, index) {
-        if ($routeParams.platformType === item.type) {
+        if ($routeParams.platformName === item.name) {
           vm.activeGroup = item.forDesktop? 1 : 0;
           vm.activePlatform = index;
         }
@@ -52,14 +52,14 @@
       $location.path('/platforms/' + type);
     }
 
-    function isCompatibleFramework(frameworkType, platformType) {
+    function isCompatibleFramework(frameworkName, platformName) {
       var compatible = false;
       angular.forEach(platformsList, function(platform) {
-        if (platform.type !== platformType) {
+        if (platform.name !== platformName) {
           return;
         }
         angular.forEach(platform.packages, function(pkg) {
-            if (pkg.indexOf('framework-' + frameworkType) !== -1) {
+            if (pkg.indexOf('framework-' + frameworkName) !== -1) {
               compatible = true;
             }
           });

@@ -46,7 +46,7 @@
     </div>
     <div class="form-group extra-pad">
       <button ng-click="vm.resetSettings()" class="btn btn-link">Clear filters &amp; sorting</button>
-    </div>      
+    </div>
     <div class="form-group  pull-right" uib-tooltip="Share Url">
       <i class="fa fa-share-alt fa-lg"></i>
       <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
@@ -66,18 +66,18 @@
         </td>
       </tr>
       <tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
-        <td sortable="'type'" data-title="'Type'" filter="{ 'type': 'text' }">
-          <span class="label label-default">{{ item.type }}</span>
+        <td sortable="'type'" data-title="'ID'" filter="{ 'type': 'text' }">
+          <span class="label label-default">{{ item.id }}</span>
         </td>
         <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
           {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
         </td>
         <td sortable="'platform'" data-title="'Platform'" filter="{ 'platform': 'select' }" filter-data="vm.getFilterData('platforms')">
-          <a href="/platforms/{{ item.platform }}">{{ item.platform | typeToName : vm.platforms }}</a>
+          <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
         </td>
         <td data-title="'Frameworks'" filter="{ 'frameworks': 'select' }" filter-data="vm.getFilterData('frameworks')">
             <span ng-repeat="framework in item.frameworks">
-              <a href="/frameworks/{{ framework }}">{{ framework | typeToName : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
+              <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
             </span>
         </td>
         <td sortable="'mcu'" data-title="'MCU'" filter="{ 'mcu': 'text' }">

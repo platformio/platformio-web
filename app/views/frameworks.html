@@ -1,6 +1,6 @@
-<view-title>{{ vm.frameworks[vm.active].name }} · Frameworks</view-title>
+<view-title>{{ vm.frameworks[vm.active].title }} · Frameworks</view-title>
 <meta name="description" content="{{ vm.frameworks[vm.active].description | truncate : 200 }}" view-head />
-<meta name="keywords" content="embedded, framework, {{ vm.frameworks[vm.active].name }}" view-head />
+<meta name="keywords" content="embedded, framework, {{ vm.frameworks[vm.active].title }}" view-head />
 
 <div class="jumbotron">
   <div class="container">
@@ -20,9 +20,9 @@
 
   <uib-tabset active="vm.active">
 
-    <uib-tab ng-repeat="framework in vm.frameworks" index="$index" select="vm.changeFramework(framework.type)">
+    <uib-tab ng-repeat="framework in vm.frameworks" index="$index" select="vm.changeFramework(framework.name)">
       <uib-tab-heading>
-        <h3><a href="/frameworks/{{ framework.type }}">{{ framework.name }}</a></h3>
+        <h3><a href="/frameworks/{{ framework.name }}">{{ framework.title }}</a></h3>
       </uib-tab-heading>
 
       <br>
@@ -33,7 +33,7 @@
         <ul class="fa-ul">
           <li>
             <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in documentation
-            <a href="http://docs.platformio.org/en/stable/frameworks/{{ framework.type }}.html" class="alert-link">Framework {{ framework.name }}</a>.
+            <a href="http://docs.platformio.org/en/stable/frameworks/{{ framework.name }}.html" class="alert-link">Framework {{ framework.title }}</a>.
           </li>
         </ul>
       </div>
@@ -47,16 +47,16 @@
             <th>Description</th>
           </tr>
         </thead>
-        <tr ng-repeat="platform in vm.platforms" ng-if="vm.isCompatiblePlatform(platform.type, framework.type)">
-          <td class="text-nowrap"><a href="/platforms/{{ platform.type }}">{{ platform.name }}</a></td>
+        <tr ng-repeat="platform in vm.platforms" ng-if="vm.isCompatiblePlatform(platform.name, framework.name)">
+          <td class="text-nowrap"><a href="/platforms/{{ platform.name }}">{{ platform.title }}</a></td>
           <td>{{ platform.description }}</td>
         </tr>
       </table>
 
       <h2>Boards</h2>
 
-      To list compatible boards by <b>Framework {{ framework.name }}</b> please use <a href="/boards?filter%5Bframeworks%5D={{ framework.type }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
-      or <a href="http://docs.platformio.org/en/stable/frameworks/{{ framework.type }}.html#boards">documentation for {{ framework.name }} framework</a>.
+      To list compatible boards by <b>Framework {{ framework.title }}</b> please use <a href="/boards?filter%5Bframeworks%5D={{ framework.name }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
+      or <a href="http://docs.platformio.org/en/stable/frameworks/{{ framework.name }}.html#boards">documentation for {{ framework.title }} framework</a>.
 
     </uib-tab>
 

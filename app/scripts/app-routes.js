@@ -50,7 +50,7 @@
         controller: 'GetStartedController',
         controllerAs: 'vm'
       })
-      .when('/platforms/:platformType?', {
+      .when('/platforms/:platformName?', {
         templateUrl: 'views/platforms.html',
         controller: 'PlatformsController',
         controllerAs: 'vm',
@@ -72,7 +72,7 @@
           ]
         }
       })
-      .when('/frameworks/:frameworkType?', {
+      .when('/frameworks/:frameworkName?', {
         templateUrl: 'views/frameworks.html',
         controller: 'FrameworksController',
         controllerAs: 'vm',

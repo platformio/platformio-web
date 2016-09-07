@@ -187,9 +187,6 @@
       .when('/donate', {
         templateUrl: 'views/donate.html'
       })
-      .when('/contact', {
-        templateUrl: 'views/contact.html'
-      })
       .when('/404', {
         templateUrl: 'views/404.html'
       })

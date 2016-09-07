@@ -105,8 +105,7 @@
         <div class="alert alert-info" role="alert">
           <ul class="fa-ul">
             <li>
-              <i class="fa fa-info-circle fa-lg fa-li"></i> Please make sure to read <a href="http://docs.platformio.org/en/latest/librarymanager/index.html" class="alert-link">PlatformIO Library Manager</a> guide first.
-              Please note that PlatformIO 2.0 supports installing of library only by <code>Id</code>
+              <i class="fa fa-info-circle fa-lg fa-li"></i> Please make sure to read <a href="http://docs.platformio.org/en/stable/librarymanager/index.html" class="alert-link">PlatformIO Library Manager</a> guide first.
             </li>
           </ul>
         </div>
@@ -146,7 +145,7 @@
         <small class="comment"># Depend on specific <kbd>version</kbd></small><br>
         <p>lib_deps = <font color="silver">{{ vm.lib.name }}@{{ vm.lib.version.name }}</font></p>
         <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
-          <small class="comment"># <a href="http://docs.platformio.org/en/latest/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
+          <small class="comment"># <a href="http://docs.platformio.org/en/stable/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
           <div>lib_deps = <font color="silver">{{ vm.lib.name }}@^{{ vm.lib.version.name }}</font></div>
           <div>lib_deps = <font color="silver">{{ vm.lib.name }}@~{{ vm.lib.version.name }}</font></div>
           <div>lib_deps = <font color="silver">{{ vm.lib.name }}@>={{ vm.lib.version.name }}</font></div>

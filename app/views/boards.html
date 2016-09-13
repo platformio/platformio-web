@@ -28,7 +28,7 @@
       <label>Sort by</label>
       <select ng-model="vm.sortBy" class="form-control">
         <option value="vendor">Vendor</option>
-        <option value="type">Type</option>
+        <option value="id">ID</option>
         <option value="name">Name</option>
         <option value="platform">Platform</option>
         <option value="frameworks">Frameworks</option>
@@ -66,7 +66,7 @@
         </td>
       </tr>
       <tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
-        <td sortable="'type'" data-title="'ID'" filter="{ 'type': 'text' }">
+        <td sortable="'id'" data-title="'ID'" filter="{ 'id': 'text' }">
           <span class="label label-default">{{ item.id }}</span>
         </td>
         <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">

@@ -3,7 +3,21 @@
 
 <div class="jumbotron home">
   <div class="container text-center">
-    <img src="images/platformio-logo.png" height="220" title="PlatformIO is an open source ecosystem for IoT development. Cross-platform build system and library manager. Continuous and IDE integration. Arduino and ARM mbed compatible. Ready for Cloud compiling" alt="PlatformIO is an open source ecosystem for IoT development. Cross-platform build system. Continuous and IDE integration. Arduino and ARM mbed compatible. Ready for Cloud compiling">
+    <div class="row stats">
+      <div class="col-md-6 col-logo">
+        <img src="images/platformio-logo.png" height="220" title="PlatformIO is an open source ecosystem for IoT development. Cross-platform build system and library manager. Continuous and IDE integration. Arduino and ARM mbed compatible. Ready for Cloud compiling" alt="PlatformIO is an open source ecosystem for IoT development. Cross-platform build system. Continuous and IDE integration. Arduino and ARM mbed compatible. Ready for Cloud compiling">
+      </div>
+      <div class="col-md-6 col-stats">
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-laptop"></i><a href="/platforms">{{ vm.stats.platforms }}</a> <span class="title">Development Platforms</span></li>
+          <li><i class="fa-li fa fa-gear"></i><a href="/boards">{{ vm.stats.mcus }}</a> <span class="title">Microcontroller Units</span></li>
+          <li><i class="fa-li fa fa-gamepad"></i><a href="/boards"> {{ vm.stats.boards }}</a> <span class="title">Embedded Boards</span></li>
+          <li><i class="fa-li fa fa-code"></i><a href="/lib">{{ vm.stats.libs }}</a> <span class="title">Libraries</span></li>
+          <li><i class="fa-li fa fa-graduation-cap"></i><a href="/lib/examples">{{ vm.stats.libexamples }}</a> <span class="title">Library Examples</span></li>
+        </ul>
+      </div>
+    </div>
+
     <h1>
       PlatformIO is an open source ecosystem for <abbr title="Internet of Things">IoT</abbr> development <br>
       <small>Cross-platform build system. Continuous and IDE integration. Arduino and ARM mbed compatible</small>

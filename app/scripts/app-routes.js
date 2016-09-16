@@ -43,7 +43,16 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html'
+        templateUrl: 'views/home.html',
+        controller: 'HomeController',
+        controllerAs: 'vm',
+        resolve: {
+          pioStats: ['dataService',
+            function(dataService) {
+              return dataService.getPioStats().$promise;
+            }
+          ]
+        }
       })
       .when('/get-started/:gsType?', {
         templateUrl: 'views/get_started.html',

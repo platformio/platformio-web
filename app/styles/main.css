@@ -191,6 +191,33 @@
   color: #fff;
 }
 
+.home .stats ul {
+  margin-left: 50px;
+}
+
+.home .stats li {
+  font-size: 20px;
+  margin-top: 14px;
+}
+
+.home .stats li a {
+  font-weight: 500;
+}
+
+.home .stats li .title {
+  color: #777;
+}
+
+@media screen and (min-width: 992px) {
+  .home .stats .col-logo {
+    text-align: right
+  }
+
+  .home .stats .col-stats {
+    text-align: left
+  }
+}
+
 /* Get Started */
 
 .get-started .top-items-lg .item {

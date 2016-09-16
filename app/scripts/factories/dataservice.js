@@ -28,6 +28,7 @@
       getLibInfo: getLibInfo,
       getLibDlUrl: getLibDlUrl,
       getLibStats: getLibStats,
+      getPioStats: getPioStats,
       getFrameworks: getFrameworks,
       getPackages: getPackages,
       getPlatforms: getPlatforms,
@@ -55,6 +56,10 @@
 
     function getLibStats() {
       return $resource(siteConfig.apiURL + '/lib/stats').get();
+    }
+
+    function getPioStats() {
+      return $resource(siteConfig.apiURL + '/stats').get();
     }
 
     function getBoards() {

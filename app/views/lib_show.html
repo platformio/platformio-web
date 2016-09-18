@@ -111,22 +111,6 @@
         </div>
       </p>
 
-      <h3>Command Line Interface</h3>
-      <p>
-        <a href="/platformio-ide">PlatformIO IDE</a> has built-in <kbd><i class="fa fa-terminal"></i></kbd> Terminal
-        that can be used to manage libraries manually, <kbd>Menu: PlatformIO > Terminal > Toggle</kbd>
-      </p>
-
-      <div class="well terminal">
-        <small class="comment"># Using library <kbd>Id</kbd></small>
-        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}</p>
-        <small class="comment"># Using library <kbd>Name</kbd></small>
-        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}"</p>
-        <small class="comment"># Install specific <kbd>version</kbd></small><br>
-        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}@{{ vm.lib.version.name }}<br>
-        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}@{{ vm.lib.version.name }}"
-      </div>
-
       <h3>Project Dependencies <small>platformio.ini</small></h3>
       <p><b>PlatformIO Library Manager</b> allows to specify dependencies for the
       specific project in <a href="http://docs.platformio.org/en/stable/projectconf.html">Project Configuration File "platformio.ini"</a>
@@ -150,10 +134,26 @@
           <div>lib_deps = <font color="silver">{{ vm.lib.name }}@~{{ vm.lib.version.name }}</font></div>
           <div>lib_deps = <font color="silver">{{ vm.lib.name }}@>={{ vm.lib.version.name }}</font></div>
         </div>
-     </div>
+      </div>
 
-     <h3>Download <small>source code</small></h3>
-     <button type="button" class="btn btn-success btn-lg" uib-tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-lg"></i> {{ vm.lib.name }} @ {{ vm.lib.version.name }}</button>
+      <h3>Command Line Interface</h3>
+      <p>
+        <a href="/platformio-ide">PlatformIO IDE</a> has built-in <kbd><i class="fa fa-terminal"></i></kbd> Terminal
+        that can be used to manage libraries manually, <kbd>Menu: PlatformIO > Terminal > Toggle</kbd>
+      </p>
+
+      <div class="well terminal">
+        <small class="comment"># Using library <kbd>Id</kbd></small>
+        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}</p>
+        <small class="comment"># Using library <kbd>Name</kbd></small>
+        <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}"</p>
+        <small class="comment"># Install specific <kbd>version</kbd></small><br>
+        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> {{ vm.lib.id }}@{{ vm.lib.version.name }}<br>
+        <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">lib install</font> "{{ vm.lib.name }}@{{ vm.lib.version.name }}"
+      </div>
+
+      <h3>Download <small>source code</small></h3>
+      <button type="button" class="btn btn-success btn-lg" uib-tooltip="Download Tar.Gz" ng-click="vm.downloadLib()"><i class="fa fa-download fa-lg"></i> {{ vm.lib.name }} @ {{ vm.lib.version.name }}</button>
 
     </uib-tab>
 

@@ -25,10 +25,7 @@
 
     vm.stats = {};
     angular.forEach(pioStats, function(nums, key) {
-      if (parseInt(nums) > 1000) {
-        nums = new String(parseInt(nums) / 1000).replace('\.', ',');
-      }
-      vm.stats[key] = nums;
+      vm.stats[key] = nums.toLocaleString();
     })
   }
 

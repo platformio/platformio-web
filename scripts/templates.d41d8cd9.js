@@ -1,4 +1,4 @@
-angular.module('siteAppApp').run(['$templateCache', function($templateCache) {
+angular.module('siteApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('dist/views/404.html',

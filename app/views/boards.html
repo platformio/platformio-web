@@ -15,14 +15,17 @@
 
 <div class="container">
 
-  <div class="form-group" uib-tooltip="Share Url">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-share-alt fa-lg"></i></span>
-      <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
-    </div>
+<div class="form-group">
+  <p class="pull-right" ng-if="!vm.shareInputShown">
+    <button type="button" class="btn btn-default" ng-click="vm.shareInputShown=true"><i class="fa fa-share-alt fa-lg"></i> Share</button>
+  </p>
+  <div class="input-group" ng-if="vm.shareInputShown" uib-tooltip="Share Url">
+    <span class="input-group-addon"><i class="fa fa-share-alt fa-lg"></i></span>
+    <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
   </div>
+</div>
 
-  <br>
+<br>
 
 <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
     <tr ng-repeat="item in $data">

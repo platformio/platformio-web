@@ -27,6 +27,7 @@
     var vm = this;
 
     vm.shareUrl = '';
+    vm.shareInputShown = false;
     vm.platforms = platformsList;
     vm.frameworks = frameworksList;
     vm.getFilterData = getFilterData;

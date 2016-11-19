@@ -18,7 +18,7 @@
 
 <div class="container">
 
-  <uib-tabset active="vm.active">
+  <uib-tabset type="pills" active="vm.active">
 
     <uib-tab ng-repeat="framework in vm.frameworks" index="$index" select="vm.changeFramework(framework.name)">
       <uib-tab-heading>

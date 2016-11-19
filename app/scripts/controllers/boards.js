@@ -22,85 +22,45 @@
     .controller('BoardsController', BoardsController);
 
   function BoardsController($scope, $httpParamSerializerJQLike, $filter,
-    $location, $q, $window,
-    ngTableParams, boardsList, platformsList, frameworksList) {
+    $location, NgTableParams, ngTableEventsChannel, boardsList, platformsList,
+    frameworksList) {
     var vm = this;
 
-    vm.groupBy = 'vendor';
-    vm.sortBy = 'vendor';
-    vm.sortOrder = 'asc';
     vm.shareUrl = '';
     vm.platforms = platformsList;
     vm.frameworks = frameworksList;
     vm.getFilterData = getFilterData;
-    vm.applySorting = applySorting;
-    vm.resetSettings = resetSettings;
     vm.updateShareUrl = updateShareUrl;
 
-    /* jshint newcap:false */
-    var _sorting = {};
-    _sorting[vm.sortBy] = vm.sortOrder;
-    vm.tableParams = new ngTableParams(
+    vm.tableParams = new NgTableParams(
       angular.extend({
           page: 1,
-          count: $window.navigator.userAgent.indexOf('PhantomJS') !== -1 ?
-            1000 : 15,
-          sorting: _sorting
+          count: 15,
+          sorting: { 'name': 'asc' }
         },
         $location.search()), {
         counts: [15, 30, 50, 100, 1000],
-        groupBy: function(item) {
-          return item[vm.groupBy];
-        },
-        total: boardsList.length,
-        getData: function($defer, params) {
-          // $location.search(params.url());
-          vm.updateShareUrl(params.url());
-
-          var orderedData = params.sorting() ?
-            $filter('orderBy')(boardsList, vm.tableParams.orderBy()) :
-            boardsList;
-          orderedData = params.filter() ?
-            $filter('filter')(orderedData, params.filter()) :
-            orderedData;
-
-          params.total(orderedData.length);
-          $defer.resolve(orderedData.slice((params.page() - 1) * params
-            .count(), params.page() * params.count()));
-        }
+        dataset: boardsList
       });
 
-    $scope.$watch('vm.groupBy', function() {
-      vm.tableParams.reload();
-    });
-    $scope.$watch('vm.sortBy', vm.applySorting);
-    $scope.$watch('vm.sortOrder', vm.applySorting);
-
+    ngTableEventsChannel.onAfterReloadData(
+      updateShareUrl,
+      $scope,
+      vm.tableParams
+    );
 
     ////////////
 
-    function applySorting() {
-      vm.tableParams.sorting(vm.sortBy, vm.sortOrder);
-    }
-
-    function resetSettings() {
-      vm.sortBy = 'vendor';
-      vm.sortOrder = 'asc';
-      vm.tableParams.filter({});
-      vm.applySorting();
-    }
-
-    function updateShareUrl(params) {
+    function updateShareUrl() {
       vm.shareUrl = $location.protocol() + '://' + $location.host();
       if (parseInt($location.port()) !== 80) {
         vm.shareUrl += ':' + $location.port();
       }
-      vm.shareUrl += '/boards?' + $httpParamSerializerJQLike(params);
+      vm.shareUrl += '/boards?' + $httpParamSerializerJQLike(vm.tableParams.url());
     }
 
     function getFilterData(type_) {
-      var d = $q.defer(),
-        data = [];
+      var data = [];
       angular.forEach(type_ === 'platforms' ? platformsList :
         frameworksList,
         function(item) {
@@ -114,9 +74,7 @@
             });
           }
         });
-
-      d.resolve(data);
-      return d;
+      return data;
     }
   }
 })();

@@ -15,85 +15,44 @@
 
 <div class="container">
 
-  <form class="form-inline boards-settings">
-    <div class="form-group">
-      <label>Group by</label>
-      <div class="btn-group">
-        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'vendor'">Vendor</label>
-        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'platform'">Platform</label>
-        <label class="btn btn-default" ng-model="vm.groupBy" uib-btn-radio="'mcu'">MCU</label>
-      </div>
-    </div>
-    <div class="form-group extra-pad">
-      <label>Sort by</label>
-      <select ng-model="vm.sortBy" class="form-control">
-        <option value="vendor">Vendor</option>
-        <option value="id">ID</option>
-        <option value="name">Name</option>
-        <option value="platform">Platform</option>
-        <option value="frameworks">Frameworks</option>
-        <option value="mcu">MCU</option>
-        <option value="fcpu">Frequency</option>
-        <option value="ram">RAM</option>
-        <option value="rom">Flash</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <div class="btn-group">
-        <label class="btn btn-default" ng-model="vm.sortOrder" uib-btn-radio="'asc'">Asc</label>
-        <label class="btn btn-default" ng-model="vm.sortOrder" uib-btn-radio="'desc'">Desc</label>
-      </div>
-    </div>
-    <div class="form-group extra-pad">
-      <button ng-click="vm.resetSettings()" class="btn btn-link">Clear filters &amp; sorting</button>
-    </div>
-    <div class="form-group  pull-right" uib-tooltip="Share Url">
-      <i class="fa fa-share-alt fa-lg"></i>
+  <div class="form-group" uib-tooltip="Share Url">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-share-alt fa-lg"></i></span>
       <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
     </div>
-  </form>
+  </div>
 
-  <hr>
+  <br>
 
-  <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
-    <tbody ng-repeat="group in $groups">
-      <tr class="ng-table-group">
-        <td colspan="{{$columns.length}}">
-          <a href="" ng-click="group.$hideRows = !group.$hideRows">
-            <i class="fa" ng-class="{ 'fa-chevron-right': group.$hideRows, 'fa-chevron-down': !group.$hideRows }"></i>
-            <strong>{{ group.value }}</strong>
-          </a>
-        </td>
-      </tr>
-      <tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
-        <td sortable="'id'" data-title="'ID'" filter="{ 'id': 'text' }">
-          <span class="label label-default">{{ item.id }}</span>
-        </td>
-        <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
-          {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
-        </td>
-        <td sortable="'platform'" data-title="'Platform'" filter="{ 'platform': 'select' }" filter-data="vm.getFilterData('platforms')">
-          <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
-        </td>
-        <td data-title="'Frameworks'" filter="{ 'frameworks': 'select' }" filter-data="vm.getFilterData('frameworks')">
-            <span ng-repeat="framework in item.frameworks">
-              <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
-            </span>
-        </td>
-        <td sortable="'mcu'" data-title="'MCU'" filter="{ 'mcu': 'text' }">
-          {{ item.mcu }}
-        </td>
-        <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
-          {{ item.fcpu | embeddedFormatter : 'frequency' }}
-        </td>
-        <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
-          {{ item.ram | embeddedFormatter : 'size' }}
-        </td>
-        <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
-          {{ item.rom | embeddedFormatter : 'size' }}
-        </td>
-      </tr>
-    </tbody>
+<table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
+    <tr ng-repeat="item in $data">
+      <td sortable="'id'" data-title="'ID'" filter="{ 'id': 'text' }">
+        <span class="label label-default">{{ item.id }}</span>
+      </td>
+      <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
+        {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
+      </td>
+      <td sortable="'platform'" data-title="'Platform'" filter="{platform: 'select'}" filter-data="vm.getFilterData('platforms')">
+        <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
+      </td>
+      <td data-title="'Frameworks'" filter="{frameworks: 'select'}" filter-data="vm.getFilterData('frameworks')">
+          <span ng-repeat="framework in item.frameworks">
+            <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
+          </span>
+      </td>
+      <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}">
+        {{ item.mcu }}
+      </td>
+      <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
+        {{ item.fcpu | embeddedFormatter : 'frequency' }}
+      </td>
+      <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
+        {{ item.ram | embeddedFormatter : 'size' }}
+      </td>
+      <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
+        {{ item.rom | embeddedFormatter : 'size' }}
+      </td>
+    </tr>
   </table>
 
 </div>

@@ -8,18 +8,21 @@
 
 module.exports = function (grunt) {
 
-  // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
-
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+
+  // Automatically load required Grunt tasks
+  require('jit-grunt')(grunt, {
+    useminPrepare: 'grunt-usemin',
+    ngtemplates: 'grunt-angular-templates',
+    cdnify: 'grunt-cdnify'
+  });
 
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
-  var pushState = require('grunt-connect-pushstate/lib/utils').pushState;
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -35,18 +38,18 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        tasks: ['newer:jshint:all', 'newer:jscs:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        tasks: ['newer:copy:styles', 'postcss']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -76,11 +79,15 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              pushState(),
+              // pushState(),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
+              ),
+              connect().use(
+                '/app/styles',
+                connect.static('./app/styles')
               ),
               connect.static(appConfig.app)
             ];
@@ -111,7 +118,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
+    // Make sure there are no obvious mistakes
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -127,6 +134,23 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
+        src: ['test/spec/{,*/}*.js']
+      }
+    },
+
+    // Make sure code styles are up to par
+    jscs: {
+      options: {
+        config: '.jscsrc',
+        verbose: true
+      },
+      all: {
+        src: [
+          'Gruntfile.js',
+          '<%= yeoman.app %>/scripts/{,*/}*.js'
+        ]
+      },
+      test: {
         src: ['test/spec/{,*/}*.js']
       }
     },
@@ -147,9 +171,22 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: ['last 1 version']
+        processors: [
+          require('autoprefixer-core')({browsers: ['last 1 version']})
+        ]
+      },
+      server: {
+        options: {
+          map: true
+        },
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: '{,*/}*.css',
+          dest: '.tmp/styles/'
+        }]
       },
       dist: {
         files: [{
@@ -166,6 +203,22 @@ module.exports = function (grunt) {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath:  /\.\.\//
+      },
+      test: {
+        devDependencies: true,
+        src: '<%= karma.unit.configFile %>',
+        ignorePath:  /\.\.\//,
+        fileTypes:{
+          js: {
+            block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+              detect: {
+                js: /'(.*\.js)'/gi
+              },
+              replace: {
+                js: '\'{{filePath}}\','
+              }
+            }
+          }
       }
     },
 
@@ -204,8 +257,16 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/images',
+          '<%= yeoman.dist %>/styles'
+        ],
+        patterns: {
+          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+        }
       }
     },
 
@@ -260,18 +321,30 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          collapseWhitespace: true/*,
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeCommentsFromCDATA: true*/
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html'],
           dest: '<%= yeoman.dist %>'
         }]
+      }
+    },
+
+    ngtemplates: {
+      dist: {
+        options: {
+          module: 'siteApp',
+          htmlmin: '<%= htmlmin.dist.options %>'
+          // usemin: 'scripts/scripts.js'
+        },
+        cwd: '<%= yeoman.dist %>',
+        src: 'views/*.html',
+        dest: '.tmp/templateCache.js'
       }
     },
 
@@ -282,55 +355,24 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
+          src: '*.js',
           dest: '.tmp/concat/scripts'
         }]
       }
     },
 
-    // cdnify: {
-    //   dist: {
-    //     options: {
-    //       base: 'http://cdn.platformio.org/'
-    //     },
-    //     files: [{
-    //       expand: true,
-    //       cwd: '<%= yeoman.dist %>',
-    //       src: '**/*.{css,html}',
-    //       dest: '<%= yeoman.dist %>'
-    //     }]
-    //   }
-    // },
-
-    cdn: {
-      options: {
-        cdn: 'http://cdn.platformio.org/',
-        flatten: true
-      },
+    // Replace Google CDN references
+    cdnify: {
       dist: {
-        cwd: '<%= yeoman.dist %>',
-        dest: '<%= yeoman.dist %>',
-        src: ['index.html', '{,*/}*.css', '{,*/}*.html']
-      }
-    },
-
-    ngtemplates: {
-      app: {
-        cwd: '<%= yeoman.dist %>',
-        src: 'views/*.html',
-        dest: '.tmp/concat/scripts/templates.js'
-      },
-      options: {
-        module: 'siteApp',
-        htmlmin: {
-          collapseBooleanAttributes:      true,
-          collapseWhitespace:             true,
-          removeAttributeQuotes:          true,
-          removeEmptyAttributes:          true,
-          removeRedundantAttributes:      true,
-          removeScriptTypeAttributes:     true,
-          removeStyleLinkTypeAttributes:  true
-        }
+        options: {
+          base: 'http://cdn.platformio.org/'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: ['**/*.{css,html}', '*.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
       }
     },
 
@@ -410,7 +452,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'autoprefixer',
+      'postcss:server',
       'connect:livereload',
       'watch'
     ]);
@@ -419,7 +461,7 @@ module.exports = function (grunt) {
   grunt.registerTask('fixtplsrev', 'Fix templates.js revision', function () {
     var scriptsDir = './dist/scripts/';
     var revFile = grunt.file.expand({cwd: scriptsDir}, 'templates.*.js');
-    grunt.file.copy('.tmp/concat/scripts/templates.js', scriptsDir + revFile);
+    grunt.file.copy('.tmp/templateCache.js', scriptsDir + revFile);
   });
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
@@ -429,8 +471,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'wiredep',
     'concurrent:test',
-    'autoprefixer',
+    'postcss',
     'connect:test',
     'karma'
   ]);
@@ -440,23 +483,23 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
+    'postcss',
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'ngtemplates',
     'cssmin',
     'uglify',
     'filerev',
     'usemin',
     'htmlmin',
-    'cdn',
+    'cdnify',
     'ngtemplates',
     'fixtplsrev'
   ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
+    'newer:jscs',
     'test',
     'build'
   ]);

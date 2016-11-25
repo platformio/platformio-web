@@ -120,20 +120,25 @@
         <div>platform = <font color="silver">{{ vm.lib.platforms[0] }}</font></div>
         <p>framework = <font color="silver">{{ vm.lib.frameworks[0] }}</font></p>
 
-        <small class="comment"># Using library <kbd>Id</kbd></small>
-        <p>lib_deps = <font color="silver">{{ vm.lib.id }}</font></p>
+        <p>lib_deps =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Using library <kbd>Id</kbd></small><br>
+          &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.id }}</font>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Using library <kbd>Name</kbd></small><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }}</font>
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Depend on specific <kbd>version</kbd></small><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @{{ vm.lib.version.name }}</font>
+          </p>
 
-        <small class="comment"># Using library <kbd>Name</kbd></small>
-        <p>lib_deps = <font color="silver">{{ vm.lib.name }}</font></p>
-
-        <small class="comment"># Depend on specific <kbd>version</kbd></small><br>
-        <p>lib_deps = <font color="silver">{{ vm.lib.name }}@{{ vm.lib.version.name }}</font></p>
-        <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
-          <small class="comment"># <a href="http://docs.platformio.org/en/stable/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
-          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@^{{ vm.lib.version.name }}</font></div>
-          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@~{{ vm.lib.version.name }}</font></div>
-          <div>lib_deps = <font color="silver">{{ vm.lib.name }}@>={{ vm.lib.version.name }}</font></div>
-        </div>
+          <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
+            &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># <a href="http://docs.platformio.org/en/stable/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @^{{ vm.lib.version.name }}</font></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @~{{ vm.lib.version.name }}</font></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @>={{ vm.lib.version.name }}</font></div>
+          </div>
+        </p>
       </div>
 
       <h3>Command Line Interface</h3>

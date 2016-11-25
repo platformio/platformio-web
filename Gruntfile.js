@@ -344,7 +344,7 @@ module.exports = function (grunt) {
         },
         cwd: '<%= yeoman.dist %>',
         src: 'views/*.html',
-        dest: '.tmp/templateCache.js'
+        dest: '.tmp/concat/scripts/templates.js'
       }
     },
 
@@ -461,7 +461,7 @@ module.exports = function (grunt) {
   grunt.registerTask('fixtplsrev', 'Fix templates.js revision', function () {
     var scriptsDir = './dist/scripts/';
     var revFile = grunt.file.expand({cwd: scriptsDir}, 'templates.*.js');
-    grunt.file.copy('.tmp/templateCache.js', scriptsDir + revFile);
+    grunt.file.copy('.tmp/concat/scripts/templates.js', scriptsDir + revFile);
   });
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
@@ -487,6 +487,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
+    'ngtemplates',
     'cssmin',
     'uglify',
     'filerev',

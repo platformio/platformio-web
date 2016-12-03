@@ -8,6 +8,9 @@
 
 module.exports = function (grunt) {
 
+  var pushState = require('connect-pushstate');
+  var serveStatic = require('serve-static');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -79,17 +82,11 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              // pushState(),
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
+              pushState(),
+              connect().use(serveStatic('.tmp')),
+              connect().use('/bower_components', serveStatic('./bower_components')),
+              connect().use('/app/styles', serveStatic('./app/styles')),
+              connect().use(serveStatic(appConfig.app)),
             ];
           }
         }

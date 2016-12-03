@@ -162,9 +162,34 @@
 
     </uib-tab>
 
+    <uib-tab select="vm.changeTab('headers')">
+      <uib-tab-heading>
+        <h3><i class="fa fa-file-code-o"></i> Headers</h3>
+      </uib-tab-heading>
+
+      <br>
+      <p>
+        <div class="alert alert-info" role="alert">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa fa-info-circle fa-lg fa-li"></i> PlatformIO allows to search for a library using known/missed header file name:
+              <ul>
+                <li>PlatformIO Web - <a href="/lib/search?query=header%253ARH_ASK.h" class="alert-link"><i class="fa fa-globe"></i> header:RH_ASK.h</a></li>
+                <li>PlatformIO CLI - <kbd><i class="fa fa-angle-right fa-lg"></i> platformio lib search -i RH_ASK.h</kbd></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </p>
+
+      <ul ng-if="vm.lib.headers.length" class="fa-ul">
+        <li ng-repeat="header in vm.lib.headers"><i class="fa-li fa fa-file-code-o"></i> <h4>{{ header }}</h4></li>
+      </ul>
+    </uib-tab>
+
     <uib-tab select="vm.changeTab('manifest')">
       <uib-tab-heading>
-        <h3><i class="fa fa-file-code-o"></i> Manifest</h3>
+        <h3><i class="fa fa-edit"></i> Manifest</h3>
       </uib-tab-heading>
       <br>
       <p>

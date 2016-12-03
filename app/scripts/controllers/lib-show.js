@@ -23,7 +23,9 @@
   function LibShowController($window, $location, $filter, $routeParams,
     $analytics, dataService, libInfo, frameworksList, platformsList) {
     var vm = this;
-    var tabs = ['examples', 'installation', 'manifest', 'discussion'];
+    var tabs = [
+      'examples', 'installation', 'headers', 'manifest', 'discussion'
+    ];
 
     vm.frameworks = frameworksList;
     vm.platforms = platformsList;

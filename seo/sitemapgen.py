@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import json
+import urllib
 from os.path import abspath
 from time import sleep
 try:
@@ -131,7 +132,12 @@ def main():
         for item in PIOLibsGenerator():
             b.add_url(
                 loc=("http://platformio.org/lib/show/%d/%s" %
-                     (item['id'], item['name'])),
+                     (item['id'], urllib.quote(item['name']))),
+                lastmod=item['updated'],
+                changefreq="weekly")
+            b.add_url(
+                loc=("http://platformio.org/lib/show/%d/%s/headers" %
+                     (item['id'], urllib.quote(item['name']))),
                 lastmod=item['updated'],
                 changefreq="weekly")
 

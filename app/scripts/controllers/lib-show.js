@@ -85,11 +85,8 @@
         });
       });
 
-      if (nametitles.length) {
-        data.keywords = data.keywords.concat(nametitles);
-        data.description += ' for ' + nametitles.join(', ');
-      }
-
+      data.keywords = data.keywords.concat(nametitles);
+      data.keywords = data.keywords.concat(vm.lib.headers);
       data.keywords = data.keywords.join(', ');
 
       return data;

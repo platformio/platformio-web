@@ -135,11 +135,6 @@ def main():
                      (item['id'], urllib.quote(item['name']))),
                 lastmod=item['updated'],
                 changefreq="weekly")
-            b.add_url(
-                loc=("http://platformio.org/lib/show/%d/%s/headers" %
-                     (item['id'], urllib.quote(item['name']))),
-                lastmod=item['updated'],
-                changefreq="weekly")
 
 
 if __name__ == "__main__":

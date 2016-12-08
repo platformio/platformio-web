@@ -105,7 +105,7 @@
         <div class="alert alert-info" role="alert">
           <ul class="fa-ul">
             <li>
-              <i class="fa fa-info-circle fa-lg fa-li"></i> Please make sure to read <a href="http://docs.platformio.org/en/stable/librarymanager/index.html" class="alert-link">PlatformIO Library Manager</a> guide first.
+              <i class="fa fa-info-circle fa-lg fa-li"></i> Please make sure to read <a href="http://docs.platformio.org/page/librarymanager/index.html" class="alert-link">PlatformIO Library Manager</a> guide first.
             </li>
           </ul>
         </div>
@@ -113,7 +113,7 @@
 
       <h3>Project Dependencies <small>platformio.ini</small></h3>
       <p><b>PlatformIO Library Manager</b> allows to specify dependencies for the
-      specific project in <a href="http://docs.platformio.org/en/stable/projectconf.html">Project Configuration File "platformio.ini"</a>
+      specific project in <a href="http://docs.platformio.org/page/projectconf.html">Project Configuration File "platformio.ini"</a>
       using <code>lib_deps</code> option. PlatformIO will install dependent libraries automatically when processes (builds) a project.</p>
       <div class="well terminal">
         <b>[env:myenv]</b>
@@ -133,7 +133,7 @@
           </p>
 
           <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
-            &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># <a href="http://docs.platformio.org/en/stable/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># <a href="http://docs.platformio.org/page/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
             <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @^{{ vm.lib.version.name }}</font></div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @~{{ vm.lib.version.name }}</font></div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @>={{ vm.lib.version.name }}</font></div>
@@ -175,7 +175,7 @@
               <i class="fa fa-info-circle fa-lg fa-li"></i> PlatformIO allows to search for a library using known/missed header file name:
               <ul>
                 <li>PlatformIO Web - <a href="/lib/search?query=header%253ARH_ASK.h" class="alert-link"><i class="fa fa-globe"></i> header:RH_ASK.h</a></li>
-                <li>PlatformIO CLI - <kbd><i class="fa fa-angle-right fa-lg"></i> platformio lib search -i RH_ASK.h</kbd></li>
+                <li>PlatformIO Core - <kbd><i class="fa fa-angle-right fa-lg"></i> platformio lib search -i RH_ASK.h</kbd></li>
               </ul>
             </li>
           </ul>
@@ -195,7 +195,7 @@
       <p>
         <div class="row">
           <div class="col-md-8">Specification for manifests:
-            <a href="http://docs.platformio.org/en/stable/librarymanager/config.html">library.json</a>,
+            <a href="http://docs.platformio.org/page/librarymanager/config.html">library.json</a>,
             <a href="https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5:-Library-specification">library.properties</a>,
            <a href="http://yottadocs.mbed.com/reference/module.html">module.json</a>
           </div>

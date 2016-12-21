@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 view-title><i class="fa fa-code"></i> Libraries <small>Registry</small></h1>
+    <h1 view-title><i class="fa fa-code"></i> Libraries</h1>
 
     <p><i>Hundreds Popular Libraries</i> are organized into single platform with advanced search by keywords, missed or known headers, etc.</p>
     <p>Project dependency manager with <a href="http://docs.platformio.org/page/librarymanager/index.html">Semantic Versioning</a> requirements.</p>
@@ -67,22 +67,23 @@
   </div>
 
   <div class="page-header libs-stats">
-    <h2>Most Downloaded <small>unique downloads</small></h2>
+    <h2>Featured</h2>
   </div>
   <div class="row">
     <div class="col col-md-4">
-      <h3>Daily</h3>
-      <p ng-repeat="item in vm.stats.dlday">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      <h3>Today</h3>
+      <p ng-repeat="item in vm.stats.dlday">
+        <i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
-      <h3>Weekly</h3>
-      <p ng-repeat="item in vm.stats.dlweek">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      <h3>Week</h3>
+      <p ng-repeat="item in vm.stats.dlweek"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
-      <h3>Monthly</h3>
-      <p ng-repeat="item in vm.stats.dlmonth">{{ item.total }} <i class="fa fa-download"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      <h3>Month</h3>
+      <p ng-repeat="item in vm.stats.dlmonth"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
   </div>

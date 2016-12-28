@@ -20,20 +20,19 @@
   angular.module('siteApp')
     .controller('LibShowController', LibShowController);
 
-  function LibShowController($window, $location, $filter, $routeParams,
-    $analytics, dataService, libInfo, frameworksList, platformsList) {
+  function LibShowController(
+    $window, $location, $routeParams, $analytics, dataService, libInfo) {
     var vm = this;
     var tabs = [
       'examples', 'installation', 'headers', 'manifest', 'discussion'
     ];
 
-    vm.frameworks = frameworksList;
-    vm.platforms = platformsList;
     vm.lib = libInfo;
     vm.meta = getMeta();
     vm.examples = getExamples();
     vm.activeTab = getActiveTab();
     vm.currentExample = {};
+    vm.showAllVersions = false;
     vm.downloadLib = downloadLib;
     vm.editLibraryConf = editLibraryConf;
     vm.changeTab = changeTab;
@@ -65,7 +64,7 @@
     function getMeta() {
       var data = {
         title: vm.lib.name,
-        keywords: vm.lib.keywords.slice(0),
+        keywords: vm.lib.keywords.slice(0), // clone
         description: vm.lib.description
       };
 
@@ -81,7 +80,7 @@
       var nametitles = [];
       angular.forEach(['frameworks', 'platforms'], function(what) {
         angular.forEach(vm.lib[what], function(item) {
-          nametitles.push($filter('nameToTitle')(item, vm[what]));
+          nametitles.push(item.title);
         });
       });
 

@@ -145,6 +145,16 @@
                 page: searchObject.page ? parseInt(searchObject.page) : 1
               }).$promise;
             }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ],
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
           ]
         }
       })
@@ -161,6 +171,16 @@
                 page: searchObject.page ? parseInt(searchObject.page) : 1
               }).$promise;
             }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ],
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
           ]
         }
       })
@@ -173,16 +193,6 @@
             function($route, dataService) {
               return dataService.getLibInfo(
                 $route.current.params.libId).$promise;
-            }
-          ],
-          frameworksList: ['dataService',
-            function(dataService) {
-              return dataService.getFrameworks().$promise;
-            }
-          ],
-          platformsList: ['dataService',
-            function(dataService) {
-              return dataService.getPlatforms().$promise;
             }
           ]
         }

@@ -21,13 +21,13 @@
     .controller('LibExamplesController', LibExamplesController);
 
   function LibExamplesController($location, $http, $templateCache, $q,
-    dataService, siteUtils, searchResult) {
+    dataService, siteUtils, searchResult, frameworksList, platformsList) {
     var vm = this;
     var searchObject = $location.search();
 
     vm.siteUtils = siteUtils;
-    vm.frameworks = dataService.getFrameworks();
-    vm.platforms = dataService.getPlatforms();
+    vm.frameworks = frameworksList;
+    vm.platforms = platformsList;
     vm.searchQuery = '';
     vm.searchResult = searchResult;
     vm.meta = getMeta();

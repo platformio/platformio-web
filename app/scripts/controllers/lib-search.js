@@ -20,14 +20,14 @@
   angular.module('siteApp')
     .controller('LibSearchController', LibSearchController);
 
-  function LibSearchController($location, $filter, dataService, siteUtils,
-    searchResult) {
+  function LibSearchController($location, siteUtils, searchResult,
+    frameworksList, platformsList) {
     var vm = this;
     var searchObject = $location.search();
 
     vm.siteUtils = siteUtils;
-    vm.frameworks = dataService.getFrameworks();
-    vm.platforms = dataService.getPlatforms();
+    vm.frameworks = frameworksList;
+    vm.platforms = platformsList;
     vm.searchQuery = '';
     vm.searchResult = searchResult;
     vm.meta = getMeta();
@@ -55,18 +55,15 @@
         // frameworks & platforms
         angular.forEach(['frameworks', 'platforms'], function(what) {
           angular.forEach(item[what], function(item2) {
-            var _title = $filter('nameToTitle')(item2, vm[
-              what]);
-            data.description.push(_title);
-            data.keywords = data.keywords.concat([item2,
-              _title
-            ]);
+            data.description.push(item2.title);
+            data.keywords = data.keywords.concat([item2.name, item2.title]);
           });
         });
       });
 
       angular.forEach(['description', 'keywords'], function(what) {
         data[what] = data[what].filter(
+
           function(value, index, self) {
             return self.indexOf(value) === index;
           }

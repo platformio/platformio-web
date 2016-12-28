@@ -47,10 +47,10 @@
 
         <dt>Compatibility</dt>
         <dd>
-          <span ng-if="vm.lib.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="name in vm.lib.frameworks"> <a href="/frameworks/{{ name }}">{{ name | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="item in vm.lib.frameworks"> <a href="/frameworks/{{ item.name }}">{{ item.title }}</a><span ng-if="!$last">,&nbsp;</span></span>
           <br>
           </span>
-          <span ng-if="vm.lib.platforms.length" uib-tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="name in vm.lib.platforms"> <a href="/platforms/{{ name }}">{{ name | nameToTitle : vm.platforms }}</a><span ng-if="!$last">,&nbsp;</span></span>
+          <span ng-if="vm.lib.platforms.length" uib-tooltip="Compatible Platforms"><i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="item in vm.lib.platforms"> <a href="/platforms/{{ item.name }}">{{ item.title }}</a><span ng-if="!$last">,&nbsp;</span></span>
           </span>
         </dd>
 
@@ -61,8 +61,20 @@
           <br>{{ vm.lib.dlstats.month }} downloads in the last month
         </dd>
 
-        <dt>Version</dt>
-        <dd><strong>{{ vm.lib.version.name}}</strong> <small uib-tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
+        <dt>
+          Version
+          <div ng-if="vm.lib.versions.length > 1"><small>(<a ng-click="vm.showAllVersions=true" href="">show all</a>)</small></div>
+        </dt>
+        <dd>
+          <div ng-if="!vm.showAllVersions">
+            <strong>{{ vm.lib.version.name}}</strong>
+            <small uib-tooltip="{{ vm.lib.version.released | date:'medium' }}">last updated {{ vm.lib.version.released | relativeDate }}</small>
+          </div>
+          <div ng-if="vm.showAllVersions">
+            <div ng-repeat="item in vm.lib.versions">
+              <span uib-tooltip="{{ item.released | date:'medium' }}"><strong>{{ item.name }}</strong> <small>released {{ item.released | relativeDate }}</small></span>
+            </div>
+          </div>
         </dd>
 
         <dt>Keywords</dt>
@@ -117,8 +129,8 @@
       using <code>lib_deps</code> option. PlatformIO will install dependent libraries automatically when processes (builds) a project.</p>
       <div class="well terminal">
         <b>[env:myenv]</b>
-        <div>platform = <font color="silver">{{ vm.lib.platforms[0] }}</font></div>
-        <p>framework = <font color="silver">{{ vm.lib.frameworks[0] }}</font></p>
+        <div>platform = <font color="silver">{{ vm.lib.platforms[0].name }}</font></div>
+        <p>framework = <font color="silver">{{ vm.lib.frameworks[0].name }}</font></p>
 
         <p>lib_deps =<br>
           &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Using library <kbd>Id</kbd></small><br>

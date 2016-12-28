@@ -38,7 +38,7 @@
     };
 
     function getLibSearchResult(data) {
-      return $resource(siteConfig.apiURL + '/lib/search', data).get();
+      return $resource(siteConfig.apiURL + '/v2/lib/search', data).get();
     }
 
     function getLibExamples(data) {

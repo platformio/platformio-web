@@ -40,7 +40,7 @@
       vm.activePlatform = -1;
       angular.forEach(platformsList, function(item, index) {
         if ($routeParams.platformName === item.name) {
-          vm.activeGroup = item.forDesktop? 1 : 0;
+          vm.activeGroup = item.forDesktop ? 1 : 0;
           vm.activePlatform = index;
         }
       });
@@ -59,10 +59,10 @@
           return;
         }
         angular.forEach(platform.packages, function(pkg) {
-            if (pkg.indexOf('framework-' + frameworkName) !== -1) {
-              compatible = true;
-            }
-          });
+          if (pkg.indexOf('framework-' + frameworkName) !== -1) {
+            compatible = true;
+          }
+        });
 
       });
       return compatible;

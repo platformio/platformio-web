@@ -21,6 +21,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-cdnify'
   });
 
+  grunt.loadNpmTasks("grunt-jsbeautifier");
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -132,6 +134,13 @@ module.exports = function (grunt) {
           jshintrc: 'test/.jshintrc'
         },
         src: ['test/spec/{,*/}*.js']
+      }
+    },
+
+    "jsbeautifier" : {
+      files : ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+      options: {
+        config: '.jsbeautifyrc'
       }
     },
 
@@ -476,6 +485,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'jsbeautifier',
     'clean:dist',
     'wiredep',
     'useminPrepare',

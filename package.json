@@ -26,6 +26,7 @@
     "grunt-svgmin": "^4.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^3.0.1",
+    "grunt-jsbeautifier": "^0.2.13",
     "serve-static": "^1.11.1",
     "connect-pushstate": "^1.1.0",
     "jit-grunt": "^0.10.0 ",

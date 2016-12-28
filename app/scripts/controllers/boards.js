@@ -37,7 +37,9 @@
       angular.extend({
           page: 1,
           count: 15,
-          sorting: { 'name': 'asc' }
+          sorting: {
+            'name': 'asc'
+          }
         },
         $location.search()), {
         counts: [15, 30, 50, 100, 1000],

@@ -54,10 +54,10 @@
           return;
         }
         angular.forEach(platform.packages, function(pkg) {
-            if (pkg.indexOf('framework-' + frameworkName) !== -1) {
-              compatible = true;
-            }
-          });
+          if (pkg.indexOf('framework-' + frameworkName) !== -1) {
+            compatible = true;
+          }
+        });
 
       });
       return compatible;

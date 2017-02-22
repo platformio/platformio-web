@@ -85,7 +85,7 @@
     <div class="ide-carousel" style="max-height: {{vm.slideHeight}}px;">
       <div uib-carousel active="vm.ideDemoActive" interval="vm.ideDemoInterval">
         <div uib-slide ng-repeat="demo in vm.ideDemos" index="$index">
-          <a href="{{demo.url}}"><div class="ide-slide" style="background-image: url({{demo.image}}); height: {{vm.slideHeight}}px;" ng-click="alert('{{demo.title}}')"></div></div>
+          <a href="{{demo.url}}"><div class="ide-slide" style="background-image: url({{demo.image}}); height: {{vm.slideHeight}}px;"></div></a>
         </div>
       </div>
     </div>
@@ -93,10 +93,10 @@
 </div>
 
 <div class="container get-started-dl text-center" ng-if="vm.ideDlUrl != ''">
-  <h2>Thank you for downloading PlatformIO IDE</h2>
-  <h3>Participate in our success and together let's make PlatformIO ecosystem even better!</h3>
+  <h2>Thank you for downloading PlatformIO IDE for Atom (bundle)</h2>
 
   <p>If the download doesn't start in a few seconds, please <a href="{{ vm.ideDlUrl }}">click here</a> to start the download.</p>
+  <p>If you have a problem with downloaded installer, please use <a href="http://docs.platformio.org/page/ide/atom.html#ide-installation" class="alert-link">official Atom Text Editor and "platformio-ide" package.</a>
   <h4>Below is some info to help you get started...</h4>
 
 </div>

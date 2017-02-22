@@ -21,7 +21,7 @@
       <ul class="dropdown-menu" role="menu">
         <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a>
         </li>
-        <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a>
+        <li ng-repeat="item in vm.frameworks"><a href="" ng-click="vm.searchQuery='framework:' + item.name; vm.submitSearchForm()">{{ item.title }}</a>
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
       <ul class="dropdown-menu" role="menu">
         <li><a href="" ng-click="vm.searchQuery=''; vm.submitSearchForm()">All</a>
         </li>
-        <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:{{ item.name }}'; vm.submitSearchForm()">{{ item.title }}</a>
+        <li ng-repeat="item in vm.platforms"><a href="" ng-click="vm.searchQuery='platform:' + item.name; vm.submitSearchForm()">{{ item.title }}</a>
         </li>
       </ul>
     </div>

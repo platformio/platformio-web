@@ -41,7 +41,11 @@
     }
 
     angular.forEach(vm.searchResult.items, function(item) {
-      codePreloader(item);
+      try {
+        codePreloader(item);
+      } catch (err) {
+        console.log(err);
+      }
     });
 
     ////////////

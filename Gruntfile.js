@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     cdnify: 'grunt-cdnify'
   });
 
-  grunt.loadNpmTasks("grunt-jsbeautifier");
+  grunt.loadNpmTasks('grunt-jsbeautifier');
 
   // Configurable paths for the application
   var appConfig = {
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
       }
     },
 
-    "jsbeautifier" : {
+    jsbeautifier : {
       files : ['<%= yeoman.app %>/scripts/{,*/}*.js'],
       options: {
         config: '.jsbeautifyrc'

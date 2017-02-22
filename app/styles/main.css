@@ -38,6 +38,7 @@
   color: #e0e0e0;
   background: url("../images/platformio-logo-xs.png") no-repeat;
   background-position: 5px 0;
+  padding: 0;
   padding-left: 50px;
   font-weight: 500;
 }

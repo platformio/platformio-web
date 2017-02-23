@@ -33,6 +33,7 @@
     vm.activeTab = getActiveTab();
     vm.currentExample = {};
     vm.showAllVersions = false;
+    vm.manifestUrl = '';
     vm.downloadLib = downloadLib;
     vm.editLibraryConf = editLibraryConf;
     vm.changeTab = changeTab;

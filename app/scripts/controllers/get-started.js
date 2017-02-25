@@ -38,15 +38,7 @@
     vm.ideDemoInterval = 5000;
     vm.slideHeight = ($window.innerHeight ? Math.ceil($window.innerHeight / 2) :
       240);
-    vm.ideDlUrl = '';
-
-    if ($location.search().dl) {
-      vm.ideDlUrl = (
-        'https://dl.bintray.com/platformio/ide-bundles/' +
-        $location.search().dl
-      );
-      $window.location.href = vm.ideDlUrl;
-    }
+    vm.showIDEInstallation = $location.search().hasOwnProperty('install');
   }
 
 })();

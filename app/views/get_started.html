@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="container get-started" ng-if="vm.ideDlUrl == ''">
+<div class="container get-started" ng-if="!vm.showIDEInstallation">
   <div class="row text-center top-items-lg">
     <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
       <center>
@@ -92,11 +92,23 @@
   </div>
 </div>
 
-<div class="container get-started-dl text-center" ng-if="vm.ideDlUrl != ''">
-  <h2>Thank you for downloading PlatformIO IDE for Atom (bundle)</h2>
+<div class="container get-started-ide-installation text-center" ng-if="vm.showIDEInstallation">
+  <h2>Thank you for installing PlatformIO IDE</h2>
+  <dl class="dl-horizontal text-left">
+    <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
+    <dd><a href="https://atom.io" target="_blank">Download</a> and install official GitHub's Atom text editor, PlatformIO IDE is built on top of it</dd>
+    <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
+    <dd>
+      <b>Open</b> Atom Package Manager and <b>Install</b> <kbd>platformio-ide</kbd> package (auto installer)
+      <ul>
+        <li><b>Windows</b>, <code>Menu: File > Settings > Install</code></li>
+        <li><b>macOS</b>, <code>Menu: Atom > Preferences > Install</code></li>
+        <li><b>Linux</b>, <code>Menu: Edit > Preferences > Install</code></li>
+      </ul>
+      <img src="images/platformio-ide-atom-pkg-installer.png" alt="Atom Package Manager and PlatformIO IDE auto-installer" />
+    </dd>
+  </dl>
 
-  <p>If the download doesn't start in a few seconds, please <a href="{{ vm.ideDlUrl }}">click here</a> to start the download.</p>
-  <p>If you have a problem with downloaded installer, please use <a href="http://docs.platformio.org/page/ide/atom.html#ide-installation" class="alert-link">official Atom Text Editor and "platformio-ide" package.</a>
   <h4>Below is some info to help you get started...</h4>
 
 </div>
@@ -114,10 +126,7 @@
 
             <div ng-if="vm.gsType == 'ide'">
               Download and install the next-generation PlatformIO IDE.
-              <p><a class="btn btn-success" href="{{ vm.ideDlUrl? vm.ideDlUrl : '/platformio-ide' }}" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Download PlatformIO IDE</a></p>
-              <br>
-              PlatformIO IDE is built on top of GitHub's Atom "hackable" text editor. If you have Atom already installed please use
-              <a href="http://docs.platformio.org/page/ide/atom.html#installation" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Package">PlatformIO IDE package for Atom</a>.
+              <p><a class="btn btn-success" href="/get-started/ide?install" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a></p>
             </div>
 
             <div ng-if="vm.gsType != 'ide'">

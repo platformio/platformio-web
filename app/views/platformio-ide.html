@@ -9,18 +9,14 @@
       <br><small>The next-generation integrated development environment for IoT</small>
     </h1>
 
-    <a ng-if="vm.siteUtils.osType === 'Macintosh'" class="btn btn-success btn-lg" href="/get-started/ide?dl=platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a>
-    <a ng-if="vm.siteUtils.osType === 'Windows'" class="btn btn-success btn-lg" href="/get-started/ide?dl=platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a>
-    <a ng-if="vm.siteUtils.osType === 'Linux'" class="btn btn-success btn-lg" href="/get-started/ide?dl=platformio-atom-linux-x86_64.deb" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .deb</a>
-    <a ng-if="vm.siteUtils.osType === 'Linux'" class="btn btn-success btn-lg" href="/get-started/ide?dl=platformio-atom-linux-x86_64.rpm" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Download .rpm</a>
-    <a ng-if="vm.siteUtils.osType === ''" class="btn btn-success btn-lg" href="/platformio-ide#other-platforms" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Download</a>
+    <a class="btn btn-success btn-lg" href="/get-started/ide?install" role="button" analytics-on analytics-event="Install" analytics-category="IDE"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a>
     <p><small>It's built on top of GitHub's Atom "hackable" text editor</small></p>
 
     <p class="other-links">
       <ul class="list-inline">
         <li><i class="fa fa-rocket"></i> <a href="http://docs.platformio.org/page/ide/atom.html#installation">Installation Guide</a></li>
         <li>·</li>
-        <li>Available on <a href="/platformio-ide#other-platforms">other platforms</a> and as <a href="http://docs.platformio.org/page/ide/atom.html#installation" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Package">Atom package</a></li>
+        <li>Available on <a href="/platformio-ide#other-platforms">other platforms</a> and as <a href="/get-started/ide?install" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Package">Atom package</a></li>
         <li>·</li>
         <li>Integration with <a href="/get-started/integration">other IDEs</a></li>
       </ul>
@@ -73,29 +69,19 @@
   <div class="row">
     <div class="col-lg-3">
       <p><i class="fa fa-windows fa-5x"></i></p>
-      <p><a class="btn btn-success" href="/get-started/ide?dl=platformio-atom-windows.exe" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Windows</a></p>
+      <p><a class="btn btn-success" href="/get-started/ide?install" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Windows"><i class="fa fa-download fa-lg"></i> &nbsp;Install for Windows</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-apple fa-5x"></i></p>
-      <p><a class="btn btn-success" href="/get-started/ide?dl=platformio-atom-mac.zip" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Download for Mac</a></p>
+      <p><a class="btn btn-success" href="/get-started/ide?install" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Mac"><i class="fa fa-download fa-lg"></i> &nbsp;Install for Mac</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-linux fa-5x"></i></p>
-      <p>
-        <div class="btn-group" uib-dropdown>
-          <button type="button" class="btn btn-success" uib-dropdown-toggle>
-            <i class="fa fa-download fa-lg"></i> &nbsp;Download for Linux <span class="caret"></span>
-          </button>
-          <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-            <li role="menuitem"><a href="/get-started/ide?dl=platformio-atom-linux-x86_64.deb" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux">Download .deb</a></li>
-            <li role="menuitem"><a href="/get-started/ide?dl=platformio-atom-linux-x86_64.rpm" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Linux">Download .rpm</a></li>
-          </ul>
-        </div>
-      </p>
+      <p><a class="btn btn-success" href="/get-started/ide?install" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Linux"><i class="fa fa-download fa-lg"></i> &nbsp;Install for Linux</a></p>
     </div>
     <div class="col-lg-3">
       <p><i class="fa fa-desktop fa-5x"></i></p>
-      <p><a class="btn btn-success" href="http://docs.platformio.org/page/ide/atom.html#installation" role="button" analytics-on analytics-event="Download" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Other Platforms</a></p>
+      <p><a class="btn btn-success" href="http://docs.platformio.org/page/ide/atom.html#installation" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Other"><i class="fa fa-download fa-lg"></i> &nbsp;Other Platforms</a></p>
     </div>
   </div>
 </div>

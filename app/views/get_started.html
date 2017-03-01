@@ -125,8 +125,9 @@
             <h3 class="media-heading">Get Started</h3>
 
             <div ng-if="vm.gsType == 'ide'">
-              Download and install the next-generation PlatformIO IDE.
-              <p><a class="btn btn-success" href="/get-started/ide?install" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a></p>
+              Install the next-generation PlatformIO IDE.
+              <div ng-if="vm.showIDEInstallation"><b>See installation steps above.</b></div>
+              <p ng-if="!vm.showIDEInstallation"><a class="btn btn-success" href="/get-started/ide?install" role="button"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO IDE</a></p>
             </div>
 
             <div ng-if="vm.gsType != 'ide'">

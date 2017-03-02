@@ -48,16 +48,13 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Contents</th>
+              <th>Description</th>
             </tr>
           </thead>
-          <tr ng-repeat="package in platform.packages">
-            <td><span class="label label-default">{{ package }}</span>
-            </td>
+          <tr ng-repeat="name in platform.packages">
+            <td><a href="{{ vm.packages[name].url }}" target="_blank">{{ name }}</a></td>
             <td>
-              <span ng-repeat="content in vm.packages[package]">
-                <a href="{{ content.url }}" target="_blank">{{ content.name }}</a><span ng-if="!$last">,&nbsp;</span>
-              </span>
+              {{ vm.packages[name].description }}
             </td>
           </tr>
         </table>

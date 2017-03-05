@@ -141,14 +141,14 @@
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Depend on specific <kbd>version</kbd></small><br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @{{ vm.lib.version.name }}</font>
+            &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }}@{{ vm.lib.version.name }}</font>
           </p>
 
           <div ng-if="vm.lib.version.name.indexOf('.') !== -1">
             &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># <a href="http://docs.platformio.org/page/userguide/lib/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @^{{ vm.lib.version.name }}</font></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @~{{ vm.lib.version.name }}</font></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }} @>={{ vm.lib.version.name }}</font></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }}@^{{ vm.lib.version.name }}</font></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }}@~{{ vm.lib.version.name }}</font></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.name }}@>={{ vm.lib.version.name }}</font></div>
           </div>
         </p>
       </div>

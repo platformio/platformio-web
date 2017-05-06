@@ -29,9 +29,6 @@
 
 <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
     <tr ng-repeat="item in $data">
-      <td sortable="'id'" data-title="'ID'" filter="{ 'id': 'text' }">
-        <span class="label label-default">{{ item.id }}</span>
-      </td>
       <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
         {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
       </td>
@@ -43,8 +40,11 @@
             <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
           </span>
       </td>
-      <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}">
+      <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}" >
         {{ item.mcu }}
+      </td>
+      <td sortable="'debug'" data-title="'Debug'" class="text-center">
+        <a ng-if="item.debug" href="http://docs.platformio.org/page/plus/debugging.html" target="_blank">Yes</a>
       </td>
       <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
         {{ item.fcpu | embeddedFormatter : 'frequency' }}

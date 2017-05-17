@@ -30,7 +30,8 @@
     'hljs',
     'ngDisqus',
     'relativeDate',
-    'ngTable'
+    'ngTable',
+    'ngclipboard'
   ])
 
   .constant('siteConfig', {

@@ -30,7 +30,7 @@
 <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
     <tr ng-repeat="item in $data">
       <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
-        <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a> {{ item.name }} <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
+        {{ item.name }} <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a> <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
       </td>
       <td sortable="'platform'" data-title="'Platform'" filter="{platform: 'select'}" filter-data="vm.getFilterData('platforms')">
         <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>

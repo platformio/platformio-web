@@ -31,7 +31,8 @@
     'ngDisqus',
     'relativeDate',
     'ngTable',
-    'ngclipboard'
+    'ngclipboard',
+    'duScroll'
   ])
 
   .constant('siteConfig', {

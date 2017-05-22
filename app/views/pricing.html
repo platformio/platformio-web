@@ -1,0 +1,678 @@
+<view-title>Plans and Features</view-title>
+<meta name="description" content="PlatformIO Plus: Professional solutions for an awesome open source PlatformIO ecosystem" view-head />
+<meta name="keywords" content="PlatformIO, features, pricing, solutions, IoT, cloud, builder, embedded" view-head />
+
+<span ng-init="vm.tooltips = {
+  'pioremote_uploading': 'Upload firmware/program to wireless and wired devices (more than 350+ boards are supported) that are accessible for PIO Remote Agent (should be launched on a remote machine).',
+  'pioremote_devmanager': 'List wired and wireless devices accessible for PIO Remote Agent (should be launched on a remote machine). Detailed hardware and vendor information for serial devices.',
+  'pioremote_sermon': 'Receive and to send data between host machine and remote device that is accessible for PIO Remote Agent (should be launched on a remote machine). For example, you are at home, serial device is located at work, then you can connect to work device and monitor all data.',
+  'pioremote_concurgents': 'You can have the launched PIO Remote Agents at home and at work in the same time. It allows you to process tasks in consecutive or in parallel orders, such as: device list, device monitor, firmware uploading, unit testing. With Basic plan you can have started only the 1 agent in the same time.',
+  'pioremote_localunittesting': 'Run tests on a host machine or on the devices that are physically connected to it. It is useful to run native tests using Continuous Integration System.',
+  'pioremote_remoteunittesting': 'Run tests on a remote machine or remote devices that are accessible for PIO Remote Agent. For example, you have Board Farm (Boards Matrix) at work that is connected with PIO Remote Agent. Now, using host machine or Continuous Integration System you can run test on physical remote devices.',
+  'pioremote_ssl': 'Establishing an encrypted link between a PlatformIO Cloud, a PIO Remote Agent and a PIO Remote Client',
+  'depends_on_pioremote_fu': 'Depends on PIO Remote Firmware Updates',
+  'depends_on_piorenome_fusm': 'Depends on PIO RemoteFirmware Updates and Serial Port Monitor',
+  'free_trial': 'Free 30-Days Trial, no credit card required. Automatically activates when you create PlatformIO Account.',
+  'agent_share': 'Allows to share PIO Remote Agent and hardware (boards) with colleagues across your organization or friends',
+  'pioremote_custom_integration': 'Own branded IDE, adding for new embedded boards or creating development platform'
+}"></span>
+
+<div class="jumbotron">
+  <div class="container ">
+    <h1><i class="fa fa-shopping-cart fa-lg"></i> Plans and Features</h1>
+    <br>
+    <p><b>PlatformIO Plus</b> - Professional solutions for an awesome open source PlatformIO ecosystem.</p>
+    <p>Subscribe to PlatformIO Plus and help us to keep PlatformIO Open Source Project free, independent and alive!</p>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row text-center top-items-lg">
+    <div class="col-md-4">
+      <center>
+        <a><i class="fa fa-heart fa-5x"></i></a>
+      </center>
+      <h2>Open Source</h2>
+      <p>
+        <strong>PlatformIO Plus</strong> is a <u>core sponsor</u> of an awesome and free <a href="http://platformio.org">PlatformIO.Org</a> ecosystem. We love the open source and believe in its power. Our main mission is to reduce input threshold to the Embedded World with creating high-level instruments and services.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <center>
+        <a><i class="fa fa-briefcase fa-5x"></i></a>
+      </center>
+      <h2>Business</h2>
+      <p>We respect companies that work in Embedded Technologies and we are ready to save their time on developing own software instruments. Add your hardware to PlatformIO ecosystem and we will bring new customers for you. In addition, we are ready to provide <u>premium technical support</u> for you and your products.</p>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <center>
+        <a><i class="fa fa-cubes fa-5x"></i></a>
+      </center>
+      <h2>Solutions</h2>
+      <p>
+        <b>PlatfromIO Plus</b> proposes professional solutions that can significantly improve project code quality and allow to work remotely with embedded devices from <u>any point of the world</u>. New cloud solutions will save your time and bring new instruments for IoT development.
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr /><br />
+
+<a name="pricing-top"></a>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="pio-plan">
+        <div class="plan-info">
+          <h2>Community</h2>
+          <div class="plan-price">
+            <span class="currency">$</span>0<span class="cents"></span>
+          </div>
+          <p>100% FREE <br>No Credit Card Required</p>
+        </div>
+        <div class="plan-button"><a class="btn btn-primary" href="/platformio-ide" role="button">Install</a></div>
+        <div class="plan-includes">
+          <h4>Community includes</h4>
+          <p>All of these great features:</p>
+        </div>
+        <hr>
+        <div class="plan-features">
+          <ul>
+            <li><a href="http://platformio.org/platformio-ide">PlatformIO IDE</a></li>
+            <li><a href="http://docs.platformio.org/page/core.html">PlatformIO Core</a></li>
+            <li><a href="http://docs.platformio.org/page/ci/index.html">Continuous Integration</a></li>
+            <li><a href="http://docs.platformio.org/page/ide.html#standalone-ide">Standalone IDEs Integration</a></li>
+            <li>30-Days <b>Free Trial</b> for Basic Plan <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+          </ul>
+          <p><b><a href="#pricing-comparison" du-smooth-scroll>See all features</a></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="pio-plan pio-plan-basic">
+        <div class="plan-info">
+          <h2>Basic</h2>
+          <div class="sale"></div>
+          <div class="plan-price">
+            <span class="currency">$</span><span class="whole">{{ vm.rates.basic.whole }}</span><span class="cents">{{ vm.rates.basic.cents }}</span>
+          </div>
+          <p>
+            per month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
+            <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
+          </p>
+        </div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.rates.basic.url }}" role="button" target="_blank">Buy Basic</a></div>
+        <div class="plan-includes">
+          <h4>Basic includes</h4>
+          <p>Everything in <b>Community</b>, and:</p>
+        </div>
+        <hr>
+        <div class="plan-features">
+          <ul>
+            <li><a href="http://docs.platformio.org/page/plus/debugging.html">PIO Unified Debugger</a></li>
+            <li><a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
+            <li><a href="#solution-unit-testing" du-smooth-scroll>Local Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_localunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li><a href="#solution-cloud-ide" du-smooth-scroll>Cloud IDEs Integration</a></li>
+            <li><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a></li>
+            <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-static-project-analysis" du-smooth-scroll>Static Project Analysis</a></li>
+            <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-cloud-builder" du-smooth-scroll>Cloud Builder</a></li>
+          </ul>
+          <p><b><a href="#pricing-comparison" du-smooth-scroll>See all features</a></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="pio-plan pio-plan-professional">
+        <div class="plan-info">
+          <h2>Professional</h2>
+          <div class="sale"></div>
+          <div class="plan-price">
+            <span class="currency">$</span><span class="whole">{{ vm.rates.professional.whole }}</span><span class="cents">{{ vm.rates.professional.cents }}</span>
+          </div>
+          <p>
+            per month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
+            <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
+          </p>
+        </div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.rates.professional.url }}" role="button" target="_blank">Buy Professional</a></div>
+        <div class="plan-includes">
+          <h4>Professional includes</h4>
+          <p>Everything in <b>Basic</b>, and:</p>
+        </div>
+        <hr>
+        <div class="plan-features">
+          <ul>
+            <li><a href="#solution-unit-testing" du-smooth-scroll>Remote Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_remoteunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li>Secure (<abbr title="Secure Sockets Layer">SSL</abbr>) <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a> <a uib-tooltip="{{ vm.tooltips['pioremote_ssl'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li>Premium support with 8 hours response time</li>
+            <li>Hot bug fixes</li>
+            <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-pio-delivery" du-smooth-scroll>PIO Delivery&trade;</a></li>
+          </ul>
+          <p><b><a href="#pricing-comparison" du-smooth-scroll>See all features</a></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="pio-plan">
+        <div class="plan-info">
+          <h2>Enterprise</h2>
+          <div class="plan-custom">
+            CUSTOM
+          </div>
+        </div>
+        <div class="plan-button"><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></div>
+        <div class="plan-includes">
+          <h4>Enterprise includes</h4>
+          <p>Everything in <b>Professional</b>, and:</p>
+        </div>
+        <hr>
+        <div class="plan-features">
+          <ul>
+            <li>Unlimited <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
+            <li>Commercial support for 3-rd party software</li>
+            <li>Comprehensive consultancy solutions</li>
+            <li>Integration with your products <a uib-tooltip="{{ vm.tooltips['pioremote_custom_integration'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li>Premium support with 1 hour response time</li>
+            <li>Priority features</li>
+          </ul>
+          <p><b><a href="#pricing-comparison" du-smooth-scroll>See all features</a></b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="alert alert-info" role="alert">
+    <p><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> The features which have not been released yet! Please <a href="mailto:contact@pioplus.com" class="alert-link">contact us</a> for details and terms.</p>
+    <p><i class="fa fa-balance-scale" aria-hidden="true"></i> By subscribing to any plans, you accept with <a href="/license.html" class="alert-link">License and Subscription Agreement</a>.</p>
+  </div>
+
+</div>
+
+<a name="pricing-comparison"></a>
+<div class="jumbotron text-center">
+  <h2>Compare PlatformIO Plus plans</h2>
+  <p>Discover the differences of each individual plan and learn more about our product.</p>
+</div>
+
+<div class="container piocomparison">
+
+
+  <table class="table table-pricig">
+    <thead>
+      <th><h3>Plans and Features</h3></th>
+      <th>
+        <div>
+          <div class="plan-info">
+            <h3>Community</h3>
+          </div>
+        </div>
+      </th>
+      <th>
+        <div class="pio-plan-basic">
+          <div class="plan-info">
+            <h3>Basic</h3>
+          </div>
+        </div>
+      </th>
+      <th>
+        <div class="pio-plan-professional">
+          <div class="plan-info">
+            <h3>Professional</h3>
+          </div>
+        </div>
+      </th>
+      <th>
+       <div>
+          <div class="plan-info">
+            <h3>Enterprise</h3>
+          </div>
+        </div>
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td><a class="btn btn-primary" href="/platformio-ide" role="button">Install</a></td>
+        <td>
+          <div class="pio-plan-basic">
+            <div class="plan-button"><a class="btn btn-success" href="https://sites.fastspring.com/platformio/instant/platformio-plus-basic-annually" role="button" target="_blank">Buy Basic</a></div>
+          </div>
+        </td>
+        <td>
+          <div class="pio-plan-professional">
+            <div class="plan-button"><a class="btn btn-success" href="https://sites.fastspring.com/platformio/instant/platformio-plus-professional-annually" role="button" target="_blank">Buy Professional</a></div>
+          </div>
+        </td>
+        <td><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#1 Core Features</th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th><a href="/platforms">Multi-platform Build System</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="http://docs.platformio.org/page/librarymanager/index.html">Library Manager</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="http://docs.platformio.org/page/ci/index.html">Continuous Integration</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="#solution-continuous-deployment" du-smooth-scroll>Continuous Deployment</a></th>
+        <td><a uib-tooltip="{{ vm.tooltips['depends_on_pioremote_fu'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="http://docs.platformio.org/page/plus/debugging.html">PIO Unified Debugger</th>
+        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="#solution-unit-testing" du-smooth-scroll>Local Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_localunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></th>
+        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="#solution-static-project-analysis" du-smooth-scroll>Static Project Analysis</a> <a data-toggle="tooltip" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i></a></th>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#2 Integrated development environment (IDE)</th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th><a href="http://docs.platformio.org/page/ide.html">Standalone IDEs Integration</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="http://platformio.org/platformio-ide">PlatformIO IDE</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="pricing.html#solution-cloud-ide">Cloud IDEs Integration</a></th>
+        <td><a uib-tooltip="{{ vm.tooltips['depends_on_pioremote_fusm'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#3 <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Device Manager <a uib-tooltip="{{ vm.tooltips['pioremote_devmanager'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Firmware Updates for <a href="/boards">350+ embedded boards</a> <a uib-tooltip="{{ vm.tooltips['pioremote_uploading'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(updates per month)</small></th>
+        <td>50</td>
+        <td>1,000</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th>Serial Port Monitor <a uib-tooltip="{{ vm.tooltips['pioremote_sermon'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(sessions per month)</small></th>
+        <td>10</td>
+        <td>300</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th>Concurrent Agents <a uib-tooltip="{{ vm.tooltips['pioremote_concurgents'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+        <td>1</td>
+        <td>2</td>
+        <td>10</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th>Agent Share <a uib-tooltip="{{ vm.tooltips['agent_share'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(extra clients)</small></th>
+        <td></td>
+        <td>3</td>
+        <td>15</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th><a href="#solution-unit-testing" du-smooth-scroll>Remote Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_remoteunittesting'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>RESTful and WebSockets API <a data-toggle="tooltip" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i></a></th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>SSL (Secure Sockets Layer) <a uib-tooltip="{{ vm.tooltips['pioremote_ssl'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#4 IoT Features</th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th><a href="#solution-cloud-builder" du-smooth-scroll>Cloud Builder</a> <a data-toggle="tooltip" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i></a> <br> <small>(requests per month)</small></th>
+        <td></td>
+        <td>10,000</td>
+        <td>100,000</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th><a href="#solution-pio-delivery" du-smooth-scroll>PIO Delivery&trade;</a> <a data-toggle="tooltip" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i></a></th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#5 Integration Services</th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Commercial support for 3-rd party software (frameworks, SDKs)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Comprehensive consultancy solutions</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Adding support for new hardware (boards/MCUs)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Integration with 3-rd party software</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <th>#6 Support</th>
+      <th>Community</th>
+      <th>Basic</th>
+      <th>Professional</th>
+      <th>Enterprise</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th><a href="https://community.platformio.org/">Community support</a></th>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a></th>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Premium Email &amp; Web support</th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Support hours</th>
+        <td></td>
+        <td></td>
+        <td>Business hours</td>
+        <td>Business hours</td>
+      </tr>
+      <tr>
+        <th>Response time</th>
+        <td></td>
+        <td></td>
+        <td>8 hours or less</td>
+        <td>1 hour or less</td>
+      </tr>
+      <tr>
+        <th>Hot bug fixes</th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th>Priority features</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="jumbotron text-center">
+  <h2>Subscribe to PlatformIO Plus</h2>
+  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Subscribe to PlatformIO Plus</a></p>
+</div>
+
+<div class="container">
+  <a name="solutions"></a>
+
+  <a name="solution-pio-remote"></a>
+  <div class="row top-items-lg text-left">
+    <div class="col-md-9">
+      <h2>PIO Remote&trade;. <span class="text-muted">Your devices are always with you!</span></h2>
+      <p class="lead">
+        <b>PIO Remote&trade;</b> allows you to work remotely with devices from <u>Anywhere In The World</u>. No matter where are you now! Run a small and cross-platform <b>PIO Remote&trade;</b> Agent on a remote machine and you are able to manage active devices (wireless + wired),
+        to upload firmware (program), to process remote unit tests, or to start remote debugging session via <b>Remote Serial Port Monitor</b>.<br>
+      </p>
+      <p class="lead">
+        Using <b>PIO Remote&trade;</b> you can share your devices with colleagues across your organization or friends. In combination with <a href="#solution-cloud-ide" du-smooth-scroll>Cloud IDE</a>, you can create awesome things at any time when inspiration comes to you.
+      </p>
+    <p><a class="btn btn-primary" href="http://docs.platformio.org/page/plus/pio-remote.html" role="button"><i class="fa fa-book" aria-hidden="true"></i> Read more</a></p>
+    </div>
+    <div class="col-md-3 text-center" style="padding-top: 50px;">
+      <div class="img-circle"><i class="fa fa-globe fa-5x"></i></div>
+    </div>
+
+  </div>
+
+  <a name="solution-cloud-ide"></a>
+  <hr class="home-divider">
+
+  <div class="row top-items-lg text-left">
+    <div class="col-md-3 text-center" style="padding-top: 50px;">
+      <div class="img-circle"><i class="fa fa-cube fa-5x"></i></div>
+    </div>
+    <div class="col-md-9">
+      <h2>Cloud IDE. <span class="text-muted">Embedded development in a browser!</span></h2>
+      <p class="lead">
+        When we talk about embedded development, we imagine complicated development environment with requirements for specific software and OS. Cloud IDE destroys these requirements and allows you to program more than 350+ embedded boards from your favorite browser. <br>
+        A <u>pairing programming in the cloud</u> lets you work together on the same project using shareable embedded devices provided by <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a>.
+      </p>
+      <p class="lead">
+        We support integration of <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a> with the most popular <a href="http://docs.platformio.org/page/ide.html">Cloud IDEs</a> (Cloud9, Codeanywhere, Eclipse Che). You have a choice which Cloud IDE to use.
+      </p>
+      <p><a class="btn btn-primary" href="http://docs.platformio.org/page/ide.html#cloud-ide" role="button"><i class="fa fa-book" aria-hidden="true"></i> Read more (demo &amp; examples)</a></p>
+    </div>
+  </div>
+
+  <a name="solution-unit-testing"></a>
+  <hr class="home-divider">
+
+  <div class="row top-items-lg text-left">
+    <div class="col-md-9">
+      <h2>Unit Testing. <span class="text-muted">Local and Remote.</span></h2>
+      <p class="lead">
+        <b>Unit Testing</b> allows segregating each part of the firmware/program and test that the individual parts are working correctly. Using <b>PlatformIO Plus Unit Testing Engine</b> you can execute the same tests on the local host machine (native), on the multiple local embedded devices/boards (connected to local host machine), or in both cases. In the last case, PlatformIO Plus builds firmware on the host machine, uploads it to a target device, executes tests on it and gather results. The final information will be shown on the host side with informative output and statistic.
+      </p>
+      <p class="lead">
+        Using <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a> you can run unit tests on the <b>Remote Device</b> from anywhere in the world or integrate with Continuous Integration Systems.
+      </p>
+      <p><a class="btn btn-primary" href="http://docs.platformio.org/page/plus/unit-testing.html" role="button"><i class="fa fa-book" aria-hidden="true"></i> Read more (demo &amp; examples)</a></p>
+    </div>
+    <div class="col-md-3 text-center" style="padding-top: 70px;">
+      <div class="img-circle"><i class="fa fa-gears fa-5x"></i></div>
+    </div>
+  </div>
+
+  <a name="solution-static-project-analysis"></a>
+  <hr class="home-divider">
+
+  <div class="row top-items-lg text-left">
+    <div class="col-md-3 text-center" style="padding-top: 10px;">
+      <div class="img-circle"><i class="fa fa-bug fa-5x"></i></div>
+    </div>
+    <div class="col-md-9">
+      <h2>Static Project Analysis. <span class="text-muted">Find bugs in your code.</span></h2>
+      <p class="lead">
+        <b>Static Project Analysis</b> lets you find bugs in a project that are not detected by the compiler. A project source code with private libraries will be checked for the various kinds of bugs: uninitialized variables, obsolete or unsafe functions, unused or redundant code, and various suspicious code.
+      </p>
+    </div>
+  </div>
+
+  <a name="solution-pio-delivery"></a>
+  <hr class="home-divider">
+
+  <div class="row top-items-lg text-left">
+    <div class="col-md-9">
+      <h2>PIO Delivery&trade;. <span class="text-muted">Automatic firmware updates!</span></h2>
+      <p class="lead">
+        Link your device with <b>PIO Delivery&trade;</b> service and manage firmware updates remotely. There is no difference if a device has hardware Internet capabilities or does not. <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a> can be used as a tunnel to your low-power device and update it by your command or specific event.<br>
+        If you connect VCS repository to <b>PIO Delivery&trade;</b>, we will test your project, build it and upload firmware automatically on a release/tag event.<br>
+        Also, a rich API can be used for advanced firmware managing.
+      </p>
+    </div>
+    <div class="col-md-3 text-center" style="padding-top: 30px;">
+      <div class="img-circle"><i class="fa fa-download fa-5x"></i></div>
+    </div>
+  </div>
+
+  <a name="solution-cloud-builder"></a>
+  <hr class="home-divider">
+
+  <div class="row top-items-lg text-left">
+    <div class="col-md-3 text-center" style="padding-top: 30px;">
+      <div class="img-circle"><i class="fa fa-cloud fa-5x"></i></div>
+    </div>
+    <div class="col-md-9">
+      <h2>Cloud Builder. <span class="text-muted">Accelerate project deployment!</span></h2>
+      <p class="lead">
+        <b>PlatformIO Cloud Builder</b> provides IoT industry leading solutions to build and deploy your project. A rich API allows specifying project dependencies/libraries, development platform requirements, custom compiler flags, and etc. In addition, you can provide configuration for remote deployment via <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a>.<br>
+        Generate project dynamically on a front-end/mobile side, push it to <b>PlatformIO Cloud Builder</b> and receive final firmware/program in moments!
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr class="home-divider">
+
+<div class="container text-center">
+  <h2>Subscribe to PlatformIO Plus</h2>
+  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Subscribe to PlatformIO Plus</a> </p>
+</div>
+<br>

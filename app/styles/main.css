@@ -99,10 +99,6 @@
   color: #ff9900;
 }
 
-.fa-heart {
-  color: #A80008;
-}
-
 .jumbotron h1 {
   margin-bottom: 30px;
 }
@@ -467,6 +463,87 @@
   min-height: 32px;
 }
 
+/* Pricing */
+
+.pio-plan .btn {
+  width: 100%;
+}
+
+.pio-plan .plan-info {
+  border: 1px solid #e6e6e6;
+  background-color: #fcfcfc;
+  border-radius: 6px;
+  text-align: center;
+  height: 220px;
+  margin-bottom: 10px;
+}
+
+.plan-info .plan-price {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 70px;
+}
+
+.plan-info .sale {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: red;
+}
+
+.plan-info .plan-price .currency,
+.plan-info .plan-price .cents  {
+  font-weight: 400;
+  position: relative;
+  top: -13px;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.plan-info .plan-price .currency {
+  top: -30px;
+}
+
+.plan-info .plan-custom {
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+.pio-plan .plan-button {
+  margin: 20px 0;
+}
+
+.pio-plan .plan-includes {
+  text-align: center;
+}
+
+.pio-plan .plan-features ul {
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+.pio-plan .plan-features ul li {
+  padding-bottom: 5px;
+}
+
+.piocomparison table thead th {
+  width: 15%;
+  text-align: center;
+}
+
+.piocomparison table thead th:first-child {
+  width: 40%;
+  text-align: left;
+}
+
+.piocomparison table tr td {
+  text-align: center;
+}
+
+.piocomparison .table td {
+  vertical-align: middle;
+}
+
 /* Footer */
 
 .footer {
@@ -622,6 +699,10 @@
 }
 
 /* Miscellaneous */
+
+.home .fa-heart {
+  color: #A80008;
+}
 
 .terminal {
   color: #fff;

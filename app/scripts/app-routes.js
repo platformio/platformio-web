@@ -197,6 +197,11 @@
           ]
         }
       })
+      .when('/pricing', {
+        templateUrl: 'views/pricing.html',
+        controller: 'PricingController',
+        controllerAs: 'vm'
+      })
       .when('/who-uses', {
         templateUrl: 'views/who_uses.html'
       })

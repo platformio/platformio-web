@@ -202,6 +202,12 @@
         controller: 'PricingController',
         controllerAs: 'vm'
       })
+      .when('/license', {
+        templateUrl: 'views/license.html'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html'
+      })
       .when('/who-uses', {
         templateUrl: 'views/who_uses.html'
       })

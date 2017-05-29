@@ -91,7 +91,9 @@
           continue;
         }
         var price = vm.rates[key]['price'];
+        vm.rates[key]['beforeSale'] = null;
         if (sale > 0 && sale <= 100) {
+          vm.rates[key]['beforeSale'] = price;
           price -= price * sale / 100;
         }
         vm.rates[key]['whole'] = Math.floor(price);

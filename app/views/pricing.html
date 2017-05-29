@@ -96,7 +96,7 @@
       <div class="pio-plan pio-plan-basic">
         <div class="plan-info">
           <h2>Basic</h2>
-          <div class="sale"></div>
+          <div class="sale" ng-if="vm.rates.basic.beforeSale">${{ vm.rates.basic.beforeSale }}</div>
           <div class="plan-price">
             <span class="currency">$</span><span class="whole">{{ vm.rates.basic.whole }}</span><span class="cents">{{ vm.rates.basic.cents }}</span>
           </div>
@@ -129,7 +129,7 @@
       <div class="pio-plan pio-plan-professional">
         <div class="plan-info">
           <h2>Professional</h2>
-          <div class="sale"></div>
+          <div class="sale" ng-if="vm.rates.professional.beforeSale">${{ vm.rates.professional.beforeSale }}</div>
           <div class="plan-price">
             <span class="currency">$</span><span class="whole">{{ vm.rates.professional.whole }}</span><span class="cents">{{ vm.rates.professional.cents }}</span>
           </div>

@@ -3,18 +3,17 @@
 <meta name="keywords" content="PlatformIO, features, pricing, solutions, IoT, cloud, builder, embedded" view-head />
 
 <span ng-init="vm.tooltips = {
-  'pioremote_uploading': 'Upload firmware/program to wireless and wired devices (more than 350+ boards are supported) that are accessible for PIO Remote Agent (should be launched on a remote machine).',
-  'pioremote_devmanager': 'List wired and wireless devices accessible for PIO Remote Agent (should be launched on a remote machine). Detailed hardware and vendor information for serial devices.',
-  'pioremote_sermon': 'Receive and to send data between host machine and remote device that is accessible for PIO Remote Agent (should be launched on a remote machine). For example, you are at home, serial device is located at work, then you can connect to work device and monitor all data.',
-  'pioremote_concurgents': 'You can have the launched PIO Remote Agents at home and at work in the same time. It allows you to process tasks in consecutive or in parallel orders, such as: device list, device monitor, firmware uploading, unit testing. With Basic plan you can have started only the 1 agent in the same time.',
-  'pioremote_localunittesting': 'Run tests on a host machine or on the devices that are physically connected to it. It is useful to run native tests using Continuous Integration System.',
-  'pioremote_remoteunittesting': 'Run tests on a remote machine or remote devices that are accessible for PIO Remote Agent. For example, you have Board Farm (Boards Matrix) at work that is connected with PIO Remote Agent. Now, using host machine or Continuous Integration System you can run test on physical remote devices.',
+  'pioremote_uploading': 'Upload firmware/program to wireless and wired devices (more than 400+ boards are supported) that are accessible for PIO Remote Agent (should be launched on a remote machine)',
+  'pioremote_devmanager': 'List wired and wireless devices accessible for PIO Remote Agent (should be launched on a remote machine). Detailed hardware and vendor information for serial devices',
+  'pioremote_sermon': 'Receive and to send data between host machine and remote device that is accessible for PIO Remote Agent (should be launched on a remote machine). For example, you are at home, serial device is located at work, then you can connect to work device and monitor all data',
+  'pioremote_concurgents': 'You can have the launched PIO Remote Agents at home and at work in the same time. It allows you to process tasks in consecutive or in parallel orders, such as: device list, device monitor, firmware uploading, unit testing. With Basic plan you can have started only the 2 agents in the same time.',
   'pioremote_ssl': 'Establishing an encrypted link between a PlatformIO Cloud, a PIO Remote Agent and a PIO Remote Client',
   'depends_on_pioremote_fu': 'Depends on PIO Remote Firmware Updates',
-  'depends_on_pioremote_fusm': 'Depends on PIO RemoteFirmware Updates and Serial Port Monitor',
+  'depends_on_pioremote_fusm': 'Depends on PIO Remote Firmware Updates and Serial Port Monitor',
   'free_trial': 'Free 30-Days Trial, no credit card required. Automatically activates when you create PlatformIO Account.',
   'agent_share': 'Allows to share PIO Remote Agent and hardware (boards) with colleagues across your organization or friends',
-  'pioremote_custom_integration': 'Own branded IDE, adding for new embedded boards or creating development platform'
+  'pioremote_custom_integration': 'Own branded IDE, adding for new embedded boards or creating development platform',
+  'pio_cloud_enterprise_server': 'Install PIO Cloud Enterprise Server in own infrastructure and receive unlimited access to all PIO Plus features: PIO Remote, PIO Unified Debugger, PIO Unit Testing, etc.'
 }"></span>
 
 <div class="jumbotron">
@@ -101,7 +100,7 @@
             <span class="currency">$</span><span class="whole">{{ vm.rates.basic.whole }}</span><span class="cents">{{ vm.rates.basic.cents }}</span>
           </div>
           <p>
-            per month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
+            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
             <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
@@ -113,10 +112,9 @@
         <hr>
         <div class="plan-features">
           <ul>
-            <li><a href="/license">Personal license</a></li>
-            <li><a href="http://docs.platformio.org/page/plus/debugging.html">PIO Unified Debugger</a></li>
             <li><a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
-            <li><a href="#solution-unit-testing" du-smooth-scroll>Local Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_localunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li><a href="http://docs.platformio.org/page/plus/debugging.html">PIO Unified Debugger</a></li>
+            <li><a href="#solution-unit-testing" du-smooth-scroll>PIO Unit Testing</a></li>
             <li><a href="#solution-cloud-ide" du-smooth-scroll>Cloud IDEs Integration</a></li>
             <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-static-project-analysis" du-smooth-scroll>Static Project Analysis</a></li>
             <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-cloud-builder" du-smooth-scroll>Cloud Builder</a></li>
@@ -134,7 +132,7 @@
             <span class="currency">$</span><span class="whole">{{ vm.rates.professional.whole }}</span><span class="cents">{{ vm.rates.professional.cents }}</span>
           </div>
           <p>
-            per month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
+            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
             <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
@@ -146,9 +144,7 @@
         <hr>
         <div class="plan-features">
           <ul>
-            <li><a href="/license">Personal license</a></li>
             <li>Unlimited <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
-            <li><a href="#solution-unit-testing" du-smooth-scroll>Remote Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_remoteunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
             <li>Premium support with 8 hours response time</li>
             <li><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a></li>
             <li>Hot bug fixes</li>
@@ -175,6 +171,7 @@
         <div class="plan-features">
           <ul>
             <li><a href="/license">Volume Licensing</a></li>
+            <li>PIO Cloud Enterprise Server <a uib-tooltip="{{ vm.tooltips['pio_cloud_enterprise_server'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
             <li>Comprehensive Consulting</li>
             <li>Technology Services</li>
             <li>System Integration</li>
@@ -301,7 +298,7 @@
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
       <tr>
-        <th><a href="#solution-unit-testing" du-smooth-scroll>Local Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_localunittesting'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></th>
+        <th><a href="#solution-unit-testing" du-smooth-scroll>PIO Unit Testing</a></th>
         <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -371,39 +368,32 @@
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
       <tr>
-        <th>Firmware Updates for <a href="/boards">350+ embedded boards</a> <a uib-tooltip="{{ vm.tooltips['pioremote_uploading'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(updates per month)</small></th>
+        <th>Firmware Updates for <a href="/boards">400+ embedded boards</a> <a uib-tooltip="{{ vm.tooltips['pioremote_uploading'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(updates per month)</small></th>
         <td>50</td>
-        <td>1,000</td>
+        <td>5,000</td>
         <td>Unlimited</td>
         <td>Unlimited</td>
       </tr>
       <tr>
         <th>Serial Port Monitor <a uib-tooltip="{{ vm.tooltips['pioremote_sermon'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(sessions per month)</small></th>
         <td>10</td>
-        <td>300</td>
+        <td>1,000</td>
         <td>Unlimited</td>
         <td>Unlimited</td>
       </tr>
       <tr>
         <th>Concurrent Agents <a uib-tooltip="{{ vm.tooltips['pioremote_concurgents'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
         <td>1</td>
-        <td>2</td>
-        <td>10</td>
-        <td>Unlimited</td>
-      </tr>
-      <tr>
-        <th>Agent Share <a uib-tooltip="{{ vm.tooltips['agent_share'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(extra clients)</small></th>
-        <td></td>
         <td>3</td>
-        <td>15</td>
+        <td>50</td>
         <td>Unlimited</td>
       </tr>
       <tr>
-        <th><a href="#solution-unit-testing" du-smooth-scroll>Remote Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_remoteunittesting'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
-        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
-        <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
-        <td><i class="fa fa-check" aria-hidden="true"></i></td>
-        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <th>Shares <a uib-tooltip="{{ vm.tooltips['agent_share'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(per Remote Agent)</small></th>
+        <td></td>
+        <td>5</td>
+        <td>100</td>
+        <td>Unlimited</td>
       </tr>
       <tr>
         <th>RESTful and WebSockets API <a data-toggle="tooltip" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i></a></th>
@@ -454,13 +444,20 @@
 
   <table class="table table-hover">
     <thead>
-      <th>#5 Custom Services</th>
+      <th>#5 Custom Services and Products</th>
       <th>Community</th>
       <th>Basic</th>
       <th>Professional</th>
       <th>Enterprise</th>
     </thead>
     <tbody>
+      <tr>
+        <th>PIO Cloud Enterprise Server <a uib-tooltip="{{ vm.tooltips['pio_cloud_enterprise_server'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
       <tr>
         <th>Comprehensive Consulting <br /><small>(Advisory, Architecture)</small></th>
         <td></td>
@@ -587,7 +584,7 @@
     <div class="col-md-9">
       <h2>Cloud IDE. <span class="text-muted">Embedded development in a browser!</span></h2>
       <p class="lead">
-        When we talk about embedded development, we imagine complicated development environment with requirements for specific software and OS. Cloud IDE destroys these requirements and allows you to program more than 350+ embedded boards from your favorite browser. <br>
+        When we talk about embedded development, we imagine complicated development environment with requirements for specific software and OS. Cloud IDE destroys these requirements and allows you to program more than 400+ embedded boards from your favorite browser. <br>
         A <u>pairing programming in the cloud</u> lets you work together on the same project using shareable embedded devices provided by <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a>.
       </p>
       <p class="lead">

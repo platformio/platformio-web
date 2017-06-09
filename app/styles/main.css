@@ -342,6 +342,10 @@
   }
 }
 
+.platformio-ide-top .container .btn-lg {
+  min-width: 250px;
+}
+
 .platformio-ide-top .other-links {
   font-size: 13px;
 }

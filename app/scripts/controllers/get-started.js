@@ -38,7 +38,7 @@
     vm.ideDemoInterval = 5000;
     vm.slideHeight = ($window.innerHeight ? Math.ceil($window.innerHeight / 2) :
       240);
-    vm.showIDEInstallation = $location.search().hasOwnProperty('install');
+    vm.installIDE = $location.search().hasOwnProperty('install') ? $location.search().install : null;
   }
 
 })();

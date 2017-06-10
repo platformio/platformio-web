@@ -188,9 +188,9 @@
 
             <div ng-if="vm.gsType == 'ide'">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
                 <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
               </ul>
             </div>
@@ -229,7 +229,7 @@
             <ul class="fa-ul">
               <li><i class="fa-li fa fa-chevron-right"></i>Ask questions and get answers in our <a href="https://community.platformio.org">Community Forums</a></li>
               <li ng-if="vm.gsType != 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio" target="_blank">PlatformIO Issues</a></li>
-              <li ng-if="vm.gsType == 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio-{{ vm.installIDE }}-ide" target="_blank">PlaformIO IDE Issues</a></li>
+              <li ng-if="vm.gsType == 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio-{{ vm.installIDE || 'atom' }}-ide" target="_blank">PlaformIO IDE Issues</a></li>
               <li><i class="fa-li fa fa-chevron-right"></i><a href="/contact">Contact Us</a> and we will integrate your products to PlatformIO ecosystem</li>
             </ul>
           </div>

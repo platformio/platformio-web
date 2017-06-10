@@ -7,6 +7,9 @@
   'pioremote_devmanager': 'List wired and wireless devices accessible for PIO Remote Agent (should be launched on a remote machine). Detailed hardware and vendor information for serial devices',
   'pioremote_sermon': 'Receive and to send data between host machine and remote device that is accessible for PIO Remote Agent (should be launched on a remote machine). For example, you are at home, serial device is located at work, then you can connect to work device and monitor all data',
   'pioremote_concurgents': 'You can have the launched PIO Remote Agents at home and at work in the same time. It allows you to process tasks in consecutive or in parallel orders, such as: device list, device monitor, firmware uploading, unit testing. With Basic plan you can have started only the 2 agents in the same time.',
+  'pioremote_localunittesting': 'Run tests on a host machine or on the devices that are physically connected to it. It is useful to run native tests using Continuous Integration System.',
+  'pioremote_remoteunittesting': 'Run tests on a remote machine or remote devices that are accessible for PIO Remote Agent. For example, you have Board Farm (Boards Matrix) at work that is connected with PIO Remote Agent. Now, using host machine or Continuous Integration System you can run test on physical remote devices.',
+
   'pioremote_ssl': 'Establishing an encrypted link between a PlatformIO Cloud, a PIO Remote Agent and a PIO Remote Client',
   'depends_on_pioremote_fu': 'Depends on PIO Remote Firmware Updates',
   'depends_on_pioremote_fusm': 'Depends on PIO Remote Firmware Updates and Serial Port Monitor',
@@ -298,7 +301,7 @@
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
       <tr>
-        <th><a href="#solution-unit-testing" du-smooth-scroll>PIO Unit Testing</a></th>
+        <th><a href="#solution-unit-testing" du-smooth-scroll>Local Unit Testing</a> <a uib-tooltip="{{ vm.tooltips['pioremote_localunittesting'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
         <td>30-Days Free Trial <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -378,6 +381,13 @@
         <th>Serial Port Monitor <a uib-tooltip="{{ vm.tooltips['pioremote_sermon'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(sessions per month)</small></th>
         <td>10</td>
         <td>1,000</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+      </tr>
+      <tr>
+        <th>Remote Unit Testing <a uib-tooltip="{{ vm.tooltips['pioremote_remoteunittesting'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a><br> <small>(sessions per month)</small></th>
+        <td>5</td>
+        <td>500</td>
         <td>Unlimited</td>
         <td>Unlimited</td>
       </tr>

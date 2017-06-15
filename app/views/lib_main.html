@@ -52,7 +52,7 @@
       </p>
     </div>
     <div class="col col-md-4 keywords-stats">
-      <h3>Keywords</h3>
+      <h3>Tags</h3>
       <p ng-repeat="keyword in vm.stats.lastkeywords">
         <a ng-href="/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
       </p>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="page-header">
-    <h2>Popular Keywords</h2>
+    <h2>Popular Tags</h2>
   </div>
   <div class="keywords-stats-top">
     <a ng-repeat="keyword in vm.stats.topkeywords" ng-href="/lib/search?query=keyword%253A%2522{{ keyword }}%2522" ng-class="{'btn btn-primary': $index <= 15, 'btn btn-primary btn-sm': $index > 15 && $index < 30, 'btn btn-primary btn-xs': $index >= 30}"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>

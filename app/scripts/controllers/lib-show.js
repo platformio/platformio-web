@@ -24,7 +24,7 @@
     $window, $location, $routeParams, $analytics, dataService, libInfo) {
     var vm = this;
     var tabs = [
-      'examples', 'installation', 'headers', 'manifest', 'discussion'
+      'examples', 'installation', 'headers', 'manifest'
     ];
 
     vm.lib = libInfo;
@@ -37,15 +37,6 @@
     vm.downloadLib = downloadLib;
     vm.editLibraryConf = editLibraryConf;
     vm.changeTab = changeTab;
-
-    // redirect to discussion tab
-    if ($routeParams.activeTab !== 'discussion' &&
-      $location.hash().indexOf('comment-') === 0) {
-      $location.url(
-        '/lib/show/' + $routeParams.libId +
-        '/' + $routeParams.libName +
-        '/discussion#' + $location.hash());
-    }
 
     if (vm.examples.length) {
       vm.currentExample = vm.examples[0];

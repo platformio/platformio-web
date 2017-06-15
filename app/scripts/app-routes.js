@@ -33,10 +33,8 @@
     };
   }
 
-  function routeConfig($locationProvider, $routeProvider,
-    $disqusProvider, $httpProvider) {
+  function routeConfig($locationProvider, $routeProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
-    $disqusProvider.setShortname('platformio');
 
     $httpProvider.interceptors.push('httpErrorInterceptor');
     $httpProvider.defaults.cache = true;

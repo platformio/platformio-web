@@ -28,7 +28,6 @@
     'angulartics',
     'angulartics.google.analytics',
     'hljs',
-    'ngDisqus',
     'relativeDate',
     'ngTable',
     'ngclipboard',

@@ -5,18 +5,9 @@
 <div class="jumbotron">
   <div class="container">
     <h1>{{ vm.lib.name }} <small>by <span ng-repeat="author in vm.lib.authors">{{ author.name }}<span ng-if="!$last">,&nbsp;</span></span></small></h1>
-
     <p>
       {{ vm.lib.description }}
     </p>
-
-    <div addthis-lib class="addthis_toolbox addthis_default_style addthis_32x32_style" data-lib="vm.lib">
-      <a class="addthis_button_twitter"></a>
-      <a class="addthis_button_linkedin"></a>
-      <a class="addthis_button_facebook"></a>
-      <a class="addthis_button_google_plusone_share"></a>
-      <a class="addthis_button_compact"></a>
-    </div>
   </div>
 </div>
 

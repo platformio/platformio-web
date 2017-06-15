@@ -401,7 +401,7 @@
 }
 
 .keywords .btn {
-  margin: 0 3px 3px 0;
+  margin: 0 4px 4px 0;
 }
 
 .keywords-stats p {
@@ -412,16 +412,9 @@
   margin: 0 3px 3px 0;
 }
 
-.libinfo {
-  margin: 0;
-}
 
-.libinfo dd {
-  padding-bottom: 10px;
-}
-
-.libinfo .author-detail {
-  margin-top: 5px;
+.lib-author-detail {
+  margin-top: 10px;
 }
 
 .page-header.libs-stats, .page-header.libs-stats h2 {

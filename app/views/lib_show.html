@@ -8,10 +8,27 @@
     <p>
       {{ vm.lib.description }}
     </p>
+
+    <label class="control-label" for="installCmd">Installation</label>
+    <div class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">&gt;</span>
+          <input type="text" class="form-control" style="min-width: 300px; background-color: white;" id="installCmd" value="pio lib install {{ vm.lib.name }}" readonly>
+        </div>
+      </div>
+      <a class="btn btn-success" href="/platformio-ide" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Library"><i class="fa fa-download fa-lg"></i> &nbsp;Open in PlatformIO IDE</a>
+      &nbsp; | &nbsp; <a href="#" ng-click="vm.changeTab('installation')">More info</a>
+    </div>
   </div>
 </div>
 
 <div class="container">
+  <ol class="breadcrumb">
+    <li><i class="fa fa-home"></i> <a href="/">Home</a></li>
+    <li><a href="/lib">Libraries</a></li>
+    <li class="active">{{ vm.lib.name }}</li>
+  </ol>
 
   <article>
     <div class="row">
@@ -179,9 +196,9 @@
         <div ng-if="vm.lib.repository"><i class="fa fa-github"></i> <a href="{{ vm.lib.repository }}" target="_blank">Repository</a></div>
 
         <h3>Unique Downloads</h3>
-        {{ vm.lib.dlstats.day }} in the last day
-        <br>{{ vm.lib.dlstats.week }} in the last week
-        <br>{{ vm.lib.dlstats.month }} in the last month
+        <b>{{ vm.lib.dlstats.day }}</b> in the last day
+        <br><b>{{ vm.lib.dlstats.week }}</b> in the last week
+        <br><b>{{ vm.lib.dlstats.month }}</b> in the last month
 
         <h3>Versions</h3>
         <div ng-repeat="item in vm.lib.versions.slice().reverse()">

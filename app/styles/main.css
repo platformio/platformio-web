@@ -265,11 +265,6 @@
   font-size: 14px;
 }
 
-.get-started-ide-installation dd img {
-  box-shadow: 0 10px 40px #808080;
-  border-radius: 7px;
-}
-
 .terminal-window {
   max-width: 726px;
   border: 1px solid #ECECEC;
@@ -723,6 +718,11 @@
 .top-banner:visited {
   color: #fff;
   text-decoration: none;
+}
+
+img.img-shadow  {
+  box-shadow: 0 10px 40px #808080;
+  border-radius: 7px;
 }
 
 /* Override glyphicon with font-awesome */

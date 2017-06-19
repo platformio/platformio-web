@@ -14,7 +14,7 @@
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-addon">&gt;</span>
-          <input type="text" class="form-control" style="min-width: 300px; background-color: white;" id="installCmd" value="pio lib install {{ vm.lib.name }}" readonly>
+          <input type="text" class="form-control" style="min-width: 300px; background-color: white;" id="installCmd" value='pio lib install "{{ vm.lib.name }}"' onClick="this.setSelectionRange(0, this.value.length)" readonly>
         </div>
       </div>
       &nbsp; <a class="btn btn-success" href="/platformio-ide" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="Library"><i class="fa fa-download fa-lg"></i> &nbsp;Open in PlatformIO IDE</a>
@@ -58,6 +58,20 @@
               <h3><i class="fa fa-download"></i> Installation</h3>
             </uib-tab-heading>
             <br>
+
+            <h3>PlatformIO IDE Library Manager <small>for Atom</small></h3>
+            <a href="/get-started/ide?install=atom">PlatformIO IDE for Atom</a> has built-in Library Manager with a friendly GUI. It allows:
+            <ul>
+              <li>Search for new libraries in PlatformIO Registry</li>
+              <li>"1-click" library installation, per-project libraries, extra storages</li>
+              <li>List installed libraries in multiple storages</li>
+              <li>List built-in libraries (by frameworks)</li>
+              <li>Updates for installed libraries</li>
+              <li>Multiple examples, trending libraries, and more.</li>
+            </ul>
+            <a href="/get-started/ide?install=atom"><img src="images/platformio-ide-atom-home-lib.png" class="img-shadow" style="max-width: 100%" alt="PlatformIO IDE for Atom: Library Manager" /></a>
+
+            <h3>Project Dependencies <small>platformio.ini</small></h3>
             <p>
               <div class="alert alert-info" role="alert">
                 <ul class="fa-ul">
@@ -67,8 +81,6 @@
                 </ul>
               </div>
             </p>
-
-            <h3>Project Dependencies <small>platformio.ini</small></h3>
             <p><b>PlatformIO Library Manager</b> allows to specify dependencies for the
             specific project in <a href="http://docs.platformio.org/page/projectconf.html">Project Configuration File "platformio.ini"</a>
             using <code>lib_deps</code> option. PlatformIO will install dependent libraries automatically when processes (builds) a project.</p>

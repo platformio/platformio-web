@@ -72,7 +72,6 @@
       <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'individual'">INDIVIDUAL CUSTOMERS</label>
       <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'business'">BUSINESS &amp; ORGANIZATIONS</label>
       <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'students'">STUDENTS &amp; TEACHERS</label>
-      <a class="btn btn-default" href="/subscriptions">SCHOOLS &amp; UNIVERSITIES</a>
     </div>
     &nbsp; <a href="/subscriptions"><i class="fa fa-university" aria-hidden="true"></i> Subscription options</a>
   </div>
@@ -122,7 +121,7 @@
             <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.basic.url }}" role="button" target="_blank">Buy Basic</a></div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.basic.url }}" role="button" target="_blank">Get Basic</a></div>
         <div class="plan-includes">
           <h4>Basic includes</h4>
           <p>Everything in <b>Community</b>, and:</p>
@@ -154,7 +153,7 @@
             <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Buy Professional</a></div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Get Professional</a></div>
         <div class="plan-includes">
           <h4>Professional includes</h4>
           <p>Everything in <b>Basic</b>, and:</p>
@@ -257,12 +256,12 @@
         <td><a class="btn btn-primary" href="/get-started" role="button">Install</a></td>
         <td>
           <div class="pio-plan-basic">
-            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Buy Now</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Get Now</a></div>
           </div>
         </td>
         <td>
           <div class="pio-plan-professional">
-            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Buy Now</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Get Now</a></div>
           </div>
         </td>
         <td><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></td>

@@ -24,11 +24,11 @@
     var vm = this;
 
     vm.annualPlans = {
-      'personal': {
+      'individual': {
         'basic': 9.99,
         'professional': 99.99
       },
-      'commercial': {
+      'business': {
         'basic': 29.99,
         'professional': 299.99
       },
@@ -37,7 +37,7 @@
         'professional': 29.99
       }
     };
-    vm.currentSubscription = 'personal';
+    vm.currentSubscription = 'individual';
     vm.currentPeriod = 'Y';
     vm.plans = null;
     vm.togglePeriod = togglePeriod;

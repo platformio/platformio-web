@@ -20,41 +20,32 @@
   angular.module('siteApp')
     .controller('PricingController', PricingController);
 
-  function PricingController() {
+  function PricingController($scope) {
     var vm = this;
 
-    vm.baseRates = {
-      'M': {
-        'basic': {
-          'price': 12.99,
-          'whole': 12,
-          'cents': 99
-        },
-        'professional': {
-          'price': 124.99,
-          'whole': 124,
-          'cents': 99
-        }
+    vm.annualPlans = {
+      'personal': {
+        'basic': 9.99,
+        'professional': 99.99
       },
-      'Y': {
-        'basic': {
-          'price': 9.99,
-          'whole': 9,
-          'cents': 99
-        },
-        'professional': {
-          'price': 99.99,
-          'whole': 99,
-          'cents': 99
-        }
+      'commercial': {
+        'basic': 29.99,
+        'professional': 299.99
+      },
+      'students': {
+        'basic': 2.99,
+        'professional': 29.99
       }
     };
+    vm.currentSubscription = 'personal';
     vm.currentPeriod = 'Y';
-    vm.rates = null;
-    vm.changeRate = changeRate;
+    vm.plans = null;
+    vm.togglePeriod = togglePeriod;
 
     // show annual rates by default
-    changeRate('Y');
+    $scope.$watchGroup(['vm.currentSubscription', 'vm.currentPeriod'], function() {
+      updateRates();
+    });
 
     ////////////
 
@@ -74,41 +65,53 @@
       return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 
-    function changeRate(newPeriod) {
-      if (!newPeriod) {
-        vm.currentPeriod = vm.currentPeriod === 'Y' ? 'M' : 'Y';
-      } else {
-        vm.currentPeriod = newPeriod;
-      }
+    function togglePeriod() {
+      vm.currentPeriod = vm.currentPeriod === 'Y' ? 'M' : 'Y';
+    }
+
+    function updateRates() {
       var coupon = getParameterByName('coupon');
       var sale = 0;
       if (coupon && coupon.indexOf('OFF') !== -1) {
         sale = parseInt(coupon.substr(coupon.indexOf('OFF') + 3));
       }
-      vm.rates = vm.baseRates[vm.currentPeriod];
-      for (var key in vm.rates) {
-        if (!vm.rates.hasOwnProperty(key)) {
-          continue;
+      vm.plans = {};
+      angular.forEach(vm.annualPlans[vm.currentSubscription], function(annualPrice, plan) {
+        var planItem = {
+          'beforeSale': null,
+          'whole': 0,
+          'cents': 0,
+          'url': null
+        };
+
+        var price = annualPrice;
+        if (vm.currentPeriod !== 'Y') {
+          price =  Math.floor(annualPrice * 14 / 12) + 0.99;
         }
-        var price = vm.rates[key]['price'];
-        vm.rates[key]['beforeSale'] = null;
+
+        planItem['beforeSale'] = null;
         if (sale > 0 && sale <= 100) {
-          vm.rates[key]['beforeSale'] = price;
+          planItem['beforeSale'] = price;
           price -= price * sale / 100;
         }
-        vm.rates[key]['whole'] = Math.floor(price);
-        vm.rates[key]['cents'] = parseInt((price - Math.floor(price)) * 100);
-        vm.rates[key]['url'] = 'https://sites.fastspring.com/platformio/';
-        vm.rates[key]['url'] += 'instant/platformio-plus-' + key + '-';
+
+        planItem['whole'] = Math.floor(price);
+        planItem['cents'] = Math.round((price % 1) * 100);
+
+        // Billing URL
+        planItem['url'] = 'https://sites.fastspring.com/platformio/';
+        planItem['url'] += 'instant/platformio-plus-';
+        planItem['url'] += plan + '-' + vm.currentSubscription + '-';
         if (vm.currentPeriod === 'Y') {
-          vm.rates[key]['url'] += 'annually';
+          planItem['url'] += 'yearly';
         } else {
-          vm.rates[key]['url'] += 'monthly';
+          planItem['url'] += 'monthly';
         }
         if (coupon) {
-          vm.rates[key]['url'] += '?coupon=' + coupon;
+          planItem['url'] += '?coupon=' + coupon;
         }
-      }
+        vm.plans[plan] = planItem;
+      });
     }
   }
 

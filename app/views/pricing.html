@@ -16,7 +16,8 @@
   'free_trial': 'Free 30-Days Trial, no credit card required. Automatically activates when you create PlatformIO Account.',
   'agent_share': 'Allows to share PIO Remote Agent and hardware (boards) with colleagues across your organization or friends',
   'pioremote_custom_integration': 'Own branded IDE, adding for new embedded boards or creating development platform',
-  'pio_cloud_enterprise_server': 'Install PIO Cloud Enterprise Server in own infrastructure and receive unlimited access to all PIO Plus features: PIO Remote, PIO Unified Debugger, PIO Unit Testing, etc.'
+  'pio_cloud_enterprise_server': 'Install PIO Cloud Enterprise Server in own infrastructure and receive unlimited access to all PIO Plus features: PIO Remote, PIO Unified Debugger, PIO Unit Testing, etc.',
+  'platformio_club': 'Communicate directly with PlatformIO Team and receive an instant professional support'
 }"></span>
 
 <div class="jumbotron">
@@ -66,6 +67,20 @@
 
 <div class="container">
 
+  <div class="text-center">
+    <div class="btn-group">
+      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'personal'">INDIVIDUAL CUSTOMERS</label>
+      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'commercial'">BUSINESS &amp; ORGANIZATIONS</label>
+      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'students'">STUDENTS &amp; TEACHERS</label>
+      <a class="btn btn-default" href="/subscriptions">SCHOOLS &amp; UNIVERSITIES</a>
+    </div>
+    &nbsp; <a href="/subscriptions"><i class="fa fa-university" aria-hidden="true"></i> Subscription options</a>
+  </div>
+
+  <p class="text-center text-success" style="margin: 15px 0;">
+    <b><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Pay Yearly and Get 2 Months FREE</b>
+  </p>
+
   <div class="row">
     <div class="col-sm-3">
       <div class="pio-plan">
@@ -98,16 +113,16 @@
       <div class="pio-plan pio-plan-basic">
         <div class="plan-info">
           <h2>Basic</h2>
-          <div class="sale" ng-if="vm.rates.basic.beforeSale">${{ vm.rates.basic.beforeSale }}</div>
+          <div class="sale" ng-if="vm.plans.basic.beforeSale">${{ vm.plans.basic.beforeSale }}</div>
           <div class="plan-price">
-            <span class="currency">$</span><span class="whole">{{ vm.rates.basic.whole }}</span><span class="cents">{{ vm.rates.basic.cents }}</span>
+            <span class="currency">$</span><span class="whole">{{ vm.plans.basic.whole }}</span><span class="cents">{{ vm.plans.basic.cents }}</span>
           </div>
           <p>
-            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
-            <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
+            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
+            <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.rates.basic.url }}" role="button" target="_blank">Buy Basic</a></div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.basic.url }}" role="button" target="_blank">Buy Basic</a></div>
         <div class="plan-includes">
           <h4>Basic includes</h4>
           <p>Everything in <b>Community</b>, and:</p>
@@ -130,16 +145,16 @@
       <div class="pio-plan pio-plan-professional">
         <div class="plan-info">
           <h2>Professional</h2>
-          <div class="sale" ng-if="vm.rates.professional.beforeSale">${{ vm.rates.professional.beforeSale }}</div>
+          <div class="sale" ng-if="vm.plans.professional.beforeSale">${{ vm.plans.professional.beforeSale }}</div>
           <div class="plan-price">
-            <span class="currency">$</span><span class="whole">{{ vm.rates.professional.whole }}</span><span class="cents">{{ vm.rates.professional.cents }}</span>
+            <span class="currency">$</span><span class="whole">{{ vm.plans.professional.whole }}</span><span class="cents">{{ vm.plans.professional.cents }}</span>
           </div>
           <p>
-            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'annually' : 'monthly' }}</span> <br>
-            <small>(<a href="" ng-click="vm.changeRate()" class="change-billed-term">see {{ vm.currentPeriod === 'Y' ? 'annual' : 'monthly' }} rate</a>)</small>
+            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
+            <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.rates.professional.url }}" role="button" target="_blank">Buy Professional</a></div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Buy Professional</a></div>
         <div class="plan-includes">
           <h4>Professional includes</h4>
           <p>Everything in <b>Basic</b>, and:</p>
@@ -148,8 +163,8 @@
         <div class="plan-features">
           <ul>
             <li>Unlimited <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
+            <li><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a> <a uib-tooltip="{{ vm.tooltips['platformio_club'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
             <li>Premium support with 8 hours response time</li>
-            <li><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a></li>
             <li>Hot bug fixes</li>
             <li data-toggle="tooltip" data-placement="left" title="Coming soon"><i class="fa fa-clock-o" aria-hidden="true"></i> <a href="#solution-pio-delivery" du-smooth-scroll>PIO Delivery&trade;</a></li>
           </ul>
@@ -190,7 +205,6 @@
 
   <div class="alert alert-info" role="alert">
     <p><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> The features which have not been released yet! Please <a href="mailto:contact@pioplus.com" class="alert-link">contact us</a> for details and terms.</p>
-    <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> PlaformIO Plus Basic is <b>FREE</b> for <b>Academics</b> and <b>Students</b>. Please <a href="mailto:contact@pioplus.com" class="alert-link">contact us</a> for license details.</p>
     <p><i class="fa fa-balance-scale" aria-hidden="true"></i> By subscribing to any plans, you accept with <a href="/license" class="alert-link">License and Subscription Agreement</a>.</p>
   </div>
 
@@ -205,7 +219,7 @@
 <div class="container piocomparison">
 
 
-  <table class="table table-pricig">
+  <table class="table">
     <thead>
       <th><h3>Plans and Features</h3></th>
       <th>
@@ -243,12 +257,12 @@
         <td><a class="btn btn-primary" href="/get-started" role="button">Install</a></td>
         <td>
           <div class="pio-plan-basic">
-            <div class="plan-button"><a class="btn btn-success" href="https://sites.fastspring.com/platformio/instant/platformio-plus-basic-annually" role="button" target="_blank">Buy Basic</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Buy Now</a></div>
           </div>
         </td>
         <td>
           <div class="pio-plan-professional">
-            <div class="plan-button"><a class="btn btn-success" href="https://sites.fastspring.com/platformio/instant/platformio-plus-professional-annually" role="button" target="_blank">Buy Professional</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Buy Now</a></div>
           </div>
         </td>
         <td><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></td>
@@ -511,7 +525,7 @@
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
       <tr>
-        <th><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a></th>
+        <th><a href="https://platformio-club.slack.com" target="_blank">Access to PlatformIO Club</a> <a uib-tooltip="{{ vm.tooltips['platformio_club'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
         <td></td>
         <td></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>

@@ -86,7 +86,7 @@
 
         var price = annualPrice;
         if (vm.currentPeriod !== 'Y') {
-          price =  Math.floor(annualPrice * 14 / 12) + 0.99;
+          price = Math.floor(annualPrice * 14 / 12) + 0.99;
         }
 
         planItem['beforeSale'] = null;

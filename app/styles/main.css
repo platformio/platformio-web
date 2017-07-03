@@ -732,6 +732,7 @@ img.img-shadow  {
     width: 100%;
     margin-top: 0;
     padding: 10px 20px;
+    display: block;
     position: relative;
 
     background-image: -owg-linear-gradient(0deg, #1991EB 2%, #2DA1F8 98%);

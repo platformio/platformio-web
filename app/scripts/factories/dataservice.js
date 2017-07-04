@@ -136,7 +136,7 @@
         'title': 'NetBeans',
         'url': 'http://docs.platformio.org/page/ide/netbeans.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-qtcreator-7.png',
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-qtcreator-7.png',
         'title': 'Qt Creator',
         'url': 'http://docs.platformio.org/page/ide/qtcreator.html'
       }, {
@@ -148,7 +148,7 @@
         'title': 'Vim',
         'url': 'http://docs.platformio.org/page/ide/vim.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-vs-platformio-newproject-8.png',
+        'image': 'http://docs.platformio.org/en/latest/_images/ide-visualstudio-newproject-8.png',
         'title': 'Visual Studio',
         'url': 'http://docs.platformio.org/page/ide/visualstudio.html'
       }];

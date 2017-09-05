@@ -27,7 +27,7 @@
   <ol class="breadcrumb">
     <li><i class="fa fa-home"></i> <a href="/">Home</a></li>
     <li><a href="/lib">Libraries</a></li>
-    <li class="active">{{ vm.lib.name }}</li>
+    <li class="active"><kbd uib-tooltip="Library ID">#{{ vm.lib.id }}</kbd> <span uib-tooltip="Library Name">{{ vm.lib.name }}</span></li>
   </ol>
 
   <article>
@@ -59,8 +59,8 @@
             </uib-tab-heading>
             <br>
 
-            <h3>PlatformIO IDE Library Manager <small>for Atom</small></h3>
-            <a href="/get-started/ide?install=atom">PlatformIO IDE for Atom</a> has built-in Library Manager with a friendly GUI. It allows:
+            <h3>PlatformIO IDE</h3>
+            <a href="/platformio-ide">PlatformIO IDE</a> has built-in <b>PIO Home: Library Manager</b> with a friendly GUI. It allows:
             <ul>
               <li>Search for new libraries in PlatformIO Registry</li>
               <li>"1-click" library installation, per-project libraries, extra storages</li>
@@ -69,7 +69,7 @@
               <li>Updates for installed libraries</li>
               <li>Multiple examples, trending libraries, and more.</li>
             </ul>
-            <a href="/get-started/ide?install=atom"><img src="images/platformio-ide-atom-home-lib.png" class="img-shadow" style="max-width: 100%" alt="PlatformIO IDE for Atom: Library Manager" /></a>
+            <a href="/platformio-ide"><img src="images/pio-home-library-search.png" class="img-shadow" style="max-width: 100%" alt="PlatformIO IDE: Library Manager" /></a>
 
             <h3>Project Dependencies <small>platformio.ini</small></h3>
             <p>

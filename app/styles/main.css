@@ -522,6 +522,28 @@
   vertical-align: middle;
 }
 
+/* IDE */
+
+
+.idecomparison table thead th {
+  width: 30%;
+  text-align: center;
+}
+
+.idecomparison table thead th:first-child {
+  width: 40%;
+  text-align: left;
+}
+
+.idecomparison table tr td {
+  text-align: center;
+}
+
+.idecomparison .table td {
+  vertical-align: middle;
+}
+
+
 /* Footer */
 
 .footer {

@@ -207,10 +207,10 @@
         <div ng-if="vm.lib.homepage"><i class="fa fa-home"></i> <a href="{{ vm.lib.homepage }}" target="_blank">Homepage</a></div>
         <div ng-if="vm.lib.repository"><i class="fa fa-github"></i> <a href="{{ vm.lib.repository }}" target="_blank">Repository</a></div>
 
-        <h3>Unique Downloads</h3>
-        <b>{{ vm.lib.dlstats.day }}</b> in the last day
-        <br><b>{{ vm.lib.dlstats.week }}</b> in the last week
-        <br><b>{{ vm.lib.dlstats.month }}</b> in the last month
+        <h3>Downloads</h3>
+        <b>{{ vm.lib.dlstats.day | number }}</b> in the last day
+        <br><b>{{ vm.lib.dlstats.week | number }}</b> in the last week
+        <br><b>{{ vm.lib.dlstats.month | number }}</b> in the last month
 
         <h3>Versions</h3>
         <div ng-repeat="item in vm.lib.versions.slice().reverse()">

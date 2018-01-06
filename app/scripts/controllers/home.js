@@ -22,11 +22,7 @@
 
   function HomeController(pioStats) {
     var vm = this;
-
-    vm.stats = {};
-    angular.forEach(pioStats, function(nums, key) {
-      vm.stats[key] = nums.toLocaleString();
-    });
+    vm.stats = pioStats;
   }
 
 })();

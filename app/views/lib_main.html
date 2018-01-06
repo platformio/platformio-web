@@ -78,17 +78,17 @@
     <div class="col col-md-4">
       <h3>Today</h3>
       <p ng-repeat="item in vm.stats.dlday">
-        <i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+        <i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total | number }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
       <h3>Week</h3>
-      <p ng-repeat="item in vm.stats.dlweek"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      <p ng-repeat="item in vm.stats.dlweek"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total | number }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
     <div class="col col-md-4">
       <h3>Month</h3>
-      <p ng-repeat="item in vm.stats.dlmonth"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
+      <p ng-repeat="item in vm.stats.dlmonth"><i class="fa fa-caret-up" uib-tooltip="+{{ item.diff }}, total: {{ item.total | number }}"></i> <a ng-href="/lib/show/{{ item.id }}/{{ item.name }}">{{ item.name }}</a>
       </p>
     </div>
   </div>

@@ -614,7 +614,7 @@
 }
 
 .brands {
-  background: url("../images/brands-tpl.jpg") no-repeat;
+  background: url("../images/brands-tpl.png") no-repeat;
   height: 40px;
   margin: 10px;
 }
@@ -697,6 +697,22 @@
   background-position: 0 -600px;
   width: 62px;
 }
+
+.brand-samsung-artik {
+  background-position: 0 -640px;
+  width: 113px;
+}
+
+.brand-wiznet {
+  background-position: 0 -680px;
+  width: 121px;
+}
+
+.brand-maxim {
+  background-position: 0 -720px;
+  width: 142px;
+}
+
 
 /* Miscellaneous */
 

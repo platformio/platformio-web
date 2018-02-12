@@ -92,46 +92,46 @@ def main():
     with SiteMapBuilder(SITEMAPXML_PATH) as b:
         # main
         b.add_url(
-            loc="http://platformio.org",
+            loc="https://platformio.org",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/get-started",
+            loc="https://platformio.org/get-started",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/platformio-ide",
+            loc="https://platformio.org/platformio-ide",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/contact",
+            loc="https://platformio.org/contact",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/platforms",
+            loc="https://platformio.org/platforms",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/frameworks",
+            loc="https://platformio.org/frameworks",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/boards",
+            loc="https://platformio.org/boards",
             changefreq="weekly"
         )
         b.add_url(
-            loc="http://platformio.org/lib",
+            loc="https://platformio.org/lib",
             changefreq="daily"
         )
         b.add_url(
-            loc="http://platformio.org/lib/examples",
+            loc="https://platformio.org/lib/examples",
             changefreq="daily"
         )
 
         # libs
         for item in PIOLibsGenerator():
             b.add_url(
-                loc=("http://platformio.org/lib/show/%d/%s" %
+                loc=("https://platformio.org/lib/show/%d/%s" %
                      (item['id'], urllib.quote(item['name']))),
                 lastmod=item['updated'],
                 changefreq="weekly")

@@ -21,7 +21,7 @@
     .controller('LibShowController', LibShowController);
 
   function LibShowController(
-    $window, $location, $routeParams, $analytics, dataService, libInfo) {
+    $window, $location, $routeParams, $analytics, dataService, siteUtils, libInfo) {
     var vm = this;
     var tabs = [
       'examples', 'installation', 'headers', 'manifest'
@@ -91,7 +91,7 @@
       angular.forEach(vm.lib.examples, function(url) {
         var urlParts = url.split('/');
         items.push({
-          url: url,
+          url: siteUtils.maybeHTTPS(url),
           name: urlParts[urlParts.length - 1]
         });
       });

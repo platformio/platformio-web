@@ -20,8 +20,8 @@
   <meta property="og:url" content="http://platformio.org" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.1.0/bundles/ng-table.min.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -30,6 +30,8 @@
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/third-party/ng-table.min.css">
+
   <!-- endbuild -->
   <script>
     (function (url){
@@ -244,7 +246,7 @@
   </script>
 
   <!--[if lt IE 9]>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <![endif]-->
 
   <!-- build:js(.) scripts/oldieshim.js -->
@@ -301,13 +303,13 @@
   <script src="scripts/controllers/lib-show.js"></script>
   <script src="scripts/controllers/lib-examples.js"></script>
   <script src="scripts/controllers/pricing.js"></script>
+  <script src="scripts/third-party/abplus.min.js"></script>
+  <script src="scripts/third-party/ng-table.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/templates.js -->
   <script src="scripts/templates.js"></script>
   <!-- endbuild -->
 
-  <script src="https://unpkg.com/ng-table@2.1.0/bundles/ng-table.min.js"></script>
-  <script src="http://dl.platformio.org/misc/abplus.js"></script>
 </body>
 </html>

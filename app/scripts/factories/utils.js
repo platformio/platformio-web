@@ -24,7 +24,8 @@
   function siteUtils($uibModal) {
     return {
       showSearchExamples: showSearchExamples,
-      osType: getOSType()
+      osType: getOSType(),
+      maybeHTTPS: maybeHTTPS
     };
 
     function showSearchExamples(searchPath) {
@@ -50,6 +51,15 @@
         return 'Linux';
       }
       return '';
+    }
+
+    function maybeHTTPS(url) {
+      var oldUrl = 'http://dl.platformio.org';
+      var newUrl = 'https://dl.platformio.org';
+      if (url.indexOf(oldUrl) !== 0) {
+        return url;
+      }
+      return url.replace(oldUrl, newUrl);
     }
   }
 

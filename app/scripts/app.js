@@ -36,7 +36,7 @@
 
   .constant('siteConfig', {
     apiURL: (parseInt(location.port) === 9013 ? 'http://localhost:8080' :
-      'http://api.platformio.org')
+      'https://api.platformio.org')
   });
 
 })();

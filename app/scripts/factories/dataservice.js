@@ -80,15 +80,15 @@
 
     function getCLIDemos() {
       return [{
-        'image': 'http://docs.platformio.org/en/stable/_images/platformio-demo-wiring.gif',
+        'image': '/images/demo/platformio-demo-wiring.gif',
         'title': 'Blink Project',
         'icon': 'lightbulb-o'
       }, {
-        'image': 'http://docs.platformio.org/en/stable/_images/platformio-demo-platforms.gif',
+        'image': '/images/demo/platformio-demo-platforms.gif',
         'title': 'Platform Manager',
         'icon': 'laptop'
       }, {
-        'image': 'http://docs.platformio.org/en/stable/_images/platformio-demo-lib.gif',
+        'image': '/images/demo/platformio-demo-lib.gif',
         'title': 'Library Manager',
         'icon': 'code'
       }];
@@ -96,59 +96,59 @@
 
     function getIDEDemos() {
       return [{
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-atom-platformio.png',
+        'image': '/images/demo/ide/ide-atom-platformio.png',
         'title': 'Atom',
         'url': 'http://docs.platformio.org/page/ide/atom.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/platformio-ide-vscode.png',
+        'image': '/images/demo/ide/platformio-ide-vscode.png',
         'title': 'VScode',
         'url': 'http://docs.platformio.org/page/ide/vscode.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-cloud9-init-project.png',
+        'image': '/images/demo/ide/ide-cloud9-init-project.png',
         'title': 'Cloud9',
         'url': 'http://docs.platformio.org/page/ide/cloud9.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-codeanywhere-init-project.png',
+        'image': '/images/demo/ide/ide-codeanywhere-init-project.png',
         'title': 'Codeanywhere (Cloud)',
         'url': 'http://docs.platformio.org/page/ide/codeanywhere.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-eclipseche-demo.png',
+        'image': '/images/demo/ide/ide-eclipseche-demo.png',
         'title': 'Eclipse Che (Cloud)',
         'url': 'http://docs.platformio.org/page/ide/eclipseche.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-clion.png',
+        'image': '/images/demo/ide/ide-platformio-clion.png',
         'title': 'CLion',
         'url': 'http://docs.platformio.org/page/ide/clion.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-codeblocks.png',
+        'image': '/images/demo/ide/ide-platformio-codeblocks.png',
         'title': 'CodeBlocks',
         'url': 'http://docs.platformio.org/page/ide/codeblocks.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-eclipse.png',
+        'image': '/images/demo/ide/ide-platformio-eclipse.png',
         'title': 'Eclipse',
         'url': 'http://docs.platformio.org/page/ide/eclipse.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-emacs.png',
+        'image': '/images/demo/ide/ide-platformio-emacs.png',
         'title': 'Emacs',
         'url': 'http://docs.platformio.org/page/ide/emacs.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-netbeans.png',
+        'image': '/images/demo/ide/ide-platformio-netbeans.png',
         'title': 'NetBeans',
         'url': 'http://docs.platformio.org/page/ide/netbeans.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-qtcreator-7.png',
+        'image': '/images/demo/ide/ide-qtcreator-7.png',
         'title': 'Qt Creator',
         'url': 'http://docs.platformio.org/page/ide/qtcreator.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-sublime-text-deviot.gif',
+        'image': '/images/demo/ide/ide-sublime-text-deviot.gif',
         'title': 'Sublime Text',
         'url': 'http://docs.platformio.org/page/ide/sublimetext.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-platformio-vim.png',
+        'image': '/images/demo/ide/ide-platformio-vim.png',
         'title': 'Vim',
         'url': 'http://docs.platformio.org/page/ide/vim.html'
       }, {
-        'image': 'http://docs.platformio.org/en/latest/_images/ide-visualstudio-newproject-8.png',
+        'image': '/images/demo/ide/ide-visualstudio-newproject-8.png',
         'title': 'Visual Studio',
         'url': 'http://docs.platformio.org/page/ide/visualstudio.html'
       }];

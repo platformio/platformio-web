@@ -61,20 +61,17 @@
           </div>
           <div class="pull-right">
             <span uib-tooltip="Examples"><i class="fa fa-graduation-cap"></i> {{ item.examplenums }}</span> &nbsp; <span uib-tooltip="Downloads"><i class="fa fa-download"></i> {{ item.dllifetime | number }} &nbsp;</span>
-            <span ng-if="item.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="item in item.frameworks"><a href="/lib/search?query=framework%253A%2522{{ item.name }}%2522">{{ item.title }}</a><span ng-if="!$last">,&nbsp;</span></span> &nbsp;</span>
+            <span ng-if="item.frameworks.length" uib-tooltip="Compatible Frameworks"><i class="fa fa-cogs"></i>&nbsp;<span ng-repeat="item in item.frameworks"><a href="/lib/search?query=framework%253A%2522{{ item.name }}%2522">{{ item.title }}</a><span ng-if="!$last">{{ ', ' }}</span></span></span>
           </div>
         </div>
 
         <p>{{ item.description }}</p>
 
-        <div class="clearfix">
-          <div class="pull-left keywords">
-            <a ng-href="/lib/search?query=keyword%253A%2522{{ keyword }}%2522" class="btn btn-primary btn-xs" ng-repeat="keyword in item.keywords"><i class="fa fa-tag fa-lg"></i> {{ keyword }}</span></a>
-          </div>
-
-          <div class="pull-right keywords" uib-tooltip="Compatible platforms">
-            <a ng-href="/lib/search?query=platform%253A%2522{{ item.name }}%2522" class="btn btn-default btn-xs" ng-repeat="item in item.platforms"><i class="fa fa-laptop"></i> {{ item.title }}</span></a>
-          </div>
+        <p>
+          <i class="fa fa-tag"></i>&nbsp;<span ng-repeat="keyword in item.keywords"><a href="/lib/search?query=keyword%253A%2522{{ keyword }}%2522">{{ keyword }}</a><span ng-if="!$last">{{ ', ' }}</span></span>
+        </p>
+        <div uib-tooltip="Compatible platforms" ng-if="item.platforms.length">
+          <i class="fa fa-laptop"></i>&nbsp;<span ng-repeat="item in item.platforms"><a href="/lib/search?query=platform%253A%2522{{ item.name }}%2522">{{ item.title }}</a><span ng-if="!$last">{{ ', ' }}</span></span>
         </div>
 
       </div>

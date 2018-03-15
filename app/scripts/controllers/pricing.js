@@ -32,7 +32,7 @@
         'basic': 29.99,
         'professional': 299.99
       },
-      'students': {
+      'non-commercial': {
         'basic': 2.99,
         'professional': 29.99
       }

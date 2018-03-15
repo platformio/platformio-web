@@ -97,6 +97,9 @@
 
         planItem['whole'] = Math.floor(price);
         planItem['cents'] = Math.round((price % 1) * 100);
+        if (planItem['cents'] === 100) {
+          planItem['cents'] = 99;
+        }
 
         // Billing URL
         planItem['url'] = 'https://sites.fastspring.com/platformio/';

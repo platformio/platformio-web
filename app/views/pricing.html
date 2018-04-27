@@ -117,7 +117,7 @@
             <span class="currency">$</span><span class="whole">{{ vm.plans.basic.whole }}</span><span class="cents">{{ vm.plans.basic.cents }}</span>
           </div>
           <p>
-            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
+            /<b>{{ vm.currentSubscription === 'business' ? 'seat' : 'user' }}</b> a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
             <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>
@@ -149,7 +149,7 @@
             <span class="currency">$</span><span class="whole">{{ vm.plans.professional.whole }}</span><span class="cents">{{ vm.plans.professional.cents }}</span>
           </div>
           <p>
-            /user a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
+            /<b>{{ vm.currentSubscription === 'business' ? 'seat' : 'user' }}</b> a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
             <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
           </p>
         </div>

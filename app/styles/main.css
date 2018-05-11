@@ -170,6 +170,10 @@
   margin: 80px 0;
 }
 
+.home-divider-small {
+  margin: 30px 0;
+}
+
 .home .main-featurette h2 {
   font-size: 40px;
 }
@@ -600,16 +604,17 @@
   text-align: left;
 }
 
-.footer .brands-contaier {
+.brands-contaier {
   background-color: #fff;
+  text-align: center;
 }
 
-.footer .brands-contaier h2 {
+.brands-contaier h2 {
   color: #222;
 }
 
-.footer .brands:hover,
-.footer .brands:focus {
+.brands:hover,
+.brands:focus {
   text-decoration: none;
 }
 
@@ -711,6 +716,16 @@
 .brand-maxim {
   background-position: 0 -720px;
   width: 142px;
+}
+
+.brand-riscv {
+  background-position: 0 -760px;
+  width: 242px;
+}
+
+.brand-sifive {
+  background-position: 0 -800px;
+  width: 122px;
 }
 
 

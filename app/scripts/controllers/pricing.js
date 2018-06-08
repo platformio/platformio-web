@@ -25,16 +25,13 @@
 
     vm.annualPlans = {
       'individual': {
-        'basic': 9.99,
-        'professional': 99.99
+        'professional': 9.99
       },
       'business': {
-        'basic': 29.99,
-        'professional': 299.99
+        'professional': 29.99
       },
       'non-commercial': {
-        'basic': 2.99,
-        'professional': 29.99
+        'professional': 2.99
       }
     };
     vm.currentSubscription = 'individual';

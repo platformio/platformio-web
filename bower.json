@@ -15,7 +15,7 @@
     "angular-bootstrap": "~2.5.0",
     "components-font-awesome": "~4.7.0",
     "angularjs-viewhead": "~0.0.1",
-    "angulartics": "~1.5.0",
+    "angulartics": "~1.6.0",
     "angulartics-google-analytics": "~0.4.0",
     "highlightjs": "~9",
     "angular-highlightjs": "~0.7.0",

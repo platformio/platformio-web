@@ -89,6 +89,14 @@
   padding-right: 10px;
 }
 
+.nav .dropdown-toggle .caret {
+  margin-left: 4px;
+}
+
+.nav .dropdown-menu li .fa {
+  margin-right: 5px;
+}
+
 .jumbotron h1 {
   margin-bottom: 30px;
 }

@@ -88,19 +88,8 @@
                 <li role="menuitem"><a href="http://docs.platformio.org/page/projectconf/advanced_scripting.html"><i class="fa fa-wrench"></i>Advanced Scripting API</a></li>
               </ul>
             </li>
-            <li ng-class="{active: vm.isRouteActive('/(lib|platforms|frameworks|boards)')}" class="dropdown" uib-dropdown>
-              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-code fa-lg"></i>Registry<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="menuitem"><a href="/lib"><i class="fa fa-code"></i>Libraries</a></li>
-                <li role="separator" class="divider"></li>
-                <li role="menuitem"><a href="/platforms"><i class="fa fa-laptop"></i>Platforms</a></li>
-                <li role="menuitem"><a href="/frameworks"><i class="fa fa-cog"></i>Frameworks</a></li>
-                <li role="menuitem"><a href="/boards"><i class="fa fa-microchip"></i>Boards</a></li>
-              </ul>
-            </li>
             <li class="dropdown" uib-dropdown>
-              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-cube fa-lg"></i>Plus<span class="caret"></span>
+              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-cube fa-lg"></i>PIO Plus<span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li role="menuitem"><a href="http://docs.platformio.org/page/plus/pio-remote.html"><i class="fa fa-globe"></i>PIO Remote&trade;</a></li>
@@ -113,6 +102,17 @@
                 <li role="menuitem"><a href="/contact#about-us"><i class="fa fa-briefcase"></i>Integration Services</a></li>
                 <li role="separator" class="divider"></li>
                 <li role="menuitem"><a href="/pricing#enterprise-features"><i class="fa fa-certificate"></i>Certification Program</a></li>
+              </ul>
+            </li>
+            <li ng-class="{active: vm.isRouteActive('/(lib|platforms|frameworks|boards)')}" class="dropdown" uib-dropdown>
+              <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-code fa-lg"></i>Registry<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a href="/lib"><i class="fa fa-code"></i>Libraries</a></li>
+                <li role="separator" class="divider"></li>
+                <li role="menuitem"><a href="/platforms"><i class="fa fa-laptop"></i>Platforms</a></li>
+                <li role="menuitem"><a href="/frameworks"><i class="fa fa-cog"></i>Frameworks</a></li>
+                <li role="menuitem"><a href="/boards"><i class="fa fa-microchip"></i>Boards</a></li>
               </ul>
             </li>
           </ul>

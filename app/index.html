@@ -99,7 +99,7 @@
                 <li role="menuitem"><a href="/pricing#solution-cloud-ide"><i class="fa fa-cloud"></i>Cloud IDEs Integration</a></li>
                 <li role="separator" class="divider"></li>
                 <li role="menuitem"><a href="/pricing#solution-white-labeling"><i class="fa fa-cube"></i>"White Label" IDE</a></li>
-                <li role="menuitem"><a href="/contact#about-us"><i class="fa fa-briefcase"></i>Integration Services</a></li>
+                <li role="menuitem"><a href="/pricing#enterprise-features"><i class="fa fa-briefcase"></i>Integration Services</a></li>
                 <li role="separator" class="divider"></li>
                 <li role="menuitem"><a href="/pricing#enterprise-features"><i class="fa fa-certificate"></i>Certification Program</a></li>
               </ul>
@@ -120,8 +120,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li ng-class="{active: vm.isRouteActive('/pricing')}"><a href="/pricing"><i class="fa fa-shopping-cart fa-lg"></i>Pricing</a></li>
             <li><a href="http://docs.platformio.org"><i class="fa fa-book fa-lg"></i>Docs</a></li>
-            <li><a href="http://community.platformio.org"><i class="fa fa-comments-o fa-lg"></i>Community</a></li>
-            <li ng-class="{active: vm.isRouteActive('/contact')}"><a href="/contact"><i class="fa fa-envelope fa-lg"></i>Contact</a></li>
+            <li ng-class="{active: vm.isRouteActive('/support')}"><a href="/support"><i class="fa fa-question-circle fa-lg"></i>Support</a></li>
           </ul>
         </div>
       </div>
@@ -162,9 +161,8 @@
         <div class="col-md-3">
           <h3>Support</h3>
           <ul>
-            <li><a href="/contact">Premium Support</a></li>
-            <li><a href="http://community.platformio.org">Ask Community</a></li>
-            <li><a href="https://github.com/platformio/platformio/issues" target="_blank">Report a Bug</a></li>
+            <li><a href="/support">Premium Support</a></li>
+            <li><a href="https://community.platformio.org">Ask Community</a></li>
             <li><a href="http://docs.platformio.org/page/userguide/index.html">User Guide</a></li>
             <li><a href="http://docs.platformio.org/page/faq.html">FAQs</a></li>
             <li><a href="http://docs.platformio.org/">Documentation</a></li>
@@ -275,12 +273,20 @@
   <script src="scripts/controllers/lib-show.js"></script>
   <script src="scripts/controllers/lib-examples.js"></script>
   <script src="scripts/controllers/pricing.js"></script>
+  <script src="scripts/controllers/support.js"></script>
   <script src="scripts/third-party/ng-table.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/templates.js -->
   <script src="scripts/templates.js"></script>
   <!-- endbuild -->
+
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({
+      vendor: 29548
+    });
+  </script>
 
 </body>
 </html>

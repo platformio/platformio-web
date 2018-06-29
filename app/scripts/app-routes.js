@@ -209,6 +209,11 @@
       .when('/contact', {
         templateUrl: 'views/contact.html'
       })
+      .when('/support', {
+        templateUrl: 'views/support.html',
+        controller: 'SupportController',
+        controllerAs: 'vm'
+      })
       .when('/who-uses', {
         templateUrl: 'views/who_uses.html'
       })

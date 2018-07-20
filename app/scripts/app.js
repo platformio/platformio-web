@@ -18,25 +18,26 @@
   'use strict';
 
   angular.module('siteApp', [
-    'ngAnimate',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.bootstrap',
-    'viewhead',
-    'angulartics',
-    'angulartics.google.analytics',
-    'hljs',
-    'relativeDate',
-    'ngTable',
-    'ngclipboard',
-    'duScroll'
-  ])
+      'ngAnimate',
+      'ngResource',
+      'ngRoute',
+      'ngSanitize',
+      'ngTouch',
+      'ui.bootstrap',
+      'viewhead',
+      'angulartics',
+      'angulartics.google.analytics',
+      'hljs',
+      'relativeDate',
+      'ngTable',
+      'ngclipboard',
+      'duScroll'
 
-  .constant('siteConfig', {
-    apiURL: (parseInt(location.port) === 9013 ? 'http://localhost:8080' :
-      'https://api.platformio.org')
-  });
+    ])
+
+    .constant('siteConfig', {
+      apiURL: (parseInt(location.port) === 9013 ? 'http://localhost:8080' :
+        'https://api.platformio.org')
+    });
 
 })();

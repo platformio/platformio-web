@@ -96,13 +96,13 @@
 
     function getIDEDemos() {
       return [{
+        'image': '/images/demo/ide/platformio-ide-vscode.png',
+        'title': 'VSCode',
+        'url': 'http://docs.platformio.org/page/ide/vscode.html'
+      }, {
         'image': '/images/demo/ide/ide-atom-platformio.png',
         'title': 'Atom',
         'url': 'http://docs.platformio.org/page/ide/atom.html'
-      }, {
-        'image': '/images/demo/ide/platformio-ide-vscode.png',
-        'title': 'VScode',
-        'url': 'http://docs.platformio.org/page/ide/vscode.html'
       }, {
         'image': '/images/demo/ide/ide-cloud9-init-project.png',
         'title': 'Cloud9',

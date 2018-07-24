@@ -1,5 +1,5 @@
 <view-title>Plans and Features</view-title>
-<meta name="description" content="PlatformIO Plus: Professional solutions for an awesome open source PlatformIO ecosystem" view-head />
+<meta name="description" content="PIO Plus: Professional solutions for an awesome open source PlatformIO ecosystem" view-head />
 <meta name="keywords" content="PlatformIO, features, pricing, solutions, IoT, cloud, builder, embedded" view-head />
 
 <span ng-init="vm.tooltips = {
@@ -11,9 +11,10 @@
   'pioremote_remoteunittesting': 'Run tests on a remote machine or remote devices that are accessible for PIO Remote Agent. For example, you have Board Farm (Boards Matrix) at work that is connected with PIO Remote Agent. Now, using host machine or Continuous Integration System you can run test on physical remote devices.',
   'depends_on_pioremote_fu': 'Depends on PIO Remote Firmware Updates',
   'depends_on_pioremote_fusm': 'Depends on PIO Remote Firmware Updates and Serial Port Monitor',
-  'free_trial': 'Free 30-Days Trial, no credit card required. Automatically activates when you create PlatformIO Account.',
+  'free_trial': 'Free 30-Days Trial, no credit card required. Automatically activates when you create PIO Account.',
   'agent_share': 'Allows to share PIO Remote Agent and hardware (boards) with colleagues across your organization or friends',
-  'platformio_club': 'Communicate directly with PlatformIO Team and receive an instant professional support'
+  'platformio_club': 'Communicate directly with PlatformIO Team and receive an instant professional support',
+  'premium_support_for_pio_plus': 'Premium support for Professional plan is available only for the PIO Plus products: PIO Unified Debugger, PIO Remote, PIO Unit Testing, Cloud IDEs Integration'
 }"></span>
 
 <div class="jumbotron">
@@ -34,7 +35,7 @@
       </center>
       <h2>Open Source</h2>
       <p>
-        <strong>PlatformIO Plus</strong> is a <u>core sponsor</u> of an awesome and free <a href="https://platformio.org">PlatformIO.Org</a> ecosystem. We love the open source and believe in its power. Our main mission is to reduce input threshold to the Embedded World by creating high-level instruments and services.
+        <strong>PIO Plus</strong> is a <u>core sponsor</u> of an awesome and free <a href="https://platformio.org">PlatformIO.Org</a> ecosystem. We love the open source and believe in its power. Our main mission is to reduce input threshold to the Embedded World by creating high-level instruments and services.
       </p>
     </div>
     <div class="col-md-4">
@@ -82,23 +83,23 @@
         <div class="plan-info">
           <h2>Community</h2>
           <div class="plan-price">
-            <span class="currency">$</span>0<span class="cents"></span>
+            <span class="currency"></span>FREE<span class="cents"></span>
           </div>
-          <p>Free, Open Source <br>No Credit Card Required</p>
+          <p>Free Forever, Open Source <br>No Credit Card Required</p>
         </div>
         <div class="plan-button"><a class="btn btn-primary" href="/get-started" role="button">Install</a></div>
         <div class="plan-includes">
-          <h4>Community includes</h4>
-          <p>All of these great features:</p>
+          <b>Top features:</b>
         </div>
-        <hr>
         <div class="plan-features">
           <ul>
             <li><a href="/platformio-ide">PlatformIO IDE</a></li>
             <li><a href="http://docs.platformio.org/page/core.html">PlatformIO Core</a></li>
+            <li><a href="http://docs.platformio.org/page/librarymanager/index.html">Library Management</a></li>
             <li><a href="http://docs.platformio.org/page/ci/index.html">Continuous Integration</a></li>
-            <li><a href="http://docs.platformio.org/page/ide.html#desktop-ide">Desktop IDE Integration</a></li>
-            <li>30-Days <b>Free Trial</b> for Professional Plan <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+            <li><a href="http://docs.platformio.org/page/ide.html#desktop-ide">Desktop IDEs Integration</a></li>
+            <li><a href="/support">Community Support – Need Premium?</a></li>
+            <li>30-Days <b>Free Trial</b> for Professional Plan <a uib-tooltip="{{ vm.tooltips['free_trial'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
           </ul>
           <p class="text-center"><a href="#pricing-comparison" du-smooth-scroll>Plan details <i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
         </div>
@@ -108,34 +109,33 @@
       <div class="pio-plan pio-plan-professional">
         <div class="plan-info">
           <h2>Professional</h2>
-          <div class="sale" ng-if="vm.plans.professional.beforeSale">${{ vm.plans.professional.beforeSale }}</div>
+          <div class="sale" ng-if="vm.plans.professional.beforeSale">{{ vm.plans.professional.beforeSale }}</div>
           <div class="plan-price">
-            <span class="currency">$</span><span class="whole">{{ vm.plans.professional.whole }}</span><span class="cents">{{ vm.plans.professional.cents }}</span>
+            <span class="currency"><i class="fa fa-money" aria-hidden="true"></i></span><span class="whole">{{ vm.plans.professional.whole }}</span><span class="cents">{{ vm.plans.professional.cents }}</span>
           </div>
           <p>
             /<b>{{ vm.currentSubscription === 'business' ? 'seat' : 'user' }}</b> a month, billed <span class="plan-billed-term">{{ vm.currentPeriod === 'Y' ? 'yearly' : 'monthly' }}</span> <br>
-            <small>(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
+            <small ng-if="vm.currentSubscription !== 'non-commercial'">(<a href="" ng-click="vm.togglePeriod()" class="change-billed-term">see {{ vm.currentPeriod === 'M' ? 'annual' : 'monthly' }} rate</a>)</small>
+            <small ng-if="vm.currentSubscription === 'non-commercial'">(only annual subscription)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Get Professional</a></div>
+        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Upgrade Now</a></div>
         <div class="plan-includes">
-          <h4>Professional includes</h4>
-          <p>Everything in <b>Community</b>, and:</p>
+          <b>Top features:</b>
         </div>
-        <hr>
         <div class="plan-features">
           <ul>
             <li><a href="http://docs.platformio.org/page/plus/debugging.html">PIO Unified Debugger</a></li>
             <li><a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a></li>
             <li><a href="#solution-unit-testing" du-smooth-scroll>PIO Unit Testing</a></li>
-            <li><a href="#solution-cloud-ide" du-smooth-scroll>Cloud IDE Integration</a></li>
-            <li><a href="/support">Community Support – Need Premium?</a></li>
+            <li><a href="#solution-cloud-ide" du-smooth-scroll>Cloud IDEs Integration</a></li>
+            <li><a href="/support">Premium Support for PIO Plus</a> <a uib-tooltip="{{ vm.tooltips['premium_support_for_pio_plus'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
           </ul>
           <p class="text-center"><a href="#pricing-comparison" du-smooth-scroll>Plan details <i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
         </div>
       </div>
     </div>
-    <div class="col-sm-4" ng-if="vm.currentSubscription !== 'non-commercial'">
+    <div class="col-sm-4">
       <div class="pio-plan">
         <div class="plan-info">
           <h2>Enterprise</h2>
@@ -144,11 +144,9 @@
           </div>
         </div>
         <div class="plan-button"><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></div>
-        <div class="plan-includes">
-          <h4>Enterprise includes</h4>
-          <p>Everything in <b>Professional</b>, and:</p>
+         <div class="plan-includes">
+          <b>Top features:</b>
         </div>
-        <hr>
         <div class="plan-features">
           <ul>
             <li><a href="#solution-white-labeling">White Labeling</a> – branded IDE with PIO Home in a few weeks, custom configuration & features</li>
@@ -172,7 +170,7 @@
 
 <a name="pricing-comparison"></a>
 <div class="jumbotron text-center">
-  <h2>Compare PlatformIO Plus plans</h2>
+  <h2>Compare PIO Plus plans</h2>
   <p>Discover the differences of each individual plan and learn more about our product.</p>
 </div>
 
@@ -210,7 +208,7 @@
         <td><a class="btn btn-primary" href="/get-started" role="button">Install</a></td>
         <td>
           <div class="pio-plan-professional">
-            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Get Now</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Upgrade Now</a></div>
           </div>
         </td>
         <td><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></td>
@@ -394,13 +392,20 @@
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
       <tr>
-      <tr>
-        <th><a href="/support">Premium Support</a></th>
+        <th>
+          <a href="/support">Premium Support</a> <br /><small>(for PIO Plus products)</small> <a uib-tooltip="{{ vm.tooltips['premium_support_for_pio_plus'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
         <td></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th><a href="/support">Premium Support</a> <br /><small>(for PlatformIO Open Source)</small></th>
+        <td>In pair with <a href="/support">PIO Support Developer Subscription</a></td>
         <td>In pair with <a href="/support">PIO Support Developer Subscription</a></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
       </tr>
-      <th><a href="https://platformio-club.slack.com" target="_blank">Live Chat Support</a> <a uib-tooltip="{{ vm.tooltips['platformio_club'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
+      <tr>
+        <th><a href="https://platformio-club.slack.com" target="_blank">Live Chat Support</a> <a uib-tooltip="{{ vm.tooltips['platformio_club'] }}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></th>
         <td></td>
         <td></td>
         <td><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -434,8 +439,8 @@
 </div>
 
 <div class="jumbotron text-center">
-  <h2>Subscribe to PlatformIO Plus</h2>
-  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Subscribe to PlatformIO Plus</a></p>
+  <h2>Ready to upgrade?</h2>
+  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Upgrade Today</a></p>
 </div>
 
 <div class="container">
@@ -487,7 +492,7 @@
     <div class="col-md-9">
       <h2>Unit Testing. <span class="text-muted">Local and Remote.</span></h2>
       <p class="lead">
-        <b>Unit Testing</b> allows segregating each part of the firmware/program and test that the individual parts are working correctly. Using <b>PlatformIO Plus Unit Testing Engine</b> you can execute the same tests on the local host machine (native), on the multiple local embedded devices/boards (connected to local host machine), or in both cases. In the last case, PlatformIO Plus builds firmware on the host machine, uploads it to a target device, executes tests on it and gather results. The final information will be shown on the host side with informative output and statistic.
+        <b>Unit Testing</b> allows segregating each part of the firmware/program and test that the individual parts are working correctly. Using <b>PIO Plus Unit Testing Engine</b> you can execute the same tests on the local host machine (native), on the multiple local embedded devices/boards (connected to local host machine), or in both cases. In the last case, PIO Plus builds firmware on the host machine, uploads it to a target device, executes tests on it and gather results. The final information will be shown on the host side with informative output and statistic.
       </p>
       <p class="lead">
         Using <a href="#solution-pio-remote" du-smooth-scroll>PIO Remote&trade;</a> you can run unit tests on the <b>Remote Device</b> from anywhere in the world or integrate with Continuous Integration Systems.
@@ -521,7 +526,7 @@
 <hr class="home-divider">
 
 <div class="container text-center">
-  <h2>Subscribe to PlatformIO Plus</h2>
-  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Subscribe to PlatformIO Plus</a> </p>
+  <h2>Subscribe to PIO Plus</h2>
+  <p><a class="btn btn-success btn-lg" href="#pricing-top" du-smooth-scroll><i class="fa fa-shopping-cart fa-lg"></i> &nbsp;Subscribe to PIO Plus</a> </p>
 </div>
 <br>

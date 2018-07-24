@@ -67,6 +67,9 @@
     }
 
     function updateRates() {
+      if (vm.currentSubscription === 'non-commercial') {
+        vm.currentPeriod = 'Y';
+      }
       var coupon = getParameterByName('coupon');
       var sale = 0;
       if (coupon && coupon.indexOf('OFF') !== -1) {

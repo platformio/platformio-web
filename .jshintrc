@@ -57,6 +57,7 @@
     "globals": {
         "angular": false,
         "$": false,
-        "addthis": false
+        "addthis": false,
+        "Paddle": false
     }
 }

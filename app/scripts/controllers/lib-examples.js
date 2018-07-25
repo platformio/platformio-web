@@ -87,7 +87,7 @@
 
       item.showFullCode = false;
       item.shortCode = 'Loading...';
-      item.url = siteUtils.maybeHTTPS(item.url)
+      item.url = siteUtils.maybeHTTPS(item.url);
 
       templateCachePromise = $templateCache.get(item.url);
       if (!templateCachePromise) {

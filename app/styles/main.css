@@ -97,6 +97,18 @@
   margin-right: 5px;
 }
 
+.nav .nav-pio-install {
+  background-color: #398439;
+}
+
+.nav .nav-pio-install:hover {
+  background-color: #449d44
+}
+
+.nav .nav-pio-install > a {
+  color: white !important;
+}
+
 .jumbotron h1 {
   margin-bottom: 30px;
 }
@@ -190,60 +202,60 @@
   color: #fff;
 }
 
-/* Get Started */
+/* Install */
 
-.get-started .top-items-lg .item {
+.install .top-items-lg .item {
   padding-top: 10px;
   border: 1px solid #fff;
 }
 
-.get-started .top-items-lg .active {
+.install .top-items-lg .active {
   border: 1px solid #e6e6e6;
   background-color: #fcfcfc;
   border-radius: 6px;
 }
 
-.get-started .top-items-lg .active .img-circle {
+.install .top-items-lg .active .img-circle {
   background-color: #fff;
 }
 
-.get-started .top-items-lg .fa-cube {
+.install .top-items-lg .fa-cube {
   padding-left: 10px;
   padding-top: 5px;
 }
 
-.get-started .top-items-lg .fa-heart-o {
+.install .top-items-lg .fa-heart-o {
   padding-top: 10px;
 }
 
-.get-started .top-items-xs .media-heading {
+.install .top-items-xs .media-heading {
   margin-bottom: 10px;
 }
 
-.get-started .top-items-xs .btn {
+.install .top-items-xs .btn {
   margin-top: 10px;
 }
 
-.get-started .top-items-xs .fa-ul {
+.install .top-items-xs .fa-ul {
   margin-left: 1.36685714em;
 }
 
-.get-started .top-items-xs .fa-ul li {
+.install .top-items-xs .fa-ul li {
   margin-top: 10px;
 }
 
-.get-started .ide-carousel {
+.install .ide-carousel {
   box-shadow: 0 10px 50px #808080;
   margin-bottom: 40px;
 }
 
-.get-started .ide-carousel .ide-slide {
+.install .ide-carousel .ide-slide {
  background-repeat: no-repeat;
  background-position: center top;
  background-size: 100%;
 }
 
-.get-started .carousel-indicators li {
+.install .carousel-indicators li {
   background-color: #fff;
   border: 1px solid #000;
   opacity: 0.7;
@@ -252,27 +264,27 @@
   height: 13px;
 }
 
-.get-started .carousel-indicators .active {
+.install .carousel-indicators .active {
   background-color: #000;
   opacity: 0.5;
   width: 15px;
   height: 15px;
 }
 
-.get-started-ide-installation {
+.install-ide-installation {
   padding-bottom: 35px;
 }
 
-.get-started-ide-installation dl {
+.install-ide-installation dl {
   font-size: 18px;
   margin: 30px 0;
 }
 
-.get-started-ide-installation dd {
+.install-ide-installation dd {
   padding-bottom: 20px;
 }
 
-.get-started-ide-installation dd ul {
+.install-ide-installation dd ul {
   margin-top: 10px;
   font-size: 14px;
 }

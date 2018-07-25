@@ -52,9 +52,12 @@
           ]
         }
       })
-      .when('/get-started/:gsType?', {
-        templateUrl: 'views/get_started.html',
-        controller: 'GetStartedController',
+      .when('/get-started', {
+        redirectTo: '/install'
+      })
+      .when('/install/:gsType?', {
+        templateUrl: 'views/install.html',
+        controller: 'InstallController',
         controllerAs: 'vm'
       })
       .when('/platforms/:platformName?', {

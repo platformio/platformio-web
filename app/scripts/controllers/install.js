@@ -19,9 +19,9 @@
 
   angular
     .module('siteApp')
-    .controller('GetStartedController', GetStartedController);
+    .controller('InstallController', InstallController);
 
-  function GetStartedController($location, $routeParams, $window, $analytics,
+  function InstallController($location, $routeParams, $window, $analytics,
     dataService, siteUtils) {
     var vm = this;
 

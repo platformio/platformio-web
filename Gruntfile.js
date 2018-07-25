@@ -121,7 +121,10 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
+        reporter: require('jshint-stylish'),
+        ignores: [
+          '<%= yeoman.app %>/scripts/third-party/*'
+        ]
       },
       all: {
         src: [
@@ -140,7 +143,10 @@ module.exports = function (grunt) {
     jsbeautifier : {
       files : ['<%= yeoman.app %>/scripts/{,*/}*.js'],
       options: {
-        config: '.jsbeautifyrc'
+        // config: '.jsbeautifyrc'
+        js: {
+          indentSize: 2
+        }
       }
     },
 

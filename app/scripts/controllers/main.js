@@ -36,7 +36,7 @@
         return;
       }
       var noscrollCtrls = [
-        'GetStartedController', 'PlatformsController',
+        'InstallController', 'PlatformsController',
         'FrameworksController', 'LibShowController'
       ];
       angular.forEach(noscrollCtrls, function(ctrlName) {

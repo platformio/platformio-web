@@ -1,63 +1,56 @@
-<view-title>Getting Started</view-title>
+<view-title>Installation</view-title>
 <meta name="description" content="Learn how to install and use PlatformIO, configure and build your first cross-platform 'Blink' project for Arduino, Teensy and MSP430" view-head />
 <meta name="keywords" content="PlatformIO, cli, command line, arduino, msp430, builder, teensy, raspberry, beaglebone" view-head />
 
-<div class="jumbotron">
-  <div class="container">
-    <h1><i class="fa fa-rocket"></i> Getting Started</h1>
-
-    <p>Learn how to install PlatformIO IDE, create and build cross-platform <i>"Blink"</i> project</p>
-    <p>Find out how to integrate PlatformIO with the popular IDEs and Continuous Integration systems.</p>
+<div class="install" style="padding: 25px;">
+  <div class="container" ng-if="!vm.installIDE">
+    <div class="row text-center top-items-lg">
+      <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
+        <center>
+          <div class="img-circle" ng-if="vm.gsType == 'cli'"><i class="fa fa-terminal fa-5x"></i></div>
+          <a href="/install/cli" ng-if="vm.gsType != 'cli'"><div class="img-circle"><i class="fa fa-terminal fa-5x"></i></div></a>
+        </center>
+        <h2>PlatformIO Core</h2>
+        <p>
+          <b>PlatformIO Core</b> is a heart of whole PlatformIO ecosystem.
+          This a <b>Command Line Tool</b> that consists of multi-platform build system, platform and library managers and other integration components.
+          <p>It's written in <b>pure Python</b> and works without any dependencies to host machine or third party software.</p>
+        </p>
+        <p ng-if="vm.gsType == 'cli'"><i class="fa fa-chevron-down fa-2x"></i><br><small>(scroll down for installation details)</small></p>
+        <p ng-if="vm.gsType != 'cli'"><a class="btn btn-default" href="/install/cli" role="button">Show details</a></p>
+      </div>
+      <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'ide'}">
+        <center>
+          <div class="img-circle" ng-if="vm.gsType == 'ide'"><i class="fa fa-cube fa-5x"></i></div>
+          <a href="/install/ide" ng-if="vm.gsType != 'ide'"><div class="img-circle"><i class="fa fa-cube fa-5x"></i></div></a>
+        </center>
+        <h2>PlatformIO IDE</h2>
+        <p>
+          <b>PlatformIO IDE</b> is the the next-generation integrated development environment for IoT.
+          We provide official extension/plugin for the popular IDEs.
+          <p>It's <b>built on top</b> of PlatformIO Core. You do not need to install PIO Core separately, our IDE already contains it and you can use it later via PlatformIO IDE Terminal.</p>
+        </p>
+        <p ng-if="vm.gsType == 'ide'"><i class="fa fa-chevron-down fa-2x"></i><br><small>(scroll down for installation details)</small></p>
+        <p ng-if="vm.gsType != 'ide'"><a class="btn btn-default" href="/install/ide" role="button">Show details</a></p>
+      </div>
+      <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'integration'}">
+        <center>
+          <div class="img-circle" ng-if="vm.gsType == 'integration'"><i class="fa fa-heart-o fa-5x"></i></div>
+          <a href="/install/integration" ng-if="vm.gsType != 'integration'"><div class="img-circle"><i class="fa fa-heart-o fa-5x"></i></div></a>
+        </center>
+        <h2>Integration</h2>
+        <p>
+          Find out how to integrate PlatformIO Core with the popular <b>Cloud &amp; Desktop Integrated Development Environments</b> (IDE) and <b>Continuous Integration</b> (CI) systems.
+          <p>Use your favorite IDE and extend it with professional instruments for embedded development.</p>
+        </p>
+        <p ng-if="vm.gsType == 'integration'"><i class="fa fa-chevron-down fa-2x"></i><br><small>(scroll down for installation details)</small></p>
+        <p ng-if="vm.gsType != 'integration'"><a class="btn btn-default" href="/install/integration" role="button">Show details</a></p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container get-started" ng-if="!vm.installIDE">
-  <div class="row text-center top-items-lg">
-    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'cli'}">
-      <center>
-        <div class="img-circle" ng-if="vm.gsType == 'cli'"><i class="fa fa-terminal fa-5x"></i></div>
-        <a href="/get-started/cli" ng-if="vm.gsType != 'cli'"><div class="img-circle"><i class="fa fa-terminal fa-5x"></i></div></a>
-      </center>
-      <h2>PlatformIO Core</h2>
-      <p>
-        <b>PlatformIO Core</b> is a heart of whole PlatformIO ecosystem.
-        This a <b>Command Line Tool</b> that consists of multi-platform build system, platform and library managers and other integration components.
-        <p>It's written in <b>pure Python</b> and works without any dependencies to host machine or third party software.</p>
-      </p>
-      <p ng-if="vm.gsType == 'cli'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'cli'"><a class="btn btn-default" href="/get-started/cli" role="button">Get Started</a></p>
-    </div>
-    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'ide'}">
-      <center>
-        <div class="img-circle" ng-if="vm.gsType == 'ide'"><i class="fa fa-cube fa-5x"></i></div>
-        <a href="/get-started/ide" ng-if="vm.gsType != 'ide'"><div class="img-circle"><i class="fa fa-cube fa-5x"></i></div></a>
-      </center>
-      <h2>PlatformIO IDE</h2>
-      <p>
-        <b>PlatformIO IDE</b> is the the next-generation integrated development environment for IoT.
-        We provide official extension/plugin for the popular IDEs.
-        <p>It's <b>built on top</b> of PlatformIO Core. You do not need to install PIO Core separately, our IDE already contains it and you can use it later via PlatformIO IDE Terminal.</p>
-      </p>
-      <p ng-if="vm.gsType == 'ide'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'ide'"><a class="btn btn-default" href="/get-started/ide" role="button">Get Started</a></p>
-    </div>
-    <div class="col-md-4 item" ng-class="{'active': vm.gsType == 'integration'}">
-      <center>
-        <div class="img-circle" ng-if="vm.gsType == 'integration'"><i class="fa fa-heart-o fa-5x"></i></div>
-        <a href="/get-started/integration" ng-if="vm.gsType != 'integration'"><div class="img-circle"><i class="fa fa-heart-o fa-5x"></i></div></a>
-      </center>
-      <h2>Integration</h2>
-      <p>
-        Find out how to integrate PlatformIO with the popular <b>Cloud &amp; Desktop IDEs</b> and <b>Continuous Integration</b> (CI) systems.
-        <p>Extend your favorite environment with professional instruments.</p>
-      </p>
-      <p ng-if="vm.gsType == 'integration'"><i class="fa fa-chevron-down fa-2x"></i></p>
-      <p ng-if="vm.gsType != 'integration'"><a class="btn btn-default" href="/get-started/integration" role="button">Get Started</a></p>
-    </div>
-  </div>
-
-  <hr ng-if="vm.gsType != ''">
-
+<div class="container install" ng-if="!vm.installIDE">
   <div class="platformio-ide-laptop" style="margin-top: 0" ng-if="vm.gsType == 'ide'">
     <img src="images/platformio-ide-laptop.png" alt="PlatformIO IDE - the next-generation integrated development environment for IoT" title="PlatformIO IDE - the next-generation integrated development environment for IoT" uib-tooltip="PlatformIO IDE - the next-generation integrated development environment for IoT" class="img-responsive center-block">
   </div>
@@ -103,7 +96,7 @@
   </div>
 </div>
 
-<div class="container get-started-ide-installation text-center" ng-if="vm.installIDE">
+<div class="container install-ide-installation text-center" ng-if="vm.installIDE">
   <div ng-if="vm.installIDE !== 'vscode'">
     <h2>Thank you for choosing PlatformIO IDE for Atom</h2>
     <dl class="dl-horizontal text-left">
@@ -133,7 +126,7 @@
     <h2>Thank you for choosing PlatformIO IDE for VSCode</h2>
     <dl class="dl-horizontal text-left">
       <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
-      <dd><a href="https://code.visualstudio.com" target="_blank">Download</a> and install official Microsoft's Visual Studio Code, PlatformIO IDE is built on top of it</dd>
+      <dd><a href="https://code.visualstudio.com" target="_blank"><i class="fa fa-download"></i> Download</a> and install official Microsoft's Visual Studio Code, PlatformIO IDE is built on top of it</dd>
       <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
       <dd>
         <ol>
@@ -143,25 +136,23 @@
         </ol>
         <img src="images/platformio-ide-vscode-pkg-installer.png" class="img-shadow" alt="VSCode Extensions Manager and PlatformIO IDE auto-installer" />
       </dd>
+      <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
+      <dd>Check <a  href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#quick-start" role="button" analytics-on analytics-event="QuickStart" analytics-category="IDE" analytics-label="{{ vm.installIDE }}"><i class="fa fa-rocket"></i> Quick Start</a> guide (highly recommended).</dd>
     </dl>
   </div>
 
-  <hr>
-
-  <a class="btn btn-success btn-lg" href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html" role="button" analytics-on analytics-event="QuickStart" analytics-category="IDE" analytics-label="{{ vm.installIDE }}"><i class="fa fa-rocket fa-lg"></i> &nbsp;Start PlatformIO Project</a>
-
 </div>
 
-<div class="jumbotron get-started" ng-if="vm.gsType != ''">
+<div class="jumbotron install" ng-if="vm.gsType != ''">
   <div class="container top-items-xs" style="padding-top: 30px;">
     <div class="row">
       <div class="col-md-4">
         <div class="row">
-          <div class="col-md-4 img-circle">
-            <i class="fa fa-rocket fa-4x"></i>
+          <div class="col-md-4 img-circle text-center">
+            <i class="fa fa-download fa-4x"></i>
           </div>
           <div class="col-md-8">
-            <h3 class="media-heading">Get Started</h3>
+            <h3 class="media-heading">Installation</h3>
 
             <div ng-if="vm.gsType == 'ide'">
               Install the next-generation PlatformIO IDE.
@@ -190,9 +181,9 @@
 
             <div ng-if="vm.gsType == 'ide'">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'atom' }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
                 <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
               </ul>
             </div>
@@ -232,7 +223,7 @@
               <li><i class="fa-li fa fa-chevron-right"></i>Ask questions and get answers in our <a href="https://community.platformio.org">Community Forums</a></li>
               <li ng-if="vm.gsType != 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio" target="_blank">PlatformIO Issues</a></li>
               <li ng-if="vm.gsType == 'ide'"><i class="fa-li fa fa-chevron-right"></i>Open bug reports or submit a feature requests in <a href="https://github.com/platformio/platformio-{{ vm.installIDE || 'atom' }}-ide" target="_blank">PlaformIO IDE Issues</a></li>
-              <li><i class="fa-li fa fa-chevron-right"></i><a href="/contact">Contact Us</a> and we will integrate your products to PlatformIO ecosystem</li>
+              <li><i class="fa-li fa fa-chevron-right"></i>Receive <a href="/support">Premium Support</a> from PIO Plus professional experts.</li>
             </ul>
           </div>
         </div>

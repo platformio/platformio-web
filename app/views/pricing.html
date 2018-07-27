@@ -43,7 +43,7 @@
         <a><i class="fa fa-briefcase fa-5x"></i></a>
       </center>
       <h2>Business</h2>
-      <p>We respect companies that work with Embedded Technologies and we are ready to save their time on developing own software instruments. Add your hardware to PlatformIO ecosystem and we will bring new customers for you. In addition, we are ready to provide <u>premium technical support</u> for you and your products.</p>
+      <p>We respect companies that work with Embedded Technologies and we are ready to save their time on developing own software instruments. Add your hardware to PlatformIO ecosystem and we will bring new customers for you. In addition, we are ready to provide <a href="/support">Premium Support</a> for you and your products.</p>
       </p>
     </div>
     <div class="col-md-4">
@@ -52,7 +52,7 @@
       </center>
       <h2>Solutions</h2>
       <p>
-        <b>PlatfromIO Plus</b> proposes professional solutions that can significantly improve project code quality and allow to work remotely with embedded devices from <u>any point in the world</u>. New cloud solutions will save your time and bring new instruments for IoT development.
+        <b>PlatfromIO Plus</b> proposes professional solutions that can significantly improve project code quality and allow to work remotely with embedded devices from <u>anywhere in the world</u>. New cloud solutions will save your time and bring new instruments for IoT development.
       </p>
     </div>
   </div>
@@ -66,9 +66,9 @@
 
   <div class="text-center">
     <div class="btn-group">
-      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'individual'">INDIVIDUAL CUSTOMERS</label>
-      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'business'">BUSINESS &amp; ORGANIZATIONS</label>
-      <label class="btn btn-default" ng-model="vm.currentSubscription" uib-btn-radio="'non-commercial'">NON-COMMERCIAL</label>
+      <label class="btn btn-default" ng-class="{'btn-primary': vm.currentSubscription === 'individual'}" ng-model="vm.currentSubscription" uib-btn-radio="'individual'"><i ng-if="vm.currentSubscription === 'individual'" class="fa fa-check" aria-hidden="true"></i> INDIVIDUAL CUSTOMERS</label>
+      <label class="btn btn-default" ng-class="{'btn-primary': vm.currentSubscription === 'business'}" ng-model="vm.currentSubscription" uib-btn-radio="'business'"><i ng-if="vm.currentSubscription === 'business'" class="fa fa-check" aria-hidden="true"></i> BUSINESS &amp; ORGANIZATIONS</label>
+      <label class="btn btn-default" ng-class="{'btn-primary': vm.currentSubscription === 'non-commercial'}" ng-model="vm.currentSubscription" uib-btn-radio="'non-commercial'"><i ng-if="vm.currentSubscription === 'non-commercial'" class="fa fa-check" aria-hidden="true"></i> NON-COMMERCIAL</label>
     </div>
     &nbsp; <a href="/subscriptions"><i class="fa fa-university" aria-hidden="true"></i> Subscription details</a>
   </div>
@@ -119,7 +119,7 @@
             <small ng-if="vm.currentSubscription === 'non-commercial'">(only annual subscription)</small>
           </p>
         </div>
-        <div class="plan-button"><a class="btn btn-success" ng-href="{{ vm.plans.professional.url }}" role="button" target="_blank">Upgrade Now</a></div>
+        <div class="plan-button"><button type="button" class="btn btn-success" ng-click="vm.checkout(vm.plans.professional.productId, vm.plans.professional.coupon)">Upgrade Now</button></div>
         <div class="plan-includes">
           <b>Top features:</b>
         </div>
@@ -209,7 +209,7 @@
         <td><a class="btn btn-primary" href="/install" role="button">Install</a></td>
         <td>
           <div class="pio-plan-professional">
-            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Upgrade Now</a></div>
+            <div class="plan-button"><a class="btn btn-success" href="#pricing-top" du-smooth-scroll>Get Now</a></div>
           </div>
         </td>
         <td><a class="btn btn-success" href="mailto:contact@pioplus.com" role="button">Contact Us</a></td>

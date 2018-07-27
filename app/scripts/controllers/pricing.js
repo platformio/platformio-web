@@ -23,21 +23,45 @@
   function PricingController($scope) {
     var vm = this;
 
-    vm.annualPlans = {
+    vm.subscriptions = {
       'individual': {
-        'professional': 9.99
+        'professional': {
+          'M': {
+            'price': 11.99,
+            'productId': 535472
+          },
+          'Y': {
+            'price': 119.88,
+            'productId': 535473
+          }
+        }
       },
       'business': {
-        'professional': 29.99
+        'professional': {
+          'M': {
+            'price': 34.99,
+            'productId': 535474
+          },
+          'Y': {
+            'price': 359.88,
+            'productId': 535475
+          }
+        }
       },
       'non-commercial': {
-        'professional': 2.99
+        'professional': {
+          'Y': {
+            'price': 35.88,
+            'productId': 535476
+          }
+        }
       }
     };
     vm.currentSubscription = 'individual';
     vm.currentPeriod = 'Y';
     vm.plans = null;
     vm.togglePeriod = togglePeriod;
+    vm.checkout = checkout;
 
     // show annual rates by default
     $scope.$watchGroup(['vm.currentSubscription', 'vm.currentPeriod'], function() {
@@ -76,20 +100,21 @@
         sale = parseInt(coupon.substr(coupon.indexOf('OFF') + 3));
       }
       vm.plans = {};
-      angular.forEach(vm.annualPlans[vm.currentSubscription], function(annualPrice, plan) {
+      angular.forEach(vm.subscriptions[vm.currentSubscription], function(item, plan) {
+        var subscription = item[vm.currentPeriod];
         var planItem = {
           'beforeSale': null,
           'whole': 0,
           'cents': 0,
-          'url': null
+          'coupon': coupon,
+          'productId': subscription.productId
         };
 
-        var price = annualPrice;
-        if (vm.currentPeriod !== 'Y') {
-          price = Math.floor(annualPrice * 14 / 12) + 0.99;
+        var price = subscription.price;
+        if (vm.currentPeriod === 'Y') {
+          price = price / 12;
         }
 
-        planItem['beforeSale'] = null;
         if (sale > 0 && sale <= 100) {
           planItem['beforeSale'] = price;
           price -= price * sale / 100;
@@ -101,19 +126,14 @@
           planItem['cents'] = 99;
         }
 
-        // Billing URL
-        planItem['url'] = 'https://sites.fastspring.com/platformio/';
-        planItem['url'] += 'instant/platformio-plus-';
-        planItem['url'] += plan + '-' + vm.currentSubscription + '-';
-        if (vm.currentPeriod === 'Y') {
-          planItem['url'] += 'yearly';
-        } else {
-          planItem['url'] += 'monthly';
-        }
-        if (coupon) {
-          planItem['url'] += '?coupon=' + coupon;
-        }
         vm.plans[plan] = planItem;
+      });
+    }
+
+    function checkout(productId, coupon) {
+      Paddle.Checkout.open({
+        product: productId,
+        coupon: coupon
       });
     }
   }

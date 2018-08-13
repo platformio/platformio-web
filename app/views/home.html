@@ -10,21 +10,55 @@
       <small>Cross-platform IDE and unified debugger. Remote unit testing and firmware updates</small>
     </h1>
 
-    <p>
-      <ul class="list-inline">
-        <li><kbd>{{ vm.stats.platforms | number }}</kbd> <a href="/platforms">Development Platforms</a></li>
-        <li>·</li>
-        <li><kbd>{{ vm.stats.frameworks | number }}</kbd> <a href="/frameworks">Frameworks</a></li>
-        <li>·</li>
-        <li><kbd>{{ vm.stats.boards | number }}</kbd> <a href="/boards">Embedded Boards</a></li>
-        <li>·</li>
-        <li><kbd>173</kbd> <a href="https://github.com/platformio/platformio-examples" target="_blank">Project Examples</a></li>
-        <li>·</li>
-        <li><kbd>{{ vm.stats.libs | number }}</kbd> <a href="/lib">Libraries</a></li>
-        <li>·</li>
-        <li><kbd>{{ vm.stats.libexamples | number }}</kbd> <a href="/lib/examples">Library Examples</a></li>
+    <div>
+      <ul class="list-inline stats">
+        <li>
+          <a href="/platforms">
+            <div class="item">
+              <i class="fa fa-laptop"></i>
+              <div class="value">{{ vm.stats.platforms | number }}</div>
+              <div class="name">Platforms</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/frameworks">
+            <div class="item">
+              <i class="fa fa-cog"></i>
+              <div class="value">{{ vm.stats.frameworks | number }}</div>
+              <div class="name">Frameworks</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/boards">
+            <div class="item">
+              <i class="fa fa-microchip"></i>
+              <div class="value">{{ vm.stats.boards | number }}</div>
+              <div class="name">Boards</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/platformio/platformio-examples" target="_blank">
+            <div class="item">
+              <i class="fa fa-graduation-cap"></i>
+              <div class="value">173</div>
+              <div class="name">Examples</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/lib">
+            <div class="item">
+              <i class="fa fa-code"></i>
+              <div class="value">{{ vm.stats.libs | number }}</div>
+              <div class="name">Libraries</div>
+            </div>
+          </a>
+        </li>
       </ul>
-    </p>
+    </div>
 
     <p>
       <a class="btn btn-success btn-lg" href="/platformio-ide" role="button" analytics-on analytics-event="Button" analytics-category="Install" analytics-label="HomeTop"><i class="fa fa-download fa-lg"></i> &nbsp;Install PlatformIO Now</a>

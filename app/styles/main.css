@@ -109,6 +109,10 @@
   color: white !important;
 }
 
+.nav-pills .active a {
+  color: #fff;
+}
+
 .jumbotron h1 {
   margin-bottom: 30px;
 }
@@ -197,8 +201,28 @@
   font-size: 40px;
 }
 
-.nav-pills .active a {
-  color: #fff;
+.home .stats a,
+.home .stats a:hover,
+.home .stats a:visited {
+  text-decoration: none;
+}
+
+.home .stats .item i {
+  font-size: 20px;
+}
+
+.home .stats .item {
+  background-color: white;
+  min-width: 170px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.home .stats .item .value {
+  font-size: 40px;
+  font-weight: 400;
+  color: #777;
+  padding: 5px 0;
 }
 
 /* Install */

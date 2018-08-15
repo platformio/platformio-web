@@ -17,28 +17,20 @@
 (function() {
   'use strict';
 
-  angular
-    .module('siteApp')
-    .controller('PlatformsController', PlatformsController);
+  angular.module('siteApp')
+    .filter('boardDebugInfo', boardDebugInfo);
 
-  function PlatformsController(platformsList, frameworksList) {
-    var vm = this;
-
-    vm.getPlatformTitles = getPlatformTitles;
-
-    vm.platforms = platformsList;
-    vm.frameworks = frameworksList;
-    vm.activeGroup = 0;
-
-    ////////////
-
-    function getPlatformTitles() {
-      var result = [];
-      angular.forEach(platformsList, function(platform) {
-        result.push(platform.title);
-      });
-      return result;
-    }
-
+  function boardDebugInfo() {
+    return function(debug) {
+      var html = '';
+      if (debug.onboard.length) {
+        html += '<p><b>ON-BOARD:</b> ' + debug.onboard.join(', ') + '</p>';
+      }
+      if (debug.external.length) {
+        html += '<p><b>EXTERNAL:</b> ' + debug.external.join(', ') + '</p>';
+      }
+      return html;
+    };
   }
+
 })();

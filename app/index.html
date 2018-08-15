@@ -115,11 +115,11 @@
                 <li role="menuitem"><a href="/boards"><i class="fa fa-microchip"></i>Boards</a></li>
               </ul>
             </li>
-            <li><a href="http://docs.platformio.org"><i class="fa fa-book fa-lg"></i>Docs</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li ng-class="{active: vm.isRouteActive('/pricing')}"><a href="/pricing"><i class="fa fa-shopping-cart fa-lg"></i>Pricing</a></li>
+            <li><a href="http://docs.platformio.org"><i class="fa fa-book fa-lg"></i>Docs</a></li>
             <li><a href="https://community.platformio.org/"><i class="fa fa-comments-o fa-lg"></i>Community</a></li>
             <li ng-class="{active: vm.isRouteActive('/support')}"><a href="/support"><i class="fa fa-question-circle fa-lg"></i>Support</a></li>
             <li class="nav-pio-install"><a href="/platformio-ide"><i class="fa fa-download fa-lg"></i>Download</a></li>
@@ -260,6 +260,7 @@
   <script src="scripts/factories/dataservice.js"></script>
   <script src="scripts/factories/utils.js"></script>
   <script src="scripts/directives/select-on-click.js"></script>
+  <script src="scripts/filters/board-debug-info.js"></script>
   <script src="scripts/filters/embedded-formatter.js"></script>
   <script src="scripts/filters/name-to-title.js"></script>
   <script src="scripts/filters/truncate.js"></script>
@@ -267,7 +268,9 @@
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/install.js"></script>
   <script src="scripts/controllers/platforms.js"></script>
+  <script src="scripts/controllers/platform-show.js"></script>
   <script src="scripts/controllers/frameworks.js"></script>
+  <script src="scripts/controllers/framework-show.js"></script>
   <script src="scripts/controllers/boards.js"></script>
   <script src="scripts/controllers/lib-main.js"></script>
   <script src="scripts/controllers/lib-modalse.js"></script>

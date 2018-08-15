@@ -82,6 +82,9 @@
   .navbar .github-corner {
     display: block;
   }
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
 }
 
 .nav li a {
@@ -112,6 +115,7 @@
 .nav-pills .active a {
   color: #fff;
 }
+
 
 .jumbotron h1 {
   margin-bottom: 30px;

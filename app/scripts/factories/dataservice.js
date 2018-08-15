@@ -63,7 +63,36 @@
     }
 
     function getBoards() {
-      return $resource(siteConfig.apiURL + '/boards').query();
+      var p = $resource(siteConfig.apiURL + '/boards').query().$promise;
+      return p.then(function(boards) {
+        angular.forEach(boards, function(board) {
+          if (!board.debug || !board.debug.tools) {
+            return;
+          }
+          var filters = [];
+          var onboard = [];
+          var external = [];
+          angular.forEach(board.debug.tools, function(data, name) {
+            if ('onboard' in data && data.onboard) {
+              onboard.push(name);
+            } else {
+              external.push(name)
+            }
+          });
+          if (onboard.length) {
+            filters.push('onboard');
+          }
+          if (external.length) {
+            filters.push('external');
+          }
+          board.debug = {
+            'onboard': onboard,
+            'external': external,
+            'filters': filters
+          };
+        });
+        return boards;
+      });
     }
 
     function getFrameworks() {

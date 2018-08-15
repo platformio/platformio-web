@@ -60,7 +60,7 @@
         controller: 'InstallController',
         controllerAs: 'vm'
       })
-      .when('/platforms/:platformName?', {
+      .when('/platforms', {
         templateUrl: 'views/platforms.html',
         controller: 'PlatformsController',
         controllerAs: 'vm',
@@ -68,6 +68,28 @@
           platformsList: ['dataService',
             function(dataService) {
               return dataService.getPlatforms().$promise;
+            }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ]
+        }
+      })
+      .when('/platforms/:platformName/:activeTab?', {
+        templateUrl: 'views/platform_show.html',
+        controller: 'PlatformShowController',
+        controllerAs: 'vm',
+        resolve: {
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
+          ],
+          boardsList: ['dataService',
+            function(dataService) {
+              return dataService.getBoards();;
             }
           ],
           packagesList: ['dataService',
@@ -82,7 +104,7 @@
           ]
         }
       })
-      .when('/frameworks/:frameworkName?', {
+      .when('/frameworks', {
         templateUrl: 'views/frameworks.html',
         controller: 'FrameworksController',
         controllerAs: 'vm',
@@ -99,6 +121,28 @@
           ]
         }
       })
+      .when('/frameworks/:frameworkName', {
+        templateUrl: 'views/framework_show.html',
+        controller: 'FrameworkShowController',
+        controllerAs: 'vm',
+        resolve: {
+          platformsList: ['dataService',
+            function(dataService) {
+              return dataService.getPlatforms().$promise;
+            }
+          ],
+          boardsList: ['dataService',
+            function(dataService) {
+              return dataService.getBoards();;
+            }
+          ],
+          frameworksList: ['dataService',
+            function(dataService) {
+              return dataService.getFrameworks().$promise;
+            }
+          ]
+        }
+      })
       .when('/boards', {
         templateUrl: 'views/boards.html',
         controller: 'BoardsController',
@@ -106,7 +150,7 @@
         resolve: {
           boardsList: ['dataService',
             function(dataService) {
-              return dataService.getBoards().$promise;
+              return dataService.getBoards();
             }
           ],
           platformsList: ['dataService',

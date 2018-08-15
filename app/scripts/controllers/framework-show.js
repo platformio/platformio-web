@@ -17,29 +17,50 @@
 (function() {
   'use strict';
 
-  angular
-    .module('siteApp')
-    .controller('FrameworksController', FrameworksController);
+  angular.module('siteApp')
+    .controller('FrameworkShowController', FrameworkShowController);
 
-  function FrameworksController(frameworksList, platformsList) {
+  function FrameworkShowController(
+    $routeParams, NgTableParams, platformsList, boardsList, frameworksList) {
     var vm = this;
 
-    vm.getFrameworkTitles = getFrameworkTitles;
     vm.getFrameworkPlatforms = getFrameworkPlatforms;
 
+    vm.framework = getFrameworkInfo($routeParams.frameworkName);
     vm.frameworks = frameworksList;
-    vm.platforms = platformsList;
-
-    console.log(vm.frameworks);
+    vm.tableParams = getBoardsTableParams();
 
     ////////////
 
-    function getFrameworkTitles() {
-      var result = [];
+    function getFrameworkInfo(name) {
+      var result = null;
       angular.forEach(frameworksList, function(item) {
-        result.push(item.title);
+        if (item['name'] === name) {
+          result = item;
+          return;
+        }
       });
       return result;
+    }
+
+    function getBoardsTableParams() {
+      var boards = [];
+      angular.forEach(boardsList, function(board) {
+        if (board.frameworks.indexOf(vm.framework.name) !== -1) {
+          boards.push(board);
+        }
+      });
+      return new NgTableParams(
+        angular.extend({
+          count: 15,
+          sorting: {
+            'name': 'asc'
+          }
+        }), {
+          counts: [15, 30, 50, 100, 1000],
+          dataset: boards
+        }
+      );
     }
 
     function getFrameworkPlatforms(frameworkName) {
@@ -51,6 +72,6 @@
       });
       return result;
     }
-
   }
+
 })();

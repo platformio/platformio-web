@@ -1,57 +1,33 @@
-<view-title>{{ vm.frameworks[vm.active].title }} · Frameworks</view-title>
-<meta name="description" content="{{ vm.frameworks[vm.active].description | truncate : 200 }}" view-head />
-<meta name="keywords" content="embedded, framework, {{ vm.frameworks[vm.active].title }}" view-head />
+<view-title>Frameworks</view-title>
+<meta name="description" content="Keep the unified workflow using the most popular embedded frameworks" view-head />
+<meta name="keywords" content="embedded, framework, debug, {{ vm.getFrameworkTitles().join(', ') }}" view-head />
 
 <div class="jumbotron">
   <div class="container">
     <h1><i class="fa fa-cog"></i> Frameworks</h1>
+    <p>Keep the unified workflow using the most popular embedded frameworks</p>
   </div>
 </div>
 
 <div class="container">
 
-  <uib-tabset type="pills" active="vm.active">
+  <ol class="breadcrumb">
+    <li><i class="fa fa-home"></i> <a href="/">Home</a></li>
+    <li class="active">Frameworks</li>
+  </ol>
 
-    <uib-tab ng-repeat="framework in vm.frameworks" index="$index" select="vm.changeFramework(framework.name)">
-      <uib-tab-heading>
-        <h3><a href="/frameworks/{{ framework.name }}">{{ framework.title }}</a></h3>
-      </uib-tab-heading>
+  <div class="input-group input-group-lg" style="width: 100%">
+    <input type="search" class="form-control" placeholder="Filter frameworks..."ng-model="vm.filterQuery">
+  </div>
 
-      <br>
-
-      <p class="lead">{{ framework.description }}</p>
-
-      <div class="alert alert-info">
-        <ul class="fa-ul">
-          <li>
-            <i class="fa fa-info-circle fa-lg fa-li"></i> More detailed information is located in documentation
-            <a href="http://docs.platformio.org/page/frameworks/{{ framework.name }}.html" class="alert-link">Framework {{ framework.title }}</a>.
-          </li>
-        </ul>
+  <section class="search-result">
+    <div class="well well-sm" ng-repeat="item in vm.frameworks | filter:vm.filterQuery">
+      <h3 class="title"><a ng-href="/frameworks/{{ item.name }}">{{ item.title }}</a></h3>
+      <p>{{ item.description }}</p>
+      <div class="keywords">
+        <a ng-href="/platforms/{{ platform.name }}" class="btn btn-default btn-sm" ng-repeat="platform in vm.getFrameworkPlatforms(item.name)"><i class="fa fa-laptop"></i> {{ platform.title }}</a>
       </div>
-
-      <h2>Platforms</h2>
-
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tr ng-repeat="platform in vm.platforms" ng-if="vm.isCompatiblePlatform(platform.name, framework.name)">
-          <td class="text-nowrap"><a href="/platforms/{{ platform.name }}">{{ platform.title }}</a></td>
-          <td>{{ platform.description }}</td>
-        </tr>
-      </table>
-
-      <h2>Boards</h2>
-
-      To list compatible boards by <b>Framework {{ framework.title }}</b> please use <a href="/boards?filter%5Bframeworks%5D={{ framework.name }}" class="btn btn-success" role="button">Embedded Boards Explorer</a>
-      or <a href="http://docs.platformio.org/page/frameworks/{{ framework.name }}.html#boards">documentation for {{ framework.title }} framework</a>.
-
-    </uib-tab>
-
-  </uib-tabset>
+    </div>
+  </section>
 
 </div>

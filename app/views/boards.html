@@ -29,34 +29,38 @@
 <br>
 
 <table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
-    <tr ng-repeat="item in $data">
-      <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
-        {{ item.name }} <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a> <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
+  <tr ng-repeat="item in $data">
+    <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
+      {{ item.name }} <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a> <a href="{{ item.url }}" target="_blank"><i class="fa fa-info-circle"></i></a>
+    </td>
+    <td sortable="'platform'" data-title="'Platform'" filter="{platform: 'select'}" filter-data="vm.getFilterData('platforms')">
+      <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
+    </td>
+    <td data-title="'Frameworks'" filter="{frameworks: 'select'}" filter-data="vm.getFilterData('frameworks')">
+        <span ng-repeat="framework in item.frameworks">
+          <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
+        </span>
+    </td>
+    <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}" >
+      {{ item.mcu }}
+    </td>
+     <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
+        <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="http://docs.platformio.org/page/platforms/{{ item.platform }}.html#debugging" target="_blank">
+          <span ng-if="item.debug.onboard.length > 0">On-board</span>
+          <span ng-if="item.debug.onboard.length === 0">External</span>
+          <i class="fa fa-info-circle"></i>
+        </a>
       </td>
-      <td sortable="'platform'" data-title="'Platform'" filter="{platform: 'select'}" filter-data="vm.getFilterData('platforms')">
-        <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
-      </td>
-      <td data-title="'Frameworks'" filter="{frameworks: 'select'}" filter-data="vm.getFilterData('frameworks')">
-          <span ng-repeat="framework in item.frameworks">
-            <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
-          </span>
-      </td>
-      <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}" >
-        {{ item.mcu }}
-      </td>
-      <td sortable="'debug'" data-title="'Debug'" class="text-center">
-        <a ng-if="item.debug" href="http://docs.platformio.org/page/plus/debugging.html" target="_blank">Yes</a>
-      </td>
-      <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
-        {{ item.fcpu | embeddedFormatter : 'frequency' }}
-      </td>
-      <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
-        {{ item.ram | embeddedFormatter : 'size' }}
-      </td>
-      <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
-        {{ item.rom | embeddedFormatter : 'size' }}
-      </td>
-    </tr>
-  </table>
+    <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
+      {{ item.fcpu | embeddedFormatter : 'frequency' }}
+    </td>
+    <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
+      {{ item.ram | embeddedFormatter : 'size' }}
+    </td>
+    <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
+      {{ item.rom | embeddedFormatter : 'size' }}
+    </td>
+  </tr>
+</table>
 
 </div>

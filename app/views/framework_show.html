@@ -37,7 +37,7 @@
                   {{ item.mcu }}
                 </td>
                 <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
-                  <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="http://docs.platformio.org/page/platforms/{{ item.platform }}.html#debugging" target="_blank">
+                  <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="https://docs.platformio.org/page/platforms/{{ item.platform }}.html#debugging" target="_blank">
                     <span ng-if="item.debug.onboard.length > 0">On-board</span>
                     <span ng-if="item.debug.onboard.length === 0">External</span>
                     <i class="fa fa-info-circle"></i>
@@ -61,7 +61,7 @@
               <h4><i class="fa fa-code"></i> Examples</h4>
             </uib-tab-heading>
             <br>
-            <p>Please visit framework documentation for the <a href="{{ 'http://docs.platformio.org/page/frameworks/' + vm.framework.name + '.html#examples' }}" target="_blank">available project examples</a>.</p>
+            <p>Please visit framework documentation for the <a href="{{ 'https://docs.platformio.org/page/frameworks/' + vm.framework.name + '.html#examples' }}" target="_blank">available project examples</a>.</p>
           </uib-tab>
 
         </uib-tabset>
@@ -75,7 +75,7 @@
 
         <h3>Resources</h3>
         <p><i class="fa fa-link"></i> <a href="{{ vm.framework.url }}" target="_blank">Vendor</a></p>
-        <p><i class="fa fa-book"></i> <a href="{{ 'http://docs.platformio.org/page/frameworks/' + vm.framework.name + '.html' }}" target="_blank">Documentation</a></p>
+        <p><i class="fa fa-book"></i> <a href="{{ 'https://docs.platformio.org/page/frameworks/' + vm.framework.name + '.html' }}" target="_blank">Documentation</a></p>
       </div>
     </div>
 

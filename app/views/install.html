@@ -137,7 +137,7 @@
         <img src="images/platformio-ide-vscode-pkg-installer.png" class="img-shadow" alt="VSCode Extensions Manager and PlatformIO IDE auto-installer" />
       </dd>
       <dt><i class="fa fa-hand-o-right" aria-hidden="true"></i></dt>
-      <dd>Check <a  href="http://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#quick-start" role="button" analytics-on analytics-event="QuickStart" analytics-category="IDE" analytics-label="{{ vm.installIDE }}"><i class="fa fa-rocket"></i> Quick Start</a> guide (highly recommended).</dd>
+      <dd>Check <a  href="https://docs.platformio.org/page/ide/{{ vm.installIDE }}.html#quick-start" role="button" analytics-on analytics-event="QuickStart" analytics-category="IDE" analytics-label="{{ vm.installIDE }}"><i class="fa fa-rocket"></i> Quick Start</a> guide (highly recommended).</dd>
     </dl>
   </div>
 
@@ -162,7 +162,7 @@
 
             <div ng-if="vm.gsType != 'ide'">
               Install PlatformIO Core with Command Line Interface (CLI).
-              <p><a class="btn btn-success" href="http://docs.platformio.org/page/installation.html" role="button" analytics-on analytics-event="Install" analytics-category="CLI" analytics-label="Get Started"><i class="fa fa-terminal fa-lg"></i> &nbsp;Install PlatformIO Core</a></p>
+              <p><a class="btn btn-success" href="https://docs.platformio.org/page/installation.html" role="button" analytics-on analytics-event="Install" analytics-category="CLI" analytics-label="Get Started"><i class="fa fa-terminal fa-lg"></i> &nbsp;Install PlatformIO Core</a></p>
               <br>
               <b>PlatformIO</b> is written in Python and works on Mac OS X, Linux, Windows OS and ARM-based credit-card sized computers.
             </div>
@@ -181,30 +181,30 @@
 
             <div ng-if="vm.gsType == 'ide'">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
-                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#installation">Installation Guide</a> provides instructions on how to install and launch PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#quick-start">Quick Start Guide</a> how to create cross-platform <i>"Blink"</i> Project</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ide/{{ vm.installIDE || 'vscode' }}.html#user-guide">User Guide</a> for PlatformIO IDE</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="https://docs.platformio.org/">Documentation</a></li>
               </ul>
             </div>
 
             <div ng-if="vm.gsType == 'cli'">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with <a href="http://docs.platformio.org/page/core.html">PlatformIO Core</a></li>
-                <li><i class="fa-li fa fa-chevron-right"></i>Advanced documentation for <a href="http://docs.platformio.org/page/projectconf.html">Project Configuration File (platformio.ini)</a></li>
-                <li><i class="fa-li fa fa-chevron-right"></i>Read <a href="http://docs.platformio.org/page/articles.html">Articles about PlatformIO</a></li>
-                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Getting Started with <a href="https://docs.platformio.org/page/core.html">PlatformIO Core</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Advanced documentation for <a href="https://docs.platformio.org/page/projectconf.html">Project Configuration File (platformio.ini)</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Read <a href="https://docs.platformio.org/page/articles.html">Articles about PlatformIO</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="https://docs.platformio.org/">Documentation</a></li>
               </ul>
             </div>
 
             <div ng-if="vm.gsType == 'integration'">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide.html#cloud-ide">Cloud IDE Integration</a> with Cloud9, Codeanywhere and Eclipse Che (Codenvy)</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ide.html#desktop-ide">Desktop IDE Integration</a> with Atom, CLion, CodeBlocks, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, Vim, Visual Studio</li>
-                <li><i class="fa-li fa fa-chevron-right"></i><a href="http://docs.platformio.org/page/ci/index.html">Continuous Integration</a> with AppVeyor, Circle CI, Drone, Shippable and Travis CI</li>
-                <li><i class="fa-li fa fa-chevron-right"></i>Advanced using of <a href="http://docs.platformio.org/page/userguide/cmd_init.html#cmdoption-platformio-init--ide">platformio init --ide</a> Project Generator</li>
-                <li><i class="fa-li fa fa-chevron-right"></i>Learn how to use helper <a href="http://docs.platformio.org/page/userguide/cmd_ci.html">platformio ci</a> command in combination with Continuous Integration Systems</li>
-                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="http://docs.platformio.org/">Documentation</a></li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ide.html#cloud-ide">Cloud IDE Integration</a> with Cloud9, Codeanywhere and Eclipse Che (Codenvy)</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ide.html#desktop-ide">Desktop IDE Integration</a> with Atom, CLion, CodeBlocks, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, Vim, Visual Studio</li>
+                <li><i class="fa-li fa fa-chevron-right"></i><a href="https://docs.platformio.org/page/ci/index.html">Continuous Integration</a> with AppVeyor, Circle CI, Drone, Shippable and Travis CI</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Advanced using of <a href="https://docs.platformio.org/page/userguide/cmd_init.html#cmdoption-platformio-init--ide">platformio init --ide</a> Project Generator</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>Learn how to use helper <a href="https://docs.platformio.org/page/userguide/cmd_ci.html">platformio ci</a> command in combination with Continuous Integration Systems</li>
+                <li><i class="fa-li fa fa-chevron-right"></i>All online <a href="https://docs.platformio.org/">Documentation</a></li>
               </ul>
             </div>
 

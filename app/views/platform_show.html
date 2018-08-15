@@ -52,7 +52,7 @@
                     {{ item.mcu }}
                   </td>
                   <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
-                    <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="http://docs.platformio.org/page/platforms/{{ item.platform }}.html#debugging" target="_blank">
+                    <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="https://docs.platformio.org/page/platforms/{{ item.platform }}.html#debugging" target="_blank">
                       <span ng-if="item.debug.onboard.length > 0">On-board</span>
                       <span ng-if="item.debug.onboard.length === 0">External</span>
                       <i class="fa fa-info-circle"></i>
@@ -91,8 +91,8 @@
 
             <h3>Project Dependencies <small>platformio.ini</small></h3>
             <p><b>PlatformIO Platform Manager</b> allows to specify development platform for the
-            specific project using <a href="http://docs.platformio.org/page/projectconf.html">Project Configuration File "platformio.ini"</a>
-            and <a href="http://docs.platformio.org/page/projectconf/section_env_general.html#platform">platform</a> option. PlatformIO will install dependent platform automatically when processes (builds) a project.</p>
+            specific project using <a href="https://docs.platformio.org/page/projectconf.html">Project Configuration File "platformio.ini"</a>
+            and <a href="https://docs.platformio.org/page/projectconf/section_env_general.html#platform">platform</a> option. PlatformIO will install dependent platform automatically when processes (builds) a project.</p>
             <div class="well terminal">
               <b>[env:the_latest_version]</b>
               <p>platform = <font color="silver">{{ vm.platform.name }}</font></p>
@@ -100,7 +100,7 @@
               <b>[env:exact_version]</b>
               <p>platform = <font color="silver">{{ vm.platform.name }}@1.2.3</font></p>
 
-              <small class="comment"># <a href="http://docs.platformio.org/page/userguide/platforms/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
+              <small class="comment"># <a href="https://docs.platformio.org/page/userguide/platforms/cmd_install.html#description">Semantic Versioning Rules</a></small><br>
               <b>[env:specific_major_version]</b><br>
               <small class="comment"># any compatible version (exact version for 1.x.x versions)</small></br>
               <p>platform = <font color="silver">{{ vm.platform.name }}@^1.2.3</font></p>
@@ -160,7 +160,7 @@
               <h4><i class="fa fa-code"></i> Examples</h4>
             </uib-tab-heading>
             <br>
-            <p>Please visit development platform documentation for the <a href="{{ 'http://docs.platformio.org/page/platforms/' + vm.platform.name + '.html#examples' }}" target="_blank">available project examples</a>.</p>
+            <p>Please visit development platform documentation for the <a href="{{ 'https://docs.platformio.org/page/platforms/' + vm.platform.name + '.html#examples' }}" target="_blank">available project examples</a>.</p>
           </uib-tab>
 
         </uib-tabset>
@@ -175,7 +175,7 @@
         <h3>Resources</h3>
         <p><i class="fa fa-link"></i> <a href="{{ vm.platform.url }}" target="_blank">Vendor</a></p>
         <p><i class="fa fa-github"></i> <a href="{{ vm.platform.repository }}" target="_blank">Repository</a></p>
-        <p><i class="fa fa-book"></i> <a href="{{ vm.platform.docs || 'http://docs.platformio.org/page/platforms/' + vm.platform.name + '.html' }}" target="_blank">Documentation</a></p>
+        <p><i class="fa fa-book"></i> <a href="{{ vm.platform.docs || 'https://docs.platformio.org/page/platforms/' + vm.platform.name + '.html' }}" target="_blank">Documentation</a></p>
         <div ng-if="vm.platform.license"><i class="fa fa-copyright"></i> <a href="{{ 'https://opensource.org/licenses/' + vm.platform.license }}" target="_blank">{{ vm.platform.license }}</a></p>
         <p ng-if="vm.platform.repository.indexOf('github.com') !== -1"><i class="fa fa-history"></i> <a href="{{ vm.platform.repository.replace('.git', '/releases') }}" target="_blank">Releases</a></p>
       </div>

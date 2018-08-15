@@ -127,59 +127,59 @@
       return [{
         'image': '/images/demo/ide/platformio-ide-vscode.png',
         'title': 'VSCode',
-        'url': 'http://docs.platformio.org/page/ide/vscode.html'
+        'url': 'https://docs.platformio.org/page/ide/vscode.html'
       }, {
         'image': '/images/demo/ide/ide-atom-platformio.png',
         'title': 'Atom',
-        'url': 'http://docs.platformio.org/page/ide/atom.html'
+        'url': 'https://docs.platformio.org/page/ide/atom.html'
       }, {
         'image': '/images/demo/ide/ide-cloud9-init-project.png',
         'title': 'Cloud9',
-        'url': 'http://docs.platformio.org/page/ide/cloud9.html'
+        'url': 'https://docs.platformio.org/page/ide/cloud9.html'
       }, {
         'image': '/images/demo/ide/ide-codeanywhere-init-project.png',
         'title': 'Codeanywhere (Cloud)',
-        'url': 'http://docs.platformio.org/page/ide/codeanywhere.html'
+        'url': 'https://docs.platformio.org/page/ide/codeanywhere.html'
       }, {
         'image': '/images/demo/ide/ide-eclipseche-demo.png',
         'title': 'Eclipse Che (Cloud)',
-        'url': 'http://docs.platformio.org/page/ide/eclipseche.html'
+        'url': 'https://docs.platformio.org/page/ide/eclipseche.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-clion.png',
         'title': 'CLion',
-        'url': 'http://docs.platformio.org/page/ide/clion.html'
+        'url': 'https://docs.platformio.org/page/ide/clion.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-codeblocks.png',
         'title': 'CodeBlocks',
-        'url': 'http://docs.platformio.org/page/ide/codeblocks.html'
+        'url': 'https://docs.platformio.org/page/ide/codeblocks.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-eclipse.png',
         'title': 'Eclipse',
-        'url': 'http://docs.platformio.org/page/ide/eclipse.html'
+        'url': 'https://docs.platformio.org/page/ide/eclipse.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-emacs.png',
         'title': 'Emacs',
-        'url': 'http://docs.platformio.org/page/ide/emacs.html'
+        'url': 'https://docs.platformio.org/page/ide/emacs.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-netbeans.png',
         'title': 'NetBeans',
-        'url': 'http://docs.platformio.org/page/ide/netbeans.html'
+        'url': 'https://docs.platformio.org/page/ide/netbeans.html'
       }, {
         'image': '/images/demo/ide/ide-qtcreator-7.png',
         'title': 'Qt Creator',
-        'url': 'http://docs.platformio.org/page/ide/qtcreator.html'
+        'url': 'https://docs.platformio.org/page/ide/qtcreator.html'
       }, {
         'image': '/images/demo/ide/ide-sublime-text-deviot.gif',
         'title': 'Sublime Text',
-        'url': 'http://docs.platformio.org/page/ide/sublimetext.html'
+        'url': 'https://docs.platformio.org/page/ide/sublimetext.html'
       }, {
         'image': '/images/demo/ide/ide-platformio-vim.png',
         'title': 'Vim',
-        'url': 'http://docs.platformio.org/page/ide/vim.html'
+        'url': 'https://docs.platformio.org/page/ide/vim.html'
       }, {
         'image': '/images/demo/ide/ide-visualstudio-newproject-8.png',
         'title': 'Visual Studio',
-        'url': 'http://docs.platformio.org/page/ide/visualstudio.html'
+        'url': 'https://docs.platformio.org/page/ide/visualstudio.html'
       }];
     }
 

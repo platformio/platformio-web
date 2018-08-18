@@ -22,7 +22,7 @@ except ImportError:
     from urllib.request import urlopen
 
 
-PLATFORMIOAPILIB_URL = "http://api.platformio.org/lib/search"
+PLATFORMIO_API_URL = "http://api.platformio.org"
 SITEMAPXML_PATH = abspath("../htdocs/sitemap.xml")
 
 
@@ -43,7 +43,7 @@ class PIOLibsGenerator(object):
             page += 1
 
         self._data = json.load(urlopen(
-            "%s?page=%d" % (PLATFORMIOAPILIB_URL, page))
+            "%s?page=%d" % (PLATFORMIO_API_URL + "/lib/search", page))
         )
         self._data['items'] = iter(self._data['items'])
 
@@ -108,6 +108,14 @@ def main():
             changefreq="weekly"
         )
         b.add_url(
+            loc="https://platformio.org/support",
+            changefreq="weekly"
+        )
+        b.add_url(
+            loc="https://platformio.org/pricing",
+            changefreq="weekly"
+        )
+        b.add_url(
             loc="https://platformio.org/platforms",
             changefreq="weekly"
         )
@@ -128,12 +136,26 @@ def main():
             changefreq="daily"
         )
 
+        # platforms
+        platforms = json.load(urlopen(PLATFORMIO_API_URL + "/platforms"))
+        for platform in platforms:
+            b.add_url(
+                loc=("https://platformio.org/platforms/%s" % platform['name']),
+                changefreq="weekly")
+
+        # frameworks
+        frameworks = json.load(urlopen(PLATFORMIO_API_URL + "/frameworks"))
+        for framework in frameworks:
+            b.add_url(
+                loc=("https://platformio.org/frameworks/%s" % framework['name']),
+                changefreq="weekly")
+
         # libs
-        for item in PIOLibsGenerator():
+        for lib in PIOLibsGenerator():
             b.add_url(
                 loc=("https://platformio.org/lib/show/%d/%s" %
-                     (item['id'], urllib.quote(item['name']))),
-                lastmod=item['updated'],
+                     (lib['id'], urllib.quote(lib['name']))),
+                lastmod=lib['updated'],
                 changefreq="weekly")
 
 

@@ -55,6 +55,9 @@
       .when('/get-started', {
         redirectTo: '/install'
       })
+      .when('/get-started/ide', {
+        redirectTo: '/platformio-ide'
+      })
       .when('/install/:gsType?', {
         templateUrl: 'views/install.html',
         controller: 'InstallController',

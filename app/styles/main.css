@@ -782,6 +782,16 @@
   width: 91px;
 }
 
+.brand-pulp {
+  background-position: 0 -880px;
+  width: 158px;
+}
+
+.brand-gwt {
+  background-position: 0 -920px;
+  width: 134px;
+}
+
 /* Miscellaneous */
 
 .home .fa-heart {

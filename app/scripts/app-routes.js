@@ -246,9 +246,7 @@
         }
       })
       .when('/pricing', {
-        templateUrl: 'views/pricing.html',
-        controller: 'PricingController',
-        controllerAs: 'vm'
+        redirectTo: '/support'
       })
       .when('/license', {
         templateUrl: 'views/license.html'
@@ -263,9 +261,6 @@
         templateUrl: 'views/support.html',
         controller: 'SupportController',
         controllerAs: 'vm'
-      })
-      .when('/who-uses', {
-        templateUrl: 'views/who_uses.html'
       })
       .when('/platformio-ide', {
         templateUrl: 'views/platformio-ide.html'

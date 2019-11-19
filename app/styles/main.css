@@ -180,8 +180,17 @@
 
 /* Home */
 
-.home h1 {
+.home .slogan h1 {
   font-size: 38px;
+  margin-bottom: 0;
+}
+
+.home .slogan h2 {
+  font-size: 20px;
+  color: #777;
+  line-height: 1.5;
+  font-weight: normal;
+  margin: 10px 0 30px 0;
 }
 
 .home .btn-lg {

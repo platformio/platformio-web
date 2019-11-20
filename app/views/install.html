@@ -85,7 +85,7 @@
       </div>
     </p>
 
-    <h2 class="text-center">PlatformIO <i class="fa fa-heart-o"></i> <a href="{{vm.ideDemos[vm.ideDemoActive].url}}">{{vm.ideDemos[vm.ideDemoActive].title}}</a></h2>
+    <h2 class="text-center">PlatformIO <i class="fa fa-heart-o"></i> <a href="{{vm.ideDemos[vm.ideDemoActive].url}}">{{vm.ideDemos[vm.ideDemoActive].title}} <i class="fa fa-external-link"></i></a></h2>
     <div class="ide-carousel" style="max-height: {{vm.slideHeight}}px;">
       <div uib-carousel active="vm.ideDemoActive" interval="vm.ideDemoInterval">
         <div uib-slide ng-repeat="demo in vm.ideDemos" index="$index">
@@ -131,7 +131,7 @@
       <dd>
         <ol>
           <li><b>Open</b> VSCode Extension Manager</li>
-          <li><b>Search</b> for official <kbd>PlatformIO IDE</kbd> extension</li>
+          <li><b>Search</b> for official <a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide" target="_blank">PlatformIO IDE</a> extension</li>
           <li><b>Install</b> PlatformIO IDE.
         </ol>
         <img src="images/platformio-ide-vscode-pkg-installer.png" class="img-shadow" alt="VSCode Extensions Manager and PlatformIO IDE auto-installer" />

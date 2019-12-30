@@ -4,8 +4,11 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
-    "grunt": "~1.0.1",
+    "connect-pushstate": "^1.1.0",
+    "grunt": "^1.0.1",
     "grunt-angular-templates": "^1.1.0",
+    "grunt-cdnify": "^1.0.2",
+    "grunt-cli": "^1.0.1",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -18,7 +21,7 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-filerev": "^2.1.2",
-    "grunt-cdnify": "^1.0.2",
+    "grunt-jsbeautifier": "^0.2.13",
     "grunt-jscs": "^3.0.1",
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^3.0.0",
@@ -26,12 +29,10 @@
     "grunt-svgmin": "^4.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^3.0.1",
-    "grunt-jsbeautifier": "^0.2.13",
-    "serve-static": "^1.11.1",
-    "connect-pushstate": "^1.1.0",
     "jit-grunt": "^0.10.0 ",
-    "time-grunt": "^1.0.0",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "serve-static": "^1.11.1",
+    "time-grunt": "^1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"

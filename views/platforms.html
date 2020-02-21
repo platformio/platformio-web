@@ -1,0 +1,76 @@
+<view-title>Development Platforms</view-title>
+<meta name="description" content="Embedded and Desktop development platforms with pre-built toolchains, debuggers, uploaders and frameworks" view-head />
+<meta name="keywords" content="embedded, platform, debug, {{ vm.getPlatformTitles().join(', ') }}" view-head />
+
+<div class="jumbotron">
+  <div class="container">
+    <h1><i class="fa fa-laptop"></i> Development Platforms</h1>
+
+    <p>
+      <i>Embedded</i> and <i>Desktop</i> development platforms with pre-built toolchains, debuggers, uploaders and frameworks which work under popular systems:
+      <i class="fa fa-apple"></i> <i>Mac</i>, <i class="fa fa-linux"></i> <i>Linux <small>(+ARM)</small></i> and <i class="fa fa-windows"></i> <i>Windows</i>.
+    </p>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><i class="fa fa-home"></i> <a href="/">Home</a></li>
+    <li class="active">Platforms</li>
+  </ol>
+
+  <uib-tabset active="vm.activeGroup">
+    <uib-tab ng-repeat="group in ['embedded', 'desktop']" index="$index">
+      <uib-tab-heading>
+        <h3 ng-if="group == 'embedded'">Embedded Platforms</h3>
+        <h3 ng-if="group == 'desktop'">Desktop Platforms</h3>
+      </uib-tab-heading>
+      <br>
+
+      <div class="input-group input-group-lg" style="width: 100%">
+        <input type="search" class="form-control" placeholder="Filter platforms..."ng-model="vm.filterQuery">
+      </div>
+
+      <section class="search-result">
+        <div class="well well-sm" ng-repeat="item in vm.platforms | filter:vm.filterQuery" ng-if="(!item.forDesktop  && vm.activeGroup === 0) || (item.forDesktop && vm.activeGroup === 1)">
+          <h3 class="title"><a ng-href="/platforms/{{ item.name }}">{{ item.title }}</a></h3>
+          <p>{{ item.description }}</p>
+          <div class="keywords" ng-if="item.frameworks.length">
+            <a ng-href="/frameworks/{{ name }}" class="btn btn-default btn-sm" ng-repeat="name in item.frameworks"><i class="fa fa-cog"></i> {{ name | nameToTitle : vm.frameworks }}</a>
+          </div>
+        </div>
+      </section>
+
+    </uib-tab>
+
+    <uib-tab index="2">
+      <uib-tab-heading >
+        <h3><a href="/platforms/creating"><i class="fa fa-plus"></i> Create Platform</a></h3>
+      </uib-tab-heading>
+
+      <br>
+
+      <p class="lead">
+        <b>PlatformIO</b> was developed like a tool which can build the same source code for the different development platforms via single command
+        <a href="https://docs.platformio.org/page/userguide/cmd_run.html"><i class="fa fa-angle-right fa-lg"></i> platformio run</a>
+        without any dependent software or requirements.
+
+        <br> <br>
+        For this purpose <i>PlatformIO</i> uses own pre-configured platforms data:
+        build scripts, toolchains, the settings for the most popular embedded boards and etc.
+        These data are pre-built and packaged to the different "packages".
+
+        <br> <br>
+        It allows <i>PlatformIO</i> to have multiple development platforms which can use the same packages(toolchains, frameworks),
+        but have different/own build scripts, uploader and etc.
+      </p>
+
+      <p class="text-center">
+        <a href="https://docs.platformio.org/page/platforms/creating_platform.html" class="btn btn-success btn-lg" role="button"  target="_blank"><i class="fa fa-plus fa-lg"></i> Create Platform</a>
+      </p>
+    </uib-tab>
+  </uib-tabset>
+
+</div>

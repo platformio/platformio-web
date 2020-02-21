@@ -1,0 +1,66 @@
+<view-title>Boards and development kits</view-title>
+<meta name="description" content="Embedded Boards Explorer: pre-configured settings for the popular embedded boards and development kits" view-head />
+<meta name="keywords" content="arduino, mbed, msp430, tiva, teensy, launchpad" view-head />
+
+<div class="jumbotron">
+  <div class="container">
+    <h1><i class="fa fa-microchip"></i> Boards & dev-kits</h1>
+    <p>
+      PlatformIO currently supports over 700 boards from leading manufacturers, and we are constantly adding new ones.
+    </p>
+    <p>
+      You can be part of the process by letting us know what board you wish to see supported next, by <a href="https://github.com/platformio/platformio-core/issues" target="_blank">submitting a feature request</a>.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="form-group">
+  <p class="pull-right" ng-if="!vm.shareInputShown">
+    <button type="button" class="btn btn-default" ng-click="vm.shareInputShown=true"><i class="fa fa-share-alt fa-lg"></i> Share</button>
+  </p>
+  <div class="input-group" ng-if="vm.shareInputShown" uib-tooltip="Share Url">
+    <span class="input-group-addon"><i class="fa fa-share-alt fa-lg"></i></span>
+    <input type="text" readonly="readonly" class="form-control" select-on-click value="{{ vm.shareUrl }}">
+  </div>
+</div>
+
+<br>
+
+<table ng-table="vm.tableParams" show-filter="true" class="table table-hover table-responsive">
+  <tr ng-repeat="item in $data">
+    <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
+      <a href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html" target="_blank">{{ item.name }}</a> <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+    </td>
+    <td sortable="'platform'" data-title="'Platform'" filter="{platform: 'select'}" filter-data="vm.getFilterData('platforms')">
+      <a href="/platforms/{{ item.platform }}">{{ item.platform | nameToTitle : vm.platforms }}</a>
+    </td>
+    <td data-title="'Frameworks'" filter="{frameworks: 'select'}" filter-data="vm.getFilterData('frameworks')">
+        <span ng-repeat="framework in item.frameworks">
+          <a href="/frameworks/{{ framework }}">{{ framework | nameToTitle : vm.frameworks }}</a><span ng-if="!$last">, &nbsp;</span>
+        </span>
+    </td>
+    <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}" >
+      {{ item.mcu }}
+    </td>
+     <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
+        <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html#debugging" target="_blank">
+          <span ng-if="item.debug.onboard.length > 0">On-board</span>
+          <span ng-if="item.debug.onboard.length === 0">External</span>
+          <i class="fa fa-info-circle"></i>
+        </a>
+      </td>
+    <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
+      {{ item.fcpu | embeddedFormatter : 'frequency' }}
+    </td>
+    <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
+      {{ item.ram | embeddedFormatter : 'size' }}
+    </td>
+    <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
+      {{ item.rom | embeddedFormatter : 'size' }}
+    </td>
+  </tr>
+</table>
+
+</div>

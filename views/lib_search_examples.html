@@ -1,0 +1,67 @@
+<div class="modal-search-examples">
+  <div class="row">
+    <div class="col-md-8">
+      <h4>Syntax & Examples</h4>
+    </div>
+    <div class="col-md-4 text-right">
+      <a href="https://docs.platformio.org/page/userguide/lib/cmd_search.html#description" class="btn btn-primary"><i class="fa fa-search"></i> Advanced search syntax</a>
+    </div>
+  </div>
+
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Search</th>
+        <th>Shows</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>
+        <button ng-click="vm.search('ds18*')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> DS18*</button>
+        <button ng-click="vm.search('pca*')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> PCA*</button>
+        <button ng-click="vm.search('dht*')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> DHT*</button>
+        <button ng-click="vm.search('sht*')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> SHT*</button>
+      </td>
+      <td>
+        <u>The asterisk</u> <code>*</code> serves as the truncation (or wildcard) operator.
+        <br>If you don't know the full name of library or chip, then use the first 2-3 letters and <code>*</code> operator.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('framework%253Aarduino%2520i2c')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> framework:arduino i2c</button>
+        <td>Arduino-based <code>I<sup>2</sup>C/TWI</code> libraries</td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('keyword%253Aweb%2520keyword%253Ahttp')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> keyword:web keyword:http</button>
+        <td>Filter by <code>web</code> and <code>http</code> keywords.</td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('sensor%2520-temperature')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> sensor -temperature</button>
+        <td>The all sensor libraries excluding temperature (<code>-</code> operator)</td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('author%253A%2522Adafruit%20Industries%2522')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> author:"Adafruit Industries"</button>
+        <td>Libraries by <code>Adafruit Industries</code> author</td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('platform%253Ateensy')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> platform:teensy</button>
+        <td>Libraries for the <code>Teensy</code> platform</td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('framework%253Aenergia%2520%252B(nRF24%2520HttpClient)')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> framework:energia +(nRF24 HttpClient)</button>
+        <td>Energia-based <code>nRF24</code> or <code>HttpClient</code> libraries. The search query can be interpreted like <code>energia nRF24 OR energia HttpClient</code>
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="vm.search('header%253ARH_ASK.h')" class="btn btn-default btn-xs"><i class="fa fa-search"></i> header:RH_ASK.h</button>
+        <td>Search by header files (<code>#include</code>)</td>
+    </tr>
+  </table>
+</div>

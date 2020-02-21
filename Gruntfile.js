@@ -377,7 +377,7 @@ module.exports = function (grunt) {
     cdnify: {
       dist: {
         options: {
-          base: 'http://cdn.platformio.org/'
+          base: 'https://cdn.platformio.org/'
         },
         files: [{
           expand: true,
@@ -506,7 +506,7 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin',
-    // 'cdnify',
+    'cdnify',
     'ngtemplates',
     'fixtplsrev'
   ]);

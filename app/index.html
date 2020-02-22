@@ -35,6 +35,7 @@
   <!-- endbuild -->
   <script>
     (function (url){
+      if (window.location.host.indexOf('platformio.org') !== 0) window.location.replace('https://platformio.org/');
       var posEscFrag = url.lastIndexOf('_escaped_fragment_=');
       var posHashbang = url.lastIndexOf('/#!');
       if (posEscFrag !== -1) window.location.replace(url.substr(posEscFrag + 19));

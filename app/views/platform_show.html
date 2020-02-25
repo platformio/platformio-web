@@ -40,36 +40,34 @@
             </uib-tab-heading>
             <br>
 
-             <div ng-if="vm.tableParams.total() === 0" class="alert alert-warning" role="alert">No boards</div>
+            <table ng-table="vm.tableParams"  show-filter="true" class="table table-hover table-responsive">
+              <tr ng-repeat="item in $data">
+                <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
+                  <a href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html" target="_blank">{{ item.name }}</a> <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+                </td>
+                <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}">
+                  {{ item.mcu }}
+                </td>
+                <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
+                  <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html#debugging" target="_blank">
+                    <span ng-if="item.debug.onboard.length > 0">On-board</span>
+                    <span ng-if="item.debug.onboard.length === 0">External</span>
+                    <i class="fa fa-info-circle"></i>
+                  </a>
+                </td>
+                <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
+                  {{ item.fcpu | embeddedFormatter : 'frequency' }}
+                </td>
+                <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
+                  {{ item.ram | embeddedFormatter : 'size' }}
+                </td>
+                <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
+                  {{ item.rom | embeddedFormatter : 'size' }}
+                </td>
+              </tr>
+            </table>
 
-            <div ng-if="vm.tableParams.total()">
-              <table ng-table="vm.tableParams"  show-filter="true" class="table table-hover table-responsive">
-                <tr ng-repeat="item in $data">
-                  <td sortable="'name'" data-title="'Name'" filter="{name: 'text'}">
-                   <a href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html" target="_blank">{{ item.name }}</a> <a href="javascript:void(0)" ngclipboard data-clipboard-text="{{ item.id }}" uib-tooltip="Copy ID to clipboard: {{ item.id }}" alt="ID: {{ item.id }}"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
-                  </td>
-                  <td sortable="'mcu'" data-title="'MCU'" filter="{'mcu': 'text'}">
-                    {{ item.mcu }}
-                  </td>
-                  <td sortable="'debug'" data-title="'Debug'" filter="{'debug.filters': 'select'}" filter-data="[{id: 'onboard', title: 'On-board'}, {id: 'external', title: 'External'}]" class="text-center text-nowrap">
-                    <a ng-if="item.debug" uib-tooltip-html="'{{ item.debug | boardDebugInfo }}'" href="https://docs.platformio.org/page/boards/{{ item.platform }}/{{ item.id }}.html#debugging" target="_blank">
-                      <span ng-if="item.debug.onboard.length > 0">On-board</span>
-                      <span ng-if="item.debug.onboard.length === 0">External</span>
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-                  </td>
-                  <td sortable="'fcpu'" data-title="'Frequency'" class="text-nowrap">
-                    {{ item.fcpu | embeddedFormatter : 'frequency' }}
-                  </td>
-                  <td sortable="'ram'" data-title="'RAM'" class="text-nowrap">
-                    {{ item.ram | embeddedFormatter : 'size' }}
-                  </td>
-                  <td sortable="'rom'" data-title="'Flash'" class="text-nowrap">
-                    {{ item.rom | embeddedFormatter : 'size' }}
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <div ng-if="vm.tableParams.total() === 0" class="alert alert-warning" role="alert">No boards</div>
           </uib-tab>
 
           <uib-tab select="vm.changeTab('installation')">

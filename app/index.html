@@ -35,7 +35,6 @@
   <!-- endbuild -->
   <script>
     (function (url){
-      if (window.location.host.indexOf('platformio.org') !== 0) window.location.replace('https://platformio.org/');
       var posEscFrag = url.lastIndexOf('_escaped_fragment_=');
       var posHashbang = url.lastIndexOf('/#!');
       if (posEscFrag !== -1) window.location.replace(url.substr(posEscFrag + 19));
@@ -75,6 +74,8 @@
               <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-rocket fa-lg"></i>Get Started<span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a href="https://docs.platformio.org/page/what-is-platformio.html"><i class="fa fa-heart"></i>What is PlatformIO?</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="menuitem"><a href="/platformio-ide"><i class="fa fa-cube"></i>PlatformIO IDE</a></li>
                 <li role="menuitem"><a href="/install/cli"><i class="fa fa-cogs"></i>PlatformIO Core (CLI)</a></li>
                 <li role="separator" class="divider"></li>
@@ -86,6 +87,9 @@
               <a role="button" class="dropdown-toggle" uib-dropdown-toggle><i class="fa fa-cube fa-lg"></i>Features<span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a href="/platformio-ide"><i class="fa fa-cube"></i>PlatformIO IDE</a></li>
+                <li role="menuitem"><a href="/install/cli"><i class="fa fa-cogs"></i>PlatformIO Core (CLI)</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="menuitem"><a href="https://docs.platformio.org/page/plus/pio-check.html"><i class="fa fa-check-circle-o"></i>PIO Check</a></li>
                 <li role="menuitem"><a href="https://docs.platformio.org/page/plus/pio-remote.html"><i class="fa fa-globe"></i>PIO Remote</a></li>
                 <li role="menuitem"><a href="https://docs.platformio.org/page/plus/debugging.html"><i class="fa fa-bug"></i>PIO Unified Debugger</a></li>

@@ -827,6 +827,11 @@
   width: 130px;
 }
 
+.brand-asr {
+  background-position: 0 -1120px;
+  width: 92px;
+}
+
 /* Miscellaneous */
 
 .home .fa-heart {

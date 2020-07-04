@@ -106,9 +106,7 @@
 
       var defer = dataService.getLibDlUrl(vm.lib.id).$promise;
       defer.then(function(data) {
-        $window.location.href = (data.url + '?filename=' + [
-          vm.lib.name.replace(/[\s]+/g, '-'), vm.lib.version.name, vm.lib.id
-        ].join('_'));
+        $window.location.href = data.url;
       });
     }
 

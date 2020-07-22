@@ -213,7 +213,7 @@
         <br><b>{{ vm.lib.dlstats.month | number }}</b> in the last month
 
         <h3>Versions</h3>
-        <div ng-repeat="item in vm.lib.versions.slice().reverse()">
+        <div ng-repeat="item in vm.lib.versions.slice()">
           <span uib-tooltip="{{ item.released | date:'medium' }}"><strong>{{ item.name }}</strong> <small>released {{ item.released | relativeDate }}</small></span>
         </div>
 

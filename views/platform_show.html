@@ -78,17 +78,6 @@
             </uib-tab-heading>
             <br>
 
-            <h3>PlatformIO IDE</h3>
-            <a href="/platformio-ide">PlatformIO IDE</a> has built-in <b>PIO Home: Platform Manager</b>. It provides a lightweight and effective solution that helps users to manage PlatformIO development platforms:
-            <ul>
-              <li>Search for new development platforms in PlatformIO Registry</li>
-              <li>"1-click" development platform installation</li>
-              <li>List installed development platforms</li>
-              <li>Updates for installed platforms</li>
-              <li>Multiple examples, trending platforms, and more.</li>
-            </ul>
-            <a href="/platformio-ide"><img src="https://cdn.platformio.org/images/pio-home-platform-manager.fac0141e.png" class="img-shadow" style="max-width: 100%" alt="PlatformIO IDE: Platform Manager" /></a>
-
             <h3>Project Dependencies <small>platformio.ini</small></h3>
             <p><b>PlatformIO Platform Manager</b> allows specifying development platform for the
             specific project using <a href="https://docs.platformio.org/page/projectconf.html">Project Configuration File "platformio.ini"</a>
@@ -126,9 +115,9 @@
 
             <div class="well terminal">
               <small class="comment"># Install the <kbd>latest</kbd> version</small>
-              <p><i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">platform install</font> {{ vm.platform.name }}</p>
+              <p><i class="fa fa-angle-right fa-lg"></i> pio <font color="silver">platform install</font> {{ vm.platform.name }}</p>
               <small class="comment"># Install <kbd>exact</kbd> version</small><br>
-              <i class="fa fa-angle-right fa-lg"></i> platformio <font color="silver">platform install</font> {{ vm.platform.name }}@1.2.3<br>
+              <i class="fa fa-angle-right fa-lg"></i> pio <font color="silver">platform install</font> {{ vm.platform.name }}@1.2.3<br>
             </div>
 
           </uib-tab>

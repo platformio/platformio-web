@@ -28,6 +28,7 @@
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  border: none;
 }
 
 .navbar-nav .fa {
@@ -62,26 +63,7 @@
     overflow-y: visible;
 }
 
-.navbar .github-corner {
-  display: none;
-}
-
-.navbar .github-corner svg {
-  fill: #fff;
-  color: #080808;
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  border: 0;
-  width: 50px;
-  height: 50px;
-  transform: scale(1, 1);
-}
-
 @media screen and (min-width: 992px) {
-  .navbar .github-corner {
-    display: block;
-  }
   ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;
   }
@@ -100,16 +82,19 @@
   margin-right: 5px;
 }
 
-.nav .nav-pio-install {
-  background-color: #398439;
+.nav .nav-pio-tech {
+  background-color: #f5822a;
+  font-weight: bold;
 }
 
-.nav .nav-pio-install:hover {
-  background-color: #449d44
+.nav .nav-pio-tech:hover {
+  background-color: #ee6d0b;
+  font-weight: bold;
 }
 
-.nav .nav-pio-install > a {
+.nav .nav-pio-tech > a {
   color: white !important;
+  font-weight: bold;
 }
 
 .nav-pills .active a {
@@ -658,8 +643,17 @@
   line-height: 1.92857143em;
 }
 
-.footer .copyright {
-  color: #777;
+.footer .sponsored a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer .sponsored li {
+  vertical-align: middle;
+}
+
+.footer .text-sponsored {
+  font-size: 14px;
 }
 
 .footer .copyright-vendors {
@@ -671,10 +665,13 @@
 .brands-contaier {
   background-color: #fff;
   text-align: center;
+  padding-bottom: 60px;
 }
 
 .brands-contaier h2 {
   color: #222;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .brands:hover,

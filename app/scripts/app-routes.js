@@ -92,7 +92,7 @@
           ],
           boardsList: ['dataService',
             function(dataService) {
-              return dataService.getBoards();;
+              return dataService.getBoards();
             }
           ],
           packagesList: ['dataService',
@@ -136,7 +136,7 @@
           ],
           boardsList: ['dataService',
             function(dataService) {
-              return dataService.getBoards();;
+              return dataService.getBoards();
             }
           ],
           frameworksList: ['dataService',

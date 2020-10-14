@@ -76,7 +76,7 @@
             if ('onboard' in data && data.onboard) {
               onboard.push(name);
             } else {
-              external.push(name)
+              external.push(name);
             }
           });
           if (onboard.length) {

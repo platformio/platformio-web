@@ -245,15 +245,6 @@
           ]
         }
       })
-      .when('/pricing', {
-        redirectTo: '/support'
-      })
-      .when('/license', {
-        templateUrl: 'views/license.html'
-      })
-      .when('/subscriptions', {
-        templateUrl: 'views/subscriptions.html'
-      })
       .when('/support', {
         templateUrl: 'views/support.html',
         controller: 'SupportController',

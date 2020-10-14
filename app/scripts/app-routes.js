@@ -254,9 +254,6 @@
       .when('/subscriptions', {
         templateUrl: 'views/subscriptions.html'
       })
-      .when('/contact', {
-        templateUrl: 'views/contact.html'
-      })
       .when('/support', {
         templateUrl: 'views/support.html',
         controller: 'SupportController',

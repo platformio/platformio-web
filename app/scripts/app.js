@@ -32,7 +32,6 @@
       'ngTable',
       'ngclipboard',
       'duScroll'
-
     ])
 
     .constant('siteConfig', {

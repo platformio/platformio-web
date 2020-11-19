@@ -107,72 +107,55 @@
 <article>
   <div class="container home">
 
-    <div class="row text-center top-items-lg">
-      <div class="col-md-4">
-        <center>
-          <a href="/platformio-ide">
-            <div class="img-circle"><i class="fa fa-cube fa-5x"></i>
-            </div>
-          </a>
-        </center>
-        <h2>PlatformIO IDE</h2>
-        <p>
-          A new generation toolset for embedded C/C++ development.
-          <br>Intelligent code completion and Smart code linter with Built-in Terminal and Serial Port Monitor.
-        </p>
-        <p><a class="btn btn-default" href="/platformio-ide" role="button">Read More</a>
-        </p>
+    <div class="row home-divider-small text-left">
+      <div class="col-md-6">
+        <h2 class="featurette-heading">The <span class="text-success">most loved</span> IDE solution for Microsoft Visual Studio Code.</h2>
+        <p class="lead"> A user-friendly and extensible integrated development environment with a set of professional development instruments, providing modern and powerful features to speed up yet simplify the creation and delivery of embedded products.</p>
+        <ul class="list-inline">
+          <li>
+            <a class="btn btn-success btn-lg" href="/install/ide?install=vscode" role="button" analytics-on analytics-event="Install" analytics-category="IDE" analytics-label="VSCode"><i class="fa fa-download fa-lg"></i> &nbsp;Get it Now!</a>
+          </li>
+          <li>
+            <a href="/install/integration" du-smooth-scroll><i class="fa fa-heart-o" aria-hidden="true"></i> Looking for another editor?</a>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-4">
-        <center>
-          <a>
-            <div class="img-circle"><i class="fa fa-wrench fa-5x"></i>
-            </div>
-          </a>
-        </center>
-        <h2>Development</h2>
-        <p>
-          Rapid <b>Embedded Development</b> with multi-platform build system. <b>Continuous and IDE integration</b> with the most popular Desktop and <b>Cloud IDEs</b> thanks to built-in project generator.
-        </p>
-        <p>
-          <a class="btn btn-default" href="/platforms" role="button">Platforms</a>
-          <a class="btn btn-default" href="/frameworks" role="button">Frameworks</a>
-          <a class="btn btn-default" href="/boards" role="button">Boards</a>
-        </p>
+      <div class="col-md-6">
+        <br />
+        <a href="/install/ide?install=vscode" analytics-on analytics-event="Image" analytics-category="IDE" analytics-label="Home"><img src="https://cdn.platformio.org/images/platformio-ide-laptop.93fc8e69.png" class="img-responsive" alt="PlatformIO IDE for embedded development" title="PlatformIO IDE for embedded development" uib-tooltip="PlatformIO IDE for embedded development"></a>
       </div>
-      <div class="col-md-4">
-        <center>
-          <a href="/lib">
-            <div class="img-circle"><i class="fa fa-code fa-5x"></i>
-            </div>
-          </a>
-        </center>
-        <h2>Library Registry</h2>
-        <p><b>Thousands of Popular Libraries</b> are organized into single platform with advanced search by keywords, missed or known headers, etc. <b>Project Dependency Manager</b> with <a href="https://docs.platformio.org/page/librarymanager/index.html">Semantic Versioning</a> requirements.</p>
-        <p><a class="btn btn-default" href="/lib" role="button">Read More</a>
-        </p>
+    </div>
+    <div class="row featurette">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-success"></i> A lightweight but powerful cross-platform source code editor</li>
+          <li><i class="fa fa-check text-success"></i> Smart code completions based on variable types, function definitions, and library dependencies</li>
+          <li><i class="fa fa-check text-success"></i> Multi-projects workflow with easy navigation around project codebase, multiple panes, and themes support</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-success"></i> Seamless integration with <a href="https://docs.platformio.org/page/home/index.html">PlatformIO Home (UI)</a> with board and library managers</li>
+          <li><i class="fa fa-check text-success"></i> Intuitive project wizard and a wide range of example projects</li>
+          <li><i class="fa fa-check text-success"></i> Built-in Terminal with <a href="https://docs.platformio.org/page/core/index.html">PlatformIO Core (CLI)</a> and powerful <a href="https://docs.platformio.org/page/core/userguide/device/cmd_monitor.html">Serial Port Monitor</a></li>
+        </ul>
       </div>
     </div>
 
-    <hr class="home-divider-small">
+    <hr class="home-divider">
 
-    <div class="row featurette text-left">
-      <div class="col-md-4">
-        <h2 class="featurette-heading"><a href="/platformio-ide" analytics-on analytics-event="Button" analytics-category="IDE" analytics-label="Home">PlatformIO IDE</a> <span class="text-muted">for embedded development</span></h2>
-        <p class="lead"><i class="fa fa-check"></i>
-          <a href="https://docs.platformio.org/page/plus/debugging.html">Unified Debugger</a> with a support for the multiple architectures and development platforms that allows you to <a href="/boards?sorting%5Bdebug%5D=asc">debug more than 200 embedded boards</a> with Zero-Configuration!
-        </p>
-        <p class="lead"><i class="fa fa-check"></i>
-          Cross-platform build system without external dependencies to the OS software: <a href="/boards">800+ embedded boards</a>, <a href="/platforms">35+ development platforms</a>, <a href="/frameworks">20+ frameworks</a>
-        </p>
-        <p class="lead"><i class="fa fa-check"></i> C/C++ <abbr title="C/C++ Intelligent Code Completion">Intelligent Code Completion</abbr> and <abbr title="C/C++ Smart Code Linter">Smart Code Linter</abbr> for rapid professional development</p>
-        <p class="lead"><i class="fa fa-check"></i> Multi-projects workflow with multiple panes and Themes support with dark and light colors</p>
-        <p class="lead"><i class="fa fa-thumbs-up"></i> Built-in Terminal with <a href="https://docs.platformio.org/page/core.html">PlatformIO Core</a> and powerful Serial Port Monitor</p>
+    <div class="row stats text-center home-divider-small">
+      <div class="col col-md-4">
+        <h3><a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide" class="text-success" target="_blank">1.2M+</a></h3>
+        <span class="text-muted">Over 1,000,000 unique installations of PlatformIO IDE for VSCode</span>
       </div>
-      <div class="col-md-8">
-        <br />
-        <br />
-        <a href="/platformio-ide" analytics-on analytics-event="Image" analytics-category="IDE" analytics-label="Home"><img src="https://cdn.platformio.org/images/demo/ide/platformio-ide-vscode.png" class="img-thumbnail" alt="PlatformIO IDE for embedded development" title="PlatformIO IDE for embedded development" uib-tooltip="PlatformIO IDE for embedded development"></a>
+      <div class="col col-md-4">
+        <h3><a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide" class="text-success" target="_blank">1,400+</a></h3>
+        <span class="text-muted">The most reviewed extension in the whole Microsoft Marketplace</span>
+      </div>
+      <div class="col col-md-4">
+        <h3><a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide" class="text-success" target="_blank">4.9/5.0</a></h3>
+        <span class="text-muted">Our average review across all of our company product lines</span>
       </div>
     </div>
   </div>
@@ -202,36 +185,63 @@
   <div class="container text-center main-featurette">
 
     <div class="row featurette text-left">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Embedded Development. <span class="text-muted">Easier Than Ever.</span></h2>
+      <div class="col-md-6">
+        <h2 class="featurette-heading">Integrated <a href="https://docs.platformio.org/page/plus/debugging.html" class="text-danger">Debugger</a></h2>
         <p class="lead">
-          <i>PlatformIO</i> is well suited for embedded development and has pre-configured settings for the most popular <a href="/boards" >Embedded Boards</a>.
+          A comprehensive debugging environment with extensive support for debugging probes and target systems.
         </p>
-        <p class="lead"><i class="fa fa-check"></i> <b><font color="blue">Co</font><font color="cyan">lour</font><font color="red">ful</font></b> <a href="https://raw.githubusercontent.com/platformio/platformio/develop/examples/platformio-examples.png" target="_blank">command-line output</a></p>
-        <p class="lead"><i class="fa fa-check"></i> <a href="https://docs.platformio.org/page/ide.html">IDE Integration</a> with <i>Cloud9, Codeanywhere, Eclipse Che, Atom, CLion, CodeBlocks, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, Vim, Visual Studio</i></p>
-        <p class="lead"><i class="fa fa-check"></i> Cloud compiling and <a href="https://docs.platformio.org/page/ci/index.html">Continuous Integration</a> with <i>AppVeyor, Circle CI, Drone, Shippable, Travis CI</i></p>
-        <p class="lead"><i class="fa fa-check"></i> Built-in <a href="https://docs.platformio.org/page/userguide/cmd_serialports.html#platformio-serialports-monitor">Serial Port Monitor</a> and configurable <a href="https://docs.platformio.org/page/projectconf.html#build-flags">build -flags/-options</a></p>
-        <p class="lead"><i class="fa fa-thumbs-up"></i> Pre-built toolchains, <a href="/frameworks">frameworks</a> for the popular <a href="/platforms">development platforms</a></p>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-danger"></i> Quickly debug your projects with predefined configurations to maximize productivity</li>
+          <li><i class="fa fa-check text-danger"></i> Easily switch to the mixed-mode disassembly view to identify buggy or non-optimized code</li>
+          <li><i class="fa fa-check text-danger"></i> Use Watch Windows to quickly evaluate symbols, registers, and expressions as your code executes </li>
+          <li><i class="fa fa-check text-danger"></i> Examine Call Stack View to understand the execution flow of your application</li>
+          <li><i class="fa fa-check text-danger"></i> Use Peripherals View to monitor the internal state of device peripherals</li>
+        </ul>
+        <p><i class="fa fa-book"></i> <a href="https://docs.platformio.org/page/plus/debugging.html" class="text-danger">Documentation & Supported Probes</a></p>
       </div>
-      <div class="col-md-5">
-        <img src="https://cdn.platformio.org/images/platformio-embedded-development.b0a1d37a.png" class="img-thumbnail" alt="PlatformIO Embedded Development Architecture" title="PlatformIO Embedded Development Architecture" uib-tooltip="PlatformIO Embedded Development Architecture">
+      <div class="col-md-6">
+        <img src="https://cdn.platformio.org/images/demo/ide/platformio-ide-vscode.png" class="img-thumbnail" alt="PlatformIO Debugging Solution" title="PlatformIO Debugging Solution" uib-tooltip="PlatformIO Debugging Solution">
       </div>
     </div>
 
     <hr class="home-divider">
 
     <div class="row featurette text-left">
-      <div class="col-md-5">
-        <img src="https://cdn.platformio.org/images/platformio-library-manager.c19b6f68.png" class="img-thumbnail" alt="PlatformIO Library Manager Architecture" title="PlatformIO Library Manager Architecture" uib-tooltip="PlatformIO Library Manager Architecture">
+      <div class="col-md-6">
+        <img src="https://cdn.platformio.org/images/pioplus-unit-testing-demo.1366991d.png" class="img-thumbnail" alt="PlatformIO Unit Testing Solution" title="PlatformIO Unit Testing Solution" uib-tooltip="PlatformIO Unit Testing Solution">
       </div>
-      <div class="col-md-7">
-        <h2 class="featurette-heading">The Missing Library Manager. <span class="text-muted">It's here!</span></h2>
-        <p class="lead"> <i>PlatformIO Library Manager</i> is the missing library manager for development platforms which allows you to organize and have up-to-date external libraries.</p>
-        <p class="lead"><i class="fa fa-check"></i> Friendly <a href="https://docs.platformio.org/page/librarymanager/index.html">Command-Line Interface</a></p>
-        <p class="lead"><i class="fa fa-check"></i> Modern <a href="/lib">Web 2.0 Library Portal</a></p>
-        <p class="lead"><i class="fa fa-check"></i> Open Source <a href="https://github.com/platformio/platformio-api" target="_blank">Library Registry API</a></p>
-        <p class="lead"><i class="fa fa-check"></i> Library Crawler based on <a href="https://docs.platformio.org/page/librarymanager/config.html">library.json</a> specification</p>
-        <p class="lead"><i class="fa fa-thumbs-up"></i> <b>Project Dependency Manager</b> with <a href="https://docs.platformio.org/page/librarymanager/index.html">Semantic Versioning</a> requirements</p>
+      <div class="col-md-6">
+        <h2 class="featurette-heading">Unit <a href="https://docs.platformio.org/page/plus/unit-testing.html" class="text-success">Testing</a></h2>
+        <p class="lead"> Make use of a common testing environment for multiple projects with different target platforms.</p>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-success"></i> Easily create, execute, and maintain tests on the host or target hardware</li>
+          <li><i class="fa fa-check text-success"></i> Quickly find failed tests, identify environment with failures and take a closer look at the failed test suites</li>
+          <li><i class="fa fa-check text-success"></i> Configure the built-in test runner to precisely orchestrate the execution of selected tests</li>
+          <li><i class="fa fa-check text-success"></i> Automate unit testing on a remote machine or from CI server</li>
+        </ul>
+        <p><i class="fa fa-book"></i> <a href="https://docs.platformio.org/page/plus/unit-testing.html" class="text-success">Documentation & API</a></p>
+      </div>
+    </div>
+
+    <hr class="home-divider">
+
+    <div class="row featurette text-left">
+      <div class="col-md-6">
+        <h2 class="featurette-heading">Static <a href="https://docs.platformio.org/page/plus/pio-check.html" class="text-warning">Code Analysis</a></h2>
+        <p class="lead">
+          Utilize out-of-the box support for popular static code analyzers to eliminate issues earlier in the development cycle and ship more reliable and secure software no matter which development platform you work with.
+        </p>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-warning"></i> Detect the precise location of potential defects</li>
+          <li><i class="fa fa-check text-warning"></i> Make use of comprehensive and detailed error information with defect severity</li>
+          <li><i class="fa fa-check text-warning"></i> Easily perform analysis as part of your Continuous Integration pipeline</li>
+          <li><i class="fa fa-check text-warning"></i> Use a powerful configuration system to filter out specific defects</li>
+          <li><i class="fa fa-check text-warning"></i> Ensure your code is robust and meets high industry standards</li>
+        </ul>
+        <p><i class="fa fa-book"></i> <a href="https://docs.platformio.org/page/plus/unit-testing.html" class="text-warning">Documentation & Tools</a></p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://cdn.platformio.org/images/modern-ui-toolkit-project-inspection.69f930c6.jpg" class="img-thumbnail" alt="PlatformIO Static Code Analysis Solution" title="PlatformIO Static Code Analysis Solution" uib-tooltip="PlatformIO Static Code Analysis Solution">
       </div>
     </div>
 
@@ -239,18 +249,18 @@
 
     <div class="row featurette text-left">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Smart Build System. <span class="text-muted">Fast and Reliable.</span></h2>
-        <p class="lead">
-          <i>PlatformIO Build System</i> is built-on a next-generation software construction tool named <a href="http://www.scons.org" target="_blank">SCons</a>. Think of <i>SCons</i> as an improved, cross-platform substitute for the classic <i>Make</i> utility.
-        </p>
-        <p class="lead"><i class="fa fa-check"></i> Reliable, automatic <strong>dependency analysis</strong></p>
-        <p class="lead"><i class="fa fa-check"></i> Reliable detection of <strong>build changes</strong></p>
-        <p class="lead"><i class="fa fa-check"></i> Improved support for <strong>parallel builds</strong></p>
-        <p class="lead"><i class="fa fa-check"></i> Ability to share <strong>built files in a cache</strong></p>
-        <p class="lead"><i class="fa fa-thumbs-up"></i> <strong>Lookup</strong> for external libraries which are installed via <a href="https://docs.platformio.org/page/librarymanager/index.html"><i class="fa fa-book"></i> Library Manager</a></p>
+        <img src="https://cdn.platformio.org/images/pio-remote-architecture.266f49d5.png" class="img-responsive" alt="PlatformIO Remote Development Solution" title="PlatformIO Remote Development Solution" uib-tooltip="PlatformIO Remote Development Solution">
       </div>
       <div class="col-md-5">
-        <img src="https://cdn.platformio.org/images/platformio-scons-builder.3196c963.png" class="img-thumbnail" alt="PlatformIO Build System Architecture" title="PlatformIO Build System Architecture" uib-tooltip="PlatformIO Build System Architecture">
+        <h2 class="featurette-heading"><a href="https://docs.platformio.org/page/plus/pio-remote.html" class="text-primary">Remote</a> Development</h2>
+        <p class="lead"> Remote development lets you develop projects in your favorite environment, while using the computing power and connected devices on a remote machine.</p>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-primary"></i> Program your devices using the most popular Cloud IDEs</li>
+          <li><i class="fa fa-check text-primary"></i> Run tests on a remote machine without extra software, SSH, VPN or opening network ports</li>
+          <li><i class="fa fa-check text-primary"></i> Easily share devices with friends or colleagues across your organization</li>
+          <li><i class="fa fa-check text-primary"></i> Safely gather logs from devices connected to a remote single-board computer</li>
+        </ul>
+        <p><i class="fa fa-book"></i> <a href="https://docs.platformio.org/page/plus/pio-remote.html" class="text-primary">Documentation & Use Cases</a></p>
       </div>
     </div>
 

@@ -229,6 +229,25 @@
   padding: 5px 0;
 }
 
+.featurette ul li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  padding-bottom: 15px;
+}
+
+.stats h3 {
+  font-size: 50px;
+}
+
+.stats span {
+  font-weight: 300;
+}
+
+.stats .col {
+  padding: 0 55px;
+}
+
 /* Install */
 
 .install .top-items-lg .item {

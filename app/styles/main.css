@@ -229,6 +229,10 @@
   padding: 5px 0;
 }
 
+.featurette-heading {
+  margin-top: 0;
+}
+
 .featurette ul li {
   font-size: 18px;
   font-weight: 300;

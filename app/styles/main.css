@@ -656,14 +656,8 @@
   width: 15px;
 }
 
-.footer .quick-links .social .fa {
-  width: 28px;
-}
-
 .footer .quick-links .social a {
-  vertical-align: top;
-  font-size: 14px;
-  line-height: 1.92857143em;
+  line-height: 1.8em;
 }
 
 .footer .sponsored a {

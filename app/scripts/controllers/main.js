@@ -27,6 +27,7 @@
     vm.viewAutoScroll = true;
     vm.isNavBarCollapsed = true;
     vm.isRouteActive = isRouteActive;
+    vm.paddleCheckout = paddleCheckout;
     vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
     vm.siteUtils = siteUtils;
 
@@ -51,6 +52,10 @@
 
     function isRouteActive(pattern) {
       return new RegExp(pattern).test($location.path());
+    }
+
+    function paddleCheckout(options) {
+      Paddle.Checkout.open(options);
     }
 
   }

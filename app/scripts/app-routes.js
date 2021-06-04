@@ -246,9 +246,7 @@
         }
       })
       .when('/support', {
-        templateUrl: 'views/support.html',
-        controller: 'SupportController',
-        controllerAs: 'vm'
+        templateUrl: 'views/support.html'
       })
       .when('/platformio-ide', {
         templateUrl: 'views/platformio-ide.html'

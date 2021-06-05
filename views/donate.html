@@ -13,12 +13,12 @@
   <h2>Dear User,</h2>
 
   <p>
-    Thanks a lot for your choice to use <b>PlatformIO a professional collaborative platform for embedded development</b>. The mission of <a href="https://piolabs.com/">PlatformIO Team</a> is to
+    Thanks a lot for your choice to use <b>PlatformIO a professional collaborative platform for embedded development</b>. The mission of PlatformIO Team is to
 
     <ul>
-      <li>Keep PlatformIO <b>NEUTRAL</b> for any architecture, hardware or software products</li>
-      <li>Keep it totally for <b>FREE</b> even for the commercial using</li>
-      <li>Provide community <b>SUPPORT</b> for FREE.</li>
+      <li>Keep PlatformIO Project <b>NEUTRAL</b> for any architecture, hardware, or software products</li>
+      <li>Keep it totally for <b>FREE</b>, even for the commercial using</li>
+      <li>Provide community <b>SUPPORT</b> for free.</li>
     </ul>
 
     If you have found PlatformIO to be useful in your work, research or company,
@@ -26,23 +26,16 @@
     resources. Any amount helps! All donations will be used strictly to fund
     the development of PlatformIO Project.
   </p>
-  <h4>Sincerely, <a href="https://piolabs.com/">PlatformIO Team</a>.</h4>
+  <b>Sincerely, PlatformIO Team.</b>
 
-  <div class="donate">
-    <ul class="list-inline text-center">
-      <li><button type="button" class="btn btn-success btn-lg" ng-click="vm.paddleCheckout({product: 657410, quantity: 100})"><i class="fa fa-heart-o"></i> More</button></li>
-      <li><button type="button" class="btn btn-primary" ng-click="vm.paddleCheckout({product: 657410, quantity: 50})"><i class="fa fa-dollar"></i> 500</button></li>
-      <li><button type="button" class="btn btn-primary btn-sm" ng-click="vm.paddleCheckout({product: 657410, quantity: 10})"><i class="fa fa-dollar"></i> 100</button></li>
-      <li><button type="button" class="btn btn-primary btn-sm" ng-click="vm.paddleCheckout({product: 657410, quantity: 5})"><i class="fa fa-dollar"></i> 50</button></li>
-      <li><button type="button" class="btn btn-default btn-xs" ng-click="vm.paddleCheckout({product: 657410, quantity: 3})"><i class="fa fa-dollar"></i> 30</button></li>
-      <li><button type="button" class="btn btn-default btn-xs" ng-click="vm.paddleCheckout({product: 657410, quantity: 1})"><i class="fa fa-dollar"></i> 10</button></li>
-    </ul>
-  </div>
+  <div ng-include="'views/donation_buttons.html'"></div>
+
+  <hr class="home-divider-small" />
 
   <center>
     <h2><i class="fa fa-btc"></i> Donate Bitcoin</h2>
-    <p style="font-size: 24px">Address: <code>1131wW4aKfvuCFRRXn7ind8HZmrfRgDaDx</code></p>
-    <img src="https://cdn.platformio.org/images/qrcode_donate_bitcoin.03c08787.png" />
+    <p style="font-size: 20px">Address: <code>1131wW4aKfvuCFRRXn7ind8HZmrfRgDaDx</code></p>
+    <img src="https://cdn.platformio.org/images/qrcode_donate_bitcoin.03c08787.png" style="max-width: 250px;" />
   </center>
 
 

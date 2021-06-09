@@ -31,7 +31,6 @@
     }
 
     vm.siteUtils = siteUtils;
-    vm.paddleCheckout = paddleCheckout;
     vm.cliDemos = dataService.getCLIDemos();
     vm.cliDemoActive = 0;
     vm.ideDemos = dataService.getIDEDemos();
@@ -40,10 +39,6 @@
     vm.slideHeight = ($window.innerHeight ? Math.ceil($window.innerHeight / 2) :
       240);
     vm.installIDE = $location.search().hasOwnProperty('install') ? $location.search().install : null;
-
-    function paddleCheckout(options) {
-      Paddle.Checkout.open(options);
-    }
   }
 
 })();

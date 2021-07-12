@@ -679,13 +679,13 @@
   text-align: left;
 }
 
-.brands-contaier {
+.brands-container {
   background-color: #fff;
   text-align: center;
   padding-bottom: 60px;
 }
 
-.brands-contaier h2 {
+.brands-container h2 {
   color: #222;
   margin-top: 0;
   margin-bottom: 30px;
@@ -758,7 +758,7 @@
 
 .brand-espresiff {
   background-position: 0 -440px;
-  width: 108px;
+  width: 156px;
 }
 
 .brand-siliconlabs {

@@ -254,6 +254,9 @@
       .when('/donate', {
         templateUrl: 'views/donate.html'
       })
+      .when('/advertising', {
+        templateUrl: 'views/advertising.html'
+      })
       .when('/404', {
         templateUrl: 'views/404.html'
       })

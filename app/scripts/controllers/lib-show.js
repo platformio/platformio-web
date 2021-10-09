@@ -36,6 +36,7 @@
     vm.manifestUrl = '';
     vm.downloadLib = downloadLib;
     vm.editLibraryConf = editLibraryConf;
+    vm.stripVersionBuildInfo = stripVersionBuildInfo
     vm.changeTab = changeTab;
 
     if (vm.examples.length) {
@@ -127,6 +128,18 @@
       }
 
       $window.location.href = confUrl;
+    }
+
+    function stripVersionBuildInfo(version) {
+      var matches = version.trim().match(/^([\d\.]+).*/);
+      if (!matches) {
+        return version;
+      }
+      var stableVersion = matches[1];
+      if (stableVersion[stableVersion.length - 1] == '.') {
+        stableVersion = stableVersion.substring(0, stableVersion.length - 1);
+      }
+      return stableVersion;
     }
 
     function changeTab(name) {

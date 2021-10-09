@@ -75,12 +75,12 @@
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp; <span class="comment"># RECOMMENDED</span><br />
                   &nbsp;&nbsp;&nbsp;&nbsp; <span class="comment"># Accept new functionality in a backwards compatible manner and patches</span><br />
-                  &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.ownername }}/{{ vm.lib.name }} @ ^{{ vm.lib.version.name }}</font>
+                  &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.ownername }}/{{ vm.lib.name }} @ ^{{ vm.stripVersionBuildInfo(vm.lib.version.name) }}</font>
                 </p>
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># Accept only backwards compatible bug fixes</small><br />
                   &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># (any version with the same major and minor versions, and an equal or greater patch version)</small><br />
-                  &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.ownername }}/{{ vm.lib.name }} @ ~{{ vm.lib.version.name }}</font>
+                  &nbsp;&nbsp;&nbsp;&nbsp; <font color="silver">{{ vm.lib.ownername }}/{{ vm.lib.name }} @ ~{{ vm.stripVersionBuildInfo(vm.lib.version.name) }}</font>
                 </p>
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp; <small class="comment"># The exact version</small><br />
@@ -95,7 +95,7 @@
             </p>
 
             <div class="well terminal">
-              <p><i class="fa fa-angle-right fa-lg"></i> pio <font color="silver">lib install</font> "{{ vm.lib.ownername }}/{{ vm.lib.name }}@^{{ vm.lib.version.name }}"</p>
+              <p><i class="fa fa-angle-right fa-lg"></i> pio <font color="silver">lib install</font> "{{ vm.lib.ownername }}/{{ vm.lib.name }}@^{{ vm.stripVersionBuildInfo(vm.lib.version.name) }}"</p>
               <small class="comment"># Install specific <kbd>version</kbd></small><br>
               <i class="fa fa-angle-right fa-lg"></i> pio <font color="silver">lib install</font> "{{ vm.lib.ownername }}/{{ vm.lib.name }}@{{ vm.lib.version.name }}"
             </div>

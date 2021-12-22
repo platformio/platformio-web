@@ -87,6 +87,11 @@
   font-weight: bold;
 }
 
+.nav .badge {
+  background-color: #5cb85c;
+  margin-left: 2px;
+}
+
 .nav .nav-pio-tech:hover {
   background-color: #ee6d0b;
   font-weight: bold;

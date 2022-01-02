@@ -89,7 +89,9 @@
 
 .nav .badge {
   background-color: #5cb85c;
-  margin-left: 2px;
+  margin-left: 5px;
+  font-size: 10px;
+  line-height: 11px;
 }
 
 .nav .nav-pio-tech:hover {

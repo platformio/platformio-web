@@ -21,14 +21,12 @@
     .module('siteApp')
     .controller('MainController', MainController);
 
-  function MainController($rootScope, $location, $window, siteUtils) {
+  function MainController($rootScope, $location) {
     var vm = this;
 
     vm.viewAutoScroll = true;
     vm.isNavBarCollapsed = true;
     vm.isRouteActive = isRouteActive;
-    vm.isPhJSCrawler = $window.navigator.userAgent.indexOf('PhantomJS') !== -1;
-    vm.siteUtils = siteUtils;
 
     $rootScope.$on('$routeChangeStart', function(angularEvent, next, current) {
       vm.viewAutoScroll = true;

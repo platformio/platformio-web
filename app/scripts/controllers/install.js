@@ -22,7 +22,7 @@
     .controller('InstallController', InstallController);
 
   function InstallController($location, $routeParams, $window, $analytics,
-    dataService, siteUtils) {
+    dataService) {
     var vm = this;
 
     vm.gsType = 'ide';
@@ -30,7 +30,6 @@
       vm.gsType = $routeParams.gsType;
     }
 
-    vm.siteUtils = siteUtils;
     vm.cliDemos = dataService.getCLIDemos();
     vm.cliDemoActive = 0;
     vm.ideDemos = dataService.getIDEDemos();

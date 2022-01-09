@@ -2,8 +2,6 @@
   "name": "platformio-web",
   "version": "0.3.0",
   "dependencies": {
-    "json3": "*",
-    "es5-shim": "*",
     "angular": "~1.7.3",
     "angular-resource": "~1.7.3",
     "angular-cookies": "~1.7.3",
@@ -17,11 +15,6 @@
     "angularjs-viewhead": "~0.0.1",
     "angulartics": "~1.6.0",
     "angulartics-google-analytics": "~0.5.0",
-    "highlightjs": "~9",
-    "angular-highlightjs": "~0.7.0",
-    "angular-relative-date": "~1.0.0",
-    "ng-table": "~4.0.0",
-    "ngclipboard": "~1.1.1",
     "angular-scroll": "~1.0.2"
   },
   "devDependencies": {

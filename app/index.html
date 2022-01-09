@@ -25,29 +25,14 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/third-party/ng-table.min.css">
-
   <!-- endbuild -->
-  <script>
-    (function (url){
-      var posEscFrag = url.lastIndexOf('_escaped_fragment_=');
-      var posHashbang = url.lastIndexOf('/#!');
-      if (posEscFrag !== -1) window.location.replace(url.substr(posEscFrag + 19));
-      if (posHashbang !== -1) window.location.replace(url.substr(posHashbang + 3));
-    })(window.location.href);
-  </script>
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
-
   <header>
     <nav role="navigation" class="navbar navbar-inverse">
       <div class="container container-fluid">
@@ -132,10 +117,6 @@
           <h3>Development</h3>
           <ul>
             <li><a href="/platformio-ide">PlatformIO IDE</a></li>
-            <li><a href="/platforms">Platforms</a></li>
-            <li><a href="/frameworks">Frameworks</a></li>
-            <li><a href="/boards">Boards & dev-kits</a></li>
-            <li><a href="/lib">Libraries</a></li>
             <li><a href="https://docs.platformio.org/page/ci/index.html">Continuous Integration</a></li>
             <li><a href="https://docs.platformio.org/page/ide.html">Cloud &amp; Standalone IDEs</a></li>
           </ul>
@@ -210,8 +191,6 @@
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="bower_components/json3/lib/json3.js"></script>
-  <script src="bower_components/es5-shim/es5-shim.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -221,15 +200,9 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angularjs-viewhead/angularjs-viewhead.js"></script>
-  <script src="bower_components/SHA-1/sha1.js"></script>
+  <script src="bower_components/SHA-1/dist/sha1.umd.js"></script>
   <script src="bower_components/angulartics/src/angulartics.js"></script>
   <script src="bower_components/angulartics-google-analytics/lib/angulartics-ga.js"></script>
-  <script src="bower_components/highlightjs/highlight.pack.js"></script>
-  <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
-  <script src="bower_components/angular-translate/angular-translate.js"></script>
-  <script src="bower_components/angular-relative-date/angular-relative-date.js"></script>
-  <script src="bower_components/clipboard/dist/clipboard.js"></script>
-  <script src="bower_components/ngclipboard/dist/ngclipboard.js"></script>
   <script src="bower_components/angular-scroll/angular-scroll.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
@@ -238,27 +211,10 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/app-routes.js"></script>
   <script src="scripts/factories/dataservice.js"></script>
-  <script src="scripts/factories/utils.js"></script>
   <script src="scripts/directives/ins-ad.js"></script>
-  <script src="scripts/directives/select-on-click.js"></script>
-  <script src="scripts/filters/board-debug-info.js"></script>
-  <script src="scripts/filters/embedded-formatter.js"></script>
-  <script src="scripts/filters/name-to-title.js"></script>
-  <script src="scripts/filters/truncate.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/install.js"></script>
-  <script src="scripts/controllers/platforms.js"></script>
-  <script src="scripts/controllers/platform-show.js"></script>
-  <script src="scripts/controllers/frameworks.js"></script>
-  <script src="scripts/controllers/framework-show.js"></script>
-  <script src="scripts/controllers/boards.js"></script>
-  <script src="scripts/controllers/lib-main.js"></script>
-  <script src="scripts/controllers/lib-modalse.js"></script>
-  <script src="scripts/controllers/lib-search.js"></script>
-  <script src="scripts/controllers/lib-show.js"></script>
-  <script src="scripts/controllers/lib-examples.js"></script>
-  <script src="scripts/third-party/ng-table.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/templates.js -->

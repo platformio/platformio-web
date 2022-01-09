@@ -23,88 +23,13 @@
 
   function dataService($resource, siteConfig) {
     return {
-      getLibSearchResult: getLibSearchResult,
-      getLibExamples: getLibExamples,
-      getLibInfo: getLibInfo,
-      getLibDlUrl: getLibDlUrl,
-      getLibStats: getLibStats,
       getPioStats: getPioStats,
-      getFrameworks: getFrameworks,
-      getPackages: getPackages,
-      getPlatforms: getPlatforms,
-      getBoards: getBoards,
       getCLIDemos: getCLIDemos,
       getIDEDemos: getIDEDemos
     };
 
-    function getLibSearchResult(data) {
-      return $resource(siteConfig.apiURL + '/v2/lib/search', data).get();
-    }
-
-    function getLibExamples(data) {
-      return $resource(siteConfig.apiURL + '/lib/examples', data).get();
-    }
-
-    function getLibInfo(id) {
-      return $resource(siteConfig.apiURL + '/lib/info/' + id).get();
-    }
-
-    function getLibDlUrl(id) {
-      return $resource(
-        siteConfig.apiURL + '/lib/download/' + id).get();
-    }
-
-    function getLibStats() {
-      return $resource(siteConfig.apiURL + '/lib/stats').get();
-    }
-
     function getPioStats() {
       return $resource(siteConfig.apiURL + '/stats').get();
-    }
-
-    function getBoards() {
-      var p = $resource(siteConfig.apiURL + '/boards').query().$promise;
-      return p.then(function(boards) {
-        angular.forEach(boards, function(board) {
-          if (!board.debug || !board.debug.tools) {
-            return;
-          }
-          var filters = [];
-          var onboard = [];
-          var external = [];
-          angular.forEach(board.debug.tools, function(data, name) {
-            if ('onboard' in data && data.onboard) {
-              onboard.push(name);
-            } else {
-              external.push(name);
-            }
-          });
-          if (onboard.length) {
-            filters.push('onboard');
-          }
-          if (external.length) {
-            filters.push('external');
-          }
-          board.debug = {
-            'onboard': onboard,
-            'external': external,
-            'filters': filters
-          };
-        });
-        return boards;
-      });
-    }
-
-    function getFrameworks() {
-      return $resource(siteConfig.apiURL + '/frameworks').query();
-    }
-
-    function getPlatforms() {
-      return $resource(siteConfig.apiURL + '/platforms').query();
-    }
-
-    function getPackages() {
-      return $resource(siteConfig.apiURL + '/packages').get();
     }
 
     function getCLIDemos() {

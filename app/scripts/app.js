@@ -27,10 +27,6 @@
       'viewhead',
       'angulartics',
       'angulartics.google.analytics',
-      'hljs',
-      'relativeDate',
-      'ngTable',
-      'ngclipboard',
       'duScroll'
     ])
 

@@ -153,23 +153,6 @@
   padding-top: 3px;
 }
 
-/* Code highlighting */
-
-.hljs {
-  padding: 0;
-  background-color: #f5f5f5;
-}
-
-.hljscode {
-  padding: 0;
-}
-
-.hljscode pre {
-  margin: 0;
-  border: none;
-  background: none;
-}
-
 /* Home */
 
 .home .slogan h1 {
@@ -443,84 +426,6 @@
   padding-top: 30px;
 }
 
-/* Lib */
-.search-filters {
-  margin-bottom: 5px;
-}
-
-.search-filters .btn-group {
-  margin-left: 3px;
-}
-
-.search-examples {
-  margin: 5px 0 20px 0;
-}
-
-.search-examples .col {
-  padding: 0;
-}
-
-.search-examples .col .btn {
-  margin-bottom: 3px;
-}
-
-.search-result {
-  margin-top: 10px;
-}
-
-.search-result .title {
-  margin-top: 0;
-}
-
-.modal-search-examples {
-  margin: 15px;
-}
-
-.keywords .btn {
-  margin: 0 4px 4px 0;
-}
-
-.keywords-stats p {
-  margin-bottom: 6px;
-}
-
-.keywords-stats-top a {
-  margin: 0 3px 3px 0;
-}
-
-
-.lib-author-detail {
-  margin-top: 10px;
-}
-
-.page-header.libs-stats, .page-header.libs-stats h2 {
-  margin-bottom: 0;
-}
-
-.libs-stats .lib-recently-btn {
-  padding-top: 20px;
-}
-
-.libs-stats .lib-recently-btn .btn {
-  margin-bottom: 3px;
-}
-
-.examples {
-  margin-bottom: 30px;
-}
-
-.examples .title {
-  margin-top: 0;
-}
-
-.examples .code-toogle {
-  line-height: 0;
-}
-
-.examples .code-toogle-btn {
-  position: relative;
-  margin-bottom: -35px;
-}
 
 /* Pricing */
 

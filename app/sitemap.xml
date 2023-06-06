@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://platformio.org</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://platformio.org/platformio-ide</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://platformio.org/contact</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://platformio.org/support</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://platformio.org/donate</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

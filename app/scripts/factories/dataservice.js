@@ -21,16 +21,11 @@
     .module('siteApp')
     .factory('dataService', dataService);
 
-  function dataService($resource, siteConfig) {
+  function dataService(siteConfig) {
     return {
-      getPioStats: getPioStats,
       getCLIDemos: getCLIDemos,
       getIDEDemos: getIDEDemos
     };
-
-    function getPioStats() {
-      return $resource(siteConfig.apiURL + '/stats').get();
-    }
 
     function getCLIDemos() {
       return [{

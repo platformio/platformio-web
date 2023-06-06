@@ -41,16 +41,7 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeController',
-        controllerAs: 'vm',
-        resolve: {
-          pioStats: ['dataService',
-            function(dataService) {
-              return dataService.getPioStats().$promise;
-            }
-          ]
-        }
+        templateUrl: 'views/home.html'
       })
       .when('/get-started', {
         redirectTo: '/install'

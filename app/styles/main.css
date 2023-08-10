@@ -155,6 +155,12 @@
 
 /* Home */
 
+.home .slogan {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home .slogan h1 {
   font-size: 32px;
   margin-bottom: 0;
@@ -167,11 +173,11 @@
 }
 
 .home .slogan h3 {
-  font-size: 16px;
+  font-size: 18px;
   color: #777;
   line-height: 1.5;
   font-weight: normal;
-  margin: 10px 0 10px 0;
+  margin: 25px 0;
 }
 
 .home .btn-lg {

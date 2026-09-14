@@ -81,6 +81,10 @@
         'title': 'Emacs',
         'url': 'https://docs.platformio.org/page/ide/emacs.html'
       }, {
+        'image': '/images/demo/ide/ide-platformio-neovim.png',
+        'title': 'Neovim',
+        'url': 'https://docs.platformio.org/page/integration/ide/neovim.html'
+      }, {
         'image': '/images/demo/ide/ide-platformio-netbeans.png',
         'title': 'NetBeans',
         'url': 'https://docs.platformio.org/page/ide/netbeans.html'
